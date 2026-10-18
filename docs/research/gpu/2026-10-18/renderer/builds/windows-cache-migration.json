@@ -1,0 +1,35 @@
+{
+  "source": "/tmp/catwalk-windows-target",
+  "target": "/mnt/c/Users/jungl/AppData/Local/Temp/catwalk-cargo-gpu-20261018-584ck51i",
+  "status": "complete",
+  "started_unix": 1792356602.1142385,
+  "space_before": {
+    "total": 2046020284416,
+    "used": 2031478841344,
+    "free": 14541443072
+  },
+  "copy_method": "Linux shutil.copytree(copy_function=copy2), preserving file/directory mtimes; original cache retained",
+  "finished_unix": 1792356812.6448298,
+  "files_copied": 3615,
+  "directories_copied": 656,
+  "source_bytes": 2714397465,
+  "size_mismatches": [],
+  "initial_timestamp_check": "copy2 via DrvFS truncated times to whole seconds; repaired natively before Cargo",
+  "timestamp_repair_record": "/tmp/catwalk-windows-ntfs-timestamp-repair.json",
+  "filetime_manifest": "/tmp/catwalk-windows-ntfs-filetimes.json",
+  "native_timestamp_verification": {
+    "target": "C:\\Users\\jungl\\AppData\\Local\\Temp\\catwalk-cargo-gpu-20261018-584ck51i",
+    "directories": 656,
+    "files": 3615,
+    "native_timestamp_verification": "passed"
+  },
+  "timestamp_resolution_ns": 100,
+  "critical_file": "release/build/proc-macro2-1361b141bc6c4b89/build_script_build-1361b141bc6c4b89.exe",
+  "critical_source_sha256": "23d46dbf44bbcf371da2c12248d8ce876a0d8e54ca85ae1bd7fe6aa0154d57a4",
+  "critical_target_sha256": "23d46dbf44bbcf371da2c12248d8ce876a0d8e54ca85ae1bd7fe6aa0154d57a4",
+  "space_after": {
+    "total": 2046020284416,
+    "used": 2034538364928,
+    "free": 11481919488
+  }
+}

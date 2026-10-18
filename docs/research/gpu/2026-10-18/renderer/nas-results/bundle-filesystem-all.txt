@@ -1,0 +1,6 @@
+bundle=/volume1/homes/max/.catwalk-gpu-20261018.n0HIq9/renderer
+Filesystem     1024-blocks        Used  Available Capacity Mounted on
+-              22473080832 13852666312 8620414520      62% /volume1/homes
+
+containing mount from /proc/mounts:
+/dev/mapper/cachedev_0 /volume1 btrfs rw,nodev,relatime,ssd,synoacl,space_cache=v2,auto_reclaim_space,metadata_ratio=50,block_group_cache_tree,syno_allocator,subvolid=256,subvol=/@syno 0 0

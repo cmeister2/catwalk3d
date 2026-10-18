@@ -1,0 +1,42 @@
+2026-10-18T20:53:12Z
+Linux velisvel 4.4.302+ #86009 SMP Wed Nov 26 18:19:17 CST 2025 x86_64 GNU/Linux synology_geminilake_920+
+uid=1026(max) gid=100(users) groups=100(users),101(administrators),65537(docker)
+render_node=/dev/dri/renderD128 render_group=937
+image=sha256:ffabbe46b4a5b81eb9cd73334047454bd6420a5cc668f43d6b9920bc1ae070dd
+MemTotal:        3856568 kB
+MemFree:          143536 kB
+MemAvailable:     904640 kB
+Buffers:           10684 kB
+Cached:           920064 kB
+SwapCached:        45000 kB
+Active:          1211344 kB
+Inactive:        1078640 kB
+Active(anon):     639580 kB
+Inactive(anon):   775868 kB
+Active(file):     571764 kB
+Inactive(file):   302772 kB
+Unevictable:        1760 kB
+Mlocked:            1760 kB
+SwapTotal:       4411308 kB
+SwapFree:        1055016 kB
+Dirty:               480 kB
+Writeback:             0 kB
+AnonPages:       1320852 kB
+Mapped:           258580 kB
+Shmem:             54300 kB
+Slab:             330908 kB
+SReclaimable:     171280 kB
+SUnreclaim:       159628 kB
+KernelStack:       29312 kB
+PageTables:        51512 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6339592 kB
+Committed_AS:   15257840 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+DirectMap4k:       16828 kB
+DirectMap2M:     1824768 kB
+DirectMap1G:     4194304 kB

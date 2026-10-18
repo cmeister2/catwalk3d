@@ -1,0 +1,83 @@
+Before relocation, UTC: Sun Oct 18 21:02:39 UTC 2026
+MemTotal:        3856568 kB
+MemFree:          324588 kB
+MemAvailable:     970832 kB
+Buffers:           11420 kB
+Cached:           801512 kB
+SwapCached:        39156 kB
+Active:          1042524 kB
+Inactive:        1069248 kB
+Active(anon):     614716 kB
+Inactive(anon):   735248 kB
+Active(file):     427808 kB
+Inactive(file):   334000 kB
+Unevictable:        1760 kB
+Mlocked:            1760 kB
+SwapTotal:       4411308 kB
+SwapFree:        1013832 kB
+Dirty:               240 kB
+Writeback:          1476 kB
+AnonPages:       1266236 kB
+Mapped:           239288 kB
+Shmem:             49380 kB
+Slab:             328644 kB
+SReclaimable:     169148 kB
+SUnreclaim:       159496 kB
+KernelStack:       29200 kB
+PageTables:        51488 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6339592 kB
+Committed_AS:   15256236 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+DirectMap4k:       16828 kB
+DirectMap2M:     1824768 kB
+DirectMap1G:     4194304 kB
+95608	/tmp/catwalk-cpu-baseline-20261018.EOdA5f
+6228	/tmp/catwalk-wgpu-probe-20261018
+668	/tmp/catwalk-gpu-probe-1792349138088
+After relocation, UTC: Sun Oct 18 21:02:45 UTC 2026
+95608	/volume1/homes/max/.catwalk-gpu-20261018.n0HIq9/earlier-tmp-scratch/catwalk-cpu-baseline-20261018.EOdA5f
+668	/volume1/homes/max/.catwalk-gpu-20261018.n0HIq9/earlier-tmp-scratch/catwalk-gpu-probe-1792349138088
+6228	/volume1/homes/max/.catwalk-gpu-20261018.n0HIq9/earlier-tmp-scratch/catwalk-wgpu-probe-20261018
+MemTotal:        3856568 kB
+MemFree:          208268 kB
+MemAvailable:     959592 kB
+Buffers:           11428 kB
+Cached:           885948 kB
+SwapCached:        67372 kB
+Active:          1046920 kB
+Inactive:        1180924 kB
+Active(anon):     617304 kB
+Inactive(anon):   743652 kB
+Active(file):     429616 kB
+Inactive(file):   437272 kB
+Unevictable:        1760 kB
+Mlocked:            1760 kB
+SwapTotal:       4411308 kB
+SwapFree:        1095364 kB
+Dirty:             64120 kB
+Writeback:             0 kB
+AnonPages:       1270096 kB
+Mapped:           240252 kB
+Shmem:             28072 kB
+Slab:             328760 kB
+SReclaimable:     169148 kB
+SUnreclaim:       159612 kB
+KernelStack:       29488 kB
+PageTables:        51972 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6339592 kB
+Committed_AS:   15271432 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+DirectMap4k:       16828 kB
+DirectMap2M:     1824768 kB
+DirectMap1G:     4194304 kB
+manyfold-manyfold-1 Up 5 days (healthy)

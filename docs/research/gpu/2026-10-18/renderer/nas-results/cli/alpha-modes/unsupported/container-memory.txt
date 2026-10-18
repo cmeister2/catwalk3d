@@ -1,0 +1,51 @@
+
+/sys/fs/cgroup/memory/memory.max_usage_in_bytes
+252870656
+
+/sys/fs/cgroup/memory/memory.limit_in_bytes
+536870912
+
+/sys/fs/cgroup/memory/memory.memsw.limit_in_bytes
+536870912
+
+/sys/fs/cgroup/memory/memory.failcnt
+0
+
+/sys/fs/cgroup/memory/memory.stat
+cache 184766464
+rss 434176
+rss_huge 0
+mapped_file 2056192
+dirty 1191936
+writeback 0
+swap 0
+pgpgin 304508
+pgpgout 259293
+pgfault 269852
+pgmajfault 99
+inactive_anon 229376
+active_anon 466944
+inactive_file 109981696
+active_file 74510336
+unevictable 0
+hierarchical_memory_limit 536870912
+hierarchical_memsw_limit 536870912
+total_cache 184766464
+total_rss 434176
+total_rss_huge 0
+total_mapped_file 2056192
+total_dirty 1191936
+total_writeback 0
+total_swap 0
+total_pgpgin 304508
+total_pgpgout 259293
+total_pgfault 269852
+total_pgmajfault 99
+total_inactive_anon 229376
+total_active_anon 466944
+total_inactive_file 109981696
+total_active_file 74510336
+total_unevictable 0
+
+proc_self_cpus_allowed_list
+3

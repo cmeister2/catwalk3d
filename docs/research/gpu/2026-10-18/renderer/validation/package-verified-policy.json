@@ -1,0 +1,9 @@
+{
+  "archive_filename": "catwalk3d-0.1.0.crate",
+  "bytes": 5170011,
+  "limit_bytes_exclusive": 10000000,
+  "entries": 660,
+  "sha256": "4fd732a7cd50ee5d9cfb62c9a84eb00f527c25b698c7fef149b278ab20e64b6b",
+  "invalid_entries": [],
+  "scope": "Full-verification archive snapshot before final Windows research evidence and any final archive-only refresh."
+}

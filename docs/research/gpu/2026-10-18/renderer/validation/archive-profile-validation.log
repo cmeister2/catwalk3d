@@ -1,0 +1,29 @@
+27/27 valid experiment reports; summary: /tmp/catwalk-archived-profile-summary.json
+input | mode | experiment | render median ms | job median ms | max sampled HWM MiB | explicit GPU MiB
+gear.obj | cpu | fresh | 14.373 | 22.749 | 8.941 | None
+gear.obj | cpu | retained | 14.014 | 22.002 | 9.211 | None
+gear.obj | cpu | reload | 15.740 | 24.508 | 9.582 | None
+gear.obj | shared-cpu | fresh | 14.218 | 21.923 | 9.094 | None
+gear.obj | shared-cpu | retained | 14.347 | 22.195 | 9.555 | None
+gear.obj | shared-cpu | reload | 14.053 | 22.904 | 9.637 | None
+gear.obj | gpu | fresh | 20.294 | 28.963 | 87.543 | 4.075
+gear.obj | gpu | retained | 8.647 | 16.150 | 86.711 | 4.075
+gear.obj | gpu | reload | 9.160 | 28.231 | 86.133 | 4.075
+ap242-tessellated.stp | cpu | fresh | 105.172 | 114.493 | 35.0 | None
+ap242-tessellated.stp | cpu | retained | 106.631 | 115.767 | 35.035 | None
+ap242-tessellated.stp | cpu | reload | 104.782 | 212.045 | 36.91 | None
+ap242-tessellated.stp | shared-cpu | fresh | 107.249 | 116.463 | 33.496 | None
+ap242-tessellated.stp | shared-cpu | retained | 105.094 | 114.272 | 33.418 | None
+ap242-tessellated.stp | shared-cpu | reload | 105.176 | 215.577 | 34.367 | None
+ap242-tessellated.stp | gpu | fresh | 18.852 | 28.189 | 109.344 | 4.547
+ap242-tessellated.stp | gpu | retained | 8.293 | 17.509 | 107.27 | 4.547
+ap242-tessellated.stp | gpu | reload | 9.087 | 188.031 | 114.852 | 4.547
+synthetic-repeated.step | cpu | fresh | 959.675 | 976.903 | 75.543 | None
+synthetic-repeated.step | cpu | retained | 957.793 | 974.580 | 75.246 | None
+synthetic-repeated.step | cpu | reload | 955.915 | 1068.592 | 77.402 | None
+synthetic-repeated.step | shared-cpu | fresh | 957.743 | 974.521 | 73.77 | None
+synthetic-repeated.step | shared-cpu | retained | 954.354 | 971.164 | 73.59 | None
+synthetic-repeated.step | shared-cpu | reload | 955.259 | 1102.621 | 77.32 | None
+synthetic-repeated.step | gpu | fresh | 45.973 | 62.840 | 97.438 | 6.538
+synthetic-repeated.step | gpu | retained | 34.504 | 51.345 | 95.656 | 6.538
+synthetic-repeated.step | gpu | reload | 36.297 | 1792.856 | 111.262 | 6.538

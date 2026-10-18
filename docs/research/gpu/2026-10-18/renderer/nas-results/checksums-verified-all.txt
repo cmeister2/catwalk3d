@@ -1,0 +1,14 @@
+bin/catwalk: OK
+bin/profile_gpu: OK
+inputs/alpha-modes.glb: OK
+inputs/ap242-tessellated.stp: OK
+inputs/gear.obj: OK
+inputs/jpeg-textured.3mf: OK
+inputs/synthetic-repeated.step: OK
+inputs/synthetic-repeated.step.json: OK
+manifest.json: OK
+policy.json: OK
+run-on-nas.sh: OK
+scripts/capture-memory.sh: OK
+scripts/run-cli-case.sh: OK
+scripts/run-profile-case.sh: OK

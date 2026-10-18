@@ -1,0 +1,9 @@
+renderer	samples	background	exit_status	expectation_met
+cpu	1	opaque	0	1
+gpu	1	opaque	0	1
+cpu	1	transparent	0	1
+gpu	1	transparent	0	1
+cpu	2	opaque	0	1
+gpu	2	opaque	0	1
+cpu	2	transparent	0	1
+gpu	2	transparent	0	1

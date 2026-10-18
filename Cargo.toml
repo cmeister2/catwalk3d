@@ -11,6 +11,7 @@ readme = "README.md"
 include = [
     "/src/**",
     "/docs/**",
+    "!/docs/research/gpu/**",
     "/README.md",
     "/LICENSE",
     "/examples/demo.rs",

@@ -1,0 +1,615 @@
+{
+  "adapter": null,
+  "after_jobs_before_retained_cleanup": {
+    "process_lifetime_hwm_kib": 79176,
+    "rss_kib": 17892,
+    "system_cpu_ticks_total": 10,
+    "user_cpu_ticks_total": 317
+  },
+  "background_srgb": [
+    245,
+    247,
+    250
+  ],
+  "cpu_clock_ticks_per_second": 100,
+  "device_cleanup": {
+    "after": {
+      "process_lifetime_hwm_kib": 79176,
+      "rss_kib": 17892,
+      "system_cpu_ticks_total": 10,
+      "user_cpu_ticks_total": 317
+    },
+    "before": {
+      "process_lifetime_hwm_kib": 79176,
+      "rss_kib": 17892,
+      "system_cpu_ticks_total": 10,
+      "user_cpu_ticks_total": 317
+    },
+    "system_cpu_ms": 0.0,
+    "user_cpu_ms": 0.0,
+    "wall_ms": 0.000153
+  },
+  "fallback_color_srgb": [
+    100,
+    160,
+    220
+  ],
+  "height": 512,
+  "input": "/inputs/synthetic-repeated.step",
+  "jobs": [
+    {
+      "first_render": true,
+      "first_render_of_scene": true,
+      "iteration": 0,
+      "job_with_cleanup_and_accounting": {
+        "after": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 14252,
+          "system_cpu_ticks_total": 4,
+          "user_cpu_ticks_total": 105
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 5192,
+          "rss_kib": 5192,
+          "system_cpu_ticks_total": 0,
+          "user_cpu_ticks_total": 0
+        },
+        "system_cpu_ms": 40.0,
+        "user_cpu_ms": 1050.0,
+        "wall_ms": 1106.0620379999998
+      },
+      "png_bytes": 63417,
+      "png_encode_to_memory": {
+        "after": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 75104,
+          "system_cpu_ticks_total": 3,
+          "user_cpu_ticks_total": 105
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 75104,
+          "system_cpu_ticks_total": 3,
+          "user_cpu_ticks_total": 103
+        },
+        "system_cpu_ms": 0.0,
+        "user_cpu_ms": 20.0,
+        "wall_ms": 16.808993
+      },
+      "png_write": null,
+      "render": {
+        "after": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 75104,
+          "system_cpu_ticks_total": 3,
+          "user_cpu_ticks_total": 103
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 75104,
+          "system_cpu_ticks_total": 3,
+          "user_cpu_ticks_total": 9
+        },
+        "cpu_geometry_preparation_wall_ms": 502.808573,
+        "cpu_rasterization_and_resolve_wall_ms": 452.44867100000005,
+        "system_cpu_ms": 0.0,
+        "user_cpu_ms": 940.0,
+        "wall_ms": 955.258684
+      },
+      "scene_cleanup": {
+        "after": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 14252,
+          "system_cpu_ticks_total": 4,
+          "user_cpu_ticks_total": 105
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 75104,
+          "system_cpu_ticks_total": 3,
+          "user_cpu_ticks_total": 105
+        },
+        "system_cpu_ms": 10.0,
+        "user_cpu_ms": 0.0,
+        "wall_ms": 5.296969000000001
+      },
+      "scene_setup": {
+        "compact_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "instances": 64,
+          "lines": 0,
+          "logical_triangles": 786432,
+          "meshes": 1,
+          "points": 0,
+          "source_appearances": 0,
+          "source_positions": 6146,
+          "source_triangles": 12288,
+          "structural_payload_estimate_bytes": 353400
+        },
+        "cpu_geometry_preparation_wall_ms": null,
+        "drop_compact_source": {
+          "after": {
+            "process_lifetime_hwm_kib": 75300,
+            "rss_kib": 75104,
+            "system_cpu_ticks_total": 3,
+            "user_cpu_ticks_total": 9
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 75240,
+            "rss_kib": 75240,
+            "system_cpu_ticks_total": 3,
+            "user_cpu_ticks_total": 9
+          },
+          "system_cpu_ms": 0.0,
+          "user_cpu_ms": 0.0,
+          "wall_ms": 0.038426
+        },
+        "expand_for_cpu": {
+          "after": {
+            "process_lifetime_hwm_kib": 75240,
+            "rss_kib": 75240,
+            "system_cpu_ticks_total": 3,
+            "user_cpu_ticks_total": 9
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 16048,
+            "rss_kib": 13876,
+            "system_cpu_ticks_total": 0,
+            "user_cpu_ticks_total": 3
+          },
+          "system_cpu_ms": 30.0,
+          "user_cpu_ms": 60.0,
+          "wall_ms": 87.743315
+        },
+        "expanded_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "lines": 0,
+          "points": 0,
+          "structural_payload_estimate_bytes": 62914560,
+          "triangle_appearances": 0,
+          "triangles": 786432
+        },
+        "explicit_gpu_allocation_bytes": null,
+        "gpu_prepare_and_upload": null,
+        "gpu_resource_creation_wall_ms": null,
+        "load_and_geometry": {
+          "after": {
+            "process_lifetime_hwm_kib": 16048,
+            "rss_kib": 13876,
+            "system_cpu_ticks_total": 0,
+            "user_cpu_ticks_total": 3
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 5192,
+            "rss_kib": 5192,
+            "system_cpu_ticks_total": 0,
+            "user_cpu_ticks_total": 0
+          },
+          "system_cpu_ms": 0.0,
+          "user_cpu_ms": 30.0,
+          "wall_ms": 39.933457
+        },
+        "total_with_accounting": {
+          "after": {
+            "process_lifetime_hwm_kib": 75300,
+            "rss_kib": 75104,
+            "system_cpu_ticks_total": 3,
+            "user_cpu_ticks_total": 9
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 5192,
+            "rss_kib": 5192,
+            "system_cpu_ticks_total": 0,
+            "user_cpu_ticks_total": 0
+          },
+          "system_cpu_ms": 30.0,
+          "user_cpu_ms": 90.0,
+          "wall_ms": 128.211257
+        }
+      }
+    },
+    {
+      "first_render": false,
+      "first_render_of_scene": true,
+      "iteration": 1,
+      "job_with_cleanup_and_accounting": {
+        "after": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 17668,
+          "system_cpu_ticks_total": 7,
+          "user_cpu_ticks_total": 211
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 75300,
+          "rss_kib": 14252,
+          "system_cpu_ticks_total": 4,
+          "user_cpu_ticks_total": 105
+        },
+        "system_cpu_ms": 30.0,
+        "user_cpu_ms": 1060.0,
+        "wall_ms": 1099.250312
+      },
+      "png_bytes": 63417,
+      "png_encode_to_memory": {
+        "after": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 78928,
+          "system_cpu_ticks_total": 6,
+          "user_cpu_ticks_total": 211
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 78928,
+          "system_cpu_ticks_total": 6,
+          "user_cpu_ticks_total": 209
+        },
+        "system_cpu_ms": 0.0,
+        "user_cpu_ms": 20.0,
+        "wall_ms": 16.390643999999998
+      },
+      "png_write": null,
+      "render": {
+        "after": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 78928,
+          "system_cpu_ticks_total": 6,
+          "user_cpu_ticks_total": 209
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 78928,
+          "system_cpu_ticks_total": 6,
+          "user_cpu_ticks_total": 114
+        },
+        "cpu_geometry_preparation_wall_ms": 503.25471,
+        "cpu_rasterization_and_resolve_wall_ms": 450.553266,
+        "system_cpu_ms": 0.0,
+        "user_cpu_ms": 950.0,
+        "wall_ms": 953.809638
+      },
+      "scene_cleanup": {
+        "after": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 17668,
+          "system_cpu_ticks_total": 7,
+          "user_cpu_ticks_total": 211
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 78928,
+          "system_cpu_ticks_total": 6,
+          "user_cpu_ticks_total": 211
+        },
+        "system_cpu_ms": 10.0,
+        "user_cpu_ms": 0.0,
+        "wall_ms": 5.312858
+      },
+      "scene_setup": {
+        "compact_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "instances": 64,
+          "lines": 0,
+          "logical_triangles": 786432,
+          "meshes": 1,
+          "points": 0,
+          "source_appearances": 0,
+          "source_positions": 6146,
+          "source_triangles": 12288,
+          "structural_payload_estimate_bytes": 353400
+        },
+        "cpu_geometry_preparation_wall_ms": null,
+        "drop_compact_source": {
+          "after": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 78928,
+            "system_cpu_ticks_total": 6,
+            "user_cpu_ticks_total": 114
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 78928,
+            "system_cpu_ticks_total": 6,
+            "user_cpu_ticks_total": 114
+          },
+          "system_cpu_ms": 0.0,
+          "user_cpu_ms": 0.0,
+          "wall_ms": 0.002187
+        },
+        "expand_for_cpu": {
+          "after": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 78928,
+            "system_cpu_ticks_total": 6,
+            "user_cpu_ticks_total": 114
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 75300,
+            "rss_kib": 17416,
+            "system_cpu_ticks_total": 4,
+            "user_cpu_ticks_total": 109
+          },
+          "system_cpu_ms": 20.0,
+          "user_cpu_ms": 50.0,
+          "wall_ms": 84.135479
+        },
+        "expanded_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "lines": 0,
+          "points": 0,
+          "structural_payload_estimate_bytes": 62914560,
+          "triangle_appearances": 0,
+          "triangles": 786432
+        },
+        "explicit_gpu_allocation_bytes": null,
+        "gpu_prepare_and_upload": null,
+        "gpu_resource_creation_wall_ms": null,
+        "load_and_geometry": {
+          "after": {
+            "process_lifetime_hwm_kib": 75300,
+            "rss_kib": 17416,
+            "system_cpu_ticks_total": 4,
+            "user_cpu_ticks_total": 109
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 75300,
+            "rss_kib": 14252,
+            "system_cpu_ticks_total": 4,
+            "user_cpu_ticks_total": 105
+          },
+          "system_cpu_ms": 0.0,
+          "user_cpu_ms": 40.0,
+          "wall_ms": 38.662618
+        },
+        "total_with_accounting": {
+          "after": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 78928,
+            "system_cpu_ticks_total": 6,
+            "user_cpu_ticks_total": 114
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 75300,
+            "rss_kib": 14252,
+            "system_cpu_ticks_total": 4,
+            "user_cpu_ticks_total": 105
+          },
+          "system_cpu_ms": 20.0,
+          "user_cpu_ms": 90.0,
+          "wall_ms": 123.22911
+        }
+      }
+    },
+    {
+      "first_render": false,
+      "first_render_of_scene": true,
+      "iteration": 2,
+      "job_with_cleanup_and_accounting": {
+        "after": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 17892,
+          "system_cpu_ticks_total": 10,
+          "user_cpu_ticks_total": 317
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 78928,
+          "rss_kib": 17668,
+          "system_cpu_ticks_total": 7,
+          "user_cpu_ticks_total": 211
+        },
+        "system_cpu_ms": 30.0,
+        "user_cpu_ms": 1060.0,
+        "wall_ms": 1102.621461
+      },
+      "png_bytes": 63417,
+      "png_encode_to_memory": {
+        "after": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 79176,
+          "system_cpu_ticks_total": 9,
+          "user_cpu_ticks_total": 317
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 79176,
+          "system_cpu_ticks_total": 9,
+          "user_cpu_ticks_total": 316
+        },
+        "system_cpu_ms": 0.0,
+        "user_cpu_ms": 10.0,
+        "wall_ms": 17.058116000000002
+      },
+      "png_write": null,
+      "render": {
+        "after": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 79176,
+          "system_cpu_ticks_total": 9,
+          "user_cpu_ticks_total": 316
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 79176,
+          "system_cpu_ticks_total": 9,
+          "user_cpu_ticks_total": 221
+        },
+        "cpu_geometry_preparation_wall_ms": 502.786682,
+        "cpu_rasterization_and_resolve_wall_ms": 456.574921,
+        "system_cpu_ms": 0.0,
+        "user_cpu_ms": 950.0,
+        "wall_ms": 959.3626790000001
+      },
+      "scene_cleanup": {
+        "after": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 17892,
+          "system_cpu_ticks_total": 10,
+          "user_cpu_ticks_total": 317
+        },
+        "before": {
+          "process_lifetime_hwm_kib": 79176,
+          "rss_kib": 79176,
+          "system_cpu_ticks_total": 9,
+          "user_cpu_ticks_total": 317
+        },
+        "system_cpu_ms": 10.0,
+        "user_cpu_ms": 0.0,
+        "wall_ms": 5.179513999999999
+      },
+      "scene_setup": {
+        "compact_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "instances": 64,
+          "lines": 0,
+          "logical_triangles": 786432,
+          "meshes": 1,
+          "points": 0,
+          "source_appearances": 0,
+          "source_positions": 6146,
+          "source_triangles": 12288,
+          "structural_payload_estimate_bytes": 353400
+        },
+        "cpu_geometry_preparation_wall_ms": null,
+        "drop_compact_source": {
+          "after": {
+            "process_lifetime_hwm_kib": 79176,
+            "rss_kib": 79176,
+            "system_cpu_ticks_total": 9,
+            "user_cpu_ticks_total": 221
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 79176,
+            "rss_kib": 79176,
+            "system_cpu_ticks_total": 9,
+            "user_cpu_ticks_total": 221
+          },
+          "system_cpu_ms": 0.0,
+          "user_cpu_ms": 0.0,
+          "wall_ms": 0.0023769999999999998
+        },
+        "expand_for_cpu": {
+          "after": {
+            "process_lifetime_hwm_kib": 79176,
+            "rss_kib": 79176,
+            "system_cpu_ticks_total": 9,
+            "user_cpu_ticks_total": 221
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 17668,
+            "system_cpu_ticks_total": 7,
+            "user_cpu_ticks_total": 214
+          },
+          "system_cpu_ms": 20.0,
+          "user_cpu_ms": 70.0,
+          "wall_ms": 83.78601400000001
+        },
+        "expanded_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "lines": 0,
+          "points": 0,
+          "structural_payload_estimate_bytes": 62914560,
+          "triangle_appearances": 0,
+          "triangles": 786432
+        },
+        "explicit_gpu_allocation_bytes": null,
+        "gpu_prepare_and_upload": null,
+        "gpu_resource_creation_wall_ms": null,
+        "load_and_geometry": {
+          "after": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 17668,
+            "system_cpu_ticks_total": 7,
+            "user_cpu_ticks_total": 214
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 17668,
+            "system_cpu_ticks_total": 7,
+            "user_cpu_ticks_total": 211
+          },
+          "system_cpu_ms": 0.0,
+          "user_cpu_ms": 30.0,
+          "wall_ms": 36.26493
+        },
+        "total_with_accounting": {
+          "after": {
+            "process_lifetime_hwm_kib": 79176,
+            "rss_kib": 79176,
+            "system_cpu_ticks_total": 9,
+            "user_cpu_ticks_total": 221
+          },
+          "before": {
+            "process_lifetime_hwm_kib": 78928,
+            "rss_kib": 17668,
+            "system_cpu_ticks_total": 7,
+            "user_cpu_ticks_total": 211
+          },
+          "system_cpu_ms": 20.0,
+          "user_cpu_ms": 100.0,
+          "wall_ms": 120.491052
+        }
+      }
+    }
+  ],
+  "mode": "shared-cpu",
+  "notes": [
+    "Device initialization is paid once in setup_device; the hardware adapter and actual renderer adapter/device capabilities are recorded separately. Adapter support can exceed enabled device limits/features.",
+    "Default mode imports/prepares once in setup and all jobs reuse geometry. Warm rendering alone is not complete thumbnail throughput.",
+    "Reload mode imports/prepares each job in scene_setup, drops that CPU/GPU scene before the next job, and reuses only the device/pipelines. Its job total includes import/upload/render/encoding/scene teardown; one-time device initialization is additional.",
+    "Load includes reads, decoding, tessellation, geometry processing and validation; those importer internals are not separately instrumented.",
+    "GPU upload includes CPU packing, fitting and resource creation; deferred upload/driver/shader work can appear in the first render.",
+    "Upload substage walls separate CPU validation/fitting/packing from resource creation and scoped driver checks; resource creation does not guarantee DMA completion.",
+    "CPU render includes validation/fitting/rasterization/resolve; GPU render includes submission/wait/resolve and final thumbnail readback only.",
+    "CPU render substage walls separate global validation/normalization/camera fitting from canvas allocation, per-triangle projection/shading, rasterization and resolve. They do not split CPU-time tick deltas or measure GPU execution time.",
+    "The shared CPU path drops the compact scene after expansion. The GPU path drops its CPU source scene before every measured render.",
+    "PNG encoding targets memory. Optional final-file writing is separate and does not fsync.",
+    "RSS values are endpoint samples, not phase peaks. VmHWM is cumulative per process and includes setup and previous iterations.",
+    "CPU values use calibrated procfs tick deltas and exclude GPU execution; short intervals can round to zero. Non-Linux fields are null.",
+    "Scene structural payload estimates exclude spare capacities, BTree nodes, allocator overhead and driver objects. Texture texels are counted once per distinct image.",
+    "Explicit GPU bytes exclude driver allocations, transient copies, other GPU users and kernel/page-cache memory. Integrated GPU memory can overlap system RAM; do not add these estimates to RSS as total memory.",
+    "Timers exclude boundary resource reads except enclosing job/setup/entry timers. Entry-to-report excludes executable startup and JSON serialization/writing, and includes retained-scene and device teardown.",
+    "No filesystem/driver caches are cleared. This geometry-only harness bypasses saved previews and GPU mode never falls back to software."
+  ],
+  "operation": "same_process_reuse_device_reload_scene",
+  "process_entry_to_report_ms": 3309.152805,
+  "reload_scene": true,
+  "retained_cleanup": {
+    "after": {
+      "process_lifetime_hwm_kib": 79176,
+      "rss_kib": 17892,
+      "system_cpu_ticks_total": 10,
+      "user_cpu_ticks_total": 317
+    },
+    "before": {
+      "process_lifetime_hwm_kib": 79176,
+      "rss_kib": 17892,
+      "system_cpu_ticks_total": 10,
+      "user_cpu_ticks_total": 317
+    },
+    "system_cpu_ms": 0.0,
+    "user_cpu_ms": 0.0,
+    "wall_ms": 0.000088
+  },
+  "schema_version": 1,
+  "setup": null,
+  "setup_device": null,
+  "setup_jobs_and_cleanup": {
+    "after": {
+      "process_lifetime_hwm_kib": 79176,
+      "rss_kib": 17892,
+      "system_cpu_ticks_total": 10,
+      "user_cpu_ticks_total": 317
+    },
+    "before": {
+      "process_lifetime_hwm_kib": 5192,
+      "rss_kib": 5192,
+      "system_cpu_ticks_total": 0,
+      "user_cpu_ticks_total": 0
+    },
+    "system_cpu_ms": 100.0,
+    "user_cpu_ms": 3170.0,
+    "wall_ms": 3308.462967
+  },
+  "supersampling": 1,
+  "width": 512
+}

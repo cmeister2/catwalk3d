@@ -1,6 +1,12 @@
-# Actual-renderer NAS comparison protocol
+# Actual-renderer NAS comparison and protocol
 
-This directory contains a protocol and locally checked tooling. **Actual NAS renderer measurements and image comparisons remain unproven.** No renderer benchmark has been run by this protocol yet, and the [manifest template](manifest-template.json) deliberately leaves build/source hashes unset. Freeze those fields only from the completed build supplied by the build owner; an evolving worktree is not evidence of what produced an executable.
+The completed NAS run contains **81 measured jobs and 27 validated experiment reports**, with source/binary identities frozen from a completed build. Keep CPU as the NAS default: complete fresh GPU jobs were slower for all three inputs, and measured process/cgroup memory was higher. Retaining uploaded scenes improved repeated rendering for the larger inputs; it did not establish a general new-thumbnail or memory benefit. The [measured recommendation](nas-recommendation.md) separates complete jobs, device reuse, representation effects and memory scopes.
+
+**Strict image qualification failed:** all 12 supported CPU/GPU CLI pairs exceeded the unchanged interior maximum-error tolerance. All eight unsupported-material CPU/automatic-fallback pairs passed with identical PNG bytes. The smaller hardware test suite passed 18 image cases, but that does not override these larger 512px failures. Timings describe an experimental implementation, not production-qualified equivalent output. Preserve the failures under the original policy.
+
+The [pixel investigation](pixel-investigation/diagnosis.md) attributes selected worst errors to subpixel triangle coverage at internal facet/occlusion edges. A sample can choose a different, sharply colored face even when average error and framing pass. Its independent geometry reconstruction explains the selected colors, including a synthetic case with a large depth separation. Exact hardware subpixel quantization was not measured. CPU coverage equivalence needs further design; these findings do not waive the original failures.
+
+The [archived results](nas-results/) include every profiler report, command/exit log, output PNG, host/cgroup record, finalized manifest, checksum record, [profile summary](nas-results/profile-summary.json) and [image comparisons](nas-results/comparisons.json). The [completed Linux build metadata](builds/linux.json) identifies source checkpoint `6e00d13` and both binaries. The source-checkpoint image tests live separately under [nas-correctness-6e00d13](nas-correctness-6e00d13/). The protocol below explains reproduction; the [manifest template](manifest-template.json) deliberately remains unset rather than pretending to be a completed build.
 
 The comparison uses the exact same GPU-enabled `profile_gpu` executable for `cpu`, `shared-cpu` and strict `gpu` modes. Every input/mode has three experiments, with three jobs each:
 

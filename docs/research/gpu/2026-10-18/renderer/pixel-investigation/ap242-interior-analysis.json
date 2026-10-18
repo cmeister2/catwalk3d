@@ -1,0 +1,298 @@
+[
+  {
+    "samples": 1,
+    "background": "opaque",
+    "interior_pixels": 54563,
+    "interior_changed": 150,
+    "interior_over_3": 1,
+    "max_error": 47,
+    "bad_at_cpu_color_boundary": 1,
+    "bad_both_colors_found_nearby_within_1": 1,
+    "worst20": [
+      {
+        "xy": [
+          372,
+          301
+        ],
+        "error": 47,
+        "cpu": [
+          82,
+          133,
+          184,
+          255
+        ],
+        "gpu": [
+          60,
+          98,
+          137,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          371,
+          302
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          0,
+          370,
+          299
+        ],
+        "cpu_local_spread": 47
+      }
+    ],
+    "all_bad": [
+      {
+        "xy": [
+          372,
+          301
+        ],
+        "error": 47,
+        "cpu": [
+          82,
+          133,
+          184,
+          255
+        ],
+        "gpu": [
+          60,
+          98,
+          137,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          371,
+          302
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          0,
+          370,
+          299
+        ],
+        "cpu_local_spread": 47
+      }
+    ]
+  },
+  {
+    "samples": 1,
+    "background": "transparent",
+    "interior_pixels": 54563,
+    "interior_changed": 150,
+    "interior_over_3": 1,
+    "max_error": 47,
+    "bad_at_cpu_color_boundary": 1,
+    "bad_both_colors_found_nearby_within_1": 1,
+    "worst20": [
+      {
+        "xy": [
+          372,
+          301
+        ],
+        "error": 47,
+        "cpu": [
+          82,
+          133,
+          184,
+          255
+        ],
+        "gpu": [
+          60,
+          98,
+          137,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          371,
+          302
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          0,
+          370,
+          299
+        ],
+        "cpu_local_spread": 47
+      }
+    ],
+    "all_bad": [
+      {
+        "xy": [
+          372,
+          301
+        ],
+        "error": 47,
+        "cpu": [
+          82,
+          133,
+          184,
+          255
+        ],
+        "gpu": [
+          60,
+          98,
+          137,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          371,
+          302
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          0,
+          370,
+          299
+        ],
+        "cpu_local_spread": 47
+      }
+    ]
+  },
+  {
+    "samples": 2,
+    "background": "opaque",
+    "interior_pixels": 55227,
+    "interior_changed": 81,
+    "interior_over_3": 1,
+    "max_error": 15,
+    "bad_at_cpu_color_boundary": 1,
+    "bad_both_colors_found_nearby_within_1": 0,
+    "worst20": [
+      {
+        "xy": [
+          154,
+          187
+        ],
+        "error": 15,
+        "cpu": [
+          94,
+          151,
+          208,
+          255
+        ],
+        "gpu": [
+          87,
+          140,
+          193,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          152,
+          185
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          15,
+          152,
+          185
+        ],
+        "cpu_local_spread": 71
+      }
+    ],
+    "all_bad": [
+      {
+        "xy": [
+          154,
+          187
+        ],
+        "error": 15,
+        "cpu": [
+          94,
+          151,
+          208,
+          255
+        ],
+        "gpu": [
+          87,
+          140,
+          193,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          152,
+          185
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          15,
+          152,
+          185
+        ],
+        "cpu_local_spread": 71
+      }
+    ]
+  },
+  {
+    "samples": 2,
+    "background": "transparent",
+    "interior_pixels": 55227,
+    "interior_changed": 81,
+    "interior_over_3": 1,
+    "max_error": 15,
+    "bad_at_cpu_color_boundary": 1,
+    "bad_both_colors_found_nearby_within_1": 0,
+    "worst20": [
+      {
+        "xy": [
+          154,
+          187
+        ],
+        "error": 15,
+        "cpu": [
+          94,
+          151,
+          208,
+          255
+        ],
+        "gpu": [
+          87,
+          140,
+          193,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          152,
+          185
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          15,
+          152,
+          185
+        ],
+        "cpu_local_spread": 71
+      }
+    ],
+    "all_bad": [
+      {
+        "xy": [
+          154,
+          187
+        ],
+        "error": 15,
+        "cpu": [
+          94,
+          151,
+          208,
+          255
+        ],
+        "gpu": [
+          87,
+          140,
+          193,
+          255
+        ],
+        "cpu_color_best_gpu_neighbor": [
+          0,
+          152,
+          185
+        ],
+        "gpu_color_best_cpu_neighbor": [
+          15,
+          152,
+          185
+        ],
+        "cpu_local_spread": 71
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+    "-NoProfile",
+    "-NonInteractive",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-restore-windows-mtimes.ps1",
+    "-Manifest",
+    "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-windows-ntfs-filetimes.json",
+    "-Target",
+    "C:\\Users\\jungl\\AppData\\Local\\Temp\\catwalk-cargo-gpu-20261018-584ck51i"
+  ],
+  "returncode": 0,
+  "stdout": "{\"target\":\"C:\\\\Users\\\\jungl\\\\AppData\\\\Local\\\\Temp\\\\catwalk-cargo-gpu-20261018-584ck51i\",\"directories\":656,\"files\":3615,\"native_timestamp_verification\":\"passed\"}\n",
+  "stderr": "",
+  "finished_unix": 1792356805.6366708
+}

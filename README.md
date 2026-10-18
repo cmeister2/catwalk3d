@@ -39,7 +39,7 @@ cargo run --release --locked -- examples/models/gear.obj --output thumbnail.png 
 
 The importers and default renderer use Rust implementations. Native Autodesk decoding uses Cadmpeg with bundled Zstandard compression; building from source requires a C compiler for that compression library. The default CPU path requires no graphics driver, display server, CAD installation or subprocess converter.
 
-An [experimental native GPU backend](docs/gpu-rendering.md) is available with `--features gpu`. Use `--renderer gpu` to require hardware or `--renderer auto` to permit complete CPU fallback. It preserves shared STEP meshes and supports a qualified opaque-surface subset; measurements and limitations are documented separately.
+An [experimental native GPU backend](docs/gpu-rendering.md) is available with `--features gpu`. Use `--renderer gpu` to require hardware or `--renderer auto` to permit complete CPU fallback. It preserves shared STEP meshes and implements an opaque-surface subset. Strict image comparisons currently fail at some triangle boundaries; CPU rendering remains the default. Measurements and limitations are documented separately.
 
 ## Create a thumbnail in your browser
 

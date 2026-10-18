@@ -1,0 +1,804 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling autocfg v1.5.1
+   Compiling libm v0.2.16
+   Compiling syn v3.0.9
+   Compiling syn v2.0.119
+   Compiling num-traits v0.2.19
+    Checking cfg-if v1.0.5
+   Compiling bytemuck_derive v1.12.1
+   Compiling crc32fast v1.5.2
+   Compiling thiserror v2.0.21
+   Compiling thiserror-impl v2.0.21
+    Checking bytemuck v1.25.2
+   Compiling libc v0.2.190
+    Checking simd-adler32 v0.3.10
+   Compiling serde_core v1.0.229
+    Checking equivalent v1.0.2
+   Compiling version_check v0.9.5
+    Checking smallvec v1.16.3
+    Checking adler2 v2.0.1
+    Checking num-complex v0.4.6
+    Checking memchr v2.8.3
+   Compiling serde v1.0.229
+   Compiling serde_derive v1.0.229
+   Compiling zerocopy v0.8.62
+    Checking miniz_oxide v0.9.1
+    Checking zlib-rs v0.6.8
+    Checking flate2 v1.1.10
+   Compiling jobserver v0.1.35
+   Compiling zerocopy-derive v0.8.62
+    Checking typenum v1.20.1
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+   Compiling cc v1.8.0
+   Compiling pkg-config v0.3.34
+   Compiling zmij v1.0.23
+    Checking either v1.19.0
+   Compiling heck v0.5.0
+    Checking hashbrown v0.17.1
+    Checking indexmap v2.14.2
+   Compiling zstd-sys v2.1.1+zstd.1.5.7
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/entropy_common.c:18:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-entropy_common.o" "-c" "zstd/lib/common/entropy_common.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/error_private.c:13:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-error_private.o" "-c" "zstd/lib/common/error_private.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/fse_decompress.c:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/bitstream.h:26:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-fse_decompress.o" "-c" "zstd/lib/common/fse_decompress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/pool.c:13:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/../common/allocations.h:15:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-pool.o" "-c" "zstd/lib/common/pool.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/zstd_common.c:17:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-zstd_common.o" "-c" "zstd/lib/common/zstd_common.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/fse_compress.c:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-fse_compress.o" "-c" "zstd/lib/compress/fse_compress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/hist.c:17:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-hist.o" "-c" "zstd/lib/compress/hist.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/huf_compress.c:26:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-huf_compress.o" "-c" "zstd/lib/compress/huf_compress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress.c:14:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/allocations.h:15:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress.o" "-c" "zstd/lib/compress/zstd_compress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_literals.c:14:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_literals.h:14:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress_literals.o" "-c" "zstd/lib/compress/zstd_compress_literals.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_sequences.c:14:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_sequences.h:14:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress_sequences.o" "-c" "zstd/lib/compress/zstd_compress_sequences.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_superblock.c:16:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress_superblock.o" "-c" "zstd/lib/compress/zstd_compress_superblock.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_double_fast.c:11:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_double_fast.o" "-c" "zstd/lib/compress/zstd_double_fast.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_fast.c:11:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_fast.o" "-c" "zstd/lib/compress/zstd_fast.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_lazy.c:11:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_lazy.o" "-c" "zstd/lib/compress/zstd_lazy.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_ldm.c:11:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_ldm.h:14:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_ldm.o" "-c" "zstd/lib/compress/zstd_ldm.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_opt.c:11:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/cpu.h:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_opt.o" "-c" "zstd/lib/compress/zstd_opt.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstd_preSplit.c:12:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_preSplit.o" "-c" "zstd/lib/compress/zstd_preSplit.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/zstdmt_compress.c:19:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/allocations.h:15:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstdmt_compress.o" "-c" "zstd/lib/compress/zstdmt_compress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/huf_decompress.c:18:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-huf_decompress.o" "-c" "zstd/lib/decompress/huf_decompress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/zstd_ddict.c:17:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/../common/allocations.h:15:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-zstd_ddict.o" "-c" "zstd/lib/decompress/zstd_ddict.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/zstd_decompress.c:58:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-zstd_decompress.o" "-c" "zstd/lib/decompress/zstd_decompress.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/zstd_decompress_block.c:17:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-zstd_decompress_block.o" "-c" "zstd/lib/decompress/zstd_decompress_block.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/cover.c:42:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/a6c81c75fc82913a-cover.o" "-c" "zstd/lib/dictBuilder/cover.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/fastcover.c:23:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/a6c81c75fc82913a-fastcover.o" "-c" "zstd/lib/dictBuilder/fastcover.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/zdict.c:48:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/dictBuilder/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/a6c81c75fc82913a-zdict.o" "-c" "zstd/lib/dictBuilder/zdict.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v01.c:18:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v01.o" "-c" "zstd/lib/legacy/zstd_v01.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v02.c:15:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v02.o" "-c" "zstd/lib/legacy/zstd_v02.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v03.c:15:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v03.o" "-c" "zstd/lib/legacy/zstd_v03.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v04.c:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v04.o" "-c" "zstd/lib/legacy/zstd_v04.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v05.c:13:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v05.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/mem.h:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v05.o" "-c" "zstd/lib/legacy/zstd_v05.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v06.c:18:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/error_private.h:22:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v06.o" "-c" "zstd/lib/legacy/zstd_v06.c"
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/zstd_v07.c:20:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from zstd/lib/legacy/../common/xxhash.h:583:
+warning: zstd-sys@2.1.1+zstd.1.5.7: In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+warning: zstd-sys@2.1.1+zstd.1.5.7: /usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+warning: zstd-sys@2.1.1+zstd.1.5.7:    26 | #include <bits/libc-header-start.h>
+warning: zstd-sys@2.1.1+zstd.1.5.7:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+warning: zstd-sys@2.1.1+zstd.1.5.7: 1 error generated.
+warning: zstd-sys@2.1.1+zstd.1.5.7: ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v07.o" "-c" "zstd/lib/legacy/zstd_v07.c"
+error: failed to run custom build command for `zstd-sys v2.1.1+zstd.1.5.7`
+
+Caused by:
+  process didn't exit successfully: `/home/max/code/github/catwalk/target/debug/build/zstd-sys-38f777ed46ed7900/build-script-build` (exit status: 1)
+  --- stdout
+  cargo:rerun-if-env-changed=ZSTD_SYS_USE_PKG_CONFIG
+  cargo:rerun-if-env-changed=ZSTD_SYS_NO_HIDE_SYMBOLS
+  cargo:rustc-cfg=feature="std"
+  cargo:rerun-if-changed=wasm-shim/stdlib.h
+  cargo:rerun-if-changed=wasm-shim/string.h
+  cargo:rerun-if-env-changed=CC_FORCE_DISABLE
+  CC_FORCE_DISABLE = None
+  cargo:rerun-if-env-changed=CC_wasm32-wasip1
+  CC_wasm32-wasip1 = None
+  cargo:rerun-if-env-changed=CC_wasm32_wasip1
+  CC_wasm32_wasip1 = Some(clang)
+  cargo:rerun-if-env-changed=CC_KNOWN_WRAPPER_CUSTOM
+  CC_KNOWN_WRAPPER_CUSTOM = None
+  cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=WASI_SYSROOT
+  WASI_SYSROOT = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=WASI_SYSROOT
+  WASI_SYSROOT = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasip1
+  CFLAGS_wasm32_wasip1 = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasip1
+  CFLAGS_wasm32-wasip1 = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasip1
+  CFLAGS_wasm32_wasip1 = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasip1
+  CFLAGS_wasm32-wasip1 = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=WASI_SYSROOT
+  WASI_SYSROOT = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasip1
+  CFLAGS_wasm32_wasip1 = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasip1
+  CFLAGS_wasm32-wasip1 = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=WASI_SYSROOT
+  WASI_SYSROOT = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasip1
+  CFLAGS_wasm32_wasip1 = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasip1
+  CFLAGS_wasm32-wasip1 = None
+  cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+  CRATE_CC_NO_DEFAULTS = None
+  cargo:rerun-if-env-changed=WASI_SYSROOT
+  WASI_SYSROOT = None
+  cargo:rerun-if-env-changed=CFLAGS
+  CFLAGS = None
+  cargo:rerun-if-env-changed=TARGET_CFLAGS
+  TARGET_CFLAGS = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32_wasip1
+  CFLAGS_wasm32_wasip1 = None
+  cargo:rerun-if-env-changed=CFLAGS_wasm32-wasip1
+  CFLAGS_wasm32-wasip1 = None
+  exit status: 0
+  cargo:warning=In file included from zstd/lib/common/entropy_common.c:18:
+  cargo:warning=In file included from zstd/lib/common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-entropy_common.o" "-c" "zstd/lib/common/entropy_common.c"
+  cargo:warning=In file included from zstd/lib/common/error_private.c:13:
+  cargo:warning=In file included from zstd/lib/common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-error_private.o" "-c" "zstd/lib/common/error_private.c"
+  cargo:warning=In file included from zstd/lib/common/fse_decompress.c:20:
+  cargo:warning=In file included from zstd/lib/common/bitstream.h:26:
+  cargo:warning=In file included from zstd/lib/common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-fse_decompress.o" "-c" "zstd/lib/common/fse_decompress.c"
+  cargo:warning=In file included from zstd/lib/common/pool.c:13:
+  cargo:warning=In file included from zstd/lib/common/../common/allocations.h:15:
+  cargo:warning=In file included from zstd/lib/common/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-pool.o" "-c" "zstd/lib/common/pool.c"
+  exit status: 0
+  cargo:warning=In file included from zstd/lib/common/zstd_common.c:17:
+  cargo:warning=In file included from zstd/lib/common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/44ff4c55aa9e5133-zstd_common.o" "-c" "zstd/lib/common/zstd_common.c"
+  cargo:warning=In file included from zstd/lib/compress/fse_compress.c:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-fse_compress.o" "-c" "zstd/lib/compress/fse_compress.c"
+  cargo:warning=In file included from zstd/lib/compress/hist.c:17:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-hist.o" "-c" "zstd/lib/compress/hist.c"
+  cargo:warning=In file included from zstd/lib/compress/huf_compress.c:26:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-huf_compress.o" "-c" "zstd/lib/compress/huf_compress.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress.c:14:
+  cargo:warning=In file included from zstd/lib/compress/../common/allocations.h:15:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress.o" "-c" "zstd/lib/compress/zstd_compress.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_literals.c:14:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_literals.h:14:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress_literals.o" "-c" "zstd/lib/compress/zstd_compress_literals.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_sequences.c:14:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_sequences.h:14:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress_sequences.o" "-c" "zstd/lib/compress/zstd_compress_sequences.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_superblock.c:16:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_compress_superblock.o" "-c" "zstd/lib/compress/zstd_compress_superblock.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_double_fast.c:11:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_double_fast.o" "-c" "zstd/lib/compress/zstd_double_fast.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_fast.c:11:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_fast.o" "-c" "zstd/lib/compress/zstd_fast.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_lazy.c:11:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_lazy.o" "-c" "zstd/lib/compress/zstd_lazy.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_ldm.c:11:
+  cargo:warning=In file included from zstd/lib/compress/zstd_ldm.h:14:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_ldm.o" "-c" "zstd/lib/compress/zstd_ldm.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_opt.c:11:
+  cargo:warning=In file included from zstd/lib/compress/zstd_compress_internal.h:21:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_internal.h:23:
+  cargo:warning=In file included from zstd/lib/compress/../common/cpu.h:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_opt.o" "-c" "zstd/lib/compress/zstd_opt.c"
+  cargo:warning=In file included from zstd/lib/compress/zstd_preSplit.c:12:
+  cargo:warning=In file included from zstd/lib/compress/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstd_preSplit.o" "-c" "zstd/lib/compress/zstd_preSplit.c"
+  cargo:warning=In file included from zstd/lib/compress/zstdmt_compress.c:19:
+  cargo:warning=In file included from zstd/lib/compress/../common/allocations.h:15:
+  cargo:warning=In file included from zstd/lib/compress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/fb80479a5fb81f6a-zstdmt_compress.o" "-c" "zstd/lib/compress/zstdmt_compress.c"
+  cargo:warning=In file included from zstd/lib/decompress/huf_decompress.c:18:
+  cargo:warning=In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-huf_decompress.o" "-c" "zstd/lib/decompress/huf_decompress.c"
+  cargo:warning=In file included from zstd/lib/decompress/zstd_ddict.c:17:
+  cargo:warning=In file included from zstd/lib/decompress/../common/allocations.h:15:
+  cargo:warning=In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-zstd_ddict.o" "-c" "zstd/lib/decompress/zstd_ddict.c"
+  cargo:warning=In file included from zstd/lib/decompress/zstd_decompress.c:58:
+  cargo:warning=In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-zstd_decompress.o" "-c" "zstd/lib/decompress/zstd_decompress.c"
+  cargo:warning=In file included from zstd/lib/decompress/zstd_decompress_block.c:17:
+  cargo:warning=In file included from zstd/lib/decompress/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/88f362f13b0528ed-zstd_decompress_block.o" "-c" "zstd/lib/decompress/zstd_decompress_block.c"
+  cargo:warning=In file included from zstd/lib/dictBuilder/cover.c:42:
+  cargo:warning=In file included from zstd/lib/dictBuilder/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/dictBuilder/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/a6c81c75fc82913a-cover.o" "-c" "zstd/lib/dictBuilder/cover.c"
+  exit status: 0
+  cargo:warning=In file included from zstd/lib/dictBuilder/fastcover.c:23:
+  cargo:warning=In file included from zstd/lib/dictBuilder/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/dictBuilder/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/a6c81c75fc82913a-fastcover.o" "-c" "zstd/lib/dictBuilder/fastcover.c"
+  cargo:warning=In file included from zstd/lib/dictBuilder/zdict.c:48:
+  cargo:warning=In file included from zstd/lib/dictBuilder/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/dictBuilder/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/a6c81c75fc82913a-zdict.o" "-c" "zstd/lib/dictBuilder/zdict.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v01.c:18:
+  cargo:warning=In file included from zstd/lib/legacy/../common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v01.o" "-c" "zstd/lib/legacy/zstd_v01.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v02.c:15:
+  cargo:warning=In file included from zstd/lib/legacy/../common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v02.o" "-c" "zstd/lib/legacy/zstd_v02.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v03.c:15:
+  cargo:warning=In file included from zstd/lib/legacy/../common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v03.o" "-c" "zstd/lib/legacy/zstd_v03.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v04.c:20:
+  cargo:warning=In file included from zstd/lib/legacy/../common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v04.o" "-c" "zstd/lib/legacy/zstd_v04.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v05.c:13:
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v05.h:22:
+  cargo:warning=In file included from zstd/lib/legacy/../common/mem.h:20:
+  cargo:warning=In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v05.o" "-c" "zstd/lib/legacy/zstd_v05.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v06.c:18:
+  cargo:warning=In file included from zstd/lib/legacy/../common/error_private.h:22:
+  cargo:warning=In file included from zstd/lib/legacy/../common/zstd_deps.h:39:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/limits.h:21:
+  cargo:warning=/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v06.o" "-c" "zstd/lib/legacy/zstd_v06.c"
+  cargo:warning=In file included from zstd/lib/legacy/zstd_v07.c:20:
+  cargo:warning=In file included from zstd/lib/legacy/../common/xxhash.h:583:
+  cargo:warning=In file included from /usr/lib/llvm-18/lib/clang/18/include/stdint.h:52:
+  cargo:warning=/usr/include/stdint.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+  cargo:warning=   26 | #include <bits/libc-header-start.h>
+  cargo:warning=      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+  cargo:warning=1 error generated.
+  exit status: 1
+  cargo:warning=ToolExecError: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v07.o" "-c" "zstd/lib/legacy/zstd_v07.c"
+
+  --- stderr
+
+
+  error occurred in cc-rs: command did not execute successfully (status code exit status: 1): "clang" "-O0" "-ffunction-sections" "-fdata-sections" "-g" "-fno-omit-frame-pointer" "-mno-omit-leaf-frame-pointer" "--target=wasm32-wasip1" "-I" "wasm-shim/" "-I" "zstd/lib/" "-I" "zstd/lib/common" "-I" "zstd/lib/legacy" "-w" "-fvisibility=hidden" "-ffunction-sections" "-fdata-sections" "-fmerge-all-constants" "-DZSTD_DISABLE_ASM=" "-DZSTD_LIB_DEPRECATED=0" "-DXXH_PRIVATE_API=" "-DZSTDLIB_VISIBILITY=" "-DZDICTLIB_VISIBILITY=" "-DZSTDERRORLIB_VISIBILITY=" "-DZSTD_LEGACY_SUPPORT=1" "-o" "/home/max/code/github/catwalk/target/wasm32-wasip1/debug/build/zstd-sys-a37b1e337fdbbf34/out/3f451b2306bc13c8-zstd_v07.o" "-c" "zstd/lib/legacy/zstd_v07.c"
+
+
+warning: build failed, waiting for other jobs to finish...

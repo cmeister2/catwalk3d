@@ -27,8 +27,16 @@ resource-constrained validation target, not the architecture's defining platform
   identifies its exact source and executable; it establishes those image cases,
   rather than performance or every numerical edge case. A demonstrated collapsed
   placement now requests CPU fallback; arbitrary near-coincident geometry remains
-  outside the qualified scope. Native Windows renderer
-  comparisons and comparable GPU throughput measurements remain pending.
+  outside the qualified scope.
+- The completed NAS renderer matrix has 81 jobs and 27 validated experiment
+  reports. Complete fresh GPU jobs were slower for all three inputs and measured
+  memory was higher; repeated rendering of retained scenes improved for the
+  larger inputs. All 12 supported 512px CPU/GPU CLI image pairs failed the frozen
+  interior maximum-error tolerance; all eight CPU/automatic-fallback pairs were
+  identical. These failures prevent a production-quality GPU recommendation.
+  The [NAS measured report](research/gpu/2026-10-18/renderer/nas-recommendation.md)
+  retains costs, resource scopes and original quality gates. Native Windows
+  actual-renderer comparisons remain pending.
 
 The reusable [hardware probe](../tools/gpu-probe/README.md) and
 [recorded results](research/gpu/2026-10-18/README.md) retain adapter and capability
@@ -117,6 +125,7 @@ details. These compatibility checks do not establish Catwalk performance benefit
   promise acceleration or lower memory use for every model or device.
 
 This document defines the clarified goal and required evidence. The optional
-[renderer prototype](gpu-rendering.md) is under validation. The completed
-[NAS CPU baselines](research/gpu/2026-10-18/cpu-baseline/README.md) establish a
-reference; a measured GPU thumbnail performance benefit remains unproven.
+[renderer prototype](gpu-rendering.md) remains experimental: the broader NAS image
+qualification has failed, and a practical NAS benefit for fresh or arbitrary
+new-scene thumbnails has not been established. Keep CPU as the default while
+investigating the image differences and native Windows results.

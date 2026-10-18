@@ -21,7 +21,18 @@ driver is still required. `--gpu-backend auto|vulkan|dx12|metal|gl` and
 `--gpu-adapter NAME` control selection for diagnosis. CPU/software adapters and
 unverified adapter types are rejected by the hardware path.
 
-## Qualified scope
+## Implemented scope and qualification limits
+
+The 512px NAS CLI matrix failed the frozen maximum interior pixel-error gate for
+all 12 supported CPU/GPU pairs. The smaller 18-case hardware suite passes, but
+the renderer is **not production-qualified** under that broader image policy.
+`auto` does not compare its result with a CPU image, so it cannot detect these
+image differences and fall back merely because a tolerance would fail. Keep CPU
+as the default; GPU selection is an explicit experimental choice.
+The [pixel diagnosis](research/gpu/2026-10-18/renderer/pixel-investigation/diagnosis.md)
+finds rare changes at internal triangle coverage boundaries, including a changed
+foreground supersample that exactly explains a high-contrast output pixel.
+Native rasterization does not reproduce the CPU's f64 edge-coverage contract.
 
 The prototype renders opaque untextured surfaces, including legacy flat colors,
 linear material colors, corner colors, authored normals, unlit materials,
@@ -72,8 +83,11 @@ with different memory requirements.
 
 The [goal](gpu-acceleration-goal.md) defines correctness and measurement criteria.
 [Hardware probes and NAS CPU baselines](research/gpu/2026-10-18/README.md) establish
-available hardware and reference costs. They do not establish GPU thumbnail
-speedups. The standalone capability probe uses wgpu 30; this renderer uses the
+available hardware and reference costs. The completed [NAS comparison](research/gpu/2026-10-18/renderer/README.md)
+found slower complete fresh GPU jobs and higher measured memory for all three
+inputs. Retained scenes improved repeated rendering on the larger inputs, but
+the strict CLI image failures remain a qualification blocker. The standalone
+capability probe uses wgpu 30; this renderer uses the
 fully published wgpu 29 backend family so its optional Metal dependency resolves.
 Runtime validation of the actual renderer is tracked separately from probe passes.
 The [NAS hardware image validation at source checkpoint 6e00d13](research/gpu/2026-10-18/renderer/nas-correctness-6e00d13/metadata.json)

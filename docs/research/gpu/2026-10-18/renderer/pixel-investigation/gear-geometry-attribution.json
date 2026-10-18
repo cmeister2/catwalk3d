@@ -1,0 +1,2855 @@
+{
+  "input": "gear",
+  "method": "Independent Python projection and f64 barycentric evaluation using source positions; OBJ polygons fan-triangulated (same planar faces, not exact importer triangulation). Actual GPU primitive coverage is not read back.",
+  "points": [
+    {
+      "pixel": [
+        406,
+        313
+      ],
+      "samples": 1,
+      "subsample": [
+        0,
+        0
+      ],
+      "sample_xy": [
+        406.5,
+        313.5
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 509,
+          "position_indices": [
+            254,
+            3,
+            255
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.33746346831321716,
+          "depth_f64": 0.3374634808891417,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            -2.215947322094113e-05,
+            0.9004394995625162,
+            0.0995826599107054
+          ],
+          "nearest_edge_distance_pixels": 0.0008627685960459413,
+          "nearest_edge_xy": [
+            [
+              409.86643565516806,
+              313.93575742049535
+            ],
+            [
+              376.0382424322069,
+              309.54823361326197
+            ]
+          ],
+          "obj_face_position_indices": [
+            254,
+            2,
+            3,
+            255
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 510,
+          "position_indices": [
+            255,
+            3,
+            0
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.3374592363834381,
+          "depth_f64": 0.33745924022188656,
+          "color_rgb": [
+            52,
+            83,
+            115
+          ],
+          "barycentric_weights": [
+            0.0995156801009126,
+            0.9004702418843956,
+            1.4078014691842328e-05
+          ],
+          "nearest_edge_distance_pixels": 0.0008627685960455768,
+          "nearest_edge_xy": [
+            [
+              376.0382424322069,
+              309.54823361326197
+            ],
+            [
+              409.86643565516806,
+              313.93575742049535
+            ]
+          ],
+          "obj_face_position_indices": [
+            255,
+            3,
+            0,
+            252
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 32,
+          "position_indices": [
+            16,
+            20,
+            21
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.03623725473880768,
+          "depth_f64": 0.03623725348585843,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.01886577930892585,
+            0.5393577561870424,
+            0.4417764645040317
+          ],
+          "nearest_edge_distance_pixels": 0.23912760550579662,
+          "nearest_edge_xy": [
+            [
+              464.2302171017777,
+              323.36794646185075
+            ],
+            [
+              333.8599943044332,
+              300.53525898361386
+            ]
+          ],
+          "obj_face_position_indices": [
+            16,
+            20,
+            21,
+            17
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 510,
+        "position_indices": [
+          255,
+          3,
+          0
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.3374592363834381,
+        "depth_f64": 0.33745924022188656,
+        "color_rgb": [
+          52,
+          83,
+          115
+        ],
+        "barycentric_weights": [
+          0.0995156801009126,
+          0.9004702418843956,
+          1.4078014691842328e-05
+        ],
+        "nearest_edge_distance_pixels": 0.0008627685960455768,
+        "nearest_edge_xy": [
+          [
+            376.0382424322069,
+            309.54823361326197
+          ],
+          [
+            409.86643565516806,
+            313.93575742049535
+          ]
+        ],
+        "obj_face_position_indices": [
+          255,
+          3,
+          0,
+          252
+        ]
+      }
+    },
+    {
+      "pixel": [
+        462,
+        229
+      ],
+      "samples": 2,
+      "subsample": [
+        0,
+        0
+      ],
+      "sample_xy": [
+        462.25,
+        229.25
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 61,
+          "position_indices": [
+            30,
+            35,
+            31
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.06368707120418549,
+          "depth_f64": 0.06368707331441326,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            -5.767112901808824e-06,
+            0.612524103044238,
+            0.38748166406866374
+          ],
+          "nearest_edge_distance_pixels": 0.0002455766132758441,
+          "nearest_edge_xy": [
+            [
+              473.6,
+              225.1009293757358
+            ],
+            [
+              444.30625786082925,
+              235.80878361240224
+            ]
+          ],
+          "obj_face_position_indices": [
+            30,
+            34,
+            35,
+            31
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 62,
+          "position_indices": [
+            31,
+            35,
+            32
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.06368579715490341,
+          "depth_f64": 0.06368579882225901,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.3874547658021172,
+            0.6125410031846499,
+            4.23101323298245e-06
+          ],
+          "nearest_edge_distance_pixels": 0.0002455766132758441,
+          "nearest_edge_xy": [
+            [
+              444.30625786082925,
+              235.80878361240224
+            ],
+            [
+              473.6,
+              225.1009293757358
+            ]
+          ],
+          "obj_face_position_indices": [
+            31,
+            35,
+            32,
+            28
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 78,
+          "position_indices": [
+            39,
+            43,
+            40
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.031150495633482933,
+          "depth_f64": -0.03115049535168003,
+          "color_rgb": [
+            60,
+            95,
+            131
+          ],
+          "barycentric_weights": [
+            0.667355219095711,
+            0.017806430062002217,
+            0.3148383508422868
+          ],
+          "nearest_edge_distance_pixels": 0.5567511832593627,
+          "nearest_edge_xy": [
+            [
+              441.5816322276929,
+              265.5864846319851
+            ],
+            [
+              472.55219660016223,
+              212.78689703060613
+            ]
+          ],
+          "obj_face_position_indices": [
+            39,
+            43,
+            40,
+            36
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 62,
+        "position_indices": [
+          31,
+          35,
+          32
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.06368579715490341,
+        "depth_f64": 0.06368579882225901,
+        "color_rgb": [
+          35,
+          56,
+          77
+        ],
+        "barycentric_weights": [
+          0.3874547658021172,
+          0.6125410031846499,
+          4.23101323298245e-06
+        ],
+        "nearest_edge_distance_pixels": 0.0002455766132758441,
+        "nearest_edge_xy": [
+          [
+            444.30625786082925,
+            235.80878361240224
+          ],
+          [
+            473.6,
+            225.1009293757358
+          ]
+        ],
+        "obj_face_position_indices": [
+          31,
+          35,
+          32,
+          28
+        ]
+      }
+    },
+    {
+      "pixel": [
+        462,
+        229
+      ],
+      "samples": 2,
+      "subsample": [
+        1,
+        0
+      ],
+      "sample_xy": [
+        462.75,
+        229.25
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 62,
+          "position_indices": [
+            31,
+            35,
+            32
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.06279493123292923,
+          "depth_f64": 0.06279492751703236,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.3703862739165614,
+            0.6266520125398616,
+            0.0029617135435770076
+          ],
+          "nearest_edge_distance_pixels": 0.17190387774139526,
+          "nearest_edge_xy": [
+            [
+              444.30625786082925,
+              235.80878361240224
+            ],
+            [
+              473.6,
+              225.1009293757358
+            ]
+          ],
+          "obj_face_position_indices": [
+            31,
+            35,
+            32,
+            28
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 78,
+          "position_indices": [
+            39,
+            43,
+            40
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.030442368239164352,
+          "depth_f64": -0.030442368659576793,
+          "color_rgb": [
+            60,
+            95,
+            131
+          ],
+          "barycentric_weights": [
+            0.6834995810126177,
+            0.0040128816788559335,
+            0.31248753730852635
+          ],
+          "nearest_edge_distance_pixels": 0.12547021582672255,
+          "nearest_edge_xy": [
+            [
+              441.5816322276929,
+              265.5864846319851
+            ],
+            [
+              472.55219660016223,
+              212.78689703060613
+            ]
+          ],
+          "obj_face_position_indices": [
+            39,
+            43,
+            40,
+            36
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 62,
+        "position_indices": [
+          31,
+          35,
+          32
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.06279493123292923,
+        "depth_f64": 0.06279492751703236,
+        "color_rgb": [
+          35,
+          56,
+          77
+        ],
+        "barycentric_weights": [
+          0.3703862739165614,
+          0.6266520125398616,
+          0.0029617135435770076
+        ],
+        "nearest_edge_distance_pixels": 0.17190387774139526,
+        "nearest_edge_xy": [
+          [
+            444.30625786082925,
+            235.80878361240224
+          ],
+          [
+            473.6,
+            225.1009293757358
+          ]
+        ],
+        "obj_face_position_indices": [
+          31,
+          35,
+          32,
+          28
+        ]
+      }
+    },
+    {
+      "pixel": [
+        462,
+        229
+      ],
+      "samples": 2,
+      "subsample": [
+        0,
+        1
+      ],
+      "sample_xy": [
+        462.25,
+        229.75
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 62,
+          "position_indices": [
+            31,
+            35,
+            32
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.06287340819835663,
+          "depth_f64": 0.06287340592144379,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.3874547658021172,
+            0.6044501449501087,
+            0.008095089247774245
+          ],
+          "nearest_edge_distance_pixels": 0.46985544411374464,
+          "nearest_edge_xy": [
+            [
+              444.30625786082925,
+              235.80878361240224
+            ],
+            [
+              473.6,
+              225.1009293757358
+            ]
+          ],
+          "obj_face_position_indices": [
+            31,
+            35,
+            32,
+            28
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 78,
+          "position_indices": [
+            39,
+            43,
+            40
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.031962886452674866,
+          "depth_f64": -0.03196288825249525,
+          "color_rgb": [
+            60,
+            95,
+            131
+          ],
+          "barycentric_weights": [
+            0.667355219095711,
+            0.009715571827460986,
+            0.3229292090768281
+          ],
+          "nearest_edge_distance_pixels": 0.3037754391051705,
+          "nearest_edge_xy": [
+            [
+              441.5816322276929,
+              265.5864846319851
+            ],
+            [
+              472.55219660016223,
+              212.78689703060613
+            ]
+          ],
+          "obj_face_position_indices": [
+            39,
+            43,
+            40,
+            36
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 62,
+        "position_indices": [
+          31,
+          35,
+          32
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.06287340819835663,
+        "depth_f64": 0.06287340592144379,
+        "color_rgb": [
+          35,
+          56,
+          77
+        ],
+        "barycentric_weights": [
+          0.3874547658021172,
+          0.6044501449501087,
+          0.008095089247774245
+        ],
+        "nearest_edge_distance_pixels": 0.46985544411374464,
+        "nearest_edge_xy": [
+          [
+            444.30625786082925,
+            235.80878361240224
+          ],
+          [
+            473.6,
+            225.1009293757358
+          ]
+        ],
+        "obj_face_position_indices": [
+          31,
+          35,
+          32,
+          28
+        ]
+      }
+    },
+    {
+      "pixel": [
+        462,
+        229
+      ],
+      "samples": 2,
+      "subsample": [
+        1,
+        1
+      ],
+      "sample_xy": [
+        462.75,
+        229.75
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 62,
+          "position_indices": [
+            31,
+            35,
+            32
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.06198253482580185,
+          "depth_f64": 0.061982534616217146,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.3703862739165614,
+            0.6185611543053203,
+            0.01105257177811827
+          ],
+          "nearest_edge_distance_pixels": 0.6415137452418641,
+          "nearest_edge_xy": [
+            [
+              444.30625786082925,
+              235.80878361240224
+            ],
+            [
+              473.6,
+              225.1009293757358
+            ]
+          ],
+          "obj_face_position_indices": [
+            31,
+            35,
+            32,
+            28
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 79,
+          "position_indices": [
+            39,
+            40,
+            36
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.031254760921001434,
+          "depth_f64": -0.031254761560392,
+          "color_rgb": [
+            60,
+            95,
+            131
+          ],
+          "barycentric_weights": [
+            0.6794216044569323,
+            0.31650041898738235,
+            0.004077976555685241
+          ],
+          "nearest_edge_distance_pixels": 0.12750552832746778,
+          "nearest_edge_xy": [
+            [
+              472.55219660016223,
+              212.78689703060613
+            ],
+            [
+              441.5816322276929,
+              265.5864846319851
+            ]
+          ],
+          "obj_face_position_indices": [
+            39,
+            43,
+            40,
+            36
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 62,
+        "position_indices": [
+          31,
+          35,
+          32
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.06198253482580185,
+        "depth_f64": 0.061982534616217146,
+        "color_rgb": [
+          35,
+          56,
+          77
+        ],
+        "barycentric_weights": [
+          0.3703862739165614,
+          0.6185611543053203,
+          0.01105257177811827
+        ],
+        "nearest_edge_distance_pixels": 0.6415137452418641,
+        "nearest_edge_xy": [
+          [
+            444.30625786082925,
+            235.80878361240224
+          ],
+          [
+            473.6,
+            225.1009293757358
+          ]
+        ],
+        "obj_face_position_indices": [
+          31,
+          35,
+          32,
+          28
+        ]
+      }
+    },
+    {
+      "pixel": [
+        184,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        0,
+        0
+      ],
+      "sample_xy": [
+        184.25,
+        247.25
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 354,
+          "position_indices": [
+            177,
+            181,
+            182
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12219127267599106,
+          "depth_f64": 0.12219127282812123,
+          "color_rgb": [
+            71,
+            114,
+            157
+          ],
+          "barycentric_weights": [
+            -0.0018107228079090223,
+            0.001771182243612955,
+            1.0000395405642961
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              309.0430389069019
+            ],
+            [
+              184.24381842640042,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            177,
+            181,
+            182,
+            178
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 355,
+          "position_indices": [
+            177,
+            182,
+            178
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12219127267599106,
+          "depth_f64": 0.12219127282812123,
+          "color_rgb": [
+            71,
+            114,
+            157
+          ],
+          "barycentric_weights": [
+            -3.9540564296066754e-05,
+            1.001810722807909,
+            -0.001771182243612948
+          ],
+          "nearest_edge_distance_pixels": 0.001548489172441636,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              247.24489765837353
+            ],
+            [
+              180.82994769335608,
+              243.0775701298729
+            ]
+          ],
+          "obj_face_position_indices": [
+            177,
+            181,
+            182,
+            178
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 363,
+          "position_indices": [
+            181,
+            186,
+            182
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12218351662158966,
+          "depth_f64": 0.1221835154370169,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            -1.3787856202905133e-05,
+            0.001505893136420643,
+            0.9985078947197822
+          ],
+          "nearest_edge_distance_pixels": 0.0006136705872016718,
+          "nearest_edge_xy": [
+            [
+              188.34874024991672,
+              251.1989667537164
+            ],
+            [
+              184.24381842640042,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            181,
+            185,
+            186,
+            182
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 356,
+          "position_indices": [
+            178,
+            182,
+            183
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12217935919761658,
+          "depth_f64": 0.12217936217310894,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            -0.0013426890471375044,
+            1.0013559874930698,
+            -1.3298445932084689e-05
+          ],
+          "nearest_edge_distance_pixels": 0.0015484891724415987,
+          "nearest_edge_xy": [
+            [
+              180.82994769335608,
+              243.0775701298729
+            ],
+            [
+              184.24381842640042,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            178,
+            182,
+            183,
+            179
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 364,
+          "position_indices": [
+            182,
+            186,
+            187
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12217935919761658,
+          "depth_f64": 0.12217936217310893,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.9986479746227783,
+            0.0013590685806411174,
+            -7.043203419437716e-06
+          ],
+          "nearest_edge_distance_pixels": 0.0006136705872015982,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              247.24489765837353
+            ],
+            [
+              188.34874024991672,
+              251.1989667537164
+            ]
+          ],
+          "obj_face_position_indices": [
+            182,
+            186,
+            187,
+            183
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 365,
+          "position_indices": [
+            182,
+            187,
+            183
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12217935919761658,
+          "depth_f64": 0.12217936217310907,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.9998852933068539,
+            0.000577356292624759,
+            -0.00046264959947805133
+          ],
+          "nearest_edge_distance_pixels": 0.006698276512335885,
+          "nearest_edge_xy": [
+            [
+              64.09393278302949,
+              284.3231701424061
+            ],
+            [
+              184.24381842640042,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            182,
+            186,
+            187,
+            183
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 274,
+          "position_indices": [
+            137,
+            141,
+            142
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.0937497615814209,
+          "depth_f64": -0.0937497639084843,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.001505893136420643,
+            0.7153278565108381,
+            0.2831662503527413
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              264.75510234162647
+            ],
+            [
+              184.24381842640042,
+              202.95696109309807
+            ]
+          ],
+          "obj_face_position_indices": [
+            137,
+            141,
+            142,
+            138
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 283,
+          "position_indices": [
+            141,
+            146,
+            142
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": -0.0937575176358223,
+          "depth_f64": -0.09375752129958864,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.716859502355352,
+            -0.0018107228079090225,
+            0.28495122045255716
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              202.95696109309807
+            ],
+            [
+              184.24381842640042,
+              264.75510234162647
+            ]
+          ],
+          "obj_face_position_indices": [
+            141,
+            145,
+            146,
+            142
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 257,
+          "position_indices": [
+            128,
+            133,
+            129
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.1790468692779541,
+          "depth_f64": -0.17904686523017405,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.1324041137890199,
+            0.27271616882082245,
+            0.5948797173901572
+          ],
+          "nearest_edge_distance_pixels": 1.53789760294389,
+          "nearest_edge_xy": [
+            [
+              198.4673327550241,
+              253.68256970318018
+            ],
+            [
+              102.13356434483191,
+              198.06424257950465
+            ]
+          ],
+          "obj_face_position_indices": [
+            128,
+            132,
+            133,
+            129
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 274,
+        "position_indices": [
+          137,
+          141,
+          142
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": -0.0937497615814209,
+        "depth_f64": -0.0937497639084843,
+        "color_rgb": [
+          35,
+          56,
+          77
+        ],
+        "barycentric_weights": [
+          0.001505893136420643,
+          0.7153278565108381,
+          0.2831662503527413
+        ],
+        "nearest_edge_distance_pixels": 0.0061815735995764945,
+        "nearest_edge_xy": [
+          [
+            184.24381842640042,
+            264.75510234162647
+          ],
+          [
+            184.24381842640042,
+            202.95696109309807
+          ]
+        ],
+        "obj_face_position_indices": [
+          137,
+          141,
+          142,
+          138
+        ]
+      }
+    },
+    {
+      "pixel": [
+        184,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        1,
+        0
+      ],
+      "sample_xy": [
+        184.75,
+        247.25
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 274,
+          "position_indices": [
+            137,
+            141,
+            142
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.09609737992286682,
+          "depth_f64": -0.0960973781631483,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.12331089247540879,
+            0.6013163825726809,
+            0.2753727249519103
+          ],
+          "nearest_edge_distance_pixels": 0.5061815735995765,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              264.75510234162647
+            ],
+            [
+              184.24381842640042,
+              202.95696109309807
+            ]
+          ],
+          "obj_face_position_indices": [
+            137,
+            141,
+            142,
+            138
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 257,
+          "position_indices": [
+            128,
+            133,
+            129
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.1790468692779541,
+          "depth_f64": -0.1790468652301741,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.12968147852152673,
+            0.22838354090418142,
+            0.6419349805742918
+          ],
+          "nearest_edge_distance_pixels": 1.2878976029438902,
+          "nearest_edge_xy": [
+            [
+              198.4673327550241,
+              253.68256970318018
+            ],
+            [
+              102.13356434483191,
+              198.06424257950465
+            ]
+          ],
+          "obj_face_position_indices": [
+            128,
+            132,
+            133,
+            129
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 274,
+        "position_indices": [
+          137,
+          141,
+          142
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": -0.09609737992286682,
+        "depth_f64": -0.0960973781631483,
+        "color_rgb": [
+          35,
+          56,
+          77
+        ],
+        "barycentric_weights": [
+          0.12331089247540879,
+          0.6013163825726809,
+          0.2753727249519103
+        ],
+        "nearest_edge_distance_pixels": 0.5061815735995765,
+        "nearest_edge_xy": [
+          [
+            184.24381842640042,
+            264.75510234162647
+          ],
+          [
+            184.24381842640042,
+            202.95696109309807
+          ]
+        ],
+        "obj_face_position_indices": [
+          137,
+          141,
+          142,
+          138
+        ]
+      }
+    },
+    {
+      "pixel": [
+        184,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        0,
+        1
+      ],
+      "sample_xy": [
+        184.25,
+        247.75
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 364,
+          "position_indices": [
+            182,
+            186,
+            187
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.12380414456129074,
+          "depth_f64": 0.12380414797473938,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.9083567641383598,
+            0.08751725362984335,
+            0.004125982231797
+          ],
+          "nearest_edge_distance_pixels": 0.35949464869670966,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              247.24489765837353
+            ],
+            [
+              188.34874024991672,
+              251.1989667537164
+            ]
+          ],
+          "obj_face_position_indices": [
+            182,
+            186,
+            187,
+            183
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 354,
+          "position_indices": [
+            177,
+            181,
+            182
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12137887626886368,
+          "depth_f64": 0.12137887992730602,
+          "color_rgb": [
+            71,
+            114,
+            157
+          ],
+          "barycentric_weights": [
+            -0.0018107228079090223,
+            0.009862040478154217,
+            0.9919486823297549
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              309.0430389069019
+            ],
+            [
+              184.24381842640042,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            177,
+            181,
+            182,
+            178
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 363,
+          "position_indices": [
+            181,
+            186,
+            182
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.12137112021446228,
+          "depth_f64": 0.12137112253620168,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            0.008077070378338365,
+            0.001505893136420643,
+            0.9904170364852409
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              247.24489765837353
+            ],
+            [
+              184.24381842640042,
+              309.0430389069019
+            ]
+          ],
+          "obj_face_position_indices": [
+            181,
+            185,
+            186,
+            182
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 274,
+          "position_indices": [
+            137,
+            141,
+            142
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.09456215798854828,
+          "depth_f64": -0.09456215680929952,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.001505893136420643,
+            0.7234187147453793,
+            0.27507539211820003
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              264.75510234162647
+            ],
+            [
+              184.24381842640042,
+              202.95696109309807
+            ]
+          ],
+          "obj_face_position_indices": [
+            137,
+            141,
+            142,
+            138
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 283,
+          "position_indices": [
+            141,
+            146,
+            142
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": -0.09456991404294968,
+          "depth_f64": -0.09456991420040387,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.7249503605898933,
+            -0.0018107228079090225,
+            0.27686036221801585
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              202.95696109309807
+            ],
+            [
+              184.24381842640042,
+              264.75510234162647
+            ]
+          ],
+          "obj_face_position_indices": [
+            141,
+            145,
+            146,
+            142
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 257,
+          "position_indices": [
+            128,
+            133,
+            129
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.17742207646369934,
+          "depth_f64": -0.17742207942854374,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.1281300139199734,
+            0.34950253280549115,
+            0.5223674532745359
+          ],
+          "nearest_edge_distance_pixels": 1.9709103048361098,
+          "nearest_edge_xy": [
+            [
+              198.4673327550241,
+              253.68256970318018
+            ],
+            [
+              102.13356434483191,
+              198.06424257950465
+            ]
+          ],
+          "obj_face_position_indices": [
+            128,
+            132,
+            133,
+            129
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 364,
+        "position_indices": [
+          182,
+          186,
+          187
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.12380414456129074,
+        "depth_f64": 0.12380414797473938,
+        "color_rgb": [
+          88,
+          141,
+          194
+        ],
+        "barycentric_weights": [
+          0.9083567641383598,
+          0.08751725362984335,
+          0.004125982231797
+        ],
+        "nearest_edge_distance_pixels": 0.35949464869670966,
+        "nearest_edge_xy": [
+          [
+            184.24381842640042,
+            247.24489765837353
+          ],
+          [
+            188.34874024991672,
+            251.1989667537164
+          ]
+        ],
+        "obj_face_position_indices": [
+          182,
+          186,
+          187,
+          183
+        ]
+      }
+    },
+    {
+      "pixel": [
+        184,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        1,
+        1
+      ],
+      "sample_xy": [
+        184.75,
+        247.75
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 364,
+          "position_indices": [
+            182,
+            186,
+            187
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.12380414456129074,
+          "depth_f64": 0.12380414797473932,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.8735248425598916,
+            0.12633031512918208,
+            0.00014484231092598725
+          ],
+          "nearest_edge_distance_pixels": 0.012620033911314051,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              247.24489765837353
+            ],
+            [
+              188.34874024991672,
+              251.1989667537164
+            ]
+          ],
+          "obj_face_position_indices": [
+            182,
+            186,
+            187,
+            183
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 363,
+          "position_indices": [
+            181,
+            186,
+            182
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.1237187385559082,
+          "depth_f64": 0.12371873679086569,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            0.000283544977507297,
+            0.12331089247540879,
+            0.8764055625470839
+          ],
+          "nearest_edge_distance_pixels": 0.012620033911314285,
+          "nearest_edge_xy": [
+            [
+              188.34874024991672,
+              251.1989667537164
+            ],
+            [
+              184.24381842640042,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            181,
+            185,
+            186,
+            182
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 274,
+          "position_indices": [
+            137,
+            141,
+            142
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.0969097688794136,
+          "depth_f64": -0.09690977106396352,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.12331089247540879,
+            0.6094072408072222,
+            0.267281866717369
+          ],
+          "nearest_edge_distance_pixels": 0.5061815735995765,
+          "nearest_edge_xy": [
+            [
+              184.24381842640042,
+              264.75510234162647
+            ],
+            [
+              184.24381842640042,
+              202.95696109309807
+            ]
+          ],
+          "obj_face_position_indices": [
+            137,
+            141,
+            142,
+            138
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 257,
+          "position_indices": [
+            128,
+            133,
+            129
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.17742207646369934,
+          "depth_f64": -0.17742207942854377,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.12540737865248017,
+            0.30516990488885015,
+            0.5694227164586704
+          ],
+          "nearest_edge_distance_pixels": 1.72091030483611,
+          "nearest_edge_xy": [
+            [
+              198.4673327550241,
+              253.68256970318018
+            ],
+            [
+              102.13356434483191,
+              198.06424257950465
+            ]
+          ],
+          "obj_face_position_indices": [
+            128,
+            132,
+            133,
+            129
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 364,
+        "position_indices": [
+          182,
+          186,
+          187
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.12380414456129074,
+        "depth_f64": 0.12380414797473932,
+        "color_rgb": [
+          88,
+          141,
+          194
+        ],
+        "barycentric_weights": [
+          0.8735248425598916,
+          0.12633031512918208,
+          0.00014484231092598725
+        ],
+        "nearest_edge_distance_pixels": 0.012620033911314051,
+        "nearest_edge_xy": [
+          [
+            184.24381842640042,
+            247.24489765837353
+          ],
+          [
+            188.34874024991672,
+            251.1989667537164
+          ]
+        ],
+        "obj_face_position_indices": [
+          182,
+          186,
+          187,
+          183
+        ]
+      }
+    },
+    {
+      "pixel": [
+        327,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        0,
+        0
+      ],
+      "sample_xy": [
+        327.25,
+        247.25
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 107,
+          "position_indices": [
+            53,
+            58,
+            54
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.09609737992286682,
+          "depth_f64": -0.09609737816314831,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            0.7246272750480898,
+            0.12331089247540879,
+            0.15206183247650146
+          ],
+          "nearest_edge_distance_pixels": 0.5061815735995765,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              202.95696109309807
+            ],
+            [
+              327.7561815735996,
+              264.75510234162647
+            ]
+          ],
+          "obj_face_position_indices": [
+            53,
+            57,
+            58,
+            54
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 120,
+          "position_indices": [
+            60,
+            64,
+            65
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.1790468692779541,
+          "depth_f64": -0.17904686523017416,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.09820492212279183,
+            0.05193591497770853,
+            0.8498591628994998
+          ],
+          "nearest_edge_distance_pixels": 0.7909238747941018,
+          "nearest_edge_xy": [
+            [
+              313.53266724497587,
+              253.68256970318018
+            ],
+            [
+              402.26702150162185,
+              217.59495904297998
+            ]
+          ],
+          "obj_face_position_indices": [
+            60,
+            64,
+            65,
+            61
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 107,
+        "position_indices": [
+          53,
+          58,
+          54
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": -0.09609737992286682,
+        "depth_f64": -0.09609737816314831,
+        "color_rgb": [
+          71,
+          113,
+          155
+        ],
+        "barycentric_weights": [
+          0.7246272750480898,
+          0.12331089247540879,
+          0.15206183247650146
+        ],
+        "nearest_edge_distance_pixels": 0.5061815735995765,
+        "nearest_edge_xy": [
+          [
+            327.7561815735996,
+            202.95696109309807
+          ],
+          [
+            327.7561815735996,
+            264.75510234162647
+          ]
+        ],
+        "obj_face_position_indices": [
+          53,
+          57,
+          58,
+          54
+        ]
+      }
+    },
+    {
+      "pixel": [
+        327,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        1,
+        0
+      ],
+      "sample_xy": [
+        327.75,
+        247.25
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 27,
+          "position_indices": [
+            13,
+            18,
+            14
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12219127267599106,
+          "depth_f64": 0.12219127282812123,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            -3.9540564296065785e-05,
+            -0.0018107228079090225,
+            1.001850263372205
+          ],
+          "nearest_edge_distance_pixels": 0.0015484891724415987,
+          "nearest_edge_xy": [
+            [
+              331.1700523066439,
+              243.0775701298729
+            ],
+            [
+              327.7561815735996,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            13,
+            17,
+            18,
+            14
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 18,
+          "position_indices": [
+            9,
+            13,
+            14
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12218351662158966,
+          "depth_f64": 0.12218351543701692,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.001505893136420643,
+            -0.0015196809926235457,
+            1.000013787856203
+          ],
+          "nearest_edge_distance_pixels": 0.005851641159216795,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              247.24489765837353
+            ],
+            [
+              323.6512597500833,
+              312.9971080022448
+            ]
+          ],
+          "obj_face_position_indices": [
+            9,
+            13,
+            14,
+            10
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 19,
+          "position_indices": [
+            9,
+            14,
+            10
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12218351662158966,
+          "depth_f64": 0.12218351543701692,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            -1.3787856202903485e-05,
+            0.9984941068635793,
+            0.001519680992623688
+          ],
+          "nearest_edge_distance_pixels": 0.0006136705872015982,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              247.24489765837353
+            ],
+            [
+              323.6512597500833,
+              251.1989667537164
+            ]
+          ],
+          "obj_face_position_indices": [
+            9,
+            13,
+            14,
+            10
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 20,
+          "position_indices": [
+            10,
+            14,
+            15
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12217935919761658,
+          "depth_f64": 0.122179362173109,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.0013426890380572258,
+            0.998664354165335,
+            -7.043203391744157e-06
+          ],
+          "nearest_edge_distance_pixels": 0.0006136705872016718,
+          "nearest_edge_xy": [
+            [
+              323.6512597500833,
+              251.1989667537164
+            ],
+            [
+              327.7561815735996,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            10,
+            14,
+            15,
+            11
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 28,
+          "position_indices": [
+            14,
+            18,
+            19
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12217935919761658,
+          "depth_f64": 0.12217936217310897,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            1.0013204218820415,
+            -0.0013071234360785375,
+            -1.3298445962554099e-05
+          ],
+          "nearest_edge_distance_pixels": 0.001548489172441636,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              247.24489765837353
+            ],
+            [
+              331.1700523066439,
+              243.0775701298729
+            ]
+          ],
+          "obj_face_position_indices": [
+            14,
+            18,
+            19,
+            15
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 29,
+          "position_indices": [
+            14,
+            19,
+            15
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12217935919761658,
+          "depth_f64": 0.12217936217310889,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.999884679894252,
+            -0.0005020489489920767,
+            0.0006173690547399176
+          ],
+          "nearest_edge_distance_pixels": 0.00621846443696967,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              247.24489765837353
+            ],
+            [
+              457.03618628325046,
+              273.1779918577303
+            ]
+          ],
+          "obj_face_position_indices": [
+            14,
+            18,
+            19,
+            15
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 107,
+          "position_indices": [
+            53,
+            58,
+            54
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.0937497615814209,
+          "depth_f64": -0.09374976390848432,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            0.7168337496472588,
+            0.001505893136420643,
+            0.2816603572163206
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              202.95696109309807
+            ],
+            [
+              327.7561815735996,
+              264.75510234162647
+            ]
+          ],
+          "obj_face_position_indices": [
+            53,
+            57,
+            58,
+            54
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 98,
+          "position_indices": [
+            49,
+            53,
+            54
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": -0.0937575176358223,
+          "depth_f64": -0.09375752129958863,
+          "color_rgb": [
+            71,
+            114,
+            157
+          ],
+          "barycentric_weights": [
+            -0.0018107228079090225,
+            0.718670225163261,
+            0.28314049764464816
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              264.75510234162647
+            ],
+            [
+              327.7561815735996,
+              202.95696109309807
+            ]
+          ],
+          "obj_face_position_indices": [
+            49,
+            53,
+            54,
+            50
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 120,
+          "position_indices": [
+            60,
+            64,
+            65
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.1790468692779541,
+          "depth_f64": -0.1790468652301741,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.11726795203648836,
+            0.03956698485869394,
+            0.8431650631048178
+          ],
+          "nearest_edge_distance_pixels": 0.6025593848070203,
+          "nearest_edge_xy": [
+            [
+              313.53266724497587,
+              253.68256970318018
+            ],
+            [
+              402.26702150162185,
+              217.59495904297998
+            ]
+          ],
+          "obj_face_position_indices": [
+            60,
+            64,
+            65,
+            61
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 107,
+        "position_indices": [
+          53,
+          58,
+          54
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": -0.0937497615814209,
+        "depth_f64": -0.09374976390848432,
+        "color_rgb": [
+          71,
+          113,
+          155
+        ],
+        "barycentric_weights": [
+          0.7168337496472588,
+          0.001505893136420643,
+          0.2816603572163206
+        ],
+        "nearest_edge_distance_pixels": 0.0061815735995764945,
+        "nearest_edge_xy": [
+          [
+            327.7561815735996,
+            202.95696109309807
+          ],
+          [
+            327.7561815735996,
+            264.75510234162647
+          ]
+        ],
+        "obj_face_position_indices": [
+          53,
+          57,
+          58,
+          54
+        ]
+      }
+    },
+    {
+      "pixel": [
+        327,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        0,
+        1
+      ],
+      "sample_xy": [
+        327.25,
+        247.75
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 20,
+          "position_indices": [
+            10,
+            14,
+            15
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.12380414456129074,
+          "depth_f64": 0.12380414797473936,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.12666715770754894,
+            0.8731879999820946,
+            0.0001448423103564591
+          ],
+          "nearest_edge_distance_pixels": 0.012620033911314285,
+          "nearest_edge_xy": [
+            [
+              323.6512597500833,
+              251.1989667537164
+            ],
+            [
+              327.7561815735996,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            10,
+            14,
+            15,
+            11
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 19,
+          "position_indices": [
+            9,
+            14,
+            10
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.1237187385559082,
+          "depth_f64": 0.12371873679086572,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.0002835449775072919,
+            0.8766891075245913,
+            0.12302734749790163
+          ],
+          "nearest_edge_distance_pixels": 0.012620033911314051,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              247.24489765837353
+            ],
+            [
+              323.6512597500833,
+              251.1989667537164
+            ]
+          ],
+          "obj_face_position_indices": [
+            9,
+            13,
+            14,
+            10
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 107,
+          "position_indices": [
+            53,
+            58,
+            54
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.0969097688794136,
+          "depth_f64": -0.09690977106396352,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            0.732718133282631,
+            0.12331089247540879,
+            0.14397097424196018
+          ],
+          "nearest_edge_distance_pixels": 0.5061815735995765,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              202.95696109309807
+            ],
+            [
+              327.7561815735996,
+              264.75510234162647
+            ]
+          ],
+          "obj_face_position_indices": [
+            53,
+            57,
+            58,
+            54
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 120,
+          "position_indices": [
+            60,
+            64,
+            65
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.17742207646369934,
+          "depth_f64": -0.17742207942854366,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.13122305847951968,
+            0.02152245709348262,
+            0.8472544844269977
+          ],
+          "nearest_edge_distance_pixels": 0.3277621115710269,
+          "nearest_edge_xy": [
+            [
+              313.53266724497587,
+              253.68256970318018
+            ],
+            [
+              402.26702150162185,
+              217.59495904297998
+            ]
+          ],
+          "obj_face_position_indices": [
+            60,
+            64,
+            65,
+            61
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 20,
+        "position_indices": [
+          10,
+          14,
+          15
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.12380414456129074,
+        "depth_f64": 0.12380414797473936,
+        "color_rgb": [
+          88,
+          141,
+          194
+        ],
+        "barycentric_weights": [
+          0.12666715770754894,
+          0.8731879999820946,
+          0.0001448423103564591
+        ],
+        "nearest_edge_distance_pixels": 0.012620033911314285,
+        "nearest_edge_xy": [
+          [
+            323.6512597500833,
+            251.1989667537164
+          ],
+          [
+            327.7561815735996,
+            247.24489765837353
+          ]
+        ],
+        "obj_face_position_indices": [
+          10,
+          14,
+          15,
+          11
+        ]
+      }
+    },
+    {
+      "pixel": [
+        327,
+        247
+      ],
+      "samples": 2,
+      "subsample": [
+        1,
+        1
+      ],
+      "sample_xy": [
+        327.75,
+        247.75
+      ],
+      "candidates": [
+        {
+          "instance": 0,
+          "triangle_fan_index": 20,
+          "position_indices": [
+            10,
+            14,
+            15
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.12380414456129074,
+          "depth_f64": 0.12380414797473935,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.09711256099802666,
+            0.8987614567864,
+            0.004125982215573332
+          ],
+          "nearest_edge_distance_pixels": 0.35949464869670994,
+          "nearest_edge_xy": [
+            [
+              323.6512597500833,
+              251.1989667537164
+            ],
+            [
+              327.7561815735996,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            10,
+            14,
+            15,
+            11
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 27,
+          "position_indices": [
+            13,
+            18,
+            14
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": 0.12137887626886368,
+          "depth_f64": 0.12137887992730602,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.008051317670245197,
+            -0.0018107228079090225,
+            0.9937594051376639
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              247.24489765837353
+            ],
+            [
+              327.7561815735996,
+              309.0430389069019
+            ]
+          ],
+          "obj_face_position_indices": [
+            13,
+            17,
+            18,
+            14
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 18,
+          "position_indices": [
+            9,
+            13,
+            14
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": 0.12137112021446228,
+          "depth_f64": 0.12137112253620168,
+          "color_rgb": [
+            35,
+            56,
+            77
+          ],
+          "barycentric_weights": [
+            0.001505893136420643,
+            0.006571177241917716,
+            0.9919229296216616
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              309.0430389069019
+            ],
+            [
+              327.7561815735996,
+              247.24489765837353
+            ]
+          ],
+          "obj_face_position_indices": [
+            9,
+            13,
+            14,
+            10
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 107,
+          "position_indices": [
+            53,
+            58,
+            54
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.09456215798854828,
+          "depth_f64": -0.09456215680929954,
+          "color_rgb": [
+            71,
+            113,
+            155
+          ],
+          "barycentric_weights": [
+            0.7249246078818,
+            0.001505893136420643,
+            0.27356949898177935
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              202.95696109309807
+            ],
+            [
+              327.7561815735996,
+              264.75510234162647
+            ]
+          ],
+          "obj_face_position_indices": [
+            53,
+            57,
+            58,
+            54
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 98,
+          "position_indices": [
+            49,
+            53,
+            54
+          ],
+          "cpu_covered": false,
+          "cpu_depth_f32": -0.09456991404294968,
+          "depth_f64": -0.09456991420040385,
+          "color_rgb": [
+            71,
+            114,
+            157
+          ],
+          "barycentric_weights": [
+            -0.0018107228079090225,
+            0.7267610833978022,
+            0.2750496394101069
+          ],
+          "nearest_edge_distance_pixels": 0.0061815735995764945,
+          "nearest_edge_xy": [
+            [
+              327.7561815735996,
+              264.75510234162647
+            ],
+            [
+              327.7561815735996,
+              202.95696109309807
+            ]
+          ],
+          "obj_face_position_indices": [
+            49,
+            53,
+            54,
+            50
+          ]
+        },
+        {
+          "instance": 0,
+          "triangle_fan_index": 120,
+          "position_indices": [
+            60,
+            64,
+            65
+          ],
+          "cpu_covered": true,
+          "cpu_depth_f32": -0.17742207646369934,
+          "depth_f64": -0.17742207942854363,
+          "color_rgb": [
+            88,
+            141,
+            194
+          ],
+          "barycentric_weights": [
+            0.1502860883932162,
+            0.009153526974468031,
+            0.8405603846323156
+          ],
+          "nearest_edge_distance_pixels": 0.13939762158394559,
+          "nearest_edge_xy": [
+            [
+              313.53266724497587,
+              253.68256970318018
+            ],
+            [
+              402.26702150162185,
+              217.59495904297998
+            ]
+          ],
+          "obj_face_position_indices": [
+            60,
+            64,
+            65,
+            61
+          ]
+        }
+      ],
+      "cpu_winner": {
+        "instance": 0,
+        "triangle_fan_index": 20,
+        "position_indices": [
+          10,
+          14,
+          15
+        ],
+        "cpu_covered": true,
+        "cpu_depth_f32": 0.12380414456129074,
+        "depth_f64": 0.12380414797473935,
+        "color_rgb": [
+          88,
+          141,
+          194
+        ],
+        "barycentric_weights": [
+          0.09711256099802666,
+          0.8987614567864,
+          0.004125982215573332
+        ],
+        "nearest_edge_distance_pixels": 0.35949464869670994,
+        "nearest_edge_xy": [
+          [
+            323.6512597500833,
+            251.1989667537164
+          ],
+          [
+            327.7561815735996,
+            247.24489765837353
+          ]
+        ],
+        "obj_face_position_indices": [
+          10,
+          14,
+          15,
+          11
+        ]
+      }
+    }
+  ],
+  "fit": {
+    "coordinate_scale": 1.15,
+    "center": [
+      0.0,
+      0.0,
+      0.1739130434782609
+    ],
+    "extent": 2.0,
+    "projection_pixels": 435.2000001950918,
+    "camera_center": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}
