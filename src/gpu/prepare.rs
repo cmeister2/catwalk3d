@@ -155,6 +155,84 @@ impl Basis {
     fn position(self, p: Vec3) -> Vec3 {
         (p / self.scale - self.center) / self.extent
     }
+
+    /// Identify the local parameterization without distinguishing signed zero.
+    fn identity(self) -> [u64; 5] {
+        [
+            self.scale,
+            self.center.x,
+            self.center.y,
+            self.center.z,
+            self.extent,
+        ]
+        .map(|value| if value == 0.0 { 0 } else { value.to_bits() })
+    }
+}
+
+/// Detect distinct placements that collapse to one single-precision projection.
+///
+/// The basis identifier prevents comparing rows expressed in different local
+/// coordinates. This catches an observed whole-face depth-ordering failure;
+/// arbitrary near-coincident surfaces still have finite-precision limitations.
+struct PlacementGuard {
+    /// Interned local coordinate parameterization for each source mesh.
+    basis_ids: Vec<u32>,
+    /// First source occurrence for each basis and packed projection row tuple.
+    placements: HashMap<[u32; 13], usize>,
+}
+
+impl PlacementGuard {
+    /// Intern mesh bases while keeping the temporary map proportional to mesh count.
+    fn new(bases: &[Basis]) -> Result<Self> {
+        let mut lookup = HashMap::new();
+        lookup.try_reserve(bases.len())?;
+        let mut basis_ids = Vec::new();
+        basis_ids.try_reserve_exact(bases.len())?;
+        for basis in bases {
+            let next_id = u32::try_from(lookup.len())?;
+            let id = *lookup.entry(basis.identity()).or_insert(next_id);
+            basis_ids.push(id);
+        }
+        Ok(Self {
+            basis_ids,
+            placements: HashMap::new(),
+        })
+    }
+
+    /// Preserve exact source ties, requesting CPU fallback for a collapsed placement.
+    fn check(
+        &mut self,
+        scene: &InstancedScene,
+        source_index: usize,
+        packed: &Instance,
+    ) -> Result<()> {
+        let source = &scene.instances[source_index];
+        let mut key = [0; 13];
+        key[0] = self.basis_ids[source.mesh];
+        for (index, value) in packed.clip_rows.iter().flatten().enumerate() {
+            key[index + 1] = if *value == 0.0 { 0 } else { value.to_bits() };
+        }
+        if let Some(previous) = self.placements.get(&key) {
+            let first = scene.instances[*previous].transform;
+            if first
+                .iter()
+                .flatten()
+                .zip(source.transform.iter().flatten())
+                .any(|(a, b)| {
+                    let canonical = |value: f64| {
+                        if value == 0.0 { 0 } else { value.to_bits() }
+                    };
+                    canonical(*a) != canonical(*b)
+                })
+            {
+                return Err("distinct placements collapse to the same GPU projection and may change depth ordering; use CPU fallback".into());
+            }
+        } else {
+            self.placements.try_reserve(1)?;
+            self.placements.insert(key, source_index);
+        }
+        Ok(())
+    }
 }
 
 /// Fitted fixed camera, preserving the CPU renderer's exact projected bounds.
@@ -741,7 +819,8 @@ impl Prepared {
         }
         let mut instances = Vec::new();
         let mut draws = Vec::new();
-        for placed in &scene.instances {
+        let mut placement_guard = PlacementGuard::new(&bases)?;
+        for (source_index, placed) in scene.instances.iter().enumerate() {
             if meshes[placed.mesh].indices.is_empty() {
                 // Packing can discard every source face. Still refuse a
                 // placement that would make any of those faces valid on CPU.
@@ -774,6 +853,7 @@ impl Prepared {
                 &fit,
                 [width, height],
             )?;
+            placement_guard.check(scene, source_index, &transform)?;
             let instance = u32::try_from(instances.len())?;
             instances.push(transform);
             draws.push(Draw {

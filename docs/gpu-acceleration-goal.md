@@ -21,6 +21,12 @@ resource-constrained validation target, not the architecture's defining platform
   component of 4,096 transformed vec4 values, and exited successfully. This
   demonstrates those workloads on that configuration, not Catwalk throughput or
   a general 256 MiB bound on graphics/system memory.
+- The actual wgpu 29 renderer passed 15 CPU/GPU image cases on the NAS's Intel
+  hardware, including mirrored affine placement, corner colors, authored normals,
+  sidedness and depth ties. The [recorded intermediate validation](research/gpu/2026-10-18/renderer/nas-correctness-initial/metadata.json)
+  identifies its exact source and executable; it establishes those image cases,
+  rather than performance or every numerical edge case. Native Windows renderer
+  comparisons and comparable GPU throughput measurements remain pending.
 
 The reusable [hardware probe](../tools/gpu-probe/README.md) and
 [recorded results](research/gpu/2026-10-18/README.md) retain adapter and capability

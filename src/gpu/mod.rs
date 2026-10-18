@@ -5,6 +5,8 @@
 //! on the CPU. Unsupported scenes return an error so callers can use the CPU path.
 //! Explicit allocation budgets exclude driver overhead and other live GPU scenes.
 //! Blank legacy raster output requests CPU fallback to preserve thin-surface outlines.
+//! Distinct placements with identical packed projection rows also request CPU fallback;
+//! arbitrary near-coincident surfaces remain subject to finite-precision depth differences.
 
 mod dispatch;
 mod prepare;
@@ -1257,6 +1259,89 @@ mod tests {
             .render(&uploaded)
             .expect_err("collapsed legacy surface must request CPU fallback");
         assert!(error.to_string().contains("CPU fallback"));
+        Ok(())
+    }
+    /// Build independently colored parallel panels separated along the active camera direction.
+    fn near_coplanar_panels(separation: f64) -> crate::Result<InstancedScene> {
+        let positions = [
+            Vec3::new(0.0, -2.0, -2.0),
+            Vec3::new(2.0, 0.0, -2.0),
+            Vec3::new(0.0, 2.0, 2.0),
+            Vec3::new(-2.0, 0.0, 2.0),
+        ];
+        let mut source = Scene::default();
+        for corners in [[0, 1, 2], [0, 2, 3]] {
+            source.triangles.push(Triangle {
+                vertices: corners.map(|index| positions[index]),
+                color: None,
+            });
+            source.appearances.insert(
+                source.triangles.len() - 1,
+                TriangleAppearance {
+                    base_color: [0.8, 0.1, 0.1, 1.0],
+                    unlit: true,
+                    ..TriangleAppearance::default()
+                },
+            );
+        }
+        let mut scene = InstancedScene::from_scene(source)?;
+        let mut front = scene.meshes[0].clone();
+        for appearance in front.appearances.values_mut() {
+            appearance.base_color = [0.1, 0.1, 0.8, 1.0];
+        }
+        scene.meshes.push(front);
+        let mut placed = MeshInstance {
+            mesh: 1,
+            ..MeshInstance::default()
+        };
+        placed.transform[0][3] = separation;
+        placed.transform[1][3] = -separation;
+        placed.transform[2][3] = separation;
+        scene.instances.push(placed);
+        Ok(scene)
+    }
+
+    /// A demonstrated collapsed placement requests CPU fallback while source ties remain valid.
+    #[test]
+    fn software_gl_near_coplanar_visibility_requires_precision_fallback() -> crate::Result<()> {
+        let Some(renderer) = correctness_renderer()? else {
+            return Ok(());
+        };
+        let options = RenderOptions {
+            width: 128,
+            height: 96,
+            supersampling: 1,
+            ..RenderOptions::default()
+        };
+        let scene = near_coplanar_panels(1e-9)?;
+        let cpu = render::render(&scene.to_scene()?, &options)?;
+        let center = cpu.get_pixel(options.width / 2, options.height / 2);
+        assert!(
+            center[2] > center[0],
+            "CPU must resolve the closer blue panel in front"
+        );
+        let error = match renderer.upload(&scene, &options) {
+            Ok(_) => return Err("collapsed placements must request CPU fallback".into()),
+            Err(error) => error,
+        };
+        eprintln!("near-coplanar GPU admission rejected: {error}");
+        assert!(error.to_string().contains("same GPU projection"));
+        assert!(error.to_string().contains("CPU fallback"));
+
+        let mut different_basis = near_coplanar_panels(0.0)?;
+        for position in &mut different_basis.meshes[1].positions {
+            position.x += 8.0;
+        }
+        different_basis.instances[1].transform[0][3] = -8.0;
+        for (label, scene) in [
+            ("exact-source-placement-ties", near_coplanar_panels(0.0)?),
+            ("distinct-mesh-local-bases", different_basis),
+            ("resolvable-depth-separation", near_coplanar_panels(1e-3)?),
+        ] {
+            let cpu = render::render(&scene.to_scene()?, &options)?;
+            let uploaded = renderer.upload(&scene, &options)?;
+            compare_images(label, &cpu, &renderer.render(&uploaded)?)?;
+        }
         Ok(())
     }
 }

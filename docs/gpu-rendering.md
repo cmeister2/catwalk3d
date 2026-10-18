@@ -38,6 +38,11 @@ double-precision camera fitting remain on the CPU. Precision checks reject GPU
 placements that move corners by more than 0.05 supersampled pixels, normal
 directions that exceed the documented validation tolerances, or placements that
 change the CPU renderer's near-degeneracy classification.
+Distinct source placements sharing a local coordinate basis that collapse to
+identical packed projection rows request CPU fallback, preserving a demonstrated
+near-coplanar ordering case. This conservative check does not establish equivalent
+depth precision for arbitrary near-coincident surfaces. Such geometry, including
+near-coincident faces within one mesh, remains outside the qualified scope.
 
 STEP loading preserves each source part as one indexed mesh plus occurrence
 transforms. Other importers initially adapt their existing expanded scenes.
@@ -71,6 +76,10 @@ available hardware and reference costs. They do not establish GPU thumbnail
 speedups. The standalone capability probe uses wgpu 30; this renderer uses the
 fully published wgpu 29 backend family so its optional Metal dependency resolves.
 Runtime validation of the actual renderer is tracked separately from probe passes.
+The [initial NAS hardware image validation](research/gpu/2026-10-18/renderer/nas-correctness-initial/metadata.json)
+passed all 15 cases on Intel UHD 600. That intermediate source qualification is
+separate from final-build validation and benchmark results; it does not establish
+performance benefits or arbitrary near-coincident depth precision.
 
 Build the comparable profiling harness with:
 
