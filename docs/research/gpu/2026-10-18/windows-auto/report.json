@@ -1,0 +1,760 @@
+{
+  "adapters": [
+    {
+      "backend": "Vulkan",
+      "compute_flag": true,
+      "device": 5567,
+      "device_type": "IntegratedGpu",
+      "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | READ_ONLY_DEPTH_STENCIL | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | DEPTH_TEXTURE_AND_BUFFER_COPIES | WEBGPU_TEXTURE_FORMAT_SUPPORT | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | DEPTH_BIAS_CLAMP | VIEW_FORMATS | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | SURFACE_VIEW_FORMATS | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+      "driver": "AMD proprietary driver",
+      "driver_info": "26.8.1 (LLPC)",
+      "features": "Features { features_wgpu: FeaturesWGPU(SHADER_FLOAT32_ATOMIC | TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | PIPELINE_STATISTICS_QUERY | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | TEXTURE_BINDING_ARRAY | BUFFER_BINDING_ARRAY | STORAGE_RESOURCE_BINDING_ARRAY | SAMPLED_TEXTURE_AND_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING | STORAGE_TEXTURE_ARRAY_NON_UNIFORM_INDEXING | PARTIALLY_BOUND_BINDING_ARRAY | MULTI_DRAW_INDIRECT_COUNT | ADDRESS_MODE_CLAMP_TO_ZERO | ADDRESS_MODE_CLAMP_TO_BORDER | POLYGON_MODE_LINE | POLYGON_MODE_POINT | CONSERVATIVE_RASTERIZATION | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | MULTIVIEW | TEXTURE_ATOMIC | TEXTURE_FORMAT_NV12 | TEXTURE_FORMAT_P010 | EXPERIMENTAL_RAY_QUERY | SHADER_F64 | SHADER_I16 | SHADER_EARLY_DEPTH_TEST | SHADER_INT64 | SUBGROUP | SUBGROUP_VERTEX | SUBGROUP_BARRIER | PIPELINE_CACHE | SHADER_INT64_ATOMIC_MIN_MAX | SHADER_INT64_ATOMIC_ALL_OPS | VULKAN_EXTERNAL_MEMORY_WIN32 | TEXTURE_INT64_ATOMIC | EXPERIMENTAL_MESH_SHADER | EXPERIMENTAL_RAY_HIT_VERTEX_RETURN | EXPERIMENTAL_MESH_SHADER_MULTIVIEW | EXTENDED_ACCELERATION_STRUCTURE_VERTEX_FORMATS | PASSTHROUGH_SHADERS | SHADER_BARYCENTRICS | SELECTIVE_MULTIVIEW | EXPERIMENTAL_MESH_SHADER_POINTS | MULTISAMPLE_ARRAY | EXPERIMENTAL_COOPERATIVE_MATRIX | SHADER_PER_VERTEX | SHADER_DRAW_INDEX | ACCELERATION_STRUCTURE_BINDING_ARRAY | MEMORY_DECORATION_COHERENT | MEMORY_DECORATION_VOLATILE | EXPERIMENTAL_RAY_TRACING_PIPELINES), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | SHADER_F16 | RG11B10UFLOAT_RENDERABLE | BGRA8UNORM_STORAGE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE | DUAL_SOURCE_BLENDING | CLIP_DISTANCES | IMMEDIATES | PRIMITIVE_INDEX) }",
+      "hardware_validation": "accepted hardware",
+      "limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 8192,\n    max_texture_array_layers: 8192,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 8,\n    max_sampled_textures_per_shader_stage: 429391871,\n    max_samplers_per_shader_stage: 429391872,\n    max_storage_buffers_per_shader_stage: 429391872,\n    max_storage_textures_per_shader_stage: 429391872,\n    max_uniform_buffers_per_shader_stage: 429391872,\n    max_binding_array_elements_per_shader_stage: 4294967295,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 524288,\n    max_binding_array_sampler_elements_per_shader_stage: 4294967295,\n    max_uniform_buffer_binding_size: 2147483647,\n    max_storage_buffer_binding_size: 2147483644,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483648,\n    max_vertex_attributes: 64,\n    max_vertex_buffer_array_stride: 16380,\n    max_inter_stage_shader_variables: 31,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 32768,\n    max_compute_invocations_per_workgroup: 1024,\n    max_compute_workgroup_size_x: 1024,\n    max_compute_workgroup_size_y: 1024,\n    max_compute_workgroup_size_z: 1024,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 256,\n    max_non_sampler_bindings: 4294967295,\n    max_task_workgroup_total_count: 4294966272,\n    max_task_workgroups_per_dimension: 65535,\n    max_mesh_workgroup_total_count: 67107840,\n    max_mesh_workgroups_per_dimension: 65535,\n    max_task_invocations_per_workgroup: 1024,\n    max_task_invocations_per_dimension: 1024,\n    max_mesh_invocations_per_workgroup: 256,\n    max_mesh_invocations_per_dimension: 256,\n    max_task_payload_size: 16384,\n    max_mesh_output_vertices: 256,\n    max_mesh_output_primitives: 256,\n    max_mesh_output_layers: 8192,\n    max_mesh_multiview_view_count: 6,\n    max_blas_primitive_count: 536870912,\n    max_blas_geometry_count: 16777216,\n    max_tlas_instance_count: 16777216,\n    max_acceleration_structures_per_shader_stage: 524288,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 6,\n    max_ray_dispatch_count: 1073741824,\n    max_ray_recursion_depth: 31,\n}",
+        "max_bind_groups": 8,
+        "max_buffer_size": 2147483648,
+        "max_compute_invocations_per_workgroup": 1024,
+        "max_compute_workgroup_size_x": 1024,
+        "max_compute_workgroup_size_y": 1024,
+        "max_compute_workgroup_size_z": 1024,
+        "max_compute_workgroup_storage_size": 32768,
+        "max_compute_workgroups_per_dimension": 65535,
+        "max_storage_buffer_binding_size": 2147483644,
+        "max_storage_buffers_per_shader_stage": 429391872,
+        "max_storage_textures_per_shader_stage": 429391872,
+        "max_texture_dimension_2d": 16384,
+        "max_vertex_attributes": 64,
+        "max_vertex_buffers": 16,
+        "min_storage_buffer_offset_alignment": 32,
+        "min_uniform_buffer_offset_alignment": 32
+      },
+      "name": "AMD Radeon(TM) 780M",
+      "shader_model": "Sm5",
+      "vendor": 4098
+    },
+    {
+      "backend": "Dx12",
+      "compute_flag": true,
+      "device": 5567,
+      "device_type": "IntegratedGpu",
+      "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | READ_ONLY_DEPTH_STENCIL | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | DEPTH_TEXTURE_AND_BUFFER_COPIES | WEBGPU_TEXTURE_FORMAT_SUPPORT | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | DEPTH_BIAS_CLAMP | VIEW_FORMATS | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | SURFACE_VIEW_FORMATS | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+      "driver": "32.0.31041.1004",
+      "driver_info": "",
+      "features": "Features { features_wgpu: FeaturesWGPU(TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | TEXTURE_BINDING_ARRAY | STORAGE_RESOURCE_BINDING_ARRAY | SAMPLED_TEXTURE_AND_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING | STORAGE_TEXTURE_ARRAY_NON_UNIFORM_INDEXING | PARTIALLY_BOUND_BINDING_ARRAY | MULTI_DRAW_INDIRECT_COUNT | ADDRESS_MODE_CLAMP_TO_ZERO | ADDRESS_MODE_CLAMP_TO_BORDER | POLYGON_MODE_LINE | CONSERVATIVE_RASTERIZATION | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | TEXTURE_ATOMIC | TEXTURE_FORMAT_NV12 | TEXTURE_FORMAT_P010 | EXTERNAL_TEXTURE | PASSTHROUGH_SHADERS | MEMORY_DECORATION_COHERENT), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | RG11B10UFLOAT_RENDERABLE | BGRA8UNORM_STORAGE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE | DUAL_SOURCE_BLENDING | IMMEDIATES | PRIMITIVE_INDEX) }",
+      "hardware_validation": "accepted hardware",
+      "limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 2048,\n    max_texture_array_layers: 2048,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 4,\n    max_sampled_textures_per_shader_stage: 786424,\n    max_samplers_per_shader_stage: 2048,\n    max_storage_buffers_per_shader_stage: 262144,\n    max_storage_textures_per_shader_stage: 262144,\n    max_uniform_buffers_per_shader_stage: 1048576,\n    max_binding_array_elements_per_shader_stage: 1048576,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 2048,\n    max_uniform_buffer_binding_size: 65536,\n    max_storage_buffer_binding_size: 2147483644,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483647,\n    max_vertex_attributes: 30,\n    max_vertex_buffer_array_stride: 2048,\n    max_inter_stage_shader_variables: 31,\n    min_uniform_buffer_offset_alignment: 256,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 32768,\n    max_compute_invocations_per_workgroup: 1024,\n    max_compute_workgroup_size_x: 1024,\n    max_compute_workgroup_size_y: 1024,\n    max_compute_workgroup_size_z: 64,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 128,\n    max_non_sampler_bindings: 1000000,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 4,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+        "max_bind_groups": 8,
+        "max_buffer_size": 2147483647,
+        "max_compute_invocations_per_workgroup": 1024,
+        "max_compute_workgroup_size_x": 1024,
+        "max_compute_workgroup_size_y": 1024,
+        "max_compute_workgroup_size_z": 64,
+        "max_compute_workgroup_storage_size": 32768,
+        "max_compute_workgroups_per_dimension": 65535,
+        "max_storage_buffer_binding_size": 2147483644,
+        "max_storage_buffers_per_shader_stage": 262144,
+        "max_storage_textures_per_shader_stage": 262144,
+        "max_texture_dimension_2d": 16384,
+        "max_vertex_attributes": 30,
+        "max_vertex_buffers": 16,
+        "min_storage_buffer_offset_alignment": 32,
+        "min_uniform_buffer_offset_alignment": 256
+      },
+      "name": "AMD Radeon(TM) 780M",
+      "shader_model": "Sm5",
+      "vendor": 4098
+    },
+    {
+      "backend": "Dx12",
+      "compute_flag": true,
+      "device": 140,
+      "device_type": "Cpu",
+      "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | READ_ONLY_DEPTH_STENCIL | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | DEPTH_TEXTURE_AND_BUFFER_COPIES | WEBGPU_TEXTURE_FORMAT_SUPPORT | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | DEPTH_BIAS_CLAMP | VIEW_FORMATS | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | SURFACE_VIEW_FORMATS | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+      "driver": "10.0.26100.9711",
+      "driver_info": "",
+      "features": "Features { features_wgpu: FeaturesWGPU(TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | TEXTURE_BINDING_ARRAY | STORAGE_RESOURCE_BINDING_ARRAY | SAMPLED_TEXTURE_AND_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING | STORAGE_TEXTURE_ARRAY_NON_UNIFORM_INDEXING | PARTIALLY_BOUND_BINDING_ARRAY | MULTI_DRAW_INDIRECT_COUNT | ADDRESS_MODE_CLAMP_TO_ZERO | ADDRESS_MODE_CLAMP_TO_BORDER | POLYGON_MODE_LINE | CONSERVATIVE_RASTERIZATION | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | TEXTURE_ATOMIC | TEXTURE_FORMAT_NV12 | TEXTURE_FORMAT_P010 | EXTERNAL_TEXTURE | PASSTHROUGH_SHADERS | MEMORY_DECORATION_COHERENT), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | RG11B10UFLOAT_RENDERABLE | BGRA8UNORM_STORAGE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE | DUAL_SOURCE_BLENDING | IMMEDIATES | PRIMITIVE_INDEX) }",
+      "hardware_validation": "software/CPU adapter rejected: Microsoft Basic Render Driver",
+      "limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 2048,\n    max_texture_array_layers: 2048,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 4,\n    max_sampled_textures_per_shader_stage: 786424,\n    max_samplers_per_shader_stage: 2048,\n    max_storage_buffers_per_shader_stage: 262144,\n    max_storage_textures_per_shader_stage: 262144,\n    max_uniform_buffers_per_shader_stage: 1048576,\n    max_binding_array_elements_per_shader_stage: 1048576,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 2048,\n    max_uniform_buffer_binding_size: 65536,\n    max_storage_buffer_binding_size: 2147483644,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483647,\n    max_vertex_attributes: 30,\n    max_vertex_buffer_array_stride: 2048,\n    max_inter_stage_shader_variables: 31,\n    min_uniform_buffer_offset_alignment: 256,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 32768,\n    max_compute_invocations_per_workgroup: 1024,\n    max_compute_workgroup_size_x: 1024,\n    max_compute_workgroup_size_y: 1024,\n    max_compute_workgroup_size_z: 64,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 128,\n    max_non_sampler_bindings: 1000000,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 4,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+        "max_bind_groups": 8,
+        "max_buffer_size": 2147483647,
+        "max_compute_invocations_per_workgroup": 1024,
+        "max_compute_workgroup_size_x": 1024,
+        "max_compute_workgroup_size_y": 1024,
+        "max_compute_workgroup_size_z": 64,
+        "max_compute_workgroup_storage_size": 32768,
+        "max_compute_workgroups_per_dimension": 65535,
+        "max_storage_buffer_binding_size": 2147483644,
+        "max_storage_buffers_per_shader_stage": 262144,
+        "max_storage_textures_per_shader_stage": 262144,
+        "max_texture_dimension_2d": 16384,
+        "max_vertex_attributes": 30,
+        "max_vertex_buffers": 16,
+        "min_storage_buffer_offset_alignment": 32,
+        "min_uniform_buffer_offset_alignment": 256
+      },
+      "name": "Microsoft Basic Render Driver",
+      "shader_model": "Sm5",
+      "vendor": 5140
+    },
+    {
+      "backend": "Gl",
+      "compute_flag": true,
+      "device": 0,
+      "device_type": "Other",
+      "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+      "driver": "",
+      "driver_info": "4.6.0 Compatibility Profile Context 26.8.1.260810",
+      "features": "Features { features_wgpu: FeaturesWGPU(TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | ADDRESS_MODE_CLAMP_TO_ZERO | ADDRESS_MODE_CLAMP_TO_BORDER | POLYGON_MODE_LINE | POLYGON_MODE_POINT | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | MULTIVIEW | SHADER_EARLY_DEPTH_TEST | PASSTHROUGH_SHADERS | MEMORY_DECORATION_COHERENT | MEMORY_DECORATION_VOLATILE), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TEXTURE_COMPRESSION_ETC2 | TEXTURE_COMPRESSION_ASTC | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | FLOAT32_FILTERABLE | DUAL_SOURCE_BLENDING | CLIP_DISTANCES | IMMEDIATES | PRIMITIVE_INDEX) }",
+      "hardware_validation": "unverified hardware device type Other",
+      "limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 8192,\n    max_texture_array_layers: 8192,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 36,\n    max_dynamic_storage_buffers_per_pipeline_layout: 96,\n    max_sampled_textures_per_shader_stage: 16,\n    max_samplers_per_shader_stage: 16,\n    max_storage_buffers_per_shader_stage: 96,\n    max_storage_textures_per_shader_stage: 32,\n    max_uniform_buffers_per_shader_stage: 36,\n    max_binding_array_elements_per_shader_stage: 0,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 0,\n    max_uniform_buffer_binding_size: 4194304,\n    max_storage_buffer_binding_size: 2147483644,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483647,\n    max_vertex_attributes: 16,\n    max_vertex_buffer_array_stride: 2048,\n    max_inter_stage_shader_variables: 16,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 65536,\n    max_compute_invocations_per_workgroup: 1024,\n    max_compute_workgroup_size_x: 1024,\n    max_compute_workgroup_size_y: 1024,\n    max_compute_workgroup_size_z: 1024,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 256,\n    max_non_sampler_bindings: 4294967295,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 0,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+        "max_bind_groups": 8,
+        "max_buffer_size": 2147483647,
+        "max_compute_invocations_per_workgroup": 1024,
+        "max_compute_workgroup_size_x": 1024,
+        "max_compute_workgroup_size_y": 1024,
+        "max_compute_workgroup_size_z": 1024,
+        "max_compute_workgroup_storage_size": 65536,
+        "max_compute_workgroups_per_dimension": 65535,
+        "max_storage_buffer_binding_size": 2147483644,
+        "max_storage_buffers_per_shader_stage": 96,
+        "max_storage_textures_per_shader_stage": 32,
+        "max_texture_dimension_2d": 16384,
+        "max_vertex_attributes": 16,
+        "max_vertex_buffers": 16,
+        "min_storage_buffer_offset_alignment": 32,
+        "min_uniform_buffer_offset_alignment": 32
+      },
+      "name": "AMD Radeon(TM) 780M",
+      "shader_model": "Sm5",
+      "vendor": 0
+    }
+  ],
+  "compute": {
+    "checked_vec4s_per_dispatch": 4096,
+    "dispatches": 17,
+    "operation": "rotate + nonuniform scale + homogeneous translation",
+    "status": "passed",
+    "tolerance": 1e-6
+  },
+  "deadline_seconds": 60,
+  "explicit_resource_bytes": {
+    "compute_three_buffers": 196608,
+    "driver_overhead": "not included",
+    "triangle_readback": 16384,
+    "triangle_texture": 16384
+  },
+  "graphics": {
+    "format": "Rgba8Unorm",
+    "height": 64,
+    "pixels_verified": 4096,
+    "png": "triangle.png",
+    "status": "passed",
+    "width": 64
+  },
+  "hardware_validation": "passed",
+  "headless": true,
+  "interpretation": "availability test only; stage timings are CPU wall time including synchronization/readback, not GPU kernel time or representative Catwalk benchmark",
+  "probe_version": "0.1.0",
+  "requested_backends": "Backends(NOOP | VULKAN | GL | METAL | DX12 | BROWSER_WEBGPU)",
+  "requested_limits": {
+    "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 2048,\n    max_texture_dimension_2d: 2048,\n    max_texture_dimension_3d: 256,\n    max_texture_array_layers: 256,\n    max_bind_groups: 4,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 1000,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 0,\n    max_sampled_textures_per_shader_stage: 16,\n    max_samplers_per_shader_stage: 16,\n    max_storage_buffers_per_shader_stage: 2,\n    max_storage_textures_per_shader_stage: 0,\n    max_uniform_buffers_per_shader_stage: 11,\n    max_binding_array_elements_per_shader_stage: 0,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 0,\n    max_uniform_buffer_binding_size: 16384,\n    max_storage_buffer_binding_size: 65536,\n    max_vertex_buffers: 8,\n    max_buffer_size: 268435456,\n    max_vertex_attributes: 16,\n    max_vertex_buffer_array_stride: 255,\n    max_inter_stage_shader_variables: 15,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 4,\n    max_color_attachment_bytes_per_sample: 32,\n    max_compute_workgroup_storage_size: 0,\n    max_compute_invocations_per_workgroup: 64,\n    max_compute_workgroup_size_x: 64,\n    max_compute_workgroup_size_y: 1,\n    max_compute_workgroup_size_z: 1,\n    max_compute_workgroups_per_dimension: 64,\n    max_immediate_size: 0,\n    max_non_sampler_bindings: 1000000,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 19,\n    max_multiview_view_count: 0,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+    "max_bind_groups": 4,
+    "max_buffer_size": 268435456,
+    "max_compute_invocations_per_workgroup": 64,
+    "max_compute_workgroup_size_x": 64,
+    "max_compute_workgroup_size_y": 1,
+    "max_compute_workgroup_size_z": 1,
+    "max_compute_workgroup_storage_size": 0,
+    "max_compute_workgroups_per_dimension": 64,
+    "max_storage_buffer_binding_size": 65536,
+    "max_storage_buffers_per_shader_stage": 2,
+    "max_storage_textures_per_shader_stage": 0,
+    "max_texture_dimension_2d": 2048,
+    "max_vertex_attributes": 16,
+    "max_vertex_buffers": 8,
+    "min_storage_buffer_offset_alignment": 32,
+    "min_uniform_buffer_offset_alignment": 32
+  },
+  "require_intel": false,
+  "selected_adapter": {
+    "backend": "Vulkan",
+    "compute_flag": true,
+    "device": 5567,
+    "device_type": "IntegratedGpu",
+    "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | READ_ONLY_DEPTH_STENCIL | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | DEPTH_TEXTURE_AND_BUFFER_COPIES | WEBGPU_TEXTURE_FORMAT_SUPPORT | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | DEPTH_BIAS_CLAMP | VIEW_FORMATS | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | SURFACE_VIEW_FORMATS | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+    "driver": "AMD proprietary driver",
+    "driver_info": "26.8.1 (LLPC)",
+    "features": "Features { features_wgpu: FeaturesWGPU(SHADER_FLOAT32_ATOMIC | TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | PIPELINE_STATISTICS_QUERY | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | TEXTURE_BINDING_ARRAY | BUFFER_BINDING_ARRAY | STORAGE_RESOURCE_BINDING_ARRAY | SAMPLED_TEXTURE_AND_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING | STORAGE_TEXTURE_ARRAY_NON_UNIFORM_INDEXING | PARTIALLY_BOUND_BINDING_ARRAY | MULTI_DRAW_INDIRECT_COUNT | ADDRESS_MODE_CLAMP_TO_ZERO | ADDRESS_MODE_CLAMP_TO_BORDER | POLYGON_MODE_LINE | POLYGON_MODE_POINT | CONSERVATIVE_RASTERIZATION | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | MULTIVIEW | TEXTURE_ATOMIC | TEXTURE_FORMAT_NV12 | TEXTURE_FORMAT_P010 | EXPERIMENTAL_RAY_QUERY | SHADER_F64 | SHADER_I16 | SHADER_EARLY_DEPTH_TEST | SHADER_INT64 | SUBGROUP | SUBGROUP_VERTEX | SUBGROUP_BARRIER | PIPELINE_CACHE | SHADER_INT64_ATOMIC_MIN_MAX | SHADER_INT64_ATOMIC_ALL_OPS | VULKAN_EXTERNAL_MEMORY_WIN32 | TEXTURE_INT64_ATOMIC | EXPERIMENTAL_MESH_SHADER | EXPERIMENTAL_RAY_HIT_VERTEX_RETURN | EXPERIMENTAL_MESH_SHADER_MULTIVIEW | EXTENDED_ACCELERATION_STRUCTURE_VERTEX_FORMATS | PASSTHROUGH_SHADERS | SHADER_BARYCENTRICS | SELECTIVE_MULTIVIEW | EXPERIMENTAL_MESH_SHADER_POINTS | MULTISAMPLE_ARRAY | EXPERIMENTAL_COOPERATIVE_MATRIX | SHADER_PER_VERTEX | SHADER_DRAW_INDEX | ACCELERATION_STRUCTURE_BINDING_ARRAY | MEMORY_DECORATION_COHERENT | MEMORY_DECORATION_VOLATILE | EXPERIMENTAL_RAY_TRACING_PIPELINES), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | SHADER_F16 | RG11B10UFLOAT_RENDERABLE | BGRA8UNORM_STORAGE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE | DUAL_SOURCE_BLENDING | CLIP_DISTANCES | IMMEDIATES | PRIMITIVE_INDEX) }",
+    "hardware_validation": "accepted hardware",
+    "limits": {
+      "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 8192,\n    max_texture_array_layers: 8192,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 8,\n    max_sampled_textures_per_shader_stage: 429391871,\n    max_samplers_per_shader_stage: 429391872,\n    max_storage_buffers_per_shader_stage: 429391872,\n    max_storage_textures_per_shader_stage: 429391872,\n    max_uniform_buffers_per_shader_stage: 429391872,\n    max_binding_array_elements_per_shader_stage: 4294967295,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 524288,\n    max_binding_array_sampler_elements_per_shader_stage: 4294967295,\n    max_uniform_buffer_binding_size: 2147483647,\n    max_storage_buffer_binding_size: 2147483644,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483648,\n    max_vertex_attributes: 64,\n    max_vertex_buffer_array_stride: 16380,\n    max_inter_stage_shader_variables: 31,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 32768,\n    max_compute_invocations_per_workgroup: 1024,\n    max_compute_workgroup_size_x: 1024,\n    max_compute_workgroup_size_y: 1024,\n    max_compute_workgroup_size_z: 1024,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 256,\n    max_non_sampler_bindings: 4294967295,\n    max_task_workgroup_total_count: 4294966272,\n    max_task_workgroups_per_dimension: 65535,\n    max_mesh_workgroup_total_count: 67107840,\n    max_mesh_workgroups_per_dimension: 65535,\n    max_task_invocations_per_workgroup: 1024,\n    max_task_invocations_per_dimension: 1024,\n    max_mesh_invocations_per_workgroup: 256,\n    max_mesh_invocations_per_dimension: 256,\n    max_task_payload_size: 16384,\n    max_mesh_output_vertices: 256,\n    max_mesh_output_primitives: 256,\n    max_mesh_output_layers: 8192,\n    max_mesh_multiview_view_count: 6,\n    max_blas_primitive_count: 536870912,\n    max_blas_geometry_count: 16777216,\n    max_tlas_instance_count: 16777216,\n    max_acceleration_structures_per_shader_stage: 524288,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 6,\n    max_ray_dispatch_count: 1073741824,\n    max_ray_recursion_depth: 31,\n}",
+      "max_bind_groups": 8,
+      "max_buffer_size": 2147483648,
+      "max_compute_invocations_per_workgroup": 1024,
+      "max_compute_workgroup_size_x": 1024,
+      "max_compute_workgroup_size_y": 1024,
+      "max_compute_workgroup_size_z": 1024,
+      "max_compute_workgroup_storage_size": 32768,
+      "max_compute_workgroups_per_dimension": 65535,
+      "max_storage_buffer_binding_size": 2147483644,
+      "max_storage_buffers_per_shader_stage": 429391872,
+      "max_storage_textures_per_shader_stage": 429391872,
+      "max_texture_dimension_2d": 16384,
+      "max_vertex_attributes": 64,
+      "max_vertex_buffers": 16,
+      "min_storage_buffer_offset_alignment": 32,
+      "min_uniform_buffer_offset_alignment": 32
+    },
+    "name": "AMD Radeon(TM) 780M",
+    "shader_model": "Sm5",
+    "vendor": 4098
+  },
+  "stage": "finished",
+  "status": "passed",
+  "timings": {
+    "compute_iterations": [
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0257,
+        "device_reused": false,
+        "encode_commands_ms": 0.0282,
+        "iteration": 0,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.9305,
+        "total_ms": 0.9874
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.17670000000000002,
+        "device_reused": true,
+        "encode_commands_ms": 0.0296,
+        "iteration": 1,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5944,
+        "total_ms": 0.8046000000000001
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0567,
+        "device_reused": true,
+        "encode_commands_ms": 0.0244,
+        "iteration": 2,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5796,
+        "total_ms": 0.6638
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.22240000000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.0262,
+        "iteration": 3,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.7117,
+        "total_ms": 0.966
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.025599999999999998,
+        "device_reused": true,
+        "encode_commands_ms": 0.0244,
+        "iteration": 4,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5373,
+        "total_ms": 0.5896
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.026,
+        "device_reused": true,
+        "encode_commands_ms": 0.025,
+        "iteration": 5,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.4964,
+        "total_ms": 0.5498000000000001
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0281,
+        "device_reused": true,
+        "encode_commands_ms": 0.024300000000000002,
+        "iteration": 6,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5727,
+        "total_ms": 0.6277
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0385,
+        "device_reused": true,
+        "encode_commands_ms": 0.0245,
+        "iteration": 7,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5932999999999999,
+        "total_ms": 0.6589
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.06430000000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.023200000000000002,
+        "iteration": 8,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5536,
+        "total_ms": 0.6439
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.026,
+        "device_reused": true,
+        "encode_commands_ms": 0.0233,
+        "iteration": 9,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5532999999999999,
+        "total_ms": 0.6049
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0901,
+        "device_reused": true,
+        "encode_commands_ms": 0.0239,
+        "iteration": 10,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.6029,
+        "total_ms": 0.7205999999999999
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0255,
+        "device_reused": true,
+        "encode_commands_ms": 0.0241,
+        "iteration": 11,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.6345,
+        "total_ms": 0.6870999999999999
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.1844,
+        "device_reused": true,
+        "encode_commands_ms": 0.0247,
+        "iteration": 12,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.3655,
+        "total_ms": 0.5772
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.068,
+        "device_reused": true,
+        "encode_commands_ms": 0.0286,
+        "iteration": 13,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.6805,
+        "total_ms": 0.7810999999999999
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0601,
+        "device_reused": true,
+        "encode_commands_ms": 0.0249,
+        "iteration": 14,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5816,
+        "total_ms": 0.6695
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0435,
+        "device_reused": true,
+        "encode_commands_ms": 0.0266,
+        "iteration": 15,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.6244999999999999,
+        "total_ms": 0.6973
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.0259,
+        "device_reused": true,
+        "encode_commands_ms": 0.0248,
+        "iteration": 16,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 0.5603,
+        "total_ms": 0.6132000000000001
+      }
+    ],
+    "compute_pipeline_resources_ms": 15.2096,
+    "device_creation_ms": 310.0417,
+    "draw_iterations": [
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0129,
+        "device_reused": false,
+        "encode_commands_ms": 2.4076000000000004,
+        "iteration": 0,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 8.3321,
+        "total_ms": 10.759
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0133,
+        "device_reused": true,
+        "encode_commands_ms": 0.0305,
+        "iteration": 1,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.646,
+        "total_ms": 0.6958
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0129,
+        "device_reused": true,
+        "encode_commands_ms": 0.0304,
+        "iteration": 2,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.4936,
+        "total_ms": 0.5428
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.008,
+        "device_reused": true,
+        "encode_commands_ms": 0.030000000000000002,
+        "iteration": 3,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.3753,
+        "total_ms": 0.41829999999999995
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0083,
+        "device_reused": true,
+        "encode_commands_ms": 0.034100000000000005,
+        "iteration": 4,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.5115999999999999,
+        "total_ms": 0.5606
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0081,
+        "device_reused": true,
+        "encode_commands_ms": 0.0363,
+        "iteration": 5,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.6657,
+        "total_ms": 0.716
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.013600000000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.034100000000000005,
+        "iteration": 6,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.6466,
+        "total_ms": 0.7011
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.013699999999999999,
+        "device_reused": true,
+        "encode_commands_ms": 0.0266,
+        "iteration": 7,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.5710999999999999,
+        "total_ms": 0.6179
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0079,
+        "device_reused": true,
+        "encode_commands_ms": 0.0288,
+        "iteration": 8,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.5335,
+        "total_ms": 0.575
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0078,
+        "device_reused": true,
+        "encode_commands_ms": 0.0293,
+        "iteration": 9,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.6383,
+        "total_ms": 0.6801
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.008,
+        "device_reused": true,
+        "encode_commands_ms": 0.027200000000000002,
+        "iteration": 10,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.6161,
+        "total_ms": 0.6571
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0079,
+        "device_reused": true,
+        "encode_commands_ms": 0.0348,
+        "iteration": 11,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.6273,
+        "total_ms": 0.6772
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0134,
+        "device_reused": true,
+        "encode_commands_ms": 0.0262,
+        "iteration": 12,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.6018,
+        "total_ms": 0.6475
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0134,
+        "device_reused": true,
+        "encode_commands_ms": 0.0301,
+        "iteration": 13,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.4842,
+        "total_ms": 0.5342
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.013600000000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.0346,
+        "iteration": 14,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.7041000000000001,
+        "total_ms": 0.7583
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.0135,
+        "device_reused": true,
+        "encode_commands_ms": 0.0307,
+        "iteration": 15,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.5680999999999999,
+        "total_ms": 0.6191
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.012700000000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.034100000000000005,
+        "iteration": 16,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 0.5883,
+        "total_ms": 0.6444000000000001
+      }
+    ],
+    "graphics_pipeline_resources_ms": 35.5838,
+    "instance_and_enumeration_ms": 823.8689999999999,
+    "png_encode_ms": 5.012,
+    "total_probe_ms": 1630.9282999999998
+  },
+  "warm_iterations": 16,
+  "wgpu_version": "30.0.1",
+  "window_or_surface_created": false
+}

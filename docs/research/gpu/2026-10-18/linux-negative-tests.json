@@ -1,0 +1,49 @@
+[
+  {
+    "case": "software",
+    "exit": 1,
+    "json_status": "failed",
+    "json_error": "No eligible hardware adapter: software/CPU, unknown, or mismatched adapters are not accepted",
+    "adapters": [
+      {
+        "name": "llvmpipe (LLVM 20.1.2, 256 bits)",
+        "device_type": "Cpu",
+        "backend": "Gl",
+        "hardware_validation": "software/CPU adapter rejected: llvmpipe (LLVM 20.1.2, 256 bits)"
+      }
+    ],
+    "last_output": [
+      "FAIL: No eligible hardware adapter: software/CPU, unknown, or mismatched adapters are not accepted"
+    ]
+  },
+  {
+    "case": "missing-vulkan-icd",
+    "exit": 1,
+    "json_status": "failed",
+    "json_error": "No eligible hardware adapter: software/CPU, unknown, or mismatched adapters are not accepted",
+    "adapters": [],
+    "last_output": [
+      "FAIL: No eligible hardware adapter: software/CPU, unknown, or mismatched adapters are not accepted"
+    ]
+  },
+  {
+    "case": "uncompiled-metal",
+    "exit": 1,
+    "json_status": "failed",
+    "json_error": "No eligible hardware adapter: software/CPU, unknown, or mismatched adapters are not accepted",
+    "adapters": [],
+    "last_output": [
+      "FAIL: No eligible hardware adapter: software/CPU, unknown, or mismatched adapters are not accepted"
+    ]
+  },
+  {
+    "case": "unknown-backend",
+    "exit": 64,
+    "json_status": null,
+    "json_error": null,
+    "adapters": [],
+    "last_output": [
+      "invalid backend"
+    ]
+  }
+]

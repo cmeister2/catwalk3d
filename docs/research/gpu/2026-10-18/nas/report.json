@@ -1,0 +1,661 @@
+{
+  "adapters": [
+    {
+      "backend": "Gl",
+      "compute_flag": true,
+      "device": 0,
+      "device_type": "IntegratedGpu",
+      "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+      "driver": "",
+      "driver_info": "4.6 (Core Profile) Mesa 21.3.9 Amber",
+      "features": "Features { features_wgpu: FeaturesWGPU(TEXTURE_FORMAT_16BIT_NORM | TEXTURE_COMPRESSION_ASTC_HDR | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | POLYGON_MODE_LINE | POLYGON_MODE_POINT | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | SHADER_EARLY_DEPTH_TEST | PASSTHROUGH_SHADERS | MEMORY_DECORATION_COHERENT | MEMORY_DECORATION_VOLATILE), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TEXTURE_COMPRESSION_ETC2 | TEXTURE_COMPRESSION_ASTC | TEXTURE_COMPRESSION_ASTC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | DUAL_SOURCE_BLENDING | CLIP_DISTANCES | IMMEDIATES | PRIMITIVE_INDEX) }",
+      "hardware_validation": "accepted hardware",
+      "limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 2048,\n    max_texture_array_layers: 2048,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 14,\n    max_dynamic_storage_buffers_per_pipeline_layout: 12,\n    max_sampled_textures_per_shader_stage: 16,\n    max_samplers_per_shader_stage: 16,\n    max_storage_buffers_per_shader_stage: 12,\n    max_storage_textures_per_shader_stage: 32,\n    max_uniform_buffers_per_shader_stage: 14,\n    max_binding_array_elements_per_shader_stage: 0,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 0,\n    max_uniform_buffer_binding_size: 65536,\n    max_storage_buffer_binding_size: 134217728,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483647,\n    max_vertex_attributes: 16,\n    max_vertex_buffer_array_stride: 2048,\n    max_inter_stage_shader_variables: 32,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 64,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 65536,\n    max_compute_invocations_per_workgroup: 1152,\n    max_compute_workgroup_size_x: 1152,\n    max_compute_workgroup_size_y: 1152,\n    max_compute_workgroup_size_z: 1152,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 256,\n    max_non_sampler_bindings: 4294967295,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 0,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+        "max_bind_groups": 8,
+        "max_buffer_size": 2147483647,
+        "max_compute_invocations_per_workgroup": 1152,
+        "max_compute_workgroup_size_x": 1152,
+        "max_compute_workgroup_size_y": 1152,
+        "max_compute_workgroup_size_z": 1152,
+        "max_compute_workgroup_storage_size": 65536,
+        "max_compute_workgroups_per_dimension": 65535,
+        "max_storage_buffer_binding_size": 134217728,
+        "max_storage_buffers_per_shader_stage": 12,
+        "max_storage_textures_per_shader_stage": 32,
+        "max_texture_dimension_2d": 16384,
+        "max_vertex_attributes": 16,
+        "max_vertex_buffers": 16,
+        "min_storage_buffer_offset_alignment": 64,
+        "min_uniform_buffer_offset_alignment": 32
+      },
+      "name": "Mesa DRI Intel(R) UHD Graphics 600 (GLK 2)",
+      "shader_model": "Sm5",
+      "vendor": 32902
+    }
+  ],
+  "compute": {
+    "checked_vec4s_per_dispatch": 4096,
+    "dispatches": 17,
+    "operation": "rotate + nonuniform scale + homogeneous translation",
+    "status": "passed",
+    "tolerance": 1e-6
+  },
+  "deadline_seconds": 60,
+  "explicit_resource_bytes": {
+    "compute_three_buffers": 196608,
+    "driver_overhead": "not included",
+    "triangle_readback": 16384,
+    "triangle_texture": 16384
+  },
+  "graphics": {
+    "format": "Rgba8Unorm",
+    "height": 64,
+    "pixels_verified": 4096,
+    "png": "triangle.png",
+    "status": "passed",
+    "width": 64
+  },
+  "hardware_validation": "passed",
+  "headless": true,
+  "interpretation": "availability test only; stage timings are CPU wall time including synchronization/readback, not GPU kernel time or representative Catwalk benchmark",
+  "probe_version": "0.1.0",
+  "requested_backends": "Backends(GL)",
+  "requested_limits": {
+    "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 2048,\n    max_texture_dimension_2d: 2048,\n    max_texture_dimension_3d: 256,\n    max_texture_array_layers: 256,\n    max_bind_groups: 4,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 1000,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 0,\n    max_sampled_textures_per_shader_stage: 16,\n    max_samplers_per_shader_stage: 16,\n    max_storage_buffers_per_shader_stage: 2,\n    max_storage_textures_per_shader_stage: 0,\n    max_uniform_buffers_per_shader_stage: 11,\n    max_binding_array_elements_per_shader_stage: 0,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 0,\n    max_uniform_buffer_binding_size: 16384,\n    max_storage_buffer_binding_size: 65536,\n    max_vertex_buffers: 8,\n    max_buffer_size: 268435456,\n    max_vertex_attributes: 16,\n    max_vertex_buffer_array_stride: 255,\n    max_inter_stage_shader_variables: 15,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 64,\n    max_color_attachments: 4,\n    max_color_attachment_bytes_per_sample: 32,\n    max_compute_workgroup_storage_size: 0,\n    max_compute_invocations_per_workgroup: 64,\n    max_compute_workgroup_size_x: 64,\n    max_compute_workgroup_size_y: 1,\n    max_compute_workgroup_size_z: 1,\n    max_compute_workgroups_per_dimension: 64,\n    max_immediate_size: 0,\n    max_non_sampler_bindings: 1000000,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 19,\n    max_multiview_view_count: 0,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+    "max_bind_groups": 4,
+    "max_buffer_size": 268435456,
+    "max_compute_invocations_per_workgroup": 64,
+    "max_compute_workgroup_size_x": 64,
+    "max_compute_workgroup_size_y": 1,
+    "max_compute_workgroup_size_z": 1,
+    "max_compute_workgroup_storage_size": 0,
+    "max_compute_workgroups_per_dimension": 64,
+    "max_storage_buffer_binding_size": 65536,
+    "max_storage_buffers_per_shader_stage": 2,
+    "max_storage_textures_per_shader_stage": 0,
+    "max_texture_dimension_2d": 2048,
+    "max_vertex_attributes": 16,
+    "max_vertex_buffers": 8,
+    "min_storage_buffer_offset_alignment": 64,
+    "min_uniform_buffer_offset_alignment": 32
+  },
+  "require_intel": true,
+  "selected_adapter": {
+    "backend": "Gl",
+    "compute_flag": true,
+    "device": 0,
+    "device_type": "IntegratedGpu",
+    "downlevel_flags": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32 | MSL2_1 | TEXTURE_COMPRESSION)",
+    "driver": "",
+    "driver_info": "4.6 (Core Profile) Mesa 21.3.9 Amber",
+    "features": "Features { features_wgpu: FeaturesWGPU(TEXTURE_FORMAT_16BIT_NORM | TEXTURE_COMPRESSION_ASTC_HDR | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | POLYGON_MODE_LINE | POLYGON_MODE_POINT | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | SHADER_EARLY_DEPTH_TEST | PASSTHROUGH_SHADERS | MEMORY_DECORATION_COHERENT | MEMORY_DECORATION_VOLATILE), features_webgpu: FeaturesWebGPU(DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TEXTURE_COMPRESSION_ETC2 | TEXTURE_COMPRESSION_ASTC | TEXTURE_COMPRESSION_ASTC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | DUAL_SOURCE_BLENDING | CLIP_DISTANCES | IMMEDIATES | PRIMITIVE_INDEX) }",
+    "hardware_validation": "accepted hardware",
+    "limits": {
+      "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 2048,\n    max_texture_array_layers: 2048,\n    max_bind_groups: 8,\n    max_bind_groups_plus_vertex_buffers: 24,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 14,\n    max_dynamic_storage_buffers_per_pipeline_layout: 12,\n    max_sampled_textures_per_shader_stage: 16,\n    max_samplers_per_shader_stage: 16,\n    max_storage_buffers_per_shader_stage: 12,\n    max_storage_textures_per_shader_stage: 32,\n    max_uniform_buffers_per_shader_stage: 14,\n    max_binding_array_elements_per_shader_stage: 0,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 0,\n    max_uniform_buffer_binding_size: 65536,\n    max_storage_buffer_binding_size: 134217728,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483647,\n    max_vertex_attributes: 16,\n    max_vertex_buffer_array_stride: 2048,\n    max_inter_stage_shader_variables: 32,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 64,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 65536,\n    max_compute_invocations_per_workgroup: 1152,\n    max_compute_workgroup_size_x: 1152,\n    max_compute_workgroup_size_y: 1152,\n    max_compute_workgroup_size_z: 1152,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 256,\n    max_non_sampler_bindings: 4294967295,\n    max_task_workgroup_total_count: 0,\n    max_task_workgroups_per_dimension: 0,\n    max_mesh_workgroup_total_count: 0,\n    max_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_buffers_and_acceleration_structures_per_shader_stage: 4294967295,\n    max_multiview_view_count: 0,\n    max_ray_dispatch_count: 0,\n    max_ray_recursion_depth: 0,\n}",
+      "max_bind_groups": 8,
+      "max_buffer_size": 2147483647,
+      "max_compute_invocations_per_workgroup": 1152,
+      "max_compute_workgroup_size_x": 1152,
+      "max_compute_workgroup_size_y": 1152,
+      "max_compute_workgroup_size_z": 1152,
+      "max_compute_workgroup_storage_size": 65536,
+      "max_compute_workgroups_per_dimension": 65535,
+      "max_storage_buffer_binding_size": 134217728,
+      "max_storage_buffers_per_shader_stage": 12,
+      "max_storage_textures_per_shader_stage": 32,
+      "max_texture_dimension_2d": 16384,
+      "max_vertex_attributes": 16,
+      "max_vertex_buffers": 16,
+      "min_storage_buffer_offset_alignment": 64,
+      "min_uniform_buffer_offset_alignment": 32
+    },
+    "name": "Mesa DRI Intel(R) UHD Graphics 600 (GLK 2)",
+    "shader_model": "Sm5",
+    "vendor": 32902
+  },
+  "stage": "finished",
+  "status": "passed",
+  "timings": {
+    "compute_iterations": [
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.075391,
+        "device_reused": false,
+        "encode_commands_ms": 0.00834,
+        "iteration": 0,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 5.223834,
+        "total_ms": 5.308974
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.070369,
+        "device_reused": true,
+        "encode_commands_ms": 0.005269,
+        "iteration": 1,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.779426,
+        "total_ms": 4.856114
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.078804,
+        "device_reused": true,
+        "encode_commands_ms": 0.0041069999999999995,
+        "iteration": 2,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 6.60788,
+        "total_ms": 6.693214
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.071003,
+        "device_reused": true,
+        "encode_commands_ms": 0.011921,
+        "iteration": 3,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.852946,
+        "total_ms": 4.936923999999999
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.070601,
+        "device_reused": true,
+        "encode_commands_ms": 0.004156,
+        "iteration": 4,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.872695,
+        "total_ms": 4.948417
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.07047199999999999,
+        "device_reused": true,
+        "encode_commands_ms": 0.004199,
+        "iteration": 5,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.785538,
+        "total_ms": 4.861161999999999
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.07052,
+        "device_reused": true,
+        "encode_commands_ms": 0.004214,
+        "iteration": 6,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.8596,
+        "total_ms": 4.935319
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.072795,
+        "device_reused": true,
+        "encode_commands_ms": 0.004220000000000001,
+        "iteration": 7,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.8684449999999995,
+        "total_ms": 4.946433
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.07554999999999999,
+        "device_reused": true,
+        "encode_commands_ms": 0.004408,
+        "iteration": 8,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 5.122837,
+        "total_ms": 5.204038000000001
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.07047300000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.0048969999999999994,
+        "iteration": 9,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.864349,
+        "total_ms": 4.940703
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.07047099999999999,
+        "device_reused": true,
+        "encode_commands_ms": 0.004127,
+        "iteration": 10,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.711199,
+        "total_ms": 4.786751
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.074457,
+        "device_reused": true,
+        "encode_commands_ms": 0.0040620000000000005,
+        "iteration": 11,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.982184,
+        "total_ms": 5.062289
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.070712,
+        "device_reused": true,
+        "encode_commands_ms": 0.005203,
+        "iteration": 12,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 4.860635,
+        "total_ms": 4.937564999999999
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.070047,
+        "device_reused": true,
+        "encode_commands_ms": 0.00432,
+        "iteration": 13,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 5.263969,
+        "total_ms": 5.339378
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.075515,
+        "device_reused": true,
+        "encode_commands_ms": 0.0045249999999999995,
+        "iteration": 14,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 5.323262,
+        "total_ms": 5.404984
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.07782900000000001,
+        "device_reused": true,
+        "encode_commands_ms": 0.006365,
+        "iteration": 15,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 5.1003300000000005,
+        "total_ms": 5.188501
+      },
+      {
+        "checked_vec4s": 4096,
+        "cpu_verification_ms": 0.080834,
+        "device_reused": true,
+        "encode_commands_ms": 0.012472,
+        "iteration": 16,
+        "max_abs_error": 0.0,
+        "submit_complete_readback_ms": 6.008355,
+        "total_ms": 6.106982
+      }
+    ],
+    "compute_pipeline_resources_ms": 10.579086,
+    "device_creation_ms": 40.821307000000004,
+    "draw_iterations": [
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024711,
+        "device_reused": false,
+        "encode_commands_ms": 0.02446,
+        "iteration": 0,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 10.195842,
+        "total_ms": 10.251305
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024176,
+        "device_reused": true,
+        "encode_commands_ms": 0.016235999999999997,
+        "iteration": 1,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.465333,
+        "total_ms": 2.510889
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024209,
+        "device_reused": true,
+        "encode_commands_ms": 0.016659,
+        "iteration": 2,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.057536,
+        "total_ms": 2.1025359999999997
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024017999999999998,
+        "device_reused": true,
+        "encode_commands_ms": 0.012735,
+        "iteration": 3,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.168065,
+        "total_ms": 2.2084740000000003
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024805,
+        "device_reused": true,
+        "encode_commands_ms": 0.012480000000000002,
+        "iteration": 4,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.338944,
+        "total_ms": 2.3820629999999996
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024216,
+        "device_reused": true,
+        "encode_commands_ms": 0.015551,
+        "iteration": 5,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.0431820000000003,
+        "total_ms": 2.0869690000000003
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.02378,
+        "device_reused": true,
+        "encode_commands_ms": 0.014148,
+        "iteration": 6,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.024382,
+        "total_ms": 2.0647640000000003
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024127000000000003,
+        "device_reused": true,
+        "encode_commands_ms": 0.008447999999999999,
+        "iteration": 7,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.0838110000000003,
+        "total_ms": 2.119139
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024961,
+        "device_reused": true,
+        "encode_commands_ms": 0.00882,
+        "iteration": 8,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.428007,
+        "total_ms": 2.467871
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024052,
+        "device_reused": true,
+        "encode_commands_ms": 0.016689,
+        "iteration": 9,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.249481,
+        "total_ms": 2.295217
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.024181,
+        "device_reused": true,
+        "encode_commands_ms": 0.016427999999999998,
+        "iteration": 10,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.159645,
+        "total_ms": 2.203764
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.023536,
+        "device_reused": true,
+        "encode_commands_ms": 0.012845,
+        "iteration": 11,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 1.948829,
+        "total_ms": 1.9873859999999999
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.023518,
+        "device_reused": true,
+        "encode_commands_ms": 0.006649,
+        "iteration": 12,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.056843,
+        "total_ms": 2.08894
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.023479,
+        "device_reused": true,
+        "encode_commands_ms": 0.005912000000000001,
+        "iteration": 13,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 2.23414,
+        "total_ms": 2.2651
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.023471,
+        "device_reused": true,
+        "encode_commands_ms": 0.005876,
+        "iteration": 14,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 1.899812,
+        "total_ms": 1.931084
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.023493,
+        "device_reused": true,
+        "encode_commands_ms": 0.005852,
+        "iteration": 15,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 1.9715449999999999,
+        "total_ms": 2.002808
+      },
+      {
+        "center_rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "corner_rgba": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "cpu_verification_ms": 0.023487,
+        "device_reused": true,
+        "encode_commands_ms": 0.005752,
+        "iteration": 16,
+        "red_pixels": 1352,
+        "submit_complete_readback_ms": 1.931674,
+        "total_ms": 1.96285
+      }
+    ],
+    "graphics_pipeline_resources_ms": 4.2432620000000005,
+    "instance_and_enumeration_ms": 1663.265564,
+    "png_encode_ms": 0.610539,
+    "total_probe_ms": 1857.945988
+  },
+  "warm_iterations": 16,
+  "wgpu_version": "30.0.1",
+  "window_or_surface_created": false
+}
