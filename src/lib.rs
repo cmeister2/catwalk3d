@@ -2,6 +2,9 @@
 #![forbid(unsafe_code)]
 /// Model-format discovery and bounded Rust geometry importers.
 pub mod formats;
+/// Optional native hardware rendering with shared indexed meshes and explicit device capabilities.
+#[cfg(all(feature = "gpu", not(target_family = "wasm")))]
+pub mod gpu;
 /// Indexed reusable meshes and checked affine instances with CPU scene expansion.
 pub mod instanced;
 /// Fixed-view CPU rendering and PNG encoding.

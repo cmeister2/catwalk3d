@@ -1007,7 +1007,7 @@ fn shade(color: [u8; 3], normal: Vec3, camera: Camera) -> [u8; 3] {
 /// Returns an error for invalid dimensions or supersampling, empty or invalid scene geometry,
 /// allocation failures, or exceeded rasterization and transparency budgets.
 pub fn render(scene: &Scene, options: &RenderOptions) -> crate::Result<RgbaImage> {
-    render_view(scene, options, None)
+    render_view(scene, options, None, || {})
 }
 
 /// Render an XY drawing from above, preserving its proportions and orientation.
@@ -1018,7 +1018,78 @@ pub fn render(scene: &Scene, options: &RenderOptions) -> crate::Result<RgbaImage
 /// Returns an error for invalid output settings or scene geometry, allocation
 /// failures, or exceeded rasterization and transparency budgets.
 pub fn render_xy(scene: &Scene, options: &RenderOptions) -> crate::Result<RgbaImage> {
-    render_view(scene, options, Some(Camera::xy()))
+    render_view(scene, options, Some(Camera::xy()), || {})
+}
+
+/// CPU wall-clock stages for rendering an already imported scene.
+///
+/// Importer decoding and tessellation happen before these measurements. The
+/// stages partition one rendering call; they do not measure GPU kernel time.
+#[cfg(all(feature = "gpu", not(target_family = "wasm")))]
+#[derive(Clone, Copy, Debug, Default)]
+pub struct CpuRenderTimings {
+    /// Output/scene validation, global coordinate normalization, camera selection
+    /// and projected geometry fitting, ending before framebuffer allocation.
+    pub geometry_preparation: std::time::Duration,
+    /// Framebuffer allocation, per-primitive normalization/projection and shading,
+    /// rasterization, transparency compositing and final supersampling resolve.
+    pub rasterization_and_resolve: std::time::Duration,
+}
+
+/// Render the fixed model view and measure global fitting separately from raster work.
+///
+/// Rendering behavior and limits match [`render`]. Timings include CPU work on
+/// an already imported scene; see [`CpuRenderTimings`] for the stage boundaries.
+///
+/// # Errors
+/// Returns the same errors as [`render`] for invalid output settings or scene
+/// geometry, allocation failures, or exceeded rasterization/transparency budgets.
+#[cfg(all(feature = "gpu", not(target_family = "wasm")))]
+pub fn render_profiled(
+    scene: &Scene,
+    options: &RenderOptions,
+) -> crate::Result<(RgbaImage, CpuRenderTimings)> {
+    let start = std::time::Instant::now();
+    let mut geometry_preparation = std::time::Duration::ZERO;
+    let image = render_view(scene, options, None, || {
+        geometry_preparation = start.elapsed();
+    })?;
+    let rasterization_and_resolve = start.elapsed().saturating_sub(geometry_preparation);
+    Ok((
+        image,
+        CpuRenderTimings {
+            geometry_preparation,
+            rasterization_and_resolve,
+        },
+    ))
+}
+
+/// Render the XY view and measure global fitting separately from raster work.
+///
+/// Rendering behavior and limits match [`render_xy`]. Timings include CPU work
+/// on an already imported scene; see [`CpuRenderTimings`] for the stage boundaries.
+///
+/// # Errors
+/// Returns the same errors as [`render_xy`] for invalid output settings or scene
+/// geometry, allocation failures, or exceeded rasterization/transparency budgets.
+#[cfg(all(feature = "gpu", not(target_family = "wasm")))]
+pub fn render_xy_profiled(
+    scene: &Scene,
+    options: &RenderOptions,
+) -> crate::Result<(RgbaImage, CpuRenderTimings)> {
+    let start = std::time::Instant::now();
+    let mut geometry_preparation = std::time::Duration::ZERO;
+    let image = render_view(scene, options, Some(Camera::xy()), || {
+        geometry_preparation = start.elapsed();
+    })?;
+    let rasterization_and_resolve = start.elapsed().saturating_sub(geometry_preparation);
+    Ok((
+        image,
+        CpuRenderTimings {
+            geometry_preparation,
+            rasterization_and_resolve,
+        },
+    ))
 }
 
 /// Validate a scene and rasterize it from either the fitted model or supplied view.
@@ -1033,6 +1104,7 @@ fn render_view(
     scene: &Scene,
     options: &RenderOptions,
     camera: Option<Camera>,
+    geometry_ready: impl FnOnce(),
 ) -> crate::Result<RgbaImage> {
     if options.width == 0
         || options.height == 0
@@ -1063,6 +1135,7 @@ fn render_view(
         Some(camera) => Projection::with_camera(scene, geometry, width, height, camera),
         None => Projection::new(scene, geometry, width, height),
     };
+    geometry_ready();
     let background = if options.transparent {
         [0, 0, 0, 0]
     } else {
@@ -2192,5 +2265,42 @@ mod tests {
             [255, 255, 255, 128],
             "transparent samples must affect coverage, without darkening visible samples"
         );
+    }
+
+    #[cfg(all(feature = "gpu", not(target_family = "wasm")))]
+    #[test]
+    fn profiled_model_and_xy_views_preserve_exact_images_and_validation() {
+        let mut scene = Scene {
+            triangles: vec![triangle(0., [60, 120, 200])],
+            ..Scene::default()
+        };
+        scene
+            .appearances
+            .insert(0, unlit([0.8, 0.4, 0.2, 0.5], AlphaMode::Blend));
+        for xy in [false, true] {
+            let expected = if xy {
+                render_xy(&scene, &options())
+            } else {
+                render(&scene, &options())
+            }
+            .unwrap();
+            let start = std::time::Instant::now();
+            let (actual, timings) = if xy {
+                render_xy_profiled(&scene, &options())
+            } else {
+                render_profiled(&scene, &options())
+            }
+            .unwrap();
+            assert!(
+                timings.geometry_preparation + timings.rasterization_and_resolve <= start.elapsed()
+            );
+            assert_eq!(actual, expected);
+        }
+        let mut geometry_callbacks = 0;
+        let hooked = render_view(&scene, &options(), None, || geometry_callbacks += 1).unwrap();
+        assert_eq!(geometry_callbacks, 1);
+        assert_eq!(hooked, render(&scene, &options()).unwrap());
+        assert!(render_profiled(&Scene::default(), &options()).is_err());
+        assert!(render_xy_profiled(&Scene::default(), &options()).is_err());
     }
 }
