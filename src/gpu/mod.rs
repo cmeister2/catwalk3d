@@ -1320,9 +1320,8 @@ mod tests {
             center[2] > center[0],
             "CPU must resolve the closer blue panel in front"
         );
-        let error = match renderer.upload(&scene, &options) {
-            Ok(_) => return Err("collapsed placements must request CPU fallback".into()),
-            Err(error) => error,
+        let Err(error) = renderer.upload(&scene, &options) else {
+            return Err("collapsed placements must request CPU fallback".into());
         };
         eprintln!("near-coplanar GPU admission rejected: {error}");
         assert!(error.to_string().contains("same GPU projection"));
