@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "archive_size_bytes": 1250270,
+  "archive_sha256": "f96a3b496b82452349d1a53ade8372296f8bcc31015fa904f8800ab5ba9f97d2",
+  "entries": 163,
+  "size_limit_exclusive_bytes": 10000000,
+  "unexpected_paths": [],
+  "forbidden_paths": [],
+  "gpu_research_paths": [],
+  "source_files_identical_to_worktree": 122,
+  "research_policy": "GPU research evidence stays tracked in Git and is excluded from the published crate; no source or dependency change."
+}

@@ -1,0 +1,37 @@
+{
+  "executable_unc": "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-native-windows-20261018-aaef25f7c6\\bin\\profile_gpu.exe",
+  "arguments": [
+    "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-native-windows-20261018-aaef25f7c6\\inputs\\synthetic-repeated.step",
+    "--mode",
+    "cpu",
+    "--iterations",
+    "3",
+    "--size",
+    "512",
+    "--samples",
+    "1",
+    "--backend",
+    "dx12",
+    "--adapter",
+    "Radeon(TM) 780M",
+    "--gpu-memory-mib",
+    "256",
+    "--report",
+    "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-native-windows-20261018-aaef25f7c6\\results\\dx12\\profile\\synthetic-repeated\\cpu\\reload.json",
+    "--reload-scene"
+  ],
+  "native_commandline": "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-native-windows-20261018-aaef25f7c6\\inputs\\synthetic-repeated.step --mode cpu --iterations 3 --size 512 --samples 1 --backend dx12 --adapter \"Radeon(TM) 780M\" --gpu-memory-mib 256 --report \\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-native-windows-20261018-aaef25f7c6\\results\\dx12\\profile\\synthetic-repeated\\cpu\\reload.json --reload-scene",
+  "outer_interop_wall_ms": 2433.1421889946796,
+  "launcher": {
+    "returncode": 0,
+    "stdout": "{\"native_pid\":37044,\"returncode\":0,\"timed_out\":false,\"native_wall_ms\":2018.8041}\n",
+    "stderr": "#< CLIXML\n<Objs Version=\"1.1.0.1\" xmlns=\"http://schemas.microsoft.com/powershell/2004/04\"><Obj S=\"progress\" RefId=\"0\"><TN RefId=\"0\"><T>System.Management.Automation.PSCustomObject</T><T>System.Object</T></TN><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj><Obj S=\"progress\" RefId=\"1\"><TNRef RefId=\"0\" /><MS><I64 N=\"SourceId\">1</I64><PR N=\"Record\"><AV>Preparing modules for first use.</AV><AI>0</AI><Nil /><PI>-1</PI><PC>-1</PC><T>Completed</T><SR>-1</SR><SD> </SD></PR></MS></Obj></Objs>"
+  },
+  "native": {
+    "native_pid": 37044,
+    "returncode": 0,
+    "timed_out": false,
+    "native_wall_ms": 2018.8041
+  },
+  "process_ram_cpu": "not measured; profiler procfs fields are null on Windows"
+}

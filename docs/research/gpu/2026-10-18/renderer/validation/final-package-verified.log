@@ -1,0 +1,56 @@
+   Packaging catwalk3d v0.1.0 (/tmp/catwalk-wgpu-worktree)
+warning: ignoring example `gallery` as `examples/gallery.rs` is not included in the published package
+warning: ignoring example `generate_fixtures` as `examples/generate_fixtures.rs` is not included in the published package
+warning: ignoring example `generate_inventor_fixtures` as `examples/generate_inventor_fixtures.rs` is not included in the published package
+warning: ignoring test `amf` as `tests/amf.rs` is not included in the published package
+warning: ignoring test `binary_brep` as `tests/binary_brep.rs` is not included in the published package
+warning: ignoring test `blend_geometry` as `tests/blend_geometry.rs` is not included in the published package
+warning: ignoring test `cad` as `tests/cad.rs` is not included in the published package
+warning: ignoring test `cli` as `tests/cli.rs` is not included in the published package
+warning: ignoring test `collada_primitives` as `tests/collada_primitives.rs` is not included in the published package
+warning: ignoring test `containers` as `tests/containers.rs` is not included in the published package
+warning: ignoring test `draco_normals` as `tests/draco_normals.rs` is not included in the published package
+warning: ignoring test `dwg_geometry` as `tests/dwg_geometry.rs` is not included in the published package
+warning: ignoring test `format_catalog` as `tests/format_catalog.rs` is not included in the published package
+warning: ignoring test `format_snapshots` as `tests/format_snapshots.rs` is not included in the published package
+warning: ignoring test `freecad` as `tests/freecad.rs` is not included in the published package
+warning: ignoring test `fusion_geometry` as `tests/fusion_geometry.rs` is not included in the published package
+warning: ignoring test `gltf_appearance_qualification` as `tests/gltf_appearance_qualification.rs` is not included in the published package
+warning: ignoring test `gltf_material_validation` as `tests/gltf_material_validation.rs` is not included in the published package
+warning: ignoring test `gpu_dispatch` as `tests/gpu_dispatch.rs` is not included in the published package
+warning: ignoring test `imported_codec_fixtures` as `tests/imported_codec_fixtures.rs` is not included in the published package
+warning: ignoring test `instanced` as `tests/instanced.rs` is not included in the published package
+warning: ignoring test `inventor_geometry` as `tests/inventor_geometry.rs` is not included in the published package
+warning: ignoring test `lightburn_geometry` as `tests/lightburn_geometry.rs` is not included in the published package
+warning: ignoring test `lychee_geometry` as `tests/lychee_geometry.rs` is not included in the published package
+warning: ignoring test `lychee_saved_previews` as `tests/lychee_saved_previews.rs` is not included in the published package
+warning: ignoring test `max_geometry` as `tests/max_geometry.rs` is not included in the published package
+warning: ignoring test `max_saved_previews` as `tests/max_saved_previews.rs` is not included in the published package
+warning: ignoring test `native_cad_producer_geometry` as `tests/native_cad_producer_geometry.rs` is not included in the published package
+warning: ignoring test `obj_appearance` as `tests/obj_appearance.rs` is not included in the published package
+warning: ignoring test `rhino_geometry` as `tests/rhino_geometry.rs` is not included in the published package
+warning: ignoring test `rhino_saved_previews` as `tests/rhino_saved_previews.rs` is not included in the published package
+warning: ignoring test `saved_preview_sources` as `tests/saved_preview_sources.rs` is not included in the published package
+warning: ignoring test `sketchup_geometry` as `tests/sketchup_geometry.rs` is not included in the published package
+warning: ignoring test `sketchup_legacy_geometry` as `tests/sketchup_legacy_geometry.rs` is not included in the published package
+warning: ignoring test `sketchup_saved_previews` as `tests/sketchup_saved_previews.rs` is not included in the published package
+warning: ignoring test `sketchup_visibility` as `tests/sketchup_visibility.rs` is not included in the published package
+warning: ignoring test `solidworks_geometry` as `tests/solidworks_geometry.rs` is not included in the published package
+warning: ignoring test `solidworks_saved_previews` as `tests/solidworks_saved_previews.rs` is not included in the published package
+warning: ignoring test `step` as `tests/step.rs` is not included in the published package
+warning: ignoring test `step_faceted` as `tests/step_faceted.rs` is not included in the published package
+warning: ignoring test `step_instanced` as `tests/step_instanced.rs` is not included in the published package
+warning: ignoring test `step_tessellated` as `tests/step_tessellated.rs` is not included in the published package
+warning: ignoring test `threemf_qualification` as `tests/threemf_qualification.rs` is not included in the published package
+warning: ignoring test `threemf_textures` as `tests/threemf_textures.rs` is not included in the published package
+warning: ignoring test `tiff_volumes` as `tests/tiff_volumes.rs` is not included in the published package
+warning: ignoring test `usd_binary_encoding` as `tests/usd_binary_encoding.rs` is not included in the published package
+warning: ignoring test `usd_nurbs_curves` as `tests/usd_nurbs_curves.rs` is not included in the published package
+warning: ignoring test `volume` as `tests/volume.rs` is not included in the published package
+warning: ignoring test `vrml_prototypes` as `tests/vrml_prototypes.rs` is not included in the published package
+warning: ignoring test `vtk_lines` as `tests/vtk_lines.rs` is not included in the published package
+warning: ignoring test `vtk_quadratic_cells` as `tests/vtk_quadratic_cells.rs` is not included in the published package
+    Packaged 163 files, 4.0MiB (1.2MiB compressed)
+   Verifying catwalk3d v0.1.0 (/tmp/catwalk-wgpu-worktree)
+   Compiling catwalk3d v0.1.0 (/home/max/code/github/catwalk/target/package/catwalk3d-0.1.0)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 21.11s

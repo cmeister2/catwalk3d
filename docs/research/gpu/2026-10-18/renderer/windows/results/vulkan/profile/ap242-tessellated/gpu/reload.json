@@ -1,0 +1,698 @@
+{
+  "adapter": {
+    "all_adapter_info_debug": "AdapterInfo {\n    name: \"AMD Radeon(TM) 780M\",\n    vendor: 4098,\n    device: 5567,\n    device_type: IntegratedGpu,\n    device_pci_bus_id: \"\",\n    driver: \"AMD proprietary driver\",\n    driver_info: \"26.8.1 (LLPC)\",\n    backend: Vulkan,\n    subgroup_min_size: 32,\n    subgroup_max_size: 64,\n    transient_saves_memory: false,\n}",
+    "backend": "Vulkan",
+    "capabilities": {
+      "adapter_features_debug": "Features {\n    features_wgpu: FeaturesWGPU(\n        SHADER_FLOAT32_ATOMIC | TEXTURE_FORMAT_16BIT_NORM | TEXTURE_ADAPTER_SPECIFIC_FORMAT_FEATURES | PIPELINE_STATISTICS_QUERY | TIMESTAMP_QUERY_INSIDE_ENCODERS | TIMESTAMP_QUERY_INSIDE_PASSES | MAPPABLE_PRIMARY_BUFFERS | TEXTURE_BINDING_ARRAY | BUFFER_BINDING_ARRAY | STORAGE_RESOURCE_BINDING_ARRAY | SAMPLED_TEXTURE_AND_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING | STORAGE_TEXTURE_ARRAY_NON_UNIFORM_INDEXING | PARTIALLY_BOUND_BINDING_ARRAY | MULTI_DRAW_INDIRECT_COUNT | ADDRESS_MODE_CLAMP_TO_ZERO | ADDRESS_MODE_CLAMP_TO_BORDER | POLYGON_MODE_LINE | POLYGON_MODE_POINT | CONSERVATIVE_RASTERIZATION | VERTEX_WRITABLE_STORAGE | CLEAR_TEXTURE | MULTIVIEW | TEXTURE_ATOMIC | TEXTURE_FORMAT_NV12 | TEXTURE_FORMAT_P010 | EXPERIMENTAL_RAY_QUERY | SHADER_F64 | SHADER_I16 | SHADER_EARLY_DEPTH_TEST | SHADER_INT64 | SUBGROUP | SUBGROUP_VERTEX | SUBGROUP_BARRIER | PIPELINE_CACHE | SHADER_INT64_ATOMIC_MIN_MAX | SHADER_INT64_ATOMIC_ALL_OPS | VULKAN_EXTERNAL_MEMORY_WIN32 | TEXTURE_INT64_ATOMIC | EXPERIMENTAL_MESH_SHADER | EXPERIMENTAL_RAY_HIT_VERTEX_RETURN | EXPERIMENTAL_MESH_SHADER_MULTIVIEW | EXTENDED_ACCELERATION_STRUCTURE_VERTEX_FORMATS | PASSTHROUGH_SHADERS | SHADER_BARYCENTRICS | SELECTIVE_MULTIVIEW | EXPERIMENTAL_MESH_SHADER_POINTS | MULTISAMPLE_ARRAY | EXPERIMENTAL_COOPERATIVE_MATRIX | SHADER_PER_VERTEX | SHADER_DRAW_INDEX | ACCELERATION_STRUCTURE_BINDING_ARRAY | MEMORY_DECORATION_COHERENT | MEMORY_DECORATION_VOLATILE,\n    ),\n    features_webgpu: FeaturesWebGPU(\n        DEPTH_CLIP_CONTROL | DEPTH32FLOAT_STENCIL8 | TEXTURE_COMPRESSION_BC | TEXTURE_COMPRESSION_BC_SLICED_3D | TIMESTAMP_QUERY | INDIRECT_FIRST_INSTANCE | SHADER_F16 | RG11B10UFLOAT_RENDERABLE | BGRA8UNORM_STORAGE | FLOAT32_FILTERABLE | FLOAT32_BLENDABLE | DUAL_SOURCE_BLENDING | CLIP_DISTANCES | IMMEDIATES | PRIMITIVE_INDEX,\n    ),\n}",
+      "adapter_limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 8192,\n    max_texture_array_layers: 8192,\n    max_bind_groups: 8,\n    max_bindings_per_bind_group: 4294967295,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 8,\n    max_sampled_textures_per_shader_stage: 429391871,\n    max_samplers_per_shader_stage: 429391872,\n    max_storage_buffers_per_shader_stage: 429391872,\n    max_storage_textures_per_shader_stage: 429391872,\n    max_uniform_buffers_per_shader_stage: 429391872,\n    max_binding_array_elements_per_shader_stage: 4294967295,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 524288,\n    max_binding_array_sampler_elements_per_shader_stage: 4294967295,\n    max_uniform_buffer_binding_size: 2147483647,\n    max_storage_buffer_binding_size: 2147483644,\n    max_vertex_buffers: 16,\n    max_buffer_size: 2147483648,\n    max_vertex_attributes: 64,\n    max_vertex_buffer_array_stride: 16380,\n    max_inter_stage_shader_variables: 31,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 8,\n    max_color_attachment_bytes_per_sample: 128,\n    max_compute_workgroup_storage_size: 32768,\n    max_compute_invocations_per_workgroup: 1024,\n    max_compute_workgroup_size_x: 1024,\n    max_compute_workgroup_size_y: 1024,\n    max_compute_workgroup_size_z: 1024,\n    max_compute_workgroups_per_dimension: 65535,\n    max_immediate_size: 256,\n    max_non_sampler_bindings: 4294967295,\n    max_task_mesh_workgroup_total_count: 67107840,\n    max_task_mesh_workgroups_per_dimension: 65535,\n    max_task_invocations_per_workgroup: 1024,\n    max_task_invocations_per_dimension: 1024,\n    max_mesh_invocations_per_workgroup: 256,\n    max_mesh_invocations_per_dimension: 256,\n    max_task_payload_size: 16384,\n    max_mesh_output_vertices: 256,\n    max_mesh_output_primitives: 256,\n    max_mesh_output_layers: 8192,\n    max_mesh_multiview_view_count: 6,\n    max_blas_primitive_count: 536870912,\n    max_blas_geometry_count: 16777216,\n    max_tlas_instance_count: 16777216,\n    max_acceleration_structures_per_shader_stage: 524288,\n    max_multiview_view_count: 6,\n}",
+        "max_bind_groups": 8,
+        "max_bindings_per_bind_group": 4294967295,
+        "max_buffer_size": 2147483648,
+        "max_color_attachment_bytes_per_sample": 128,
+        "max_color_attachments": 8,
+        "max_compute_invocations_per_workgroup": 1024,
+        "max_compute_workgroup_size_x": 1024,
+        "max_compute_workgroup_size_y": 1024,
+        "max_compute_workgroup_size_z": 1024,
+        "max_compute_workgroup_storage_size": 32768,
+        "max_compute_workgroups_per_dimension": 65535,
+        "max_dynamic_storage_buffers_per_pipeline_layout": 8,
+        "max_dynamic_uniform_buffers_per_pipeline_layout": 8,
+        "max_inter_stage_shader_variables": 31,
+        "max_sampled_textures_per_shader_stage": 429391871,
+        "max_samplers_per_shader_stage": 429391872,
+        "max_storage_buffer_binding_size": 2147483644,
+        "max_storage_buffers_per_shader_stage": 429391872,
+        "max_storage_textures_per_shader_stage": 429391872,
+        "max_texture_array_layers": 8192,
+        "max_texture_dimension_1d": 16384,
+        "max_texture_dimension_2d": 16384,
+        "max_texture_dimension_3d": 8192,
+        "max_uniform_buffer_binding_size": 2147483647,
+        "max_uniform_buffers_per_shader_stage": 429391872,
+        "max_vertex_attributes": 64,
+        "max_vertex_buffer_array_stride": 16380,
+        "max_vertex_buffers": 16,
+        "min_storage_buffer_offset_alignment": 32,
+        "min_uniform_buffer_offset_alignment": 32
+      },
+      "device_features_debug": "Features {\n    features_wgpu: FeaturesWGPU(\n        0x0,\n    ),\n    features_webgpu: FeaturesWebGPU(\n        0x0,\n    ),\n}",
+      "device_limits": {
+        "all_limits_debug": "Limits {\n    max_texture_dimension_1d: 16384,\n    max_texture_dimension_2d: 16384,\n    max_texture_dimension_3d: 8192,\n    max_texture_array_layers: 256,\n    max_bind_groups: 4,\n    max_bindings_per_bind_group: 1000,\n    max_dynamic_uniform_buffers_per_pipeline_layout: 8,\n    max_dynamic_storage_buffers_per_pipeline_layout: 0,\n    max_sampled_textures_per_shader_stage: 16,\n    max_samplers_per_shader_stage: 16,\n    max_storage_buffers_per_shader_stage: 0,\n    max_storage_textures_per_shader_stage: 0,\n    max_uniform_buffers_per_shader_stage: 11,\n    max_binding_array_elements_per_shader_stage: 0,\n    max_binding_array_acceleration_structure_elements_per_shader_stage: 0,\n    max_binding_array_sampler_elements_per_shader_stage: 0,\n    max_uniform_buffer_binding_size: 16384,\n    max_storage_buffer_binding_size: 0,\n    max_vertex_buffers: 2,\n    max_buffer_size: 268435456,\n    max_vertex_attributes: 12,\n    max_vertex_buffer_array_stride: 255,\n    max_inter_stage_shader_variables: 4,\n    min_uniform_buffer_offset_alignment: 32,\n    min_storage_buffer_offset_alignment: 32,\n    max_color_attachments: 4,\n    max_color_attachment_bytes_per_sample: 32,\n    max_compute_workgroup_storage_size: 0,\n    max_compute_invocations_per_workgroup: 0,\n    max_compute_workgroup_size_x: 0,\n    max_compute_workgroup_size_y: 0,\n    max_compute_workgroup_size_z: 0,\n    max_compute_workgroups_per_dimension: 0,\n    max_immediate_size: 0,\n    max_non_sampler_bindings: 1000000,\n    max_task_mesh_workgroup_total_count: 0,\n    max_task_mesh_workgroups_per_dimension: 0,\n    max_task_invocations_per_workgroup: 0,\n    max_task_invocations_per_dimension: 0,\n    max_mesh_invocations_per_workgroup: 0,\n    max_mesh_invocations_per_dimension: 0,\n    max_task_payload_size: 0,\n    max_mesh_output_vertices: 0,\n    max_mesh_output_primitives: 0,\n    max_mesh_output_layers: 0,\n    max_mesh_multiview_view_count: 0,\n    max_blas_primitive_count: 0,\n    max_blas_geometry_count: 0,\n    max_tlas_instance_count: 0,\n    max_acceleration_structures_per_shader_stage: 0,\n    max_multiview_view_count: 0,\n}",
+        "max_bind_groups": 4,
+        "max_bindings_per_bind_group": 1000,
+        "max_buffer_size": 268435456,
+        "max_color_attachment_bytes_per_sample": 32,
+        "max_color_attachments": 4,
+        "max_compute_invocations_per_workgroup": 0,
+        "max_compute_workgroup_size_x": 0,
+        "max_compute_workgroup_size_y": 0,
+        "max_compute_workgroup_size_z": 0,
+        "max_compute_workgroup_storage_size": 0,
+        "max_compute_workgroups_per_dimension": 0,
+        "max_dynamic_storage_buffers_per_pipeline_layout": 0,
+        "max_dynamic_uniform_buffers_per_pipeline_layout": 8,
+        "max_inter_stage_shader_variables": 4,
+        "max_sampled_textures_per_shader_stage": 16,
+        "max_samplers_per_shader_stage": 16,
+        "max_storage_buffer_binding_size": 0,
+        "max_storage_buffers_per_shader_stage": 0,
+        "max_storage_textures_per_shader_stage": 0,
+        "max_texture_array_layers": 256,
+        "max_texture_dimension_1d": 16384,
+        "max_texture_dimension_2d": 16384,
+        "max_texture_dimension_3d": 8192,
+        "max_uniform_buffer_binding_size": 16384,
+        "max_uniform_buffers_per_shader_stage": 11,
+        "max_vertex_attributes": 12,
+        "max_vertex_buffer_array_stride": 255,
+        "max_vertex_buffers": 2,
+        "min_storage_buffer_offset_alignment": 32,
+        "min_uniform_buffer_offset_alignment": 32
+      },
+      "downlevel": {
+        "all_debug": "DownlevelCapabilities {\n    flags: DownlevelFlags(\n        COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | READ_ONLY_DEPTH_STENCIL | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | DEPTH_TEXTURE_AND_BUFFER_COPIES | WEBGPU_TEXTURE_FORMAT_SUPPORT | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | DEPTH_BIAS_CLAMP | VIEW_FORMATS | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | SURFACE_VIEW_FORMATS | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32,\n    ),\n    limits: DownlevelLimits,\n    shader_model: Sm5,\n}",
+        "compute_shaders_supported": true,
+        "flags_bits": 16777215,
+        "flags_debug": "DownlevelFlags(COMPUTE_SHADERS | FRAGMENT_WRITABLE_STORAGE | INDIRECT_EXECUTION | BASE_VERTEX | READ_ONLY_DEPTH_STENCIL | NON_POWER_OF_TWO_MIPMAPPED_TEXTURES | CUBE_ARRAY_TEXTURES | COMPARISON_SAMPLERS | INDEPENDENT_BLEND | VERTEX_STORAGE | ANISOTROPIC_FILTERING | FRAGMENT_STORAGE | MULTISAMPLED_SHADING | DEPTH_TEXTURE_AND_BUFFER_COPIES | WEBGPU_TEXTURE_FORMAT_SUPPORT | BUFFER_BINDINGS_NOT_16_BYTE_ALIGNED | UNRESTRICTED_INDEX_BUFFER | FULL_DRAW_INDEX_UINT32 | DEPTH_BIAS_CLAMP | VIEW_FORMATS | UNRESTRICTED_EXTERNAL_TEXTURE_COPIES | SURFACE_VIEW_FORMATS | NONBLOCKING_QUERY_RESOLVE | SHADER_F16_IN_F32)",
+        "shader_model": "Sm5"
+      },
+      "source": "actual renderer adapter and successful device request; not the separate availability probe",
+      "wgpu_version": "29.0.3"
+    },
+    "device": 5567,
+    "device_type": "IntegratedGpu",
+    "driver": "AMD proprietary driver",
+    "driver_info": "26.8.1 (LLPC)",
+    "name": "AMD Radeon(TM) 780M",
+    "vendor": 4098
+  },
+  "after_jobs_before_retained_cleanup": {
+    "process_lifetime_hwm_kib": null,
+    "rss_kib": null,
+    "system_cpu_ticks_total": null,
+    "user_cpu_ticks_total": null
+  },
+  "background_srgb": [
+    245,
+    247,
+    250
+  ],
+  "cpu_clock_ticks_per_second": null,
+  "device_cleanup": {
+    "after": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "before": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "system_cpu_ms": null,
+    "user_cpu_ms": null,
+    "wall_ms": 25.5028
+  },
+  "fallback_color_srgb": [
+    100,
+    160,
+    220
+  ],
+  "height": 512,
+  "input": "\\\\wsl.localhost\\Ubuntu-24.04\\tmp\\catwalk-native-windows-20261018-aaef25f7c6\\inputs\\ap242-tessellated.stp",
+  "jobs": [
+    {
+      "first_render": true,
+      "first_render_of_scene": true,
+      "iteration": 0,
+      "job_with_cleanup_and_accounting": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 152.7944
+      },
+      "png_bytes": 18552,
+      "png_encode_to_memory": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 5.4581
+      },
+      "png_write": null,
+      "render": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "cpu_geometry_preparation_wall_ms": null,
+        "cpu_rasterization_and_resolve_wall_ms": null,
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 7.4585
+      },
+      "scene_cleanup": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 0.48950000000000005
+      },
+      "scene_setup": {
+        "compact_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "instances": 1,
+          "lines": 0,
+          "logical_triangles": 3388,
+          "meshes": 1,
+          "points": 0,
+          "source_appearances": 3388,
+          "source_positions": 1636,
+          "source_triangles": 3388,
+          "structural_payload_estimate_bytes": 1177848
+        },
+        "cpu_geometry_preparation_wall_ms": 9.7182,
+        "drop_compact_source": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 0.3181
+        },
+        "expand_for_cpu": null,
+        "expanded_scene": null,
+        "explicit_gpu_allocation_bytes": 4767508,
+        "gpu_prepare_and_upload": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 12.1061
+        },
+        "gpu_resource_creation_wall_ms": 1.7789,
+        "load_and_geometry": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 125.81960000000001
+        },
+        "total_with_accounting": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 138.723
+        }
+      }
+    },
+    {
+      "first_render": false,
+      "first_render_of_scene": true,
+      "iteration": 1,
+      "job_with_cleanup_and_accounting": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 97.998
+      },
+      "png_bytes": 18552,
+      "png_encode_to_memory": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 2.6335
+      },
+      "png_write": null,
+      "render": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "cpu_geometry_preparation_wall_ms": null,
+        "cpu_rasterization_and_resolve_wall_ms": null,
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 0.9470000000000001
+      },
+      "scene_cleanup": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 0.0472
+      },
+      "scene_setup": {
+        "compact_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "instances": 1,
+          "lines": 0,
+          "logical_triangles": 3388,
+          "meshes": 1,
+          "points": 0,
+          "source_appearances": 3388,
+          "source_positions": 1636,
+          "source_triangles": 3388,
+          "structural_payload_estimate_bytes": 1177848
+        },
+        "cpu_geometry_preparation_wall_ms": 5.1128,
+        "drop_compact_source": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 0.3338
+        },
+        "expand_for_cpu": null,
+        "expanded_scene": null,
+        "explicit_gpu_allocation_bytes": 4767508,
+        "gpu_prepare_and_upload": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 5.9387
+        },
+        "gpu_resource_creation_wall_ms": 0.7477999999999999,
+        "load_and_geometry": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 87.24510000000001
+        },
+        "total_with_accounting": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 93.9421
+        }
+      }
+    },
+    {
+      "first_render": false,
+      "first_render_of_scene": true,
+      "iteration": 2,
+      "job_with_cleanup_and_accounting": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 100.208
+      },
+      "png_bytes": 18552,
+      "png_encode_to_memory": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 1.8614
+      },
+      "png_write": null,
+      "render": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "cpu_geometry_preparation_wall_ms": null,
+        "cpu_rasterization_and_resolve_wall_ms": null,
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 1.2009
+      },
+      "scene_cleanup": {
+        "after": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "before": {
+          "process_lifetime_hwm_kib": null,
+          "rss_kib": null,
+          "system_cpu_ticks_total": null,
+          "user_cpu_ticks_total": null
+        },
+        "system_cpu_ms": null,
+        "user_cpu_ms": null,
+        "wall_ms": 0.07959999999999999
+      },
+      "scene_setup": {
+        "compact_scene": {
+          "distinct_texture_texel_bytes": 0,
+          "instances": 1,
+          "lines": 0,
+          "logical_triangles": 3388,
+          "meshes": 1,
+          "points": 0,
+          "source_appearances": 3388,
+          "source_positions": 1636,
+          "source_triangles": 3388,
+          "structural_payload_estimate_bytes": 1177848
+        },
+        "cpu_geometry_preparation_wall_ms": 4.9841,
+        "drop_compact_source": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 0.23800000000000002
+        },
+        "expand_for_cpu": null,
+        "expanded_scene": null,
+        "explicit_gpu_allocation_bytes": 4767508,
+        "gpu_prepare_and_upload": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 5.5598
+        },
+        "gpu_resource_creation_wall_ms": 0.49589999999999995,
+        "load_and_geometry": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 90.36619999999999
+        },
+        "total_with_accounting": {
+          "after": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "before": {
+            "process_lifetime_hwm_kib": null,
+            "rss_kib": null,
+            "system_cpu_ticks_total": null,
+            "user_cpu_ticks_total": null
+          },
+          "system_cpu_ms": null,
+          "user_cpu_ms": null,
+          "wall_ms": 96.6824
+        }
+      }
+    }
+  ],
+  "mode": "gpu",
+  "notes": [
+    "Device initialization is paid once in setup_device; the hardware adapter and actual renderer adapter/device capabilities are recorded separately. Adapter support can exceed enabled device limits/features.",
+    "Default mode imports/prepares once in setup and all jobs reuse geometry. Warm rendering alone is not complete thumbnail throughput.",
+    "Reload mode imports/prepares each job in scene_setup, drops that CPU/GPU scene before the next job, and reuses only the device/pipelines. Its job total includes import/upload/render/encoding/scene teardown; one-time device initialization is additional.",
+    "Load includes reads, decoding, tessellation, geometry processing and validation; those importer internals are not separately instrumented.",
+    "GPU upload includes CPU packing, fitting and resource creation; deferred upload/driver/shader work can appear in the first render.",
+    "Upload substage walls separate CPU validation/fitting/packing from resource creation and scoped driver checks; resource creation does not guarantee DMA completion.",
+    "CPU render includes validation/fitting/rasterization/resolve; GPU render includes submission/wait/resolve and final thumbnail readback only.",
+    "CPU render substage walls separate global validation/normalization/camera fitting from canvas allocation, per-triangle projection/shading, rasterization and resolve. They do not split CPU-time tick deltas or measure GPU execution time.",
+    "The shared CPU path drops the compact scene after expansion. The GPU path drops its CPU source scene before every measured render.",
+    "PNG encoding targets memory. Optional final-file writing is separate and does not fsync.",
+    "RSS values are endpoint samples, not phase peaks. VmHWM is cumulative per process and includes setup and previous iterations.",
+    "CPU values use calibrated procfs tick deltas and exclude GPU execution; short intervals can round to zero. Non-Linux fields are null.",
+    "Scene structural payload estimates exclude spare capacities, BTree nodes, allocator overhead and driver objects. Texture texels are counted once per distinct image.",
+    "Explicit GPU bytes exclude driver allocations, transient copies, other GPU users and kernel/page-cache memory. Integrated GPU memory can overlap system RAM; do not add these estimates to RSS as total memory.",
+    "Timers exclude boundary resource reads except enclosing job/setup/entry timers. Entry-to-report excludes executable startup and JSON serialization/writing, and includes retained-scene and device teardown.",
+    "No filesystem/driver caches are cleared. This geometry-only harness bypasses saved previews and GPU mode never falls back to software."
+  ],
+  "operation": "same_process_reuse_device_reload_scene",
+  "process_entry_to_report_ms": 687.8366,
+  "reload_scene": true,
+  "retained_cleanup": {
+    "after": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "before": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "system_cpu_ms": null,
+    "user_cpu_ms": null,
+    "wall_ms": 0.0
+  },
+  "schema_version": 1,
+  "setup": null,
+  "setup_device": {
+    "after": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "before": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "system_cpu_ms": null,
+    "user_cpu_ms": null,
+    "wall_ms": 296.81239999999997
+  },
+  "setup_jobs_and_cleanup": {
+    "after": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "before": {
+      "process_lifetime_hwm_kib": null,
+      "rss_kib": null,
+      "system_cpu_ticks_total": null,
+      "user_cpu_ticks_total": null
+    },
+    "system_cpu_ms": null,
+    "user_cpu_ms": null,
+    "wall_ms": 679.4261
+  },
+  "supersampling": 1,
+  "width": 512
+}

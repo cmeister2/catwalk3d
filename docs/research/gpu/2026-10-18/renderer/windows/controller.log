@@ -1,0 +1,66 @@
+profile dx12 gear cpu fresh: exit 0
+profile dx12 gear cpu retained: exit 0
+profile dx12 gear cpu reload: exit 0
+profile dx12 gear shared-cpu fresh: exit 0
+profile dx12 gear shared-cpu retained: exit 0
+profile dx12 gear shared-cpu reload: exit 0
+profile dx12 gear gpu fresh: exit 0
+profile dx12 gear gpu retained: exit 0
+profile dx12 gear gpu reload: exit 0
+profile dx12 ap242-tessellated cpu fresh: exit 0
+profile dx12 ap242-tessellated cpu retained: exit 0
+profile dx12 ap242-tessellated cpu reload: exit 0
+profile dx12 ap242-tessellated shared-cpu fresh: exit 0
+profile dx12 ap242-tessellated shared-cpu retained: exit 0
+profile dx12 ap242-tessellated shared-cpu reload: exit 0
+profile dx12 ap242-tessellated gpu fresh: exit 0
+profile dx12 ap242-tessellated gpu retained: exit 0
+profile dx12 ap242-tessellated gpu reload: exit 0
+profile dx12 synthetic-repeated cpu fresh: exit 0
+profile dx12 synthetic-repeated cpu retained: exit 0
+profile dx12 synthetic-repeated cpu reload: exit 0
+profile dx12 synthetic-repeated shared-cpu fresh: exit 0
+profile dx12 synthetic-repeated shared-cpu retained: exit 0
+profile dx12 synthetic-repeated shared-cpu reload: exit 0
+profile dx12 synthetic-repeated gpu fresh: exit 0
+profile dx12 synthetic-repeated gpu retained: exit 0
+profile dx12 synthetic-repeated gpu reload: exit 0
+cli dx12 gear: command matrix complete
+cli dx12 ap242-tessellated: command matrix complete
+cli dx12 synthetic-repeated: command matrix complete
+cli dx12 jpeg-textured: command matrix complete
+cli dx12 alpha-modes: command matrix complete
+profile vulkan gear cpu fresh: exit 0
+profile vulkan gear cpu retained: exit 0
+profile vulkan gear cpu reload: exit 0
+profile vulkan gear shared-cpu fresh: exit 0
+profile vulkan gear shared-cpu retained: exit 0
+profile vulkan gear shared-cpu reload: exit 0
+profile vulkan gear gpu fresh: exit 0
+profile vulkan gear gpu retained: exit 0
+profile vulkan gear gpu reload: exit 0
+profile vulkan ap242-tessellated cpu fresh: exit 0
+profile vulkan ap242-tessellated cpu retained: exit 0
+profile vulkan ap242-tessellated cpu reload: exit 0
+profile vulkan ap242-tessellated shared-cpu fresh: exit 0
+profile vulkan ap242-tessellated shared-cpu retained: exit 0
+profile vulkan ap242-tessellated shared-cpu reload: exit 0
+profile vulkan ap242-tessellated gpu fresh: exit 0
+profile vulkan ap242-tessellated gpu retained: exit 0
+profile vulkan ap242-tessellated gpu reload: exit 0
+profile vulkan synthetic-repeated cpu fresh: exit 0
+profile vulkan synthetic-repeated cpu retained: exit 0
+profile vulkan synthetic-repeated cpu reload: exit 0
+profile vulkan synthetic-repeated shared-cpu fresh: exit 0
+profile vulkan synthetic-repeated shared-cpu retained: exit 0
+profile vulkan synthetic-repeated shared-cpu reload: exit 0
+profile vulkan synthetic-repeated gpu fresh: exit 0
+profile vulkan synthetic-repeated gpu retained: exit 0
+profile vulkan synthetic-repeated gpu reload: exit 0
+cli vulkan gear: command matrix complete
+cli vulkan ap242-tessellated: command matrix complete
+cli vulkan synthetic-repeated: command matrix complete
+cli vulkan jpeg-textured: command matrix complete
+cli vulkan alpha-modes: command matrix complete
+/tmp/catwalk-native-windows-20261018-aaef25f7c6
+54/54 native experiment reports passed; /tmp/catwalk-native-windows-20261018-aaef25f7c6/results/windows-summary.json

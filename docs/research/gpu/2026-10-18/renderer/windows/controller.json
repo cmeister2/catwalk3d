@@ -1,0 +1,36 @@
+{
+  "output": "/tmp/catwalk-native-windows-20261018-aaef25f7c6",
+  "log": "/tmp/catwalk-native-windows-20261018-aaef25f7c6.controller.log",
+  "started_unix": 1792357687.092188,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/catwalk-wgpu-worktree/docs/research/gpu/2026-10-18/renderer/windows/run_windows.py",
+        "--catwalk-binary",
+        "/mnt/c/Users/jungl/AppData/Local/Temp/catwalk-cargo-gpu-20261018-584ck51i/release/catwalk.exe",
+        "--profile-binary",
+        "/mnt/c/Users/jungl/AppData/Local/Temp/catwalk-cargo-gpu-20261018-584ck51i/release/examples/profile_gpu.exe",
+        "--build-metadata",
+        "/tmp/catwalk-final-build-windows.json",
+        "--output",
+        "/tmp/catwalk-native-windows-20261018-aaef25f7c6"
+      ],
+      "started_unix": 1792357687.0923817,
+      "returncode": 0,
+      "finished_unix": 1792357907.0160358
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/tmp/catwalk-wgpu-worktree/docs/research/gpu/2026-10-18/renderer/windows/analyze.py",
+        "/tmp/catwalk-native-windows-20261018-aaef25f7c6"
+      ],
+      "started_unix": 1792357907.016559,
+      "returncode": 1,
+      "finished_unix": 1792357912.8519258
+    }
+  ],
+  "finished_unix": 1792357912.8523502,
+  "log_sha256": "25f7778162302a4394e5276b76c3659b65d0794b82a24955a571e1ae075f7552"
+}

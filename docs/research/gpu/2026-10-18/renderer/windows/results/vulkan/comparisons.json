@@ -1,0 +1,2347 @@
+{
+  "schema_version": 1,
+  "passed": false,
+  "comparisons_expected": 20,
+  "comparisons": [
+    {
+      "input": "gear",
+      "samples": 1,
+      "background": "opaque",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/cpu-s1-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/gpu-s1-opaque.png",
+        "reference_sha256": "3fb279606854be4620545b495cc112a88e1a464d8045026af22c386d956f0e1e",
+        "candidate_sha256": "745f20470c0d5a33f767b1aed25bb745f664bb96dea15cc65256a8bad7a9d736",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 3,
+          "max_abs_channel_error": 198,
+          "max_abs_rgba": [
+            198,
+            172,
+            146,
+            0
+          ],
+          "mean_abs_channel_error": 0.0009613037109375,
+          "mean_abs_rgba": [
+            0.001491546630859375,
+            0.00128173828125,
+            0.001071929931640625,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.4985215262736436,
+            0.41054668916503884,
+            0.34217612887784576,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 101346,
+          "candidate_pixels": 101348,
+          "intersection_pixels": 101346,
+          "union_pixels": 101348,
+          "iou": 0.9999802660141295,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "candidate_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 1.9734375308349615e-05
+        },
+        "interior_rgba_errors": {
+          "pixels": 99404,
+          "changed_pixels": 1,
+          "max_abs_channel_error": 79,
+          "max_abs_rgba": [
+            36,
+            58,
+            79,
+            0
+          ],
+          "mean_abs_channel_error": 0.0004350931552050219,
+          "mean_abs_rgba": [
+            0.00036215846444811073,
+            0.0005834775260552895,
+            0.0007947366303166875,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.11418276892829314,
+            0.18396112771780562,
+            0.2505677429259766,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 158854,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "gear",
+      "samples": 1,
+      "background": "transparent",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/cpu-s1-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/gpu-s1-transparent.png",
+        "reference_sha256": "246ad59cf3d3ca40e7c9457bea2eefd3c63fc9c96bdcb94f7f95863c8b0e599c",
+        "candidate_sha256": "b0f68f93a7d95ed7325f241b8b7f9d28902355ec2532f3a172ebcf1952163758",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 3,
+          "max_abs_channel_error": 255,
+          "max_abs_rgba": [
+            88,
+            141,
+            194,
+            255
+          ],
+          "mean_abs_channel_error": 0.001270294189453125,
+          "mean_abs_rgba": [
+            0.000652313232421875,
+            0.00104522705078125,
+            0.001438140869140625,
+            0.00194549560546875
+          ],
+          "rmse_rgba": [
+            0.2071509824765879,
+            0.3318588706944471,
+            0.4567682536569591,
+            0.7043446453225376
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 101346,
+          "candidate_pixels": 101348,
+          "intersection_pixels": 101346,
+          "union_pixels": 101348,
+          "iou": 0.9999802660141295,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "candidate_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 1.9734375308349615e-05
+        },
+        "interior_rgba_errors": {
+          "pixels": 99404,
+          "changed_pixels": 1,
+          "max_abs_channel_error": 79,
+          "max_abs_rgba": [
+            36,
+            58,
+            79,
+            0
+          ],
+          "mean_abs_channel_error": 0.0004350931552050219,
+          "mean_abs_rgba": [
+            0.00036215846444811073,
+            0.0005834775260552895,
+            0.0007947366303166875,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.11418276892829314,
+            0.18396112771780562,
+            0.2505677429259766,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 158854,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "gear",
+      "samples": 2,
+      "background": "opaque",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/cpu-s2-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/gpu-s2-opaque.png",
+        "reference_sha256": "50eebc93aecefd9927d954c3ab6dcba95ce47af61b866860d75fccbeaced61f2",
+        "candidate_sha256": "0b140b124f08bcdf43356fd5363b6da2cc403283c30a4a40fae54381c638c27d",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 5,
+          "max_abs_channel_error": 52,
+          "max_abs_rgba": [
+            52,
+            48,
+            43,
+            0
+          ],
+          "mean_abs_channel_error": 0.0003509521484375,
+          "mean_abs_rgba": [
+            0.000461578369140625,
+            0.000469207763671875,
+            0.0004730224609375,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.13216466539622787,
+            0.12214450870120758,
+            0.12052537984798056,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 101734,
+          "candidate_pixels": 101732,
+          "intersection_pixels": 101732,
+          "union_pixels": 101734,
+          "iou": 0.999980340888985,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "candidate_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 1.9659111014999903e-05
+        },
+        "interior_rgba_errors": {
+          "pixels": 99792,
+          "changed_pixels": 3,
+          "max_abs_channel_error": 29,
+          "max_abs_rgba": [
+            13,
+            21,
+            29,
+            0
+          ],
+          "mean_abs_channel_error": 0.00036576078242744913,
+          "mean_abs_rgba": [
+            0.00030062530062530064,
+            0.0004910213243546577,
+            0.0006713965047298381,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.05955987363467578,
+            0.09658884595406705,
+            0.1329163151513519,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 158470,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "gear",
+      "samples": 2,
+      "background": "transparent",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/cpu-s2-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/gear/supported/gpu-s2-transparent.png",
+        "reference_sha256": "b4c08d0f1982af930b7bad07f061d1c0d2e9dc79803c35d7e5238c3a08937c5e",
+        "candidate_sha256": "7f4aa696bda97953a247e382c063257005fb0634daa691c2e06085eb54caf595",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 5,
+          "max_abs_channel_error": 194,
+          "max_abs_rgba": [
+            88,
+            141,
+            194,
+            64
+          ],
+          "mean_abs_channel_error": 0.0008249282836914062,
+          "mean_abs_rgba": [
+            0.000583648681640625,
+            0.00093841552734375,
+            0.00128936767578125,
+            0.00048828125
+          ],
+          "rmse_rgba": [
+            0.1885853191725747,
+            0.3022488546168331,
+            0.415827605692852,
+            0.1767766952966369
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 101734,
+          "candidate_pixels": 101732,
+          "intersection_pixels": 101732,
+          "union_pixels": 101734,
+          "iou": 0.999980340888985,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            99,
+            474,
+            413
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "candidate_centroid_xy": [
+            255.5,
+            255.5
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 1.9659111014999903e-05
+        },
+        "interior_rgba_errors": {
+          "pixels": 99792,
+          "changed_pixels": 3,
+          "max_abs_channel_error": 29,
+          "max_abs_rgba": [
+            13,
+            21,
+            29,
+            0
+          ],
+          "mean_abs_channel_error": 0.00036576078242744913,
+          "mean_abs_rgba": [
+            0.00030062530062530064,
+            0.0004910213243546577,
+            0.0006713965047298381,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.05955987363467578,
+            0.09658884595406705,
+            0.1329163151513519,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 158470,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "ap242-tessellated",
+      "samples": 1,
+      "background": "opaque",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/cpu-s1-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/gpu-s1-opaque.png",
+        "reference_sha256": "238f28798d0cb71ce324c9c6c83fdb1196207df56485b03487ef0921ee68576f",
+        "candidate_sha256": "35d7ce293167c932ac50853aabed960256f35e1b65e9385daef87001ff6932f7",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 166,
+          "max_abs_channel_error": 47,
+          "max_abs_rgba": [
+            22,
+            35,
+            47,
+            0
+          ],
+          "mean_abs_channel_error": 0.0002613067626953125,
+          "mean_abs_rgba": [
+            0.000209808349609375,
+            0.0003204345703125,
+            0.000514984130859375,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.04440944140977372,
+            0.06971315741240136,
+            0.09360747629938874,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 56948,
+          "candidate_pixels": 56948,
+          "intersection_pixels": 56948,
+          "union_pixels": 56948,
+          "iou": 1.0,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            118,
+            474,
+            394
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            118,
+            474,
+            394
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            259.7356008990658,
+            257.75479384701833
+          ],
+          "candidate_centroid_xy": [
+            259.7356008990658,
+            257.75479384701833
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 0.0
+        },
+        "interior_rgba_errors": {
+          "pixels": 54563,
+          "changed_pixels": 150,
+          "max_abs_channel_error": 47,
+          "max_abs_rgba": [
+            22,
+            35,
+            47,
+            0
+          ],
+          "mean_abs_channel_error": 0.0011821197514799407,
+          "mean_abs_rgba": [
+            0.0009346993383794879,
+            0.001484522478602716,
+            0.0023092571889375586,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.09696378549653062,
+            0.15262428937576558,
+            0.20477592182926407,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 202894,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "ap242-tessellated",
+      "samples": 1,
+      "background": "transparent",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/cpu-s1-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/gpu-s1-transparent.png",
+        "reference_sha256": "23cedab65d7e2c87a4ef1bee98a0c04a8a6f4f486ee12e8cf2652cfb63203f17",
+        "candidate_sha256": "c980de23f34e100775c80fa7cf385da6734aae24e84b76efb5a7d53db5b517ce",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 166,
+          "max_abs_channel_error": 47,
+          "max_abs_rgba": [
+            22,
+            35,
+            47,
+            0
+          ],
+          "mean_abs_channel_error": 0.0002613067626953125,
+          "mean_abs_rgba": [
+            0.000209808349609375,
+            0.0003204345703125,
+            0.000514984130859375,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.04440944140977372,
+            0.06971315741240136,
+            0.09360747629938874,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 56948,
+          "candidate_pixels": 56948,
+          "intersection_pixels": 56948,
+          "union_pixels": 56948,
+          "iou": 1.0,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            118,
+            474,
+            394
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            118,
+            474,
+            394
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            259.7356008990658,
+            257.75479384701833
+          ],
+          "candidate_centroid_xy": [
+            259.7356008990658,
+            257.75479384701833
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 0.0
+        },
+        "interior_rgba_errors": {
+          "pixels": 54563,
+          "changed_pixels": 150,
+          "max_abs_channel_error": 47,
+          "max_abs_rgba": [
+            22,
+            35,
+            47,
+            0
+          ],
+          "mean_abs_channel_error": 0.0011821197514799407,
+          "mean_abs_rgba": [
+            0.0009346993383794879,
+            0.001484522478602716,
+            0.0023092571889375586,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.09696378549653062,
+            0.15262428937576558,
+            0.20477592182926407,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 202894,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "ap242-tessellated",
+      "samples": 2,
+      "background": "opaque",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/cpu-s2-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/gpu-s2-opaque.png",
+        "reference_sha256": "d67c94cbede4c7f55466c341217abedeaf4a65da6e2ea6cd111c024b6cce9c89",
+        "candidate_sha256": "2d20e4965afdd44edab9b4324789fb2db5427d5c9a2b27332c735f87ad8d3b11",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 91,
+          "max_abs_channel_error": 40,
+          "max_abs_rgba": [
+            40,
+            30,
+            17,
+            0
+          ],
+          "mean_abs_channel_error": 0.0002689361572265625,
+          "mean_abs_rgba": [
+            0.000385284423828125,
+            0.0003204345703125,
+            0.000370025634765625,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.1089031395269582,
+            0.07967217989988726,
+            0.051267206048463625,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 57539,
+          "candidate_pixels": 57539,
+          "intersection_pixels": 57539,
+          "union_pixels": 57539,
+          "iou": 1.0,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            117,
+            474,
+            395
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            117,
+            474,
+            395
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            259.6761500895045,
+            257.5980291628287
+          ],
+          "candidate_centroid_xy": [
+            259.6761500895045,
+            257.5980291628287
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 0.0
+        },
+        "interior_rgba_errors": {
+          "pixels": 55227,
+          "changed_pixels": 81,
+          "max_abs_channel_error": 15,
+          "max_abs_rgba": [
+            7,
+            11,
+            15,
+            0
+          ],
+          "mean_abs_channel_error": 0.0005115251597950278,
+          "mean_abs_rgba": [
+            0.0003983558766545349,
+            0.0004888913031669293,
+            0.001158853459358647,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.034041936774494,
+            0.04980633179064288,
+            0.07043678991038141,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 202338,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "ap242-tessellated",
+      "samples": 2,
+      "background": "transparent",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/cpu-s2-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/ap242-tessellated/supported/gpu-s2-transparent.png",
+        "reference_sha256": "6f47c7ffb2b0456fcab6284df486ac5f13d9ba5b2c23dc96652f6078f86f44e1",
+        "candidate_sha256": "d57e65ec7dbf5da517b6504237fe763eac67aadf51ade60d8ed17fb67ed92925",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 96,
+          "max_abs_channel_error": 63,
+          "max_abs_rgba": [
+            7,
+            11,
+            15,
+            63
+          ],
+          "mean_abs_channel_error": 0.000244140625,
+          "mean_abs_rgba": [
+            8.7738037109375e-05,
+            0.00012969970703125,
+            0.000278472900390625,
+            0.00048065185546875
+          ],
+          "rmse_rgba": [
+            0.015746597164645604,
+            0.0235996991671769,
+            0.03285664812746235,
+            0.17401455943262692
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 57539,
+          "candidate_pixels": 57539,
+          "intersection_pixels": 57539,
+          "union_pixels": 57539,
+          "iou": 1.0,
+          "reference_bounds_xyxy_exclusive": [
+            38,
+            117,
+            474,
+            395
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            38,
+            117,
+            474,
+            395
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            259.6761500895045,
+            257.5980291628287
+          ],
+          "candidate_centroid_xy": [
+            259.6761500895045,
+            257.5980291628287
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 0.0
+        },
+        "interior_rgba_errors": {
+          "pixels": 55227,
+          "changed_pixels": 81,
+          "max_abs_channel_error": 15,
+          "max_abs_rgba": [
+            7,
+            11,
+            15,
+            0
+          ],
+          "mean_abs_channel_error": 0.0005115251597950278,
+          "mean_abs_rgba": [
+            0.0003983558766545349,
+            0.0004888913031669293,
+            0.001158853459358647,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.034041936774494,
+            0.04980633179064288,
+            0.07043678991038141,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 202338,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "synthetic-repeated",
+      "samples": 1,
+      "background": "opaque",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/cpu-s1-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/gpu-s1-opaque.png",
+        "reference_sha256": "b293a433a1e480f57abb492f0cb2ea5240b00e8e7ab10de9a54d1f7e240b20a3",
+        "candidate_sha256": "aa43d289f882d6d8ab37887e184e53c60ab67e25195cd8325b6334c1a1b85b00",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 123,
+          "max_abs_channel_error": 18,
+          "max_abs_rgba": [
+            9,
+            13,
+            18,
+            0
+          ],
+          "mean_abs_channel_error": 0.0008554458618164062,
+          "mean_abs_rgba": [
+            0.0007171630859375,
+            0.001155853271484375,
+            0.00154876708984375,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.05182226234930312,
+            0.08168173307158783,
+            0.11000099875256815,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 41718,
+          "candidate_pixels": 41718,
+          "intersection_pixels": 41718,
+          "union_pixels": 41718,
+          "iou": 1.0,
+          "reference_bounds_xyxy_exclusive": [
+            59,
+            38,
+            453,
+            474
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            59,
+            38,
+            453,
+            474
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.5461191811688,
+            255.50678364255236
+          ],
+          "candidate_centroid_xy": [
+            255.5461191811688,
+            255.50678364255236
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 0.0
+        },
+        "interior_rgba_errors": {
+          "pixels": 36198,
+          "changed_pixels": 92,
+          "max_abs_channel_error": 14,
+          "max_abs_rgba": [
+            7,
+            10,
+            14,
+            0
+          ],
+          "mean_abs_channel_error": 0.004268191612796287,
+          "mean_abs_rgba": [
+            0.0035637328029172882,
+            0.005773799657439638,
+            0.007735233990828223,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.11112492317047346,
+            0.1775417655444065,
+            0.23611212676465024,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 214610,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "synthetic-repeated",
+      "samples": 1,
+      "background": "transparent",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/cpu-s1-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/gpu-s1-transparent.png",
+        "reference_sha256": "068777062176f5cdc54d702ef433922cf72a7d4aafa8fb5cbbf74aa45b943a94",
+        "candidate_sha256": "339e19dd357d458ea7ad4dc1440e165dd86e00dbd1bb46b1cb5a4d235b6d899c",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 123,
+          "max_abs_channel_error": 18,
+          "max_abs_rgba": [
+            9,
+            13,
+            18,
+            0
+          ],
+          "mean_abs_channel_error": 0.0008554458618164062,
+          "mean_abs_rgba": [
+            0.0007171630859375,
+            0.001155853271484375,
+            0.00154876708984375,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.05182226234930312,
+            0.08168173307158783,
+            0.11000099875256815,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 41718,
+          "candidate_pixels": 41718,
+          "intersection_pixels": 41718,
+          "union_pixels": 41718,
+          "iou": 1.0,
+          "reference_bounds_xyxy_exclusive": [
+            59,
+            38,
+            453,
+            474
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            59,
+            38,
+            453,
+            474
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.5461191811688,
+            255.50678364255236
+          ],
+          "candidate_centroid_xy": [
+            255.5461191811688,
+            255.50678364255236
+          ],
+          "centroid_distance_pixels": 0.0,
+          "relative_area_error": 0.0
+        },
+        "interior_rgba_errors": {
+          "pixels": 36198,
+          "changed_pixels": 92,
+          "max_abs_channel_error": 14,
+          "max_abs_rgba": [
+            7,
+            10,
+            14,
+            0
+          ],
+          "mean_abs_channel_error": 0.004268191612796287,
+          "mean_abs_rgba": [
+            0.0035637328029172882,
+            0.005773799657439638,
+            0.007735233990828223,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.11112492317047346,
+            0.1775417655444065,
+            0.23611212676465024,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 214610,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "synthetic-repeated",
+      "samples": 2,
+      "background": "opaque",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/cpu-s2-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/gpu-s2-opaque.png",
+        "reference_sha256": "48ca6c8095568a987dc6f0e7fb6a1a990bcf7e47e0c68c3b72c8666468ff2caf",
+        "candidate_sha256": "088239ffde52d03f9686898e9190df8714719f8cb30cebca920ba890bc749a3e",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 189,
+          "max_abs_channel_error": 53,
+          "max_abs_rgba": [
+            53,
+            48,
+            44,
+            0
+          ],
+          "mean_abs_channel_error": 0.0014123916625976562,
+          "mean_abs_rgba": [
+            0.00186920166015625,
+            0.001895904541015625,
+            0.00188446044921875,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.27209491823856247,
+            0.23889680992222484,
+            0.20800552008713313,
+            0.0
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 43142,
+          "candidate_pixels": 43146,
+          "intersection_pixels": 43142,
+          "union_pixels": 43146,
+          "iou": 0.9999072915218097,
+          "reference_bounds_xyxy_exclusive": [
+            58,
+            38,
+            454,
+            474
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            58,
+            38,
+            454,
+            474
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.48613879745955,
+            255.53224236243105
+          ],
+          "candidate_centroid_xy": [
+            255.48614008251056,
+            255.53223937329068
+          ],
+          "centroid_distance_pixels": 3.253661976500569e-06,
+          "relative_area_error": 9.271707384914932e-05
+        },
+        "interior_rgba_errors": {
+          "pixels": 37530,
+          "changed_pixels": 145,
+          "max_abs_channel_error": 6,
+          "max_abs_rgba": [
+            3,
+            5,
+            6,
+            0
+          ],
+          "mean_abs_channel_error": 0.0025446309618971487,
+          "mean_abs_rgba": [
+            0.002104982680522249,
+            0.0034638955502264853,
+            0.004609645616839861,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.05289387290194911,
+            0.07586432418108816,
+            0.10022622957917157,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 213086,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "synthetic-repeated",
+      "samples": 2,
+      "background": "transparent",
+      "candidate_renderer": "gpu",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "gpu_tolerance",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/cpu-s2-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/synthetic-repeated/supported/gpu-s2-transparent.png",
+        "reference_sha256": "1b15f673437b5ddc7581c771024b6b66df18129319cd0f564635665c115eb761",
+        "candidate_sha256": "45e613d7a9398b6dd605153459d80929a5e0063d4cf6e595a2dfed2b60cf9083",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "nonempty_foreground": true,
+          "coverage_iou": true,
+          "bounds": true,
+          "centroid": true,
+          "coverage_area": true,
+          "interior_support": true,
+          "interior_max_error": false,
+          "interior_mean_error": true,
+          "background_error": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 192,
+          "max_abs_channel_error": 168,
+          "max_abs_rgba": [
+            76,
+            122,
+            168,
+            64
+          ],
+          "mean_abs_channel_error": 0.0020132064819335938,
+          "mean_abs_rgba": [
+            0.001277923583984375,
+            0.00205230712890625,
+            0.00276947021484375,
+            0.001953125
+          ],
+          "rmse_rgba": [
+            0.2268905894910791,
+            0.36232442879168214,
+            0.4990836329276387,
+            0.3535533905932738
+          ]
+        },
+        "encoded_png_identical": false,
+        "decoded_rgba_identical": false,
+        "coverage": {
+          "reference_pixels": 43142,
+          "candidate_pixels": 43146,
+          "intersection_pixels": 43142,
+          "union_pixels": 43146,
+          "iou": 0.9999072915218097,
+          "reference_bounds_xyxy_exclusive": [
+            58,
+            38,
+            454,
+            474
+          ],
+          "candidate_bounds_xyxy_exclusive": [
+            58,
+            38,
+            454,
+            474
+          ],
+          "bounds_max_coordinate_error_pixels": 0,
+          "reference_centroid_xy": [
+            255.48613879745955,
+            255.53224236243105
+          ],
+          "candidate_centroid_xy": [
+            255.48614008251056,
+            255.53223937329068
+          ],
+          "centroid_distance_pixels": 3.253661976500569e-06,
+          "relative_area_error": 9.271707384914932e-05
+        },
+        "interior_rgba_errors": {
+          "pixels": 37530,
+          "changed_pixels": 145,
+          "max_abs_channel_error": 6,
+          "max_abs_rgba": [
+            3,
+            5,
+            6,
+            0
+          ],
+          "mean_abs_channel_error": 0.0025446309618971487,
+          "mean_abs_rgba": [
+            0.002104982680522249,
+            0.0034638955502264853,
+            0.004609645616839861,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.05289387290194911,
+            0.07586432418108816,
+            0.10022622957917157,
+            0.0
+          ]
+        },
+        "background_beyond_one_pixel_edge_rgba_errors": {
+          "pixels": 213086,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "passed": false
+      },
+      "passed": false
+    },
+    {
+      "input": "jpeg-textured",
+      "samples": 1,
+      "background": "opaque",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/cpu-s1-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/auto-s1-opaque.png",
+        "reference_sha256": "a68549fd1548dddbd371708e96209051946cf2164ffa9de59734126f2308b514",
+        "candidate_sha256": "a68549fd1548dddbd371708e96209051946cf2164ffa9de59734126f2308b514",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "jpeg-textured",
+      "samples": 1,
+      "background": "transparent",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/cpu-s1-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/auto-s1-transparent.png",
+        "reference_sha256": "b6bdd4ed843c66d594c206f24111f14c6a0e7ec9583ace72d74a5ebe9db406a4",
+        "candidate_sha256": "b6bdd4ed843c66d594c206f24111f14c6a0e7ec9583ace72d74a5ebe9db406a4",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "jpeg-textured",
+      "samples": 2,
+      "background": "opaque",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/cpu-s2-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/auto-s2-opaque.png",
+        "reference_sha256": "5231ba7c500e55fb0305696d7d742dd806b4d36b72e6b9d8ea452219f82ff725",
+        "candidate_sha256": "5231ba7c500e55fb0305696d7d742dd806b4d36b72e6b9d8ea452219f82ff725",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "jpeg-textured",
+      "samples": 2,
+      "background": "transparent",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/cpu-s2-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/jpeg-textured/unsupported/auto-s2-transparent.png",
+        "reference_sha256": "af0d75f4aca46f1692a133e593dc5b9b195e65179d1e84b422586d106c535730",
+        "candidate_sha256": "af0d75f4aca46f1692a133e593dc5b9b195e65179d1e84b422586d106c535730",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "alpha-modes",
+      "samples": 1,
+      "background": "opaque",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/cpu-s1-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/auto-s1-opaque.png",
+        "reference_sha256": "5f6fd4aa0f19d19042f7a7fe60d2242d104d63a137ec576f9058cd71f17f6240",
+        "candidate_sha256": "5f6fd4aa0f19d19042f7a7fe60d2242d104d63a137ec576f9058cd71f17f6240",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "alpha-modes",
+      "samples": 1,
+      "background": "transparent",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/cpu-s1-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/auto-s1-transparent.png",
+        "reference_sha256": "6e2cdd0e28e2a17d40a51fb6143b77d933fcbe327c8aa378c37316424f826a50",
+        "candidate_sha256": "6e2cdd0e28e2a17d40a51fb6143b77d933fcbe327c8aa378c37316424f826a50",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "alpha-modes",
+      "samples": 2,
+      "background": "opaque",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/cpu-s2-opaque.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/auto-s2-opaque.png",
+        "reference_sha256": "ce0772d8a86e3e781b267751af40020fba0ac4c5adc93c24d348b7f9ef6b2044",
+        "candidate_sha256": "ce0772d8a86e3e781b267751af40020fba0ac4c5adc93c24d348b7f9ef6b2044",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": false,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    },
+    {
+      "input": "alpha-modes",
+      "samples": 2,
+      "background": "transparent",
+      "candidate_renderer": "auto",
+      "execution_passed": true,
+      "comparison": {
+        "schema_version": 1,
+        "policy": "exact_fallback",
+        "policy_sha256": "88f12e77f2ac5b2d30ad7a4383f309aa47ecd6d67ad388eb2291f3a70f79f38f",
+        "comparator_sha256": "d7c24ff7d279795006252c518a5bef83fbe6b2d18a51c730d8b7c9c921d7a8cd",
+        "pillow_version": "10.2.0",
+        "reference": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/cpu-s2-transparent.png",
+        "candidate": "/tmp/catwalk-native-windows-20261018-aaef25f7c6/results/vulkan/cli/alpha-modes/unsupported/auto-s2-transparent.png",
+        "reference_sha256": "c7e533ff38fd8dff125ac95eb2c4acbb69aba1750f5de9e286eb2b7e33b23a70",
+        "candidate_sha256": "c7e533ff38fd8dff125ac95eb2c4acbb69aba1750f5de9e286eb2b7e33b23a70",
+        "reference_size": [
+          512,
+          512
+        ],
+        "candidate_size": [
+          512,
+          512
+        ],
+        "transparent_background": true,
+        "opaque_background_rgb": [
+          245,
+          247,
+          250
+        ],
+        "alignment": "original coordinates; no resize, translation, crop or registration",
+        "criteria": {
+          "dimensions_match": true,
+          "decoded_rgba_identical": true,
+          "encoded_png_identical": true
+        },
+        "global_rgba_errors": {
+          "pixels": 262144,
+          "changed_pixels": 0,
+          "max_abs_channel_error": 0,
+          "max_abs_rgba": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_abs_channel_error": 0.0,
+          "mean_abs_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rmse_rgba": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "encoded_png_identical": true,
+        "decoded_rgba_identical": true,
+        "passed": true
+      },
+      "passed": true
+    }
+  ]
+}

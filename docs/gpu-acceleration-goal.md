@@ -35,8 +35,14 @@ resource-constrained validation target, not the architecture's defining platform
   interior maximum-error tolerance; all eight CPU/automatic-fallback pairs were
   identical. These failures prevent a production-quality GPU recommendation.
   The [NAS measured report](research/gpu/2026-10-18/renderer/nas-recommendation.md)
-  retains costs, resource scopes and original quality gates. Native Windows
-  actual-renderer comparisons remain pending.
+  retains costs, resource scopes and original quality gates.
+- The actual Windows renderer completed 162 jobs / 54 validated reports on
+  Radeon 780M through native DX12 and Vulkan. Each backend failed all 12
+  supported GPU image pairs at the same unchanged maximum-error gate; its eight
+  CPU/automatic-fallback pairs were identical. Windows CPU/RAM measurements are
+  unavailable. The [native Windows record](research/gpu/2026-10-18/renderer/windows/README.md)
+  retains the full matrix and notes that artifacts were accessed through UNC
+  paths; no WSL2 graphics was involved.
 
 The reusable [hardware probe](../tools/gpu-probe/README.md) and
 [recorded results](research/gpu/2026-10-18/README.md) retain adapter and capability
@@ -127,5 +133,8 @@ details. These compatibility checks do not establish Catwalk performance benefit
 This document defines the clarified goal and required evidence. The optional
 [renderer prototype](gpu-rendering.md) remains experimental: the broader NAS image
 qualification has failed, and a practical NAS benefit for fresh or arbitrary
-new-scene thumbnails has not been established. Keep CPU as the default while
-investigating the image differences and native Windows results.
+new-scene thumbnails has not been established. Keep CPU as the default. Native
+hardware compatibility and the measured prototype are established on the two
+available systems; production image qualification remains open because of
+triangle-coverage differences. Future acceleration work needs to preserve the
+recorded failures and meet an explicitly reviewed image contract.

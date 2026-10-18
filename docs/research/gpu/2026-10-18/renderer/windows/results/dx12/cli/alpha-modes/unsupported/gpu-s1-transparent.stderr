@@ -1,0 +1,1 @@
+catwalk: GPU prototype supports opaque untextured materials; use CPU fallback for textures or alpha coverage

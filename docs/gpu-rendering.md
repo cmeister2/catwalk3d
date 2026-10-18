@@ -96,6 +96,13 @@ including the collapsed-placement fallback and its accepted controls. Image
 qualification is separate from benchmark results; it does not establish
 performance benefits or arbitrary near-coincident depth precision.
 
+The [actual native Windows matrix](research/gpu/2026-10-18/renderer/windows/README.md)
+also completed on Radeon 780M through DX12 and Vulkan: 162 jobs and all command
+expectations passed, while all 24 supported GPU image pairs failed the same
+maximum-error gate. All 16 automatic-fallback pairs were byte-identical.
+Windows CPU/peak-memory fields remain unavailable. This validates execution on
+those backends, rather than equivalent production image output or memory savings.
+
 Build the comparable profiling harness with:
 
 ```sh
