@@ -30,6 +30,26 @@ then
   printf 'Requested results already exist; preserve them and use a fresh bundle for reruns.\n' >&2
   exit 2
 fi
+bundle_real=$(CDPATH= cd "$bundle" && pwd -P)
+bundle_mount=$(awk -v bundle="$bundle_real" '
+  { point=$2; if (point == "/" || bundle == point || index(bundle, point "/") == 1) {
+      if (length(point) > longest) { longest=length(point); record=$0 }
+    }
+  }
+  END { print record }
+' /proc/mounts)
+{
+  printf 'bundle=%s\n' "$bundle_real"
+  df -Pk "$bundle_real"
+  printf '\ncontaining mount from /proc/mounts:\n%s\n' "$bundle_mount"
+} > "$results/bundle-filesystem-$stage.txt"
+bundle_fstype=$(printf '%s\n' "$bundle_mount" | awk '{ print $3 }')
+case "$bundle_fstype" in
+  tmpfs|ramfs)
+    printf 'Stage the NAS bundle/test payloads on disk; current filesystem is %s.\n' "$bundle_fstype" >&2
+    exit 2
+    ;;
+esac
 cp "$bundle/manifest.json" "$results/manifest-$stage.json"
 cp "$bundle/SHA256SUMS" "$results/SHA256SUMS-$stage"
 cp "$bundle/checksums-verified.txt" "$results/checksums-verified-$stage.txt"

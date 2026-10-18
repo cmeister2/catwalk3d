@@ -1,0 +1,3 @@
+memory.max_usage_in_bytes=209764352
+memory.limit_in_bytes=536870912
+memory.failcnt=0

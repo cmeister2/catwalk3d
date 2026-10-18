@@ -1,0 +1,21 @@
+
+running 16 tests
+test gpu::prepare::tests::anisotropic_authored_normals_are_checked_even_when_face_normals_remain_safe ... ok
+test gpu::prepare::tests::anisotropic_geometric_normals_below_shader_normalization_threshold_are_refused ... ok
+test gpu::prepare::tests::cancellation_in_rounded_authored_normals_is_refused_by_direction_error ... ok
+test gpu::prepare::tests::faces_degenerate_in_both_spaces_do_not_trigger_unused_precision_checks ... ok
+test gpu::prepare::tests::ordinary_reflected_sheared_instances_keep_authored_and_geometric_normals ... ok
+test gpu::prepare::tests::reflected_nonuniform_normal_matrix_preserves_inverse_transpose_direction ... ok
+test gpu::prepare::tests::shared_instances_retain_one_indexed_gpu_mesh ... ok
+test gpu::prepare::tests::source_degenerate_faces_that_become_valid_cannot_bypass_empty_packed_mesh_checks ... ok
+test gpu::prepare::tests::source_valid_faces_that_become_degenerate_require_whole_scene_fallback ... ok
+test gpu::prepare::tests::unsupported_primitives_and_budget_fail_before_device_allocation ... ok
+test gpu::prepare::tests::unused_appearance_meshes_do_not_change_resolve_or_allocate_buffers ... ok
+test gpu::tests::rejects_empty_backend_selection ... ok
+test gpu::tests::software_gl_matches_cpu_supported_surfaces ... ok
+test gpu::tests::software_gl_near_coplanar_visibility_requires_precision_fallback ... ok
+test gpu::tests::software_gl_preserves_thin_legacy_fallback ... ok
+test gpu::tests::validates_shader_on_available_gl_device ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 534 filtered out; finished in 7.46s
+

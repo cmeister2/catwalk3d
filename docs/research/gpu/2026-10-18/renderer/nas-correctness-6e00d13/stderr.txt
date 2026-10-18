@@ -1,0 +1,22 @@
+correctness adapter: Mesa DRI Intel(R) UHD Graphics 600 (GLK 2) / Gl / IntegratedGpu; hardware_required=true; no performance claim
+legacy-ss1-transparent-false: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+legacy-ss2-transparent-false: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+legacy-ss4-transparent-false: mean byte error=0.0018, unmatched outside one-pixel edge tolerance=2/12288, coverage intersection/union=12288/12288
+legacy-ss1-transparent-true: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=3311/3311
+legacy-ss2-transparent-true: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=3400/3400
+legacy-ss4-transparent-true: mean byte error=0.0007, unmatched outside one-pixel edge tolerance=2/12288, coverage intersection/union=3446/3446
+ordered-shared-instances-depth-ties: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+opaque-material: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+corner-colors-authored-normals: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+unlit-linear-resolve-transparent: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=3432/3432
+single-sided-front: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+single-sided-culled: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=0/0
+mirrored-nonuniform-shear-reverse-false: mean byte error=0.0001, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=2611/2611
+mirrored-nonuniform-shear-reverse-true: mean byte error=0.0001, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=2611/2611
+imported-gear: mean byte error=0.0002, unmatched outside one-pixel edge tolerance=1/30720, coverage intersection/union=30720/30720
+correctness adapter: Mesa DRI Intel(R) UHD Graphics 600 (GLK 2) / Gl / IntegratedGpu; hardware_required=true; no performance claim
+near-coplanar GPU admission rejected: distinct placements collapse to the same GPU projection and may change depth ordering; use CPU fallback
+exact-source-placement-ties: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+distinct-mesh-local-bases: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+resolvable-depth-separation: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+correctness adapter: Mesa DRI Intel(R) UHD Graphics 600 (GLK 2) / Gl / IntegratedGpu; hardware_required=true; no performance claim

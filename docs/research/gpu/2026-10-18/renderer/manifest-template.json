@@ -28,6 +28,14 @@
     "adapter_substring": "UHD Graphics 600",
     "explicit_gpu_allocation_budget_mib": 256
   },
+  "staging": {
+    "policy": "New disk-backed NAS user directory for bundle and native test payloads; move this investigation's earlier RAM-backed scratch payloads before the final host baseline",
+    "example_nas_directory": "/volume1/homes/max/.catwalk-gpu-20261018.XXXXXX",
+    "filesystem_record": "results/bundle-filesystem-{stage}.txt",
+    "actual_bundle_mount": null,
+    "inspection_context": "NAS /tmp is a1.9GiB tmpfs with nosuid,nodev,noexec; about463MiB used at inspection included an initial257MiB Catwalk debug-test payload",
+    "memory_scope": "RAM-backed artifacts can occupy host RAM/swap outside measured container charges. Disk files can still occupy host page cache. Do not subtract artifact size from RSS or attribute relocation effects to GPU execution."
+  },
   "workloads": {
     "profile": {"modes": ["cpu", "shared-cpu", "gpu"], "fresh_jobs": 3, "retained_scene_and_device_jobs": 3, "reused_device_reload_scene_jobs": 3, "size": 512, "samples": 1, "per_case_timeout_seconds": 120},
     "cli_correctness": {"size": 512, "samples": [1, 2], "backgrounds": ["opaque", "transparent"], "per_command_timeout_seconds": 120, "per_input_timeout_seconds": 600},

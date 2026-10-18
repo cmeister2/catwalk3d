@@ -1,0 +1,6 @@
+
+running 1 test
+test render::tests::profiled_model_and_xy_views_preserve_exact_images_and_validation ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 549 filtered out; finished in 0.11s
+

@@ -1,0 +1,14 @@
+running 1 test
+correctness adapter: llvmpipe (LLVM 20.1.2, 256 bits) / Gl / Cpu; hardware_required=false; no performance claim
+near-coplanar packed rows: back=[[0.7361216, 0.7361216, 0.0, 0.0], [-0.56666666, 0.56666666, 1.1333333, 0.0], [-0.14433756, 0.14433756, -0.14433756, 0.5]], front=[[0.7361216, 0.7361216, 0.0, 0.0], [-0.56666666, 0.56666666, 1.1333333, 0.0], [-0.14433756, 0.14433756, -0.14433756, 0.5]]
+near-coplanar center: CPU=Rgba([89, 89, 231, 255]), GPU=Rgba([231, 89, 89, 255])
+near-coplanar-visibility: mean byte error=22.7422, unmatched outside one-pixel edge tolerance=3936/12288, coverage intersection/union=12288/12288
+Error: "near-coplanar-visibility: CPU/GPU image mismatch (mean byte error 22.7421875, unmatched 3936); diagnostic PNGs in /tmp/catwalk-gpu-correctness-failures"
+test gpu::tests::software_gl_near_coplanar_visibility_requires_precision_fallback ... FAILED
+
+failures:
+
+failures:
+    gpu::tests::software_gl_near_coplanar_visibility_requires_precision_fallback
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 549 filtered out; finished in 0.89s

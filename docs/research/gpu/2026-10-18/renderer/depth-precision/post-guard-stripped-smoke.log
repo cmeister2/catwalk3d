@@ -1,0 +1,11 @@
+
+running 1 test
+correctness adapter: llvmpipe (LLVM 20.1.2, 256 bits) / Gl / Cpu; hardware_required=false; no performance claim
+near-coplanar GPU admission rejected: distinct placements collapse to the same GPU projection and may change depth ordering; use CPU fallback
+exact-source-placement-ties: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+distinct-mesh-local-bases: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+resolvable-depth-separation: mean byte error=0.0000, unmatched outside one-pixel edge tolerance=0/12288, coverage intersection/union=12288/12288
+test gpu::tests::software_gl_near_coplanar_visibility_requires_precision_fallback ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 549 filtered out; finished in 0.81s
+

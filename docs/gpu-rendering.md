@@ -76,9 +76,10 @@ available hardware and reference costs. They do not establish GPU thumbnail
 speedups. The standalone capability probe uses wgpu 30; this renderer uses the
 fully published wgpu 29 backend family so its optional Metal dependency resolves.
 Runtime validation of the actual renderer is tracked separately from probe passes.
-The [initial NAS hardware image validation](research/gpu/2026-10-18/renderer/nas-correctness-initial/metadata.json)
-passed all 15 cases on Intel UHD 600. That intermediate source qualification is
-separate from final-build validation and benchmark results; it does not establish
+The [NAS hardware image validation at source checkpoint 6e00d13](research/gpu/2026-10-18/renderer/nas-correctness-6e00d13/metadata.json)
+passed all 16 preparation/rendering tests and 18 image cases on Intel UHD 600,
+including the collapsed-placement fallback and its accepted controls. Image
+qualification is separate from benchmark results; it does not establish
 performance benefits or arbitrary near-coincident depth precision.
 
 Build the comparable profiling harness with:

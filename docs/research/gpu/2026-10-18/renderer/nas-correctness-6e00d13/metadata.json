@@ -1,0 +1,105 @@
+{
+  "role": "Actual Intel hardware correctness qualification of the production source checkpoint; not throughput or total-memory evidence",
+  "source_git_commit": "6e00d1371992fff6788c0e914de040192d3986c8",
+  "source_files_manifest_sha256": "eec4db21b779432f57e1406d492f3b65eeef04a21810b1cd39dddf392efa9b2e",
+  "test_build_metadata": {
+    "recorded_at_utc": "2026-10-18T20:40:43.242214+00:00",
+    "source_commit": "6e00d1371992fff6788c0e914de040192d3986c8",
+    "source_combined_sha256": "83dd2d01846e8dd9333344e8a4f73d12259581d9db885bea4ef3344e92e22499",
+    "compiled_source_before_after_identical": true,
+    "source_scope": "Cargo manifests, README compiled crate docs, all src files and embedded GPU gear fixture",
+    "debug_binary": "/home/max/code/github/catwalk/target/debug/deps/catwalk3d-edcdb66bbf5f63a6",
+    "debug_binary_sha256": "80d425b22d41033c41d8cb0e017bf1d25d5e22dfaec4aab2b620986f07d06a95",
+    "debug_binary_bytes": 1768485072,
+    "stripped_binary": "/tmp/catwalk-final-gpu-tests",
+    "stripped_binary_sha256": "3f79558191f358655ec8659c1ccdd4b156c0ae8f164ddccad28e68b35b42ce06",
+    "stripped_binary_bytes": 444285192,
+    "strip_command": [
+      "strip",
+      "--strip-debug",
+      "-o",
+      "/tmp/catwalk-final-gpu-tests",
+      "/home/max/code/github/catwalk/target/debug/deps/catwalk3d-edcdb66bbf5f63a6"
+    ],
+    "build_command": "CARGO_TARGET_DIR=/home/max/code/github/catwalk/target CARGO_BUILD_JOBS=2 cargo test --features gpu --lib --no-run --locked --offline",
+    "gpu_tests": {
+      "command": [
+        "/home/max/code/github/catwalk/target/debug/deps/catwalk3d-edcdb66bbf5f63a6",
+        "gpu::",
+        "--nocapture",
+        "--test-threads=1"
+      ],
+      "exit_code": 0,
+      "passed": 16,
+      "image_cases": 18,
+      "log": "post-guard-software-gl.log"
+    },
+    "cpu_profile_equivalence": {
+      "exit_code": 0,
+      "passed": 1,
+      "log": "post-guard-cpu-profile.log"
+    },
+    "stripped_binary_smoke": {
+      "command": [
+        "/tmp/catwalk-final-gpu-tests",
+        "gpu::tests::software_gl_near_coplanar_visibility_requires_precision_fallback",
+        "--exact",
+        "--nocapture"
+      ],
+      "exit_code": 0,
+      "log": "post-guard-stripped-smoke.log"
+    },
+    "required_hardware_with_forced_software": {
+      "command": [
+        "/tmp/catwalk-final-gpu-tests",
+        "gpu::tests::software_gl_near_coplanar_visibility_requires_precision_fallback",
+        "--exact",
+        "--nocapture"
+      ],
+      "exit_code": 101,
+      "expected_exit_code": 101,
+      "log": "post-guard-software-rejected-as-hardware.log"
+    },
+    "environment": {
+      "CATWALK_REQUIRE_GPU_TEST_ADAPTER": "1",
+      "CATWALK_GPU_TEST_BACKEND": "gl",
+      "EGL_PLATFORM": "surfaceless",
+      "LIBGL_ALWAYS_SOFTWARE": "1"
+    },
+    "adapter": {
+      "name": "llvmpipe (LLVM 20.1.2, 256 bits)",
+      "backend": "Gl",
+      "device_type": "Cpu"
+    },
+    "qualification": "Software correctness checks only; no hardware performance claim. The demonstrated near-coplanar case uses conservative whole-scene CPU fallback, not an exact GPU depth fix.",
+    "integrations": {
+      "command": "CARGO_TARGET_DIR=/home/max/code/github/catwalk/target CARGO_BUILD_JOBS=2 cargo test --features gpu --test gpu_dispatch --test instanced --test step_instanced --locked --offline",
+      "exit_code": 0,
+      "gpu_dispatch_passed": 5,
+      "instanced_passed": 7,
+      "step_instanced_passed": 5,
+      "log": "post-guard-integrations.log"
+    }
+  },
+  "nas_test_binary_sha256": "0f6b54c6c41b21a0d0eee54cba747e54440b5f43da54e5413bf4ac074651fa24",
+  "additional_postprocessing": "strip --strip-all on a separate copy of the source-verified test executable; executable code retained",
+  "adapter": "Mesa DRI Intel(R) UHD Graphics 600 (GLK 2)",
+  "backend": "Gl",
+  "device_type": "IntegratedGpu",
+  "hardware_required": true,
+  "cpu_set": "3",
+  "memory_limit_bytes": 536870912,
+  "cgroup_peak_charge_bytes": 209764352,
+  "cgroup_failcnt": 0,
+  "tests_passed": 16,
+  "cpu_gpu_image_comparisons_passed": 18,
+  "near_coplanar_admission": "Rejected for whole-scene CPU fallback; exact ties, distinct local bases and resolvable separation remain accepted",
+  "nas_scratch": "/volume1/homes/max/.catwalk-gpu-20261018.n0HIq9/final-tests",
+  "staging_filesystem": "Disk-backed /volume1, rather than RAM-backed /tmp",
+  "qualifications": [
+    "Cgroup charge includes mapped code and file cache and is not total graphics/system memory.",
+    "The narrow guard does not establish equivalent arbitrary near-coincident depth precision, including within-mesh faces.",
+    "No speedup or RAM reduction follows from this correctness workload.",
+    "A pending test-only Clippy control-flow rewrite does not change the production renderer; this evidence explicitly identifies the test-source checkpoint used."
+  ]
+}

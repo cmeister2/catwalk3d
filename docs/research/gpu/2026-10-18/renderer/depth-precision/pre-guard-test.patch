@@ -1,0 +1,90 @@
+--- a/src/gpu/mod.rs
++++ b/src/gpu/mod.rs
+@@ -1259,4 +1259,86 @@
+         assert!(error.to_string().contains("CPU fallback"));
+         Ok(())
+     }
+-}
++    /// Build independently colored parallel panels separated along the active camera direction.
++    fn near_coplanar_panels(separation: f64) -> crate::Result<InstancedScene> {
++        let positions = [
++            Vec3::new(0.0, -2.0, -2.0),
++            Vec3::new(2.0, 0.0, -2.0),
++            Vec3::new(0.0, 2.0, 2.0),
++            Vec3::new(-2.0, 0.0, 2.0),
++        ];
++        let mut source = Scene::default();
++        for corners in [[0, 1, 2], [0, 2, 3]] {
++            source.triangles.push(Triangle {
++                vertices: corners.map(|index| positions[index]),
++                color: None,
++            });
++            source.appearances.insert(
++                source.triangles.len() - 1,
++                TriangleAppearance {
++                    base_color: [0.8, 0.1, 0.1, 1.0],
++                    unlit: true,
++                    ..TriangleAppearance::default()
++                },
++            );
++        }
++        let mut scene = InstancedScene::from_scene(source)?;
++        let mut front = scene.meshes[0].clone();
++        for appearance in front.appearances.values_mut() {
++            appearance.base_color = [0.1, 0.1, 0.8, 1.0];
++        }
++        scene.meshes.push(front);
++        let mut placed = MeshInstance {
++            mesh: 1,
++            ..MeshInstance::default()
++        };
++        placed.transform[0][3] = separation;
++        placed.transform[1][3] = -separation;
++        placed.transform[2][3] = separation;
++        scene.instances.push(placed);
++        Ok(scene)
++    }
++
++    /// A near-coplanar ordering change must be rejected or remain within CPU image tolerance.
++    #[test]
++    fn software_gl_near_coplanar_visibility_requires_precision_fallback() -> crate::Result<()> {
++        let Some(renderer) = correctness_renderer()? else {
++            return Ok(());
++        };
++        let options = RenderOptions {
++            width: 128,
++            height: 96,
++            supersampling: 1,
++            ..RenderOptions::default()
++        };
++        let scene = near_coplanar_panels(1e-9)?;
++        let prepared = super::prepare::Prepared::new(&scene, &options, DEFAULT_ALLOCATION_BYTES)?;
++        eprintln!(
++            "near-coplanar packed rows: back={:?}, front={:?}",
++            prepared.instances[0].clip_rows, prepared.instances[1].clip_rows
++        );
++        drop(prepared);
++        let cpu = render::render(&scene.to_scene()?, &options)?;
++        let center = cpu.get_pixel(options.width / 2, options.height / 2);
++        assert!(
++            center[2] > center[0],
++            "CPU must resolve the closer blue panel in front"
++        );
++        match renderer.upload(&scene, &options) {
++            Err(error) => {
++                eprintln!("near-coplanar GPU admission rejected: {error}");
++                assert!(error.to_string().contains("CPU fallback"));
++            }
++            Ok(uploaded) => {
++                let gpu = renderer.render(&uploaded)?;
++                eprintln!(
++                    "near-coplanar center: CPU={:?}, GPU={:?}",
++                    center,
++                    gpu.get_pixel(options.width / 2, options.height / 2)
++                );
++                compare_images("near-coplanar-visibility", &cpu, &gpu)?;
++            }
++        }
++        Ok(())
++    }
++}

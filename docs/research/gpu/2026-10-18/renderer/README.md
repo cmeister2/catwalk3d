@@ -20,15 +20,23 @@ Source preparation, after the binaries are complete:
 python3 prepare_bundle.py \
   --catwalk-binary /ACTUAL/BUILD/catwalk \
   --profile-binary /ACTUAL/BUILD/examples/profile_gpu \
-  --build-metadata /tmp/COMPLETED-BUILD.json \
-  --output /tmp/NEW-RENDERER-BUNDLE
+  --build-metadata /LOCAL/COMPLETED-BUILD.json \
+  --output /LOCAL/STAGING/NEW-RENDERER-BUNDLE
 ```
 
-The supplied build metadata must contain `source_provenance`, `cargo_lock_sha256`, `compiler`, `command`, `catwalk_binary_sha256`, `profile_gpu_binary_sha256` and `profile_gpu_source_sha256`. Preserve the effective source snapshot/patch and untracked source hashes in `source_provenance`. [prepare_bundle.py](prepare_bundle.py) validates the supplied binary hashes and synthetic workload, then records input, policy and runner hashes and writes `SHA256SUMS`. It does not invent a source revision. Transfer the finalized bundle to a new NAS `/tmp` directory, then invoke:
+The supplied build metadata must contain `source_provenance`, `cargo_lock_sha256`, `compiler`, `command`, `catwalk_binary_sha256`, `profile_gpu_binary_sha256` and `profile_gpu_source_sha256`. Preserve the effective source snapshot/patch and untracked source hashes in `source_provenance`. [prepare_bundle.py](prepare_bundle.py) validates the supplied binary hashes and synthetic workload, then records input, policy and runner hashes and writes `SHA256SUMS`. It does not invent a source revision.
+
+Stage the finalized bundle and native test payloads in a new **disk-backed NAS directory**, for example `/volume1/homes/max/.catwalk-gpu-20261018.XXXXXX`. NAS inspection found `/tmp` on a 1.9 GiB RAM-backed `tmpfs`, mounted `nosuid,nodev,noexec`; it held about 463 MiB at inspection, including an initial 257 MiB Catwalk debug-test payload. Relocate this investigation's earlier scratch payloads to the disk-backed staging area before taking the final host-memory baseline, preserving earlier evidence. The writable home under `/volume1/homes/max` is on the disk volume. Create a unique destination there, transfer the prepared bundle into it, then invoke:
 
 ```sh
-sh run-on-nas.sh /tmp/NEW-RENDERER-BUNDLE all
+nas_bundle=$(mktemp -d /volume1/homes/max/.catwalk-gpu-20261018.XXXXXX)
+# Transfer the prepared bundle into "$nas_bundle" before running it.
+sh "$nas_bundle/run-on-nas.sh" "$nas_bundle" all
 ```
+
+The runner records `df` and the containing mount in `results/bundle-filesystem-{stage}.txt` and refuses known RAM-backed `tmpfs`/`ramfs` staging. This restriction concerns the NAS bundle and test payloads; the container's bounded 32 MiB `/tmp` remains part of the fixed runtime settings.
+
+RAM-backed artifacts occupy host RAM or swap before a measured container starts and can change available memory, page-fault latency and pressure on other workloads. Their pages need not be charged to the reading container. Disk-backed files can still populate host page cache, and those charges are not fully attributable through process RSS or this container's counters. Preserve staging/mount and host-memory records; do not subtract bundle size from RSS or attribute a change caused by relocating artifacts to GPU execution. The earlier CPU reference used NAS `/tmp` staging, so its host-pressure context differs from these final comparisons.
 
 Record every strict GPU report's actual hardware identity: Intel vendor `0x8086`, integrated hardware adapter, expected UHD Graphics 600 and `Gl` backend. The profiler records one-time device initialization in top-level `setup_device`, with identity in top-level `adapter`. Cached scene preparation is in `setup`; reload mode has `setup: null` and preparation/destruction in each job's `scene_setup`/`scene_cleanup`. Fresh children each use the cached schema with one job.
 

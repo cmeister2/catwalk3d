@@ -1,0 +1,37 @@
+Blocking waiting for file lock on build directory
+   Compiling catwalk3d v0.1.0 (/tmp/catwalk-wgpu-worktree)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 15s
+     Running tests/gpu_dispatch.rs (/home/max/code/github/catwalk/target/debug/deps/gpu_dispatch-7ad53747c940c31a)
+
+running 5 tests
+test scalar_tiff_volume_requires_the_selected_gpu_in_required_mode ... ok
+test raster_tiff_still_bypasses_gpu_initialization_in_required_mode ... ok
+test missing_gpu_falls_back_to_the_complete_cpu_geometry ... ok
+test scalar_tiff_volume_automatic_fallback_preserves_exact_cpu_pixels_and_png ... ok
+test raster_previews_do_not_initialize_a_gpu_even_in_required_mode ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.28s
+
+     Running tests/instanced.rs (/home/max/code/github/catwalk/target/debug/deps/instanced-a54e7fcf6b1ff4f2)
+
+running 7 tests
+test row_major_placement_and_inverse_transpose_match_independent_expectations ... ok
+test singular_normals_fall_back_and_large_finite_transforms_remain_bounded ... ok
+test mirrored_occurrences_reverse_geometry_and_every_corner_attribute_only_when_requested ... ok
+test point_and_line_only_scenes_are_retained_without_empty_meshes ... ok
+test invalid_references_coordinates_appearances_and_matrices_are_rejected ... ok
+test repeated_parts_count_logical_triangles_before_any_large_expansion ... ok
+test exact_position_indexing_preserves_signed_zero_faces_and_identity_rendering ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/step_instanced.rs (/home/max/code/github/catwalk/target/debug/deps/step_instanced-5761c53fc29db769)
+
+running 5 tests
+test non_step_identity_adapters_retain_materials_textures_and_lines ... ok
+test repeated_product_occurrences_retain_one_local_indexed_mesh ... ok
+test nested_mappings_compose_all_four_placements_without_copying_source_meshes ... ok
+test shared_import_rejects_the_same_missing_and_cyclic_mapping_references ... ok
+test analytic_faceted_ap242_and_aliased_step_paths_match_legacy_geometry ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.65s
