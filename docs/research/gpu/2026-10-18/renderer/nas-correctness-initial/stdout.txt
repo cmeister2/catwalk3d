@@ -1,0 +1,9 @@
+
+running 4 tests
+test gpu::tests::rejects_empty_backend_selection ... ok
+test gpu::tests::software_gl_matches_cpu_supported_surfaces ... ok
+test gpu::tests::software_gl_preserves_thin_legacy_fallback ... ok
+test gpu::tests::validates_shader_on_available_gl_device ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 545 filtered out; finished in 6.60s
+

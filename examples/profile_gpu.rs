@@ -260,11 +260,11 @@ fn in_process(args: &Args, entry: Instant) -> Result<Value> {
         )?);
     }
     let after_jobs = resources();
-    let (_, cleanup) = measured(ticks, || {
+    let ((), cleanup) = measured(ticks, || {
         drop(cached);
         Ok(())
     })?;
-    let (_, device_cleanup) = measured(ticks, || {
+    let ((), device_cleanup) = measured(ticks, || {
         drop(device);
         Ok(())
     })?;
@@ -357,14 +357,14 @@ fn render_job(
     if iteration + 1 == args.iterations
         && let Some(path) = &args.png
     {
-        (_, write_phase) = measured(ticks, || Ok(fs::write(path, &encoded)?))?;
+        ((), write_phase) = measured(ticks, || Ok(fs::write(path, &encoded)?))?;
     }
     let png_bytes = encoded.len();
     std::hint::black_box(&encoded);
     drop(encoded);
     drop(image);
     let scene_cleanup = if args.reload_scene {
-        let (_, phase) = measured(ticks, || {
+        let ((), phase) = measured(ticks, || {
             drop(reloaded);
             Ok(())
         })?;
@@ -491,7 +491,7 @@ fn prepare(
             let (expanded, phase) = measured(ticks, || source.to_scene())?;
             setup["expand_for_cpu"] = phase;
             setup["expanded_scene"] = legacy_stats(&expanded);
-            let (_, phase) = measured(ticks, || {
+            let ((), phase) = measured(ticks, || {
                 drop(source);
                 Ok(())
             })?;
@@ -510,7 +510,7 @@ fn prepare(
                 json!(milliseconds(timings.cpu_preparation));
             setup["gpu_resource_creation_wall_ms"] = json!(milliseconds(timings.resource_creation));
             setup["explicit_gpu_allocation_bytes"] = json!(scene.explicit_allocation_bytes());
-            let (_, phase) = measured(ticks, || {
+            let ((), phase) = measured(ticks, || {
                 drop(source);
                 Ok(())
             })?;
