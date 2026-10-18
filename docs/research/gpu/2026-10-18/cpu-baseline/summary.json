@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "scope": "NAS CPU-only geometry profiling; three jobs per mode; no GPU comparison",
+  "options": {
+    "width": 512,
+    "height": 512,
+    "samples_per_axis": 1,
+    "fresh_process_iterations": 3,
+    "reuse_scene_iterations": 3,
+    "saved_previews": "bypassed; geometry import only",
+    "filesystem_caches": "not flushed; fresh process does not mean cold cache"
+  },
+  "inputs": [
+    {
+      "input": "gear.obj",
+      "repository_path": "examples/models/gear.obj",
+      "exit_statuses": {
+        "container": 0,
+        "fresh": 0,
+        "reuse": 0
+      },
+      "status": "passed",
+      "scene": {
+        "lines": 0,
+        "points": 0,
+        "triangle_appearances": 0,
+        "triangles": 512
+      },
+      "fresh_launch_to_exit_ms_median": 25.698,
+      "fresh_launch_to_exit_ms_min": 25.075,
+      "fresh_launch_to_exit_ms_max": 47.957,
+      "fresh_load_and_geometry_ms_median": 0.606,
+      "fresh_render_ms_median": 14.892,
+      "fresh_png_encode_ms_median": 7.461,
+      "fresh_job_cpu_ms_median": 20.0,
+      "fresh_process_hwm_kib_max": 8112,
+      "reuse_one_time_load_and_geometry_ms": 0.626,
+      "reuse_render_ms_median": 14.036,
+      "reuse_png_encode_ms_median": 7.305,
+      "reuse_job_cpu_ms_median": 20.0,
+      "reuse_process_lifetime_hwm_kib": 9516,
+      "container_lifetime_memory_peak_bytes": 9969664,
+      "raw_report_sha256": {
+        "fresh.json": "50a413978ce30691202defede1f1fcf53e02ffc19eef6624e3a32dc952db5395",
+        "reuse.json": "a9b9407326d37263a143d37bf80235d6d93554e23b99b4f01c01713f84523850"
+      }
+    },
+    {
+      "input": "repeated-assembly.step",
+      "repository_path": "tests/fixtures/formats/scientific_cad/step-repeated-product-assembly.step",
+      "exit_statuses": {
+        "container": 0,
+        "fresh": 0,
+        "reuse": 0
+      },
+      "status": "passed",
+      "scene": {
+        "lines": 0,
+        "points": 0,
+        "triangle_appearances": 0,
+        "triangles": 24
+      },
+      "fresh_launch_to_exit_ms_median": 11.908,
+      "fresh_launch_to_exit_ms_min": 11.756,
+      "fresh_launch_to_exit_ms_max": 67.057,
+      "fresh_load_and_geometry_ms_median": 1.822,
+      "fresh_render_ms_median": 1.286,
+      "fresh_png_encode_ms_median": 5.518,
+      "fresh_job_cpu_ms_median": 0.0,
+      "fresh_process_hwm_kib_max": 11860,
+      "reuse_one_time_load_and_geometry_ms": 1.752,
+      "reuse_render_ms_median": 1.067,
+      "reuse_png_encode_ms_median": 5.348,
+      "reuse_job_cpu_ms_median": 0.0,
+      "reuse_process_lifetime_hwm_kib": 11896,
+      "container_lifetime_memory_peak_bytes": 9867264,
+      "raw_report_sha256": {
+        "fresh.json": "feb5c57e95683c693d32b2d214094e212aa203a45b281b76e9bd078913d8a758",
+        "reuse.json": "27987bc4de16d41120646cfa087f7485fd17cea387def4ff6fc1046bd2c6482a"
+      }
+    },
+    {
+      "input": "ap242-tessellated.stp",
+      "repository_path": "tests/fixtures/formats/scientific_cad/step-nist-ap242-tessellated.stp",
+      "exit_statuses": {
+        "container": 0,
+        "fresh": 0,
+        "reuse": 0
+      },
+      "status": "passed",
+      "scene": {
+        "lines": 0,
+        "points": 0,
+        "triangle_appearances": 3388,
+        "triangles": 3388
+      },
+      "fresh_launch_to_exit_ms_median": 218.885,
+      "fresh_launch_to_exit_ms_min": 218.856,
+      "fresh_launch_to_exit_ms_max": 291.679,
+      "fresh_load_and_geometry_ms_median": 103.233,
+      "fresh_render_ms_median": 101.047,
+      "fresh_png_encode_ms_median": 9.082,
+      "fresh_job_cpu_ms_median": 210.0,
+      "fresh_process_hwm_kib_max": 34972,
+      "reuse_one_time_load_and_geometry_ms": 103.587,
+      "reuse_render_ms_median": 101.015,
+      "reuse_png_encode_ms_median": 9.097,
+      "reuse_job_cpu_ms_median": 110.0,
+      "reuse_process_lifetime_hwm_kib": 35016,
+      "container_lifetime_memory_peak_bytes": 34316288,
+      "raw_report_sha256": {
+        "fresh.json": "2a47a32203d20d44d9f812bd782ac53d0909dabc9c3e7893ea4ab13f902beca5",
+        "reuse.json": "12da511c9c8dd114a8c21b74ff2d871f35338ece972867ce3ac84078071cd5de"
+      }
+    },
+    {
+      "input": "jpeg-textured.3mf",
+      "repository_path": "tests/fixtures/formats/mesh_scene/3mf-consortium-jpeg-textures.3mf",
+      "exit_statuses": {
+        "container": 0,
+        "fresh": 0,
+        "reuse": 0
+      },
+      "status": "passed",
+      "scene": {
+        "lines": 0,
+        "points": 0,
+        "triangle_appearances": 96692,
+        "triangles": 96692
+      },
+      "fresh_launch_to_exit_ms_median": 1502.717,
+      "fresh_launch_to_exit_ms_min": 1123.023,
+      "fresh_launch_to_exit_ms_max": 2281.066,
+      "fresh_load_and_geometry_ms_median": 745.46,
+      "fresh_render_ms_median": 336.894,
+      "fresh_png_encode_ms_median": 27.852,
+      "fresh_job_cpu_ms_median": 1050.0,
+      "fresh_process_hwm_kib_max": 146892,
+      "reuse_one_time_load_and_geometry_ms": 693.319,
+      "reuse_render_ms_median": 334.667,
+      "reuse_png_encode_ms_median": 26.632,
+      "reuse_job_cpu_ms_median": 350.0,
+      "reuse_process_lifetime_hwm_kib": 146700,
+      "container_lifetime_memory_peak_bytes": 148287488,
+      "raw_report_sha256": {
+        "fresh.json": "e649fb962152e0246cabc4634ed17c568d0525d66af0cf6049c215afee9078a8",
+        "reuse.json": "9430d11cdf3ee095f8dfd3d8299e44974b552869484f78f164b972d2966e20af"
+      }
+    },
+    {
+      "input": "alpha-modes.glb",
+      "repository_path": "tests/fixtures/formats/mesh_scene/glb-khronos-alpha-modes.glb",
+      "exit_statuses": {
+        "container": 0,
+        "fresh": 0,
+        "reuse": 0
+      },
+      "status": "passed",
+      "scene": {
+        "lines": 0,
+        "points": 0,
+        "triangle_appearances": 61,
+        "triangles": 61
+      },
+      "fresh_launch_to_exit_ms_median": 302.835,
+      "fresh_launch_to_exit_ms_min": 300.796,
+      "fresh_launch_to_exit_ms_max": 393.528,
+      "fresh_load_and_geometry_ms_median": 155.183,
+      "fresh_render_ms_median": 123.032,
+      "fresh_png_encode_ms_median": 17.907,
+      "fresh_job_cpu_ms_median": 290.0,
+      "fresh_process_hwm_kib_max": 54168,
+      "reuse_one_time_load_and_geometry_ms": 156.623,
+      "reuse_render_ms_median": 123.052,
+      "reuse_png_encode_ms_median": 17.866,
+      "reuse_job_cpu_ms_median": 140.0,
+      "reuse_process_lifetime_hwm_kib": 54080,
+      "container_lifetime_memory_peak_bytes": 54939648,
+      "raw_report_sha256": {
+        "fresh.json": "231d32aae551098e840bc76c0856890eb48d6a1ff65573f522c881bd45f71540",
+        "reuse.json": "31ea89557c8fa5a1ecb57895e925c32166f8265b5de6e3673215af95d8ba2bb7"
+      }
+    }
+  ]
+}

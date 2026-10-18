@@ -1,0 +1,6 @@
+326827fcaba12dd62c9ff2a8dcce17534319a4ba5c9c043fa9708ec9d5c4fe9c  /tmp/catwalk-cpu-baseline-20261018.EOdA5f/profile_thumbnail
+37c3577d143071b42dd46e9d942b157837eb25c6340112171d7faecaa987b14e  /tmp/catwalk-cpu-baseline-20261018.EOdA5f/inputs/alpha-modes.glb
+40cd4e5e2e02b5742e0884ba5b132f2e37d2215c45f57afb48962a05a060c384  /tmp/catwalk-cpu-baseline-20261018.EOdA5f/inputs/ap242-tessellated.stp
+4e69c36fb92dc077d82097bd300093f8dd1be8f83380dae04657f3ba80c6ff1f  /tmp/catwalk-cpu-baseline-20261018.EOdA5f/inputs/gear.obj
+1024c33276043c5ef25bf111496056d87bf5a816ae2f6eb6a6804d75ced02d59  /tmp/catwalk-cpu-baseline-20261018.EOdA5f/inputs/jpeg-textured.3mf
+934c2e5e2f3e440a2155fb6d40b303f039c7b18566b0f21a2fc263c6cb0acdd8  /tmp/catwalk-cpu-baseline-20261018.EOdA5f/inputs/repeated-assembly.step

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "host": "Synology DS920+; Intel Celeron J4125; DSM 7.3.2; Linux 4.4.302+; CPU 3 only",
+  "build": {
+    "git_commit": "c06490333429ab85f9435ae8ca2df4b5a55ad60c",
+    "profiler_source_sha256": "d51986b881621155a70365415b6328e938fc97494acaf47a50ef80b382cd2fbe",
+    "cargo_toml_sha256": "e038d2b75d00c13ae4d6637829fe3d9ad9008e113b54b98b25ffa3f288f53f00",
+    "cargo_lock_sha256": "d48a636af61f8996c575621464ef9e05112181757b28cc427954902840213c1d",
+    "code_source_digest_sha256": "d04950be13ed15c3edf7d94157f38c5e8c43ffc04ec418d50bbbaeccb4365e24",
+    "code_source_digest_method": "SHA-256 of sorted source path UTF-8 bytes, NUL, then raw SHA-256 file digest; tracked src/**/*.rs, Cargo.toml and Cargo.lock are read from the recorded Git commit; examples/profile_thumbnail.rs is the recorded untracked profiler source.",
+    "command": "CARGO_TARGET_DIR=/home/max/code/github/catwalk/target cargo build --release --example profile_thumbnail --offline",
+    "compiler": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+    "profile": "release; opt-level=3; lto=thin; codegen-units=1",
+    "binary_sha256": "326827fcaba12dd62c9ff2a8dcce17534319a4ba5c9c043fa9708ec9d5c4fe9c",
+    "binary_bytes": 89379112,
+    "binary_target": "x86_64-unknown-linux-gnu",
+    "maximum_glibc_symbol_version": "GLIBC_2.39",
+    "code_state": "Tracked source at the recorded HEAD commit plus the untracked profiler example. Tracked worktree was observed clean after the optimized build completed, before concurrent GPU development edits."
+  },
+  "container": {
+    "image": "catwalk-gpu-probe:20261018",
+    "image_id": "sha256:ffabbe46b4a5b81eb9cd73334047454bd6420a5cc668f43d6b9920bc1ae070dd",
+    "uid": 1026,
+    "gid": 100,
+    "cpuset_cpus": "3",
+    "memory_limit_bytes": 536870912,
+    "memory_plus_swap_limit_bytes": 536870912,
+    "network": "none",
+    "root_filesystem": "read-only",
+    "capabilities": "ALL dropped",
+    "security_opt": "no-new-privileges",
+    "gpu_devices": [],
+    "tmpfs_tmp_bytes": 33554432,
+    "per_input_timeout_seconds": 120,
+    "timeout_termination_grace_seconds": 5
+  },
+  "workload": {
+    "width": 512,
+    "height": 512,
+    "samples_per_axis": 1,
+    "fresh_process_iterations": 3,
+    "reuse_scene_iterations": 3,
+    "saved_previews": "bypassed; geometry import only",
+    "filesystem_caches": "not flushed; fresh process does not mean cold cache"
+  },
+  "inputs": [
+    {
+      "packaged_name": "gear.obj",
+      "repository_path": "examples/models/gear.obj",
+      "sha256": "4e69c36fb92dc077d82097bd300093f8dd1be8f83380dae04657f3ba80c6ff1f",
+      "bytes": 14218
+    },
+    {
+      "packaged_name": "repeated-assembly.step",
+      "repository_path": "tests/fixtures/formats/scientific_cad/step-repeated-product-assembly.step",
+      "sha256": "934c2e5e2f3e440a2155fb6d40b303f039c7b18566b0f21a2fc263c6cb0acdd8",
+      "bytes": 8459
+    },
+    {
+      "packaged_name": "ap242-tessellated.stp",
+      "repository_path": "tests/fixtures/formats/scientific_cad/step-nist-ap242-tessellated.stp",
+      "sha256": "40cd4e5e2e02b5742e0884ba5b132f2e37d2215c45f57afb48962a05a060c384",
+      "bytes": 2120559
+    },
+    {
+      "packaged_name": "jpeg-textured.3mf",
+      "repository_path": "tests/fixtures/formats/mesh_scene/3mf-consortium-jpeg-textures.3mf",
+      "sha256": "1024c33276043c5ef25bf111496056d87bf5a816ae2f6eb6a6804d75ced02d59",
+      "bytes": 3093233
+    },
+    {
+      "packaged_name": "alpha-modes.glb",
+      "repository_path": "tests/fixtures/formats/mesh_scene/glb-khronos-alpha-modes.glb",
+      "sha256": "37c3577d143071b42dd46e9d942b157837eb25c6340112171d7faecaa987b14e",
+      "bytes": 2978812
+    }
+  ]
+}

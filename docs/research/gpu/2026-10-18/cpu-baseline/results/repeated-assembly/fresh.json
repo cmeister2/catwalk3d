@@ -1,0 +1,337 @@
+{
+  "input": "/inputs/repeated-assembly.step",
+  "jobs": [
+    {
+      "iteration": 0,
+      "report": {
+        "cpu_clock_ticks_per_second": 100,
+        "height": 512,
+        "input": "/inputs/repeated-assembly.step",
+        "jobs": [
+          {
+            "iteration": 0,
+            "job_with_cleanup_and_accounting": {
+              "after": {
+                "process_lifetime_hwm_kib": 11744,
+                "rss_kib": 10336,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 4128,
+                "rss_kib": 4128,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 8.946822000000001
+            },
+            "load_and_geometry": {
+              "after": {
+                "process_lifetime_hwm_kib": 8672,
+                "rss_kib": 8672,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 4128,
+                "rss_kib": 4128,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 1.823086
+            },
+            "png_bytes": 2635,
+            "png_encode_to_memory": {
+              "after": {
+                "process_lifetime_hwm_kib": 11744,
+                "rss_kib": 11044,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 11744,
+                "rss_kib": 10724,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 5.420956
+            },
+            "png_write": null,
+            "render": {
+              "after": {
+                "process_lifetime_hwm_kib": 11744,
+                "rss_kib": 10724,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 8672,
+                "rss_kib": 8672,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 1.285613
+            },
+            "scene": {
+              "lines": 0,
+              "points": 0,
+              "triangle_appearances": 0,
+              "triangles": 24
+            }
+          }
+        ],
+        "mode": "same_process_reload_scene",
+        "notes": [
+          "Import includes file reads, decoding, geometry processing, tessellation and validation; these are not separately instrumented.",
+          "Rendering includes scene validation, bounds/projection, rasterization, compositing and output resizing.",
+          "PNG encoding targets memory; optional final PNG writing has a separate phase and does not fsync.",
+          "RSS values are endpoint samples, not phase peaks. VmHWM is cumulative for the entire process and includes setup/earlier jobs.",
+          "CPU values are procfs clock-tick deltas; null means unsupported/unavailable and short phases may round to zero.",
+          "Repeated jobs retain filesystem caches and allocator state. No job is claimed to have cold filesystem caches.",
+          "Phase wall timers exclude boundary resource sampling; job/entry timers include instrumentation and cleanup.",
+          "Entry-to-report excludes executable startup, JSON serialization/writing and final retained-scene destruction.",
+          "Process RSS excludes kernel page cache and is not a measure of total system or GPU memory.",
+          "This geometry-only profiler bypasses saved previews and does not reproduce production CLI argument/output overhead."
+        ],
+        "process_entry_to_report_ms": 65.05111199999999,
+        "schema_version": 1,
+        "setup_load_and_geometry": null,
+        "supersampling": 1,
+        "width": 512
+      },
+      "subprocess_launch_to_exit_ms": 67.057417
+    },
+    {
+      "iteration": 1,
+      "report": {
+        "cpu_clock_ticks_per_second": 100,
+        "height": 512,
+        "input": "/inputs/repeated-assembly.step",
+        "jobs": [
+          {
+            "iteration": 0,
+            "job_with_cleanup_and_accounting": {
+              "after": {
+                "process_lifetime_hwm_kib": 11692,
+                "rss_kib": 10284,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 4136,
+                "rss_kib": 4136,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 8.863961
+            },
+            "load_and_geometry": {
+              "after": {
+                "process_lifetime_hwm_kib": 8680,
+                "rss_kib": 8680,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 4136,
+                "rss_kib": 4136,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 1.7082149999999998
+            },
+            "png_bytes": 2635,
+            "png_encode_to_memory": {
+              "after": {
+                "process_lifetime_hwm_kib": 11692,
+                "rss_kib": 10992,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 11692,
+                "rss_kib": 10672,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 5.5181249999999995
+            },
+            "png_write": null,
+            "render": {
+              "after": {
+                "process_lifetime_hwm_kib": 11692,
+                "rss_kib": 10672,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 8680,
+                "rss_kib": 8680,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 1.274938
+            },
+            "scene": {
+              "lines": 0,
+              "points": 0,
+              "triangle_appearances": 0,
+              "triangles": 24
+            }
+          }
+        ],
+        "mode": "same_process_reload_scene",
+        "notes": [
+          "Import includes file reads, decoding, geometry processing, tessellation and validation; these are not separately instrumented.",
+          "Rendering includes scene validation, bounds/projection, rasterization, compositing and output resizing.",
+          "PNG encoding targets memory; optional final PNG writing has a separate phase and does not fsync.",
+          "RSS values are endpoint samples, not phase peaks. VmHWM is cumulative for the entire process and includes setup/earlier jobs.",
+          "CPU values are procfs clock-tick deltas; null means unsupported/unavailable and short phases may round to zero.",
+          "Repeated jobs retain filesystem caches and allocator state. No job is claimed to have cold filesystem caches.",
+          "Phase wall timers exclude boundary resource sampling; job/entry timers include instrumentation and cleanup.",
+          "Entry-to-report excludes executable startup, JSON serialization/writing and final retained-scene destruction.",
+          "Process RSS excludes kernel page cache and is not a measure of total system or GPU memory.",
+          "This geometry-only profiler bypasses saved previews and does not reproduce production CLI argument/output overhead."
+        ],
+        "process_entry_to_report_ms": 9.506083,
+        "schema_version": 1,
+        "setup_load_and_geometry": null,
+        "supersampling": 1,
+        "width": 512
+      },
+      "subprocess_launch_to_exit_ms": 11.756308
+    },
+    {
+      "iteration": 2,
+      "report": {
+        "cpu_clock_ticks_per_second": 100,
+        "height": 512,
+        "input": "/inputs/repeated-assembly.step",
+        "jobs": [
+          {
+            "iteration": 0,
+            "job_with_cleanup_and_accounting": {
+              "after": {
+                "process_lifetime_hwm_kib": 11860,
+                "rss_kib": 10460,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 4132,
+                "rss_kib": 4132,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 9.171771
+            },
+            "load_and_geometry": {
+              "after": {
+                "process_lifetime_hwm_kib": 8728,
+                "rss_kib": 8728,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 4132,
+                "rss_kib": 4132,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 1.822038
+            },
+            "png_bytes": 2635,
+            "png_encode_to_memory": {
+              "after": {
+                "process_lifetime_hwm_kib": 11860,
+                "rss_kib": 11168,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 11860,
+                "rss_kib": 10848,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 5.529835
+            },
+            "png_write": null,
+            "render": {
+              "after": {
+                "process_lifetime_hwm_kib": 11860,
+                "rss_kib": 10848,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "before": {
+                "process_lifetime_hwm_kib": 8728,
+                "rss_kib": 8728,
+                "system_cpu_ticks_total": 0,
+                "user_cpu_ticks_total": 0
+              },
+              "system_cpu_ms": 0.0,
+              "user_cpu_ms": 0.0,
+              "wall_ms": 1.34529
+            },
+            "scene": {
+              "lines": 0,
+              "points": 0,
+              "triangle_appearances": 0,
+              "triangles": 24
+            }
+          }
+        ],
+        "mode": "same_process_reload_scene",
+        "notes": [
+          "Import includes file reads, decoding, geometry processing, tessellation and validation; these are not separately instrumented.",
+          "Rendering includes scene validation, bounds/projection, rasterization, compositing and output resizing.",
+          "PNG encoding targets memory; optional final PNG writing has a separate phase and does not fsync.",
+          "RSS values are endpoint samples, not phase peaks. VmHWM is cumulative for the entire process and includes setup/earlier jobs.",
+          "CPU values are procfs clock-tick deltas; null means unsupported/unavailable and short phases may round to zero.",
+          "Repeated jobs retain filesystem caches and allocator state. No job is claimed to have cold filesystem caches.",
+          "Phase wall timers exclude boundary resource sampling; job/entry timers include instrumentation and cleanup.",
+          "Entry-to-report excludes executable startup, JSON serialization/writing and final retained-scene destruction.",
+          "Process RSS excludes kernel page cache and is not a measure of total system or GPU memory.",
+          "This geometry-only profiler bypasses saved previews and does not reproduce production CLI argument/output overhead."
+        ],
+        "process_entry_to_report_ms": 9.803442,
+        "schema_version": 1,
+        "setup_load_and_geometry": null,
+        "supersampling": 1,
+        "width": 512
+      },
+      "subprocess_launch_to_exit_ms": 11.908022
+    }
+  ],
+  "mode": "fresh_process_per_job",
+  "notes": [
+    "Each child has a new process and independent VmHWM; filesystem caches are not flushed.",
+    "Launch-to-exit includes child startup, procfs/getconf accounting and JSON serialization.",
+    "This geometry-only profiler bypasses saved previews and is not the production CLI.",
+    "Use an external process monitor for production CLI peak RSS and whole-job CPU accounting."
+  ],
+  "schema_version": 1
+}
