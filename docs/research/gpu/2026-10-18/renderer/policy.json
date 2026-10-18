@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "Proposed and recorded before actual NAS renderer comparison results; do not silently relax after observing results.",
+  "scope": "512px opaque mesh renders, samples 1 or 2, with opaque or transparent backgrounds; no image alignment or rescaling",
+  "coverage_iou_min": 0.995,
+  "bounds_max_error_pixels": 1,
+  "centroid_distance_max_pixels": 0.25,
+  "coverage_relative_area_error_max": 0.005,
+  "foreground_rgb_background_difference_threshold": 2,
+  "interior_erosion_radius_pixels": 1,
+  "interior_min_pixels": 32,
+  "interior_min_reference_coverage_fraction": 0.25,
+  "interior_max_abs_channel_error": 3,
+  "interior_mean_abs_channel_error": 0.5,
+  "background_far_max_abs_channel_error": 1,
+  "exact_fallback_requires_encoded_png_identity": true
+}

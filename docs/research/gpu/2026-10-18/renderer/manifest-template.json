@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "UNFINALIZED: no actual renderer results; complete only after the final binaries and source snapshot are supplied",
+  "build": {
+    "source_provenance": null,
+    "cargo_lock_sha256": null,
+    "compiler": null,
+    "command": "cargo build --release --features gpu --bin catwalk --example profile_gpu",
+    "catwalk_binary_sha256": null,
+    "profile_gpu_binary_sha256": null,
+    "profile_gpu_source_sha256": null
+  },
+  "container": {
+    "image": "catwalk-gpu-probe:20261018",
+    "image_id": "sha256:ffabbe46b4a5b81eb9cd73334047454bd6420a5cc668f43d6b9920bc1ae070dd",
+    "cpuset_cpus": "3",
+    "memory_limit_bytes": 536870912,
+    "memory_plus_swap_limit_bytes": 536870912,
+    "tmpfs_tmp_bytes": 33554432,
+    "user": "host UID:GID",
+    "supplementary_group": "renderD128 device group",
+    "render_node": "/dev/dri/renderD128",
+    "network": "none",
+    "root_filesystem": "read-only",
+    "capabilities": "ALL dropped",
+    "security_opt": "no-new-privileges",
+    "backend": "gl",
+    "adapter_substring": "UHD Graphics 600",
+    "explicit_gpu_allocation_budget_mib": 256
+  },
+  "workloads": {
+    "profile": {"modes": ["cpu", "shared-cpu", "gpu"], "fresh_jobs": 3, "retained_scene_and_device_jobs": 3, "reused_device_reload_scene_jobs": 3, "size": 512, "samples": 1, "per_case_timeout_seconds": 120},
+    "cli_correctness": {"size": 512, "samples": [1, 2], "backgrounds": ["opaque", "transparent"], "per_command_timeout_seconds": 120, "per_input_timeout_seconds": 600},
+    "supported_inputs": ["gear.obj", "ap242-tessellated.stp", "synthetic-repeated.step"],
+    "expected_logical_triangles": {"gear.obj": 512, "ap242-tessellated.stp": 3388, "synthetic-repeated.step": 786432},
+    "expected_gpu_rejections": ["jpeg-textured.3mf", "alpha-modes.glb"]
+  },
+  "inputs": null,
+  "synthetic_workload_manifest_sha256": null,
+  "policy_sha256": null,
+  "scripts_sha256": null,
+  "notes": ["Do not infer source provenance from a changed worktree after compilation.", "Both CPU and GPU benchmark modes must use the exact same profile_gpu executable.", "A strict GPU error is a failed/unsupported GPU case, never a CPU benchmark attributed to GPU."]
+}

@@ -108,5 +108,7 @@ details. These compatibility checks do not establish Catwalk performance benefit
   GPU path for that workload. Report regressions and resource tradeoffs; do not
   promise acceleration or lower memory use for every model or device.
 
-This document defines the clarified goal and required evidence. It does not
-record an implemented backend or establish a measured performance improvement.
+This document defines the clarified goal and required evidence. The optional
+[renderer prototype](gpu-rendering.md) is under validation. The completed
+[NAS CPU baselines](research/gpu/2026-10-18/cpu-baseline/README.md) establish a
+reference; a measured GPU thumbnail performance benefit remains unproven.

@@ -14,6 +14,8 @@ include = [
     "/README.md",
     "/LICENSE",
     "/examples/demo.rs",
+    "/examples/profile_thumbnail.rs",
+    "/examples/profile_gpu.rs",
     "/examples/models/gear.obj",
     "/examples/gear.png",
     "/Cargo.toml",
@@ -23,6 +25,19 @@ include = [
 [[bin]]
 name = "catwalk"
 path = "src/main.rs"
+
+[[example]]
+name = "profile_gpu"
+required-features = ["gpu"]
+
+[features]
+default = []
+gpu = ["dep:wgpu", "dep:pollster", "dep:bytemuck"]
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+wgpu = { version = "=29.0.3", optional = true, default-features = false, features = ["std", "dx12", "metal", "vulkan", "gles", "wgsl"] }
+pollster = { version = "0.4", optional = true }
+bytemuck = { version = "1.25", optional = true, features = ["derive"] }
 
 [dependencies]
 acadrust = { version = "=0.6.4", default-features = false }

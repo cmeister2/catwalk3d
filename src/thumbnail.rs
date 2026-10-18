@@ -4,6 +4,7 @@ use crate::{
     Result, formats,
     render::{self, RenderOptions},
     saved_preview,
+    scene::Scene,
 };
 use image::{DynamicImage, Rgba, RgbaImage};
 use std::path::Path;
@@ -19,6 +20,22 @@ use std::path::Path;
 /// dimensions, or importer/render limits. Supported native documents fall back
 /// to fresh geometry when their saved image is absent or cannot be decoded.
 pub fn thumbnail(path: &Path, options: &RenderOptions) -> Result<RgbaImage> {
+    thumbnail_with_geometry(path, options, |path, options, decoded| {
+        if let Some(scene) = decoded {
+            render::render(&scene, options)
+        } else {
+            geometry_thumbnail(path, options)
+        }
+    })
+}
+
+/// Preserve saved/raster image dispatch while allowing one selected geometry renderer.
+/// Scalar TIFF volumes pass their already decoded scene to avoid reading them twice.
+pub(crate) fn thumbnail_with_geometry(
+    path: &Path,
+    options: &RenderOptions,
+    geometry: impl FnOnce(&Path, &RenderOptions, Option<Scene>) -> Result<RgbaImage>,
+) -> Result<RgbaImage> {
     let extension = formats::extension(path)?;
     if saved_preview::EXTENSIONS.contains(&extension.as_str()) {
         validate_dimensions(options)?;
@@ -31,21 +48,21 @@ pub fn thumbnail(path: &Path, options: &RenderOptions) -> Result<RgbaImage> {
                 // The geometry reader can support a document header or version
                 // outside the saved-image reader's qualification, or a valid
                 // model can carry a corrupt saved thumbnail.
-                return geometry_thumbnail(path, options).map_err(|geometry_error| {
+                return geometry(path, options, None).map_err(|geometry_error| {
                     format!("native geometry failed: {geometry_error}; saved preview unavailable: {saved_error}").into()
                 });
             }
             Err(error) => return Err(error),
         }
         if formats::NATIVE_GEOMETRY_EXTENSIONS.contains(&extension.as_str()) {
-            return geometry_thumbnail(path, options);
+            return geometry(path, options, None);
         }
         return Err(saved_preview::NoSavedPreview.into());
     }
     if formats::IMAGE_EXTENSIONS.contains(&extension.as_str()) {
-        return image_thumbnail(path, options);
+        return image_thumbnail(path, options, geometry);
     }
-    geometry_thumbnail(path, options)
+    geometry(path, options, None)
 }
 
 /// Generate a fresh preview from stored geometry, without reading a saved image.
@@ -74,7 +91,11 @@ fn validate_dimensions(options: &RenderOptions) -> Result<()> {
 }
 
 /// Render a scalar TIFF stack or fit one bounded raster frame to the canvas.
-fn image_thumbnail(path: &Path, options: &RenderOptions) -> Result<RgbaImage> {
+fn image_thumbnail(
+    path: &Path,
+    options: &RenderOptions,
+    geometry: impl FnOnce(&Path, &RenderOptions, Option<Scene>) -> Result<RgbaImage>,
+) -> Result<RgbaImage> {
     validate_dimensions(options)?;
     let source = if formats::extension(path)? == "dcm" {
         formats::dicom::load(path)?
@@ -84,7 +105,7 @@ fn image_thumbnail(path: &Path, options: &RenderOptions) -> Result<RgbaImage> {
             && let Some(scene) = formats::tiff_volume::scene(&data, data.capacity())?
         {
             drop(data);
-            return render::render(&scene, options);
+            return geometry(path, options, Some(scene));
         }
         // TGA has no dependable magic signature. Select the advertised reader
         // from the extension so every supported image type gets its decoder.
