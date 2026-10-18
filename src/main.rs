@@ -16,7 +16,7 @@ use std::{io::Write, path::PathBuf};
 #[command(
     name = "catwalk",
     version,
-    about = "Render model preview thumbnails entirely in Rust, without a GPU or display server"
+    about = "Render model preview thumbnails headlessly in Rust"
 )]
 struct Args {
     /// Model or image to preview. See --list-formats for importer coverage.
@@ -42,6 +42,18 @@ struct Args {
     /// Supersampling factor for smoothing triangle edges.
     #[arg(long, default_value_t = 2, value_parser = clap::value_parser!(u32).range(1..=4))]
     samples: u32,
+    /// Geometry renderer: CPU, automatic hardware with CPU fallback, or required GPU.
+    #[arg(long, value_enum, default_value_t = RendererChoice::Cpu)]
+    renderer: RendererChoice,
+    /// Native GPU backend; requires a build with the gpu feature.
+    #[arg(long, value_enum, default_value_t = GpuBackend::Auto)]
+    gpu_backend: GpuBackend,
+    /// Select a hardware adapter whose name contains this text.
+    #[arg(long)]
+    gpu_adapter: Option<String>,
+    /// Explicit GPU allocation budget in MiB; CPU and driver memory are additional.
+    #[arg(long, default_value_t = 256, value_parser = clap::value_parser!(u64).range(1..=8192))]
+    gpu_memory_mib: u64,
     /// Explicit image extraction or fresh-geometry selection.
     #[command(flatten)]
     preview_mode: PreviewMode,
@@ -51,6 +63,34 @@ struct Args {
     /// Print the format catalog as versioned JSON, including display descriptions.
     #[arg(long, requires = "list_formats")]
     json: bool,
+}
+
+/// Geometry rendering policy; default releases continue to use the CPU path.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, clap::ValueEnum)]
+enum RendererChoice {
+    /// Existing software rendering without a graphics device.
+    #[default]
+    Cpu,
+    /// Use hardware where supported and fall back for the complete scene.
+    Auto,
+    /// Require hardware and return errors for unsupported GPU features.
+    Gpu,
+}
+
+/// Graphics API selection for an optional native hardware build.
+#[derive(Clone, Copy, Debug, Default, clap::ValueEnum)]
+enum GpuBackend {
+    /// Discover hardware through any compiled native backend.
+    #[default]
+    Auto,
+    /// Vulkan graphics and compute API.
+    Vulkan,
+    /// Windows DirectX 12 graphics API.
+    Dx12,
+    /// Apple Metal graphics API.
+    Metal,
+    /// OpenGL/EGL graphics API.
+    Gl,
 }
 
 /// Mutually exclusive ways to bypass normal saved-image preference and fallback.
@@ -162,11 +202,7 @@ fn run(args: &Args) -> Result<()> {
             color: args.color,
             supersampling: args.samples,
         };
-        let image = if args.preview_mode.render_geometry {
-            catwalk3d::geometry_thumbnail(input, &options)?
-        } else {
-            thumbnail(input, &options)?
-        };
+        let image = render_selected(input, &options, args)?;
         write_png(&image, &mut bytes)?;
     }
     if output == &PathBuf::from("-") {
@@ -178,6 +214,46 @@ fn run(args: &Args) -> Result<()> {
         std::fs::write(output, bytes)?;
     }
     Ok(())
+}
+
+/// Apply the chosen geometry backend while retaining ordinary preview dispatch.
+fn render_selected(
+    input: &std::path::Path,
+    options: &RenderOptions,
+    args: &Args,
+) -> Result<image::RgbaImage> {
+    if args.renderer != RendererChoice::Cpu {
+        #[cfg(all(feature = "gpu", not(target_family = "wasm")))]
+        {
+            let backends = match args.gpu_backend {
+                GpuBackend::Auto => wgpu::Backends::all(),
+                GpuBackend::Vulkan => wgpu::Backends::VULKAN,
+                GpuBackend::Dx12 => wgpu::Backends::DX12,
+                GpuBackend::Metal => wgpu::Backends::METAL,
+                GpuBackend::Gl => wgpu::Backends::GL,
+            };
+            let gpu = catwalk3d::gpu::GpuOptions {
+                backends,
+                adapter_name: args.gpu_adapter.clone(),
+                max_allocation_bytes: args.gpu_memory_mib * 1024 * 1024,
+            };
+            let fallback = args.renderer == RendererChoice::Auto;
+            return if args.preview_mode.render_geometry {
+                catwalk3d::gpu::geometry_thumbnail(input, options, gpu, fallback)
+            } else {
+                catwalk3d::gpu::thumbnail(input, options, gpu, fallback)
+            };
+        }
+        #[cfg(not(all(feature = "gpu", not(target_family = "wasm"))))]
+        if args.renderer == RendererChoice::Gpu {
+            return Err("GPU rendering requires a native build with cargo --features gpu".into());
+        }
+    }
+    if args.preview_mode.render_geometry {
+        catwalk3d::geometry_thumbnail(input, options)
+    } else {
+        thumbnail(input, options)
+    }
 }
 
 /// Map CLI failures to diagnostics and a distinct absent-saved-preview exit code.

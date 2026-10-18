@@ -122,16 +122,47 @@ jobs:
           path: target/gallery
           retention-days: 14
 
+  gpu:
+    name: GPU software correctness
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CARGO_BUILD_JOBS: "2"
+      EGL_PLATFORM: surfaceless
+      LIBGL_ALWAYS_SOFTWARE: "1"
+      CATWALK_REQUIRE_GPU_TEST_ADAPTER: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2
+        with:
+          shared-key: catwalk-gpu-tests
+      - name: Install Mesa software rendering libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libegl1 libegl-mesa0 libgl1-mesa-dri
+      - name: Test optional GPU paths with software rendering
+        run: env -u DISPLAY -u WAYLAND_DISPLAY -u XDG_RUNTIME_DIR cargo test --features gpu --locked --lib --test gpu_dispatch --test instanced --test step_instanced
+      - name: Check optional GPU warnings
+        run: cargo clippy --features gpu --locked --all-targets -- -D warnings
+      - name: Check optional GPU documentation
+        env:
+          RUSTDOCFLAGS: -D warnings
+        run: cargo doc --features gpu --locked --no-deps --document-private-items
+
   success:
     name: Success
     if: always()
-    needs: [checks, tests, web, gallery, release-plan, prepare-binaries, binaries]
+    needs: [checks, tests, gpu, web, gallery, release-plan, prepare-binaries, binaries]
     runs-on: ubuntu-latest
     steps:
       - name: Require all checks to pass
         env:
           CHECKS_RESULT: ${{ needs.checks.result }}
           TESTS_RESULT: ${{ needs.tests.result }}
+          GPU_RESULT: ${{ needs.gpu.result }}
           WEB_RESULT: ${{ needs.web.result }}
           GALLERY_RESULT: ${{ needs.gallery.result }}
           PLAN_RESULT: ${{ needs.release-plan.result }}
@@ -140,6 +171,7 @@ jobs:
         run: |
           test "$CHECKS_RESULT" = success
           test "$TESTS_RESULT" = success
+          test "$GPU_RESULT" = success
           test "$WEB_RESULT" = success
           test "$GALLERY_RESULT" = success
           test "$PLAN_RESULT" = success || test "$PLAN_RESULT" = skipped
