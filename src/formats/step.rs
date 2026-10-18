@@ -3,6 +3,7 @@ use super::{
     step_budget::Budget, step_faceted, step_parameters, step_tessellation, transform::Transform,
 };
 use crate::Result;
+use crate::instanced::{IndexedMesh, IndexedTriangle, InstancedScene, MeshInstance};
 use crate::scene::{Scene, Triangle, Vec3};
 use ruststep::ast::{EntityInstance, Name, Parameter, Record};
 use ruststep::tables::EntityTable;
@@ -34,6 +35,158 @@ pub(super) fn load(path: &Path) -> Result<Scene> {
     // Truck exposes infallible geometry constructors; convert their panics to importer errors.
     std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| parse(text)))
         .map_err(|_| "STEP geometry could not be tessellated by the Rust CAD kernel")?
+}
+
+/// Read STEP geometry while retaining one indexed mesh per source geometry item.
+///
+/// # Errors
+///
+/// Parsing, topology, placements, tessellation or resource limits fail validation.
+pub(super) fn load_instanced(path: &Path) -> Result<InstancedScene> {
+    let bytes = super::read_file(path)?;
+    let text = std::str::from_utf8(&bytes)?.trim_start_matches('\u{feff}');
+    std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+        parse_output::<SharedOutput>(text)
+    }))
+    .map_err(|_| "STEP geometry could not be tessellated by the Rust CAD kernel")?
+    .map(|output| output.scene)
+}
+
+/// Destination for geometry emitted by the shared STEP hierarchy traversal.
+trait GeometryOutput: Default {
+    /// Append one source mesh under its composed placement.
+    ///
+    /// # Errors
+    ///
+    /// The placement, geometry or cumulative preview budget is invalid.
+    fn append(
+        &mut self,
+        id: u64,
+        mesh: &mut Scene,
+        transform: Transform,
+        budget: &mut Budget,
+    ) -> Result<()>;
+
+    /// Retain an unplaced kernel shell using its existing source triangle order.
+    ///
+    /// # Errors
+    ///
+    /// The destination cannot retain the geometry within its preview budget.
+    fn append_unplaced(&mut self, id: u64, mut mesh: Scene, budget: &mut Budget) -> Result<()> {
+        self.append(id, &mut mesh, Transform::IDENTITY, budget)
+    }
+
+    /// Check the completed output without changing source ownership or placements.
+    ///
+    /// # Errors
+    ///
+    /// The emitted scene is empty or contains invalid geometry or appearances.
+    fn validate(&self) -> Result<()>;
+}
+
+impl GeometryOutput for Scene {
+    fn append(
+        &mut self,
+        _id: u64,
+        mesh: &mut Scene,
+        transform: Transform,
+        budget: &mut Budget,
+    ) -> Result<()> {
+        append_mesh(mesh, transform, self, budget)
+    }
+
+    fn append_unplaced(&mut self, _id: u64, mesh: Scene, _budget: &mut Budget) -> Result<()> {
+        self.triangles.extend(mesh.triangles);
+        Ok(())
+    }
+
+    fn validate(&self) -> Result<()> {
+        Scene::validate(self)
+    }
+}
+
+/// Indexed destination that consumes each local source mesh on its first occurrence.
+#[derive(Default)]
+struct SharedOutput {
+    /// Shared local geometry and the retained assembly placements.
+    scene: InstancedScene,
+    /// Source entity identifiers already transferred into indexed mesh storage.
+    sources: HashMap<u64, usize>,
+    /// Expanded primitive count charged without allocating expanded triangles.
+    expanded_triangles: usize,
+}
+
+impl GeometryOutput for SharedOutput {
+    fn append(
+        &mut self,
+        id: u64,
+        mesh: &mut Scene,
+        transform: Transform,
+        budget: &mut Budget,
+    ) -> Result<()> {
+        let cached = self.sources.get(&id).copied();
+        let triangles = cached.map_or(mesh.triangles.len(), |index| {
+            self.scene.meshes[index].faces.len()
+        });
+        self.expanded_triangles = self
+            .expanded_triangles
+            .checked_add(triangles)
+            .filter(|&count| count <= MAX_TRIANGLES)
+            .ok_or("STEP assembled preview exceeds triangle limit")?;
+        budget.work(
+            triangles
+                .checked_mul(3)
+                .ok_or("STEP expanded corner work overflows")?,
+        )?;
+        budget.storage(1, std::mem::size_of::<MeshInstance>())?;
+        let index = if let Some(index) = cached {
+            index
+        } else {
+            // Charge the worst case before indexing: no source corners need be shared.
+            budget.storage(
+                triangles,
+                3 * std::mem::size_of::<Vec3>() + std::mem::size_of::<IndexedTriangle>(),
+            )?;
+            // Exact-bit indexing temporarily retains a coordinate lookup table.
+            // Include bucket metadata and spare capacity in its conservative bound.
+            budget.storage(
+                triangles,
+                3 * (std::mem::size_of::<([u64; 3], u32)>() + 4 * std::mem::size_of::<usize>()),
+            )?;
+            budget.storage(
+                mesh.appearances.len(),
+                std::mem::size_of::<crate::scene::TriangleAppearance>()
+                    + 4 * std::mem::size_of::<usize>(),
+            )?;
+            budget.storage(
+                1,
+                std::mem::size_of::<IndexedMesh>()
+                    + std::mem::size_of::<(u64, usize)>()
+                    + 4 * std::mem::size_of::<usize>(),
+            )?;
+            self.scene.meshes.try_reserve(1)?;
+            self.sources.try_reserve(1)?;
+            let index = self.scene.meshes.len();
+            self.scene
+                .meshes
+                .push(IndexedMesh::from_scene(std::mem::take(mesh))?);
+            self.sources.insert(id, index);
+            index
+        };
+        self.scene.instances.try_reserve(1)?;
+        self.scene.instances.push(MeshInstance {
+            mesh: index,
+            transform: std::array::from_fn(|row| {
+                std::array::from_fn(|column| transform.0[column][row])
+            }),
+            reverse_winding: false,
+        });
+        Ok(())
+    }
+
+    fn validate(&self) -> Result<()> {
+        self.scene.validate()
+    }
 }
 
 /// Expose an entity identifier and its simple or complex record list.
@@ -654,9 +807,9 @@ struct Assembly<'a> {
     roots: Vec<u64>,
 }
 /// Mutable assembly expansion state and shared tessellated item cache.
-struct Expansion<'a> {
+struct Expansion<'a, O> {
     /// Cached tessellated item scenes indexed by source geometry identifier.
-    meshes: &'a HashMap<u64, Scene>,
+    meshes: &'a mut HashMap<u64, Scene>,
     /// Owned AP242 decoder loading only geometry selected by shape ownership.
     decoder: step_tessellation::Decoder<'a>,
     /// Owned planar polygon decoder loading only selected topology.
@@ -669,8 +822,8 @@ struct Expansion<'a> {
     dependencies: HashMap<u64, usize>,
     /// Cumulative geometry, allocation and processing budgets across every loader.
     budget: Budget,
-    /// Scene receiving all expanded assembly occurrences.
-    scene: Scene,
+    /// Destination receiving expanded triangles or retained mesh placements.
+    output: O,
     /// Active representation identifiers used to reject expansion cycles.
     visiting: HashSet<u64>,
     /// Geometry item identifiers consumed by successful expansion.
@@ -1123,21 +1276,21 @@ impl<'a> Assembly<'a> {
     /// # Errors
     ///
     /// Expansion encounters invalid references, missing geometry, cycles or occurrence/triangle limits.
-    fn render(
+    fn render<O: GeometryOutput>(
         &self,
-        meshes: &HashMap<u64, Scene>,
+        mut meshes: HashMap<u64, Scene>,
         graph: &HashMap<u64, Vec<u64>>,
         budget: Budget,
-    ) -> Result<Scene> {
+    ) -> Result<O> {
         let mut expansion = Expansion {
-            meshes,
+            meshes: &mut meshes,
             decoder: step_tessellation::Decoder::new(self.entities),
             faceted: step_faceted::Decoder::new(self.entities),
             owned: HashMap::new(),
             graph,
             dependencies: HashMap::new(),
             budget,
-            scene: Scene::default(),
+            output: O::default(),
             visiting: HashSet::new(),
             used: HashSet::new(),
             work: 0,
@@ -1145,23 +1298,27 @@ impl<'a> Assembly<'a> {
         for &root in &self.roots {
             self.expand(root, Transform::IDENTITY, 0, &mut expansion)?;
         }
-        if meshes.keys().any(|id| !expansion.used.contains(id)) {
+        if expansion
+            .meshes
+            .keys()
+            .any(|id| !expansion.used.contains(id))
+        {
             return Err("STEP assembly contains unowned or unsupported required shells".into());
         }
-        expansion.scene.validate()?;
-        Ok(expansion.scene)
+        expansion.output.validate()?;
+        Ok(expansion.output)
     }
     /// Expand a representation's items and placed child occurrences recursively.
     ///
     /// # Errors
     ///
     /// Representations are missing, cyclic or exceed the expansion budget.
-    fn expand(
+    fn expand<O: GeometryOutput>(
         &self,
         id: u64,
         transform: Transform,
         depth: usize,
-        expansion: &mut Expansion<'_>,
+        expansion: &mut Expansion<'_, O>,
     ) -> Result<()> {
         expansion.work += 1;
         if depth > MAX_REFERENCE_DEPTH || expansion.work > MAX_ENTITIES {
@@ -1257,12 +1414,12 @@ impl<'a> Assembly<'a> {
     /// # Errors
     ///
     /// The item is missing, unsupported, cyclic or exceeds expansion/geometry limits.
-    fn append_item(
+    fn append_item<O: GeometryOutput>(
         &self,
         id: u64,
         transform: Transform,
         depth: usize,
-        expansion: &mut Expansion<'_>,
+        expansion: &mut Expansion<'_, O>,
     ) -> Result<()> {
         expansion.work += 1;
         if depth > MAX_REFERENCE_DEPTH || expansion.work > MAX_ENTITIES {
@@ -1289,8 +1446,10 @@ impl<'a> Assembly<'a> {
                 expansion.owned.insert(id, mesh);
             }
         }
-        if let Some(mesh) = expansion.owned.get(&id) {
-            append_mesh(mesh, transform, &mut expansion.scene, &mut expansion.budget)?;
+        if let Some(mesh) = expansion.owned.get_mut(&id) {
+            expansion
+                .output
+                .append(id, mesh, transform, &mut expansion.budget)?;
             expansion.used.insert(id);
             return Ok(());
         }
@@ -1311,9 +1470,11 @@ impl<'a> Assembly<'a> {
             "OPEN_SHELL" | "CLOSED_SHELL" => {
                 let mesh = expansion
                     .meshes
-                    .get(&id)
+                    .get_mut(&id)
                     .ok_or("STEP component references an unsupported shell")?;
-                append_mesh(mesh, transform, &mut expansion.scene, &mut expansion.budget)?;
+                expansion
+                    .output
+                    .append(id, mesh, transform, &mut expansion.budget)?;
                 expansion.used.insert(id);
             }
             _ => {
@@ -1474,6 +1635,19 @@ fn dependency_closure(
     reason = "Keep the format record dispatch, validation and its resource checks together without changing geometry evaluation."
 )]
 fn parse(text: &str) -> Result<Scene> {
+    parse_output(text)
+}
+
+/// Parse source geometry once and emit it through the selected scene representation.
+///
+/// # Errors
+///
+/// Syntax, entity dependencies, CAD surfaces, placements or preview limits fail validation.
+#[allow(
+    clippy::too_many_lines,
+    reason = "Keep the format record dispatch, validation and its resource checks together without changing geometry evaluation."
+)]
+fn parse_output<O: GeometryOutput>(text: &str) -> Result<O> {
     check_nesting(text)?;
     let exchange = step_parameters::parse(text)?;
     if exchange.data.is_empty() {
@@ -1677,26 +1851,24 @@ fn parse(text: &str) -> Result<Scene> {
                 )
         })
     }) {
-        return Assembly::new(&entities)?.render(&meshes, &graph, budget);
+        return Assembly::new(&entities)?.render(meshes, &graph, budget);
     }
-    let mut scene = Scene::default();
+    let mut output = O::default();
     for (&id, _) in shells {
-        scene
-            .triangles
-            .extend(meshes.remove(&id).unwrap().triangles);
+        output.append_unplaced(id, meshes.remove(&id).unwrap(), &mut budget)?;
     }
     let mut decoder = step_faceted::Decoder::new(&entities);
     let mut polygon_shells: Vec<_> = owned_shells.into_iter().collect();
     polygon_shells.sort_unstable();
     for id in polygon_shells {
         check_graph(id, &graph, &mut HashSet::new(), &mut done, 0)?;
-        let mesh = decoder
+        let mut mesh = decoder
             .decode(id, &mut budget)?
             .ok_or("STEP polygon shell is unsupported")?;
-        append_mesh(&mesh, Transform::IDENTITY, &mut scene, &mut budget)?;
+        output.append(id, &mut mesh, Transform::IDENTITY, &mut budget)?;
     }
-    scene.validate()?;
-    Ok(scene)
+    output.validate()?;
+    Ok(output)
 }
 
 #[cfg(test)]
