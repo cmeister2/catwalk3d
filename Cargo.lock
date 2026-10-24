@@ -14,9 +14,9 @@ dependencies = [
 
 [[package]]
 name = "acadrust"
-version = "0.6.4"
+version = "0.6.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "94862189cab6e282ed0433a801a216cd1a712953813284a48fa81c67223e38f6"
+checksum = "000d512cd910e55577d85ad2d09d743f6a16e033f1c57d7dfeda747ff013a2b3"
 dependencies = [
  "anyhow",
  "bitflags",
@@ -30,7 +30,6 @@ dependencies = [
  "nom",
  "oem_cp",
  "once_cell",
- "rayon",
  "ryu",
  "thiserror 2.0.21",
  "web-time",
@@ -254,9 +253,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-asm"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2813c4e27045a7c4fc90e6df04447a4d239d1c5cda9925bcffe245198828275d"
+checksum = "bfbb82db1ff651d18d301da215c790297ff0e2ed2d7d618e424dff845793a501"
 dependencies = [
  "cadmpeg-core",
  "cadmpeg-ir",
@@ -266,9 +265,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-f3d"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7dea294039462c336c2f067fb48076d062712aed06b63752ffaff8e1c3a0e5b7"
+checksum = "286fff814a952068c15a497763d5961a18b44e0dbc070b2bf9fed8177f6beb4b"
 dependencies = [
  "cadmpeg-asm",
  "cadmpeg-container",
@@ -283,14 +282,14 @@ dependencies = [
  "serde_json",
  "sha2",
  "tempfile",
- "zip 8.6.0",
+ "zip 9.1.0",
 ]
 
 [[package]]
 name = "cadmpeg-codec-inventor"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5e735324856a85a10b4a595e5824f2dd7430a14451b3d16056b4168b6d122df"
+checksum = "fbe423d07b9faf037219b2c875de9175a32cd31bd71100d2d58d15d8f0744e87"
 dependencies = [
  "cadmpeg-asm",
  "cadmpeg-container",
@@ -304,9 +303,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-rhino"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7d88b42fb91c7e5af4c75c0433029771f7e3233a0b72ec3d0b2e5ff2c72bed07"
+checksum = "83efca1e710871c4121facc028fbecdc257e3f8a055b86febe50a992bf5a8b6a"
 dependencies = [
  "cadmpeg-container",
  "cadmpeg-core",
@@ -323,9 +322,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-sldprt"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7120642fdb67fee1c9a4df272fb8a25f2604bf0c006314b9723aeb1463e793fa"
+checksum = "070c55d960308c99e4d73ce1806c164f868a91ec9f181b785fb25e2baa8c9208"
 dependencies = [
  "cadmpeg-container",
  "cadmpeg-core",
@@ -342,53 +341,53 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-step"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e83a52258c129a683f77fb360ca30af54ae34339625ad890be12621128a5811c"
+checksum = "55714dc96f857280874177a372b65922473d46055b5401122b7f21ffc5b3862b"
 dependencies = [
  "base64",
  "cadmpeg-container",
  "cadmpeg-core",
  "cadmpeg-ir",
  "encoding_rs",
+ "serde",
  "serde_json",
  "thiserror 2.0.21",
- "zip 8.6.0",
+ "zip 9.1.0",
 ]
 
 [[package]]
 name = "cadmpeg-container"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c110508cd9155e905f52906de505dfd42dc70a0321f5e90b5f68c28ba207686e"
+checksum = "2b73699d97a5c5597018e742ba963491d6b5a7e10584968252090a11f241e01b"
 dependencies = [
  "cadmpeg-core",
  "crc32fast",
  "flate2",
- "zip 8.6.0",
- "zstd 0.14.2",
+ "zip 9.1.0",
 ]
 
 [[package]]
 name = "cadmpeg-core"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21b1147e51a74e7c52da5b393a0344597238cdc622fac6443eb2fd526759f6fa"
+checksum = "20a37636192cb4f4d9b1cb10d8f780d514ec09e4bf6ca04776f52c1ed123e4e0"
 dependencies = [
  "flate2",
  "memchr",
  "roxmltree",
+ "ruzstd",
  "serde",
  "serde_json",
  "thiserror 2.0.21",
- "zstd 0.14.2",
 ]
 
 [[package]]
 name = "cadmpeg-ir"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71ff19f019f013d97e353bb802c5d2e253c2859aaa5422009aa933dc2f2e7dbc"
+checksum = "86316714dc9bcf195bfcc48e6a63ae42c3ca0aeb2115f32be465c5ae902ad3ed"
 dependencies = [
  "base64",
  "cadmpeg-core",
@@ -401,18 +400,18 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-parasolid"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "249789dc0c92e3a80031a6de57ec63c60adc2303b3ff98df30014c1279bef040"
+checksum = "29ee32529c1d9fb81fd2f73aa4e5c7349b28d37019c279745963cf6a2129c671"
 dependencies = [
  "cadmpeg-core",
 ]
 
 [[package]]
 name = "cadmpeg-protein"
-version = "0.6.1"
+version = "0.6.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6356e0859ba89925fc23dc9725f981280ab9f97a48faf91a2c980f3637d3eebf"
+checksum = "65df080a01163b3ea8fc2bdb41b394558b87f0a9b6ffbfb6182e70175b3fa00f"
 dependencies = [
  "cadmpeg-container",
  "cadmpeg-core",
@@ -420,7 +419,7 @@ dependencies = [
  "flate2",
  "roxmltree",
  "serde",
- "zip 8.6.0",
+ "zip 9.1.0",
 ]
 
 [[package]]
@@ -477,7 +476,7 @@ dependencies = [
  "truck-meshalgo",
  "truck-modeling",
  "truck-stepio",
- "zip 9.0.3",
+ "zip 9.1.0",
 ]
 
 [[package]]
@@ -487,8 +486,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6651c9ed80effdc7db0ff72512157f901af5e3549e341e24b1dd4887d836d838"
 dependencies = [
  "find-msvc-tools",
- "jobserver",
- "libc",
  "shlex",
 ]
 
@@ -1083,8 +1080,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "300e883d756b2e4ec94e02791f39b04b522276138852cfc41d9fb7e904106099"
 dependencies = [
  "cfg-if",
+ "js-sys",
  "libc",
  "r-efi",
+ "wasm-bindgen",
 ]
 
 [[package]]
@@ -1188,18 +1187,18 @@ checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
 
 [[package]]
 name = "hdf5-core"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c91b525024c4692a02df5164c5fc29ee6a01546b6afc1be1d4401186c4099d00"
+checksum = "ead172cd4849c50e80e990267b4c06f02e3a3eed58b987cfe8e4a77dec67d93f"
 dependencies = [
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "hdf5-reader"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4926d5e2cae25a7a46db06cf03da6c3208d3d181badac5fa28dccc49871907f9"
+checksum = "c50e22fc5c53e8e23edd603050ac342ea4cde1898b64bf86266d60f6a9cc3963"
 dependencies = [
  "flate2",
  "hdf5-core",
@@ -1216,9 +1215,9 @@ dependencies = [
 
 [[package]]
 name = "hdf5-writer"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a292270e76950c2160cc2ea996cb0a4511299b3cc1481b59e40828a4dc9fcf82"
+checksum = "83eb60106ae0024a5a52ff712d32f2ffc0e3b7e47af1b38213f43357d55223c3"
 dependencies = [
  "flate2",
  "hdf5-core",
@@ -1367,16 +1366,6 @@ name = "itoa"
 version = "1.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
-
-[[package]]
-name = "jobserver"
-version = "0.1.35"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c00acbd29eabad4a2392fa0e921c874934dbbf4194312ad20f04a0ed67a3cb3"
-dependencies = [
- "getrandom 0.4.3",
- "libc",
-]
 
 [[package]]
 name = "jpeg-decoder"
@@ -1697,18 +1686,18 @@ dependencies = [
 
 [[package]]
 name = "netcdf-core"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25a7215ebd56ede9f76768a895593673ca072b67764f3abff7393be0de0dbaf4"
+checksum = "cd5d7b34be4035ea15cc85c5720c033367e215b8a4bbfa98d7cdfad750caa4c6"
 dependencies = [
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "netcdf-reader"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33e22b42b44c58a4fdb3c6969fdcf9bbcae71efad0ff94e2d63e21728a843f82"
+checksum = "773d8adb7844401741abb4786fef0e96cff721542bf1cca2b6e5a85e26a79518"
 dependencies = [
  "hdf5-reader",
  "memmap2",
@@ -1719,9 +1708,9 @@ dependencies = [
 
 [[package]]
 name = "netcdf-writer"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "23183a2ee350dfaf042f7d3b2b07623ffe20124fd6a70e7fd2255b87a5691d9a"
+checksum = "44f93c89caa8c9c6d540afa479fa0d1ef3211b5ea121c460a32e65f685f803fa"
 dependencies = [
  "hdf5-writer",
  "netcdf-core",
@@ -1811,9 +1800,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-algo"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3869ffa98ff1126f3028e05a57286f871a711771a5e2afcdbe72d568f4b866d"
+checksum = "ae2080588bafa2a8367ef69a664db9d5955c8dc4a43ece0c35f63bed4478f295"
 dependencies = [
  "nalgebra",
  "ogeom-core",
@@ -1828,9 +1817,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-bool"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "057c2b9248ae6d28dd55393c2bd8af71f4773e4cf178729debb358fccea039fd"
+checksum = "e68515aeb578820383cea6c66fb1adf5d75919d717c9fdfb17c8136c654e0618"
 dependencies = [
  "indexmap",
  "ogeom-algo",
@@ -1845,9 +1834,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-core"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dee43957ad6c9d429aaef75c4134a60080b5fee47ef6c7e2f71b87255ac359e5"
+checksum = "cead98901bf2b85b572cad715363906b9ded70f64d120808a4711bfe1949b821"
 dependencies = [
  "foldhash",
  "hashbrown 0.16.1",
@@ -1858,9 +1847,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-doc"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "445842c7d0c9f3a1c46b6103930a271c4e6096d93023c00a638d66bab462f8b0"
+checksum = "dc3ca1d4c562392299ddbe67d298cf83ca68da7927e82dc2c4a84f23f96af519"
 dependencies = [
  "ogeom-core",
  "ogeom-geom",
@@ -1870,9 +1859,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-geom"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c702135dbb3b35c87e4b55726972ce396ec4f3ad71bdea7f210ea44136feb0a"
+checksum = "f1121cd19be338571194fd47462019a8eee72287feac0a1493c2e4121d51f1c7"
 dependencies = [
  "nalgebra",
  "ogeom-core",
@@ -1882,9 +1871,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-intersect"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b71053f409d94dfb3744935c63d3a0e99cdf92bcaced10118f8ea3cd6101d03e"
+checksum = "b9adface7bcb8184278ec964e999758c3874bf4c12d6930a82c5bca0b882953c"
 dependencies = [
  "nalgebra",
  "ogeom-core",
@@ -1895,9 +1884,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-io"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9dc342f9d4c1325d27f96aeacb29c47e162ab77baae818869a600f12ea66e4c0"
+checksum = "61df40868215ae5624cf1134eda6dc4cd3f73c521b450cf6f58b98903a59aa12"
 dependencies = [
  "ogeom-algo",
  "ogeom-bool",
@@ -1912,9 +1901,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-math"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1710e78cdc7cbfc02deb9cee568ad487fc12823c6cebb7c15275c31e8c0ad9f"
+checksum = "1f5c88df73616d8190ae19ecf4fa4e0ed9c21622997671f82e1eacd812232d10"
 dependencies = [
  "nalgebra",
  "ogeom-core",
@@ -1923,9 +1912,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-mesh"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12a560485f50cf327c5d8048a16d3aede671788523f0f8745a668541cec6c8d8"
+checksum = "4f48f9f0b584cbeddbe247389f51ff8ead5d36ce7e7323cd8a6caa79b026481e"
 dependencies = [
  "ogeom-core",
  "ogeom-geom",
@@ -1936,9 +1925,9 @@ dependencies = [
 
 [[package]]
 name = "ogeom-topo"
-version = "0.11.2"
+version = "0.11.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6508265f4bc40afa02844904f451a3f49b2a50b8d9e945754792899b9b5618b5"
+checksum = "254ed3cf686d432b6c9f4775cfd33e882f3dd223118d60860b7171a879f53a58"
 dependencies = [
  "indexmap",
  "ogeom-core",
@@ -2068,12 +2057,6 @@ name = "pin-project-lite"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a89322df9ebe1c1578d689c92318e070967d1042b512afbe49518723f4e6d5cd"
-
-[[package]]
-name = "pkg-config"
-version = "0.3.34"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6b464fbc74e149a392436b17d523f769e057cb6877f6a5c4618bc6f11800548"
 
 [[package]]
 name = "png"
@@ -2371,9 +2354,9 @@ checksum = "4e27ee8bb91ca0adcf0ecb116293afa12d393f9c2b9b9cd54d33e8078fe19839"
 
 [[package]]
 name = "roxmltree"
-version = "0.21.1"
+version = "0.21.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1964b10c76125c36f8afe190065a4bf9a87bf324842c05701330bba9f1cacbb"
+checksum = "9da7f59328b09405b181fee1018925fad50f157afb43c0c0f5c522c256dd5907"
 dependencies = [
  "memchr",
 ]
@@ -2988,6 +2971,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8e28f89b80c87b8fb0cf04ab448d5dd0dd0ade2f8891bae878de66a75a28600e"
 
 [[package]]
+name = "typed-path"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ce898823d8cd0f028662d2f349694b1af0a5cc9be83f1d213a00d3147445e1e"
+
+[[package]]
 name = "typenum"
 version = "1.20.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3211,23 +3200,24 @@ dependencies = [
  "flate2",
  "indexmap",
  "memchr",
- "typed-path",
+ "typed-path 0.12.3",
  "zopfli",
- "zstd 0.13.3",
 ]
 
 [[package]]
 name = "zip"
-version = "9.0.3"
+version = "9.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c2d98561b612a84ae525331a7a094429ef8a5772514ed507ff6db5f54badc971"
+checksum = "2886b00003a72c4ccee3f42cfc34908d33b2508a74d827dc2a4244706475c704"
 dependencies = [
  "crc32fast",
  "flate2",
+ "getrandom 0.4.3",
  "indexmap",
  "memchr",
  "nix",
- "typed-path",
+ "typed-path 0.13.0",
+ "windows-sys",
  "zopfli",
 ]
 
@@ -3253,52 +3243,6 @@ dependencies = [
  "crc32fast",
  "log",
  "simd-adler32",
-]
-
-[[package]]
-name = "zstd"
-version = "0.13.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e91ee311a569c327171651566e07972200e76fcfe2242a4fa446149a3881c08a"
-dependencies = [
- "zstd-safe 7.3.0",
-]
-
-[[package]]
-name = "zstd"
-version = "0.14.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "057cfd910cfac363a0ada849592624b4c9ff2e10bef504c3433810d78ed96f93"
-dependencies = [
- "zstd-safe 8.1.0",
-]
-
-[[package]]
-name = "zstd-safe"
-version = "7.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "64d80649ab6db9d9f6f9c80a40becd948eda4714a0a5ac8c4d157a32231c7882"
-dependencies = [
- "zstd-sys",
-]
-
-[[package]]
-name = "zstd-safe"
-version = "8.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bdd44c6a7284e91f3717755b24315a302edd9153a01f753c3cba3d765e8eafac"
-dependencies = [
- "zstd-sys",
-]
-
-[[package]]
-name = "zstd-sys"
-version = "2.1.1+zstd.1.5.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aeec9eaf2dffbbd09201e23bd0ffcbaa33bb8e9266a10734fd7ed90a85eca078"
-dependencies = [
- "cc",
- "pkg-config",
 ]
 
 [[package]]
