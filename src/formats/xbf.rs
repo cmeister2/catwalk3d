@@ -1678,7 +1678,7 @@ impl Tables {
         if children.len() != primitives.len() + self.shapes.len() {
             return Err("XBF topology conversion omitted a primitive".into());
         }
-        self.restore_representation_locations(&mut model, &children[..self.shapes.len()])?;
+        Self::restore_representation_locations(&mut model, &root, &text)?;
         super::cad::restore_brep_wire_order(&mut model)?;
         let mut scene = Scene::default();
         for (shape, (_, _, color)) in children
@@ -1804,187 +1804,16 @@ fn compose_orientation(parent: u8, child: u8) -> Result<u8> {
 }
 
 impl Tables {
-    /// The ASCII kernel reader preserves topology placements but resets
-    /// edge/surface representation placements. Restore those exact native
-    /// records through the public typed geometry API before tessellation.
-    #[allow(
-        clippy::too_many_lines,
-        reason = "Keep the format record dispatch, validation and its resource checks together without changing geometry evaluation."
-    )]
+    /// Validate native carriers already materialized by the upstream reader.
+    ///
+    /// # Errors
+    /// Source carrier scales, topology or exact planar boundaries are unsupported.
     fn restore_representation_locations(
-        &self,
         model: &mut ogeom_topo::Model,
-        nodes: &[ogeom_topo::Shape],
+        root: &ogeom_topo::Shape,
+        text: &str,
     ) -> Result<()> {
-        use ogeom_geom::Transformable;
-        let tolerance = ogeom_core::Tolerances::millimetres();
-        let mut transforms = vec![ogeom_math::Transform::IDENTITY];
-        for transform in &self.locations {
-            let rows =
-                std::array::from_fn(|row| std::array::from_fn(|column| transform.0[column][row]));
-            let scale = ogeom_math::Matrix3::new(rows).determinant().cbrt();
-            if !scale.is_finite() || scale == 0.0 {
-                return Err("singular XBF geometry location".into());
-            }
-            let normalized =
-                std::array::from_fn(|row| std::array::from_fn(|column| rows[row][column] / scale));
-            transforms.push(ogeom_math::Transform::from_parts(
-                ogeom_math::Matrix3::new(normalized),
-                scale,
-                ogeom_math::Vector::new(transform.0[3][0], transform.0[3][1], transform.0[3][2]),
-                1e-9,
-            )?);
-        }
-        // The tessellator evaluates carrier geometry in its stored coordinate
-        // frame. Materialize each actual rigid carrier placement once and
-        // share that transformed geometry between its face and pcurves.
-        let mut surfaces = HashMap::new();
-        let mut curves = HashMap::new();
-        let placed_surface = |model: &mut ogeom_topo::Model,
-                              surfaces: &mut HashMap<
-            (ogeom_topo::SurfaceId, usize),
-            ogeom_topo::SurfaceId,
-        >,
-                              id: ogeom_topo::SurfaceId,
-                              index: usize|
-         -> Result<ogeom_topo::SurfaceId> {
-            let transform = transforms
-                .get(index)
-                .ok_or("invalid XBF surface location")?;
-            if (transform.scale_factor().abs() - 1.0).abs() > 1e-9 {
-                return Err("scaled XBF surface representation locations are unsupported".into());
-            }
-            if transform.kind() == ogeom_math::TransformKind::Identity {
-                return Ok(id);
-            }
-            if let Some(placed) = surfaces.get(&(id, index)) {
-                return Ok(*placed);
-            }
-            let surface = model
-                .geometry()
-                .surface(id)
-                .ok_or("XBF carrier surface is missing")?
-                .transformed(transform, tolerance)?;
-            let placed = model.geometry_mut().add_surface(surface);
-            surfaces.insert((id, index), placed);
-            Ok(placed)
-        };
-        for (shape, node) in self.shapes.iter().zip(nodes) {
-            let mut tokens = shape.geometry.split_whitespace();
-            let mut data = model
-                .node(node)
-                .ok_or("converted XBF node is missing")?
-                .data()
-                .clone();
-            match &mut data {
-                ogeom_topo::NodeData::Face(face) => {
-                    let index = tokens
-                        .nth(3)
-                        .ok_or("XBF face has no carrier placement")?
-                        .parse::<usize>()?;
-                    face.surface = placed_surface(model, &mut surfaces, face.surface, index)?;
-                    face.location = ogeom_topo::Location::identity();
-                }
-                ogeom_topo::NodeData::Edge(edge) => {
-                    for _ in 0..4 {
-                        tokens.next().ok_or("truncated XBF edge geometry")?;
-                    }
-                    let mut index = 0;
-                    loop {
-                        let kind = tokens
-                            .next()
-                            .ok_or("truncated XBF edge representations")?
-                            .parse::<u8>()?;
-                        if kind == 0 {
-                            break;
-                        }
-                        let (before, after) = match kind {
-                            1 => (1, 2),
-                            2 => (2, 2),
-                            3 => (4, 2),
-                            4 => {
-                                for _ in 0..5 {
-                                    tokens.next().ok_or("truncated XBF continuity")?;
-                                }
-                                continue;
-                            }
-                            _ => return Err("unsupported converted XBF edge representation".into()),
-                        };
-                        for _ in 0..before {
-                            tokens.next().ok_or("truncated XBF edge placement")?;
-                        }
-                        let native_location = tokens
-                            .next()
-                            .ok_or("missing XBF edge placement")?
-                            .parse::<usize>()?;
-                        let transform = transforms
-                            .get(native_location)
-                            .ok_or("invalid XBF edge placement")?;
-                        if (transform.scale_factor().abs() - 1.0).abs() > 1e-9 {
-                            return Err(
-                                "scaled XBF curve representation locations are unsupported".into(),
-                            );
-                        }
-                        let representation = edge
-                            .representations
-                            .get_mut(index)
-                            .ok_or("XBF conversion lost an edge representation")?;
-                        match representation {
-                            ogeom_topo::EdgeRepr::Curve3d {
-                                curve, location, ..
-                            } => {
-                                if transform.kind() != ogeom_math::TransformKind::Identity {
-                                    let key = (*curve, native_location);
-                                    let placed = if let Some(id) = curves.get(&key) {
-                                        *id
-                                    } else {
-                                        let geometry = model
-                                            .geometry()
-                                            .curve(*curve)
-                                            .ok_or("XBF edge curve is missing")?
-                                            .transformed(transform, tolerance)?;
-                                        let id = model.geometry_mut().add_curve(geometry);
-                                        curves.insert(key, id);
-                                        id
-                                    };
-                                    *curve = placed;
-                                }
-                                *location = ogeom_topo::Location::identity();
-                            }
-                            ogeom_topo::EdgeRepr::PCurve {
-                                surface, location, ..
-                            }
-                            | ogeom_topo::EdgeRepr::Seam {
-                                surface, location, ..
-                            } => {
-                                *surface = placed_surface(
-                                    model,
-                                    &mut surfaces,
-                                    *surface,
-                                    native_location,
-                                )?;
-                                *location = ogeom_topo::Location::identity();
-                            }
-                            _ => return Err("XBF conversion changed an edge representation".into()),
-                        }
-                        index += 1;
-                        for _ in 0..after {
-                            tokens.next().ok_or("truncated XBF edge range")?;
-                        }
-                    }
-                    if index != edge.representations.len() {
-                        return Err("XBF conversion lost edge representations".into());
-                    }
-                    edge.assert_same_parameter(false);
-                }
-                _ => {}
-            }
-            *model
-                .node_mut(node)
-                .ok_or("converted XBF node is missing")?
-                .data_mut() = data;
-        }
-        Ok(())
+        super::cad::restore_brep_carriers(text, model, root, ogeom_core::Tolerances::millimetres())
     }
     /// Serialize collected native topology and placements as ASCII BREP.
     ///
@@ -2098,6 +1927,43 @@ fn write_reference(out: &mut String, shape: ShapeRef, total: usize) -> Result<()
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn converted_binary_topology_is_bounded_by_shared_brep_preflight() {
+        let mut tables = Tables::default();
+        tables.shapes.push(Shape {
+            kind: 7,
+            geometry: "0.0000001 0 0 0 0 0".into(),
+            flags: 8,
+            children: Vec::new(),
+        });
+        for node in 1..20 {
+            let child = ShapeRef {
+                node: node - 1,
+                location: 0,
+                orientation: 0,
+            };
+            tables.shapes.push(Shape {
+                kind: 0,
+                geometry: String::new(),
+                flags: 8,
+                children: vec![child, child],
+            });
+        }
+        let root = ShapeRef {
+            node: 19,
+            location: 0,
+            orientation: 0,
+        };
+        let converted = tables.brep(&[(root, Transform::IDENTITY, None)]).unwrap();
+        // Inspect only the converted source: an upstream import would expand
+        // the adversarial DAG before post-import topology checks could run.
+        let tokens: Vec<_> = converted.split_whitespace().collect();
+        let error = super::super::cad::preflight_brep_import(&tokens)
+            .unwrap_err()
+            .to_string();
+        assert!(error.contains("occurrences"), "{error}");
+    }
 
     /// Emit a primary native table header for one of its four supported versions.
     fn native_header(version: u32) -> Vec<u8> {
@@ -3118,7 +2984,7 @@ mod tests {
         let error = parse(&document(triangle(scale, Transform::IDENTITY), 12))
             .unwrap_err()
             .to_string();
-        assert!(error.contains("scaled XBF"));
+        assert!(error.contains("scaled") && error.contains("carrier"));
     }
     #[test]
     fn legacy_table_archive_uses_document_roots_and_real_vertex_geometry() {

@@ -126,7 +126,7 @@ impl Project {
         let decoded = InventorCodec.decode(
             &mut File::open(path)?,
             &DecodeOptions {
-                container_only: false,
+                depth: cadmpeg_core::decode::DecodeDepth::Full,
                 policy: DecodePolicy::service(),
             },
         )?;
@@ -348,16 +348,11 @@ fn validate_assembly_kernel(ir: &CadIr, path: &Path) -> Result<()> {
         return Err("Inventor assembly has no segment inventory".into());
     };
     for segment in metadata {
-        if segment
-            .fields()
-            .get("kind")
-            .and_then(serde_json::Value::as_str)
-            != Some("am_brep")
-        {
+        let fields = segment.fields()?;
+        if fields.get("kind").and_then(serde_json::Value::as_str) != Some("am_brep") {
             continue;
         }
-        let token = segment
-            .fields()
+        let token = fields
             .get("token")
             .and_then(serde_json::Value::as_str)
             .ok_or("Inventor assembly B-rep has no segment token")?;
@@ -367,13 +362,13 @@ fn validate_assembly_kernel(ir: &CadIr, path: &Path) -> Result<()> {
             .ok_or("Inventor assembly has no framed bulk records")?;
         let mut carriers = records.iter().filter(|record| {
             record
-                .fields()
-                .get("token")
+                .field("token")
+                .as_ref()
                 .and_then(serde_json::Value::as_str)
                 == Some(token)
                 && record
-                    .fields()
-                    .get("type_id")
+                    .field("type_id")
+                    .as_ref()
                     .and_then(serde_json::Value::as_str)
                     == Some("5c5945f6d5113313100060a6bba647b5")
         });
@@ -384,14 +379,12 @@ fn validate_assembly_kernel(ir: &CadIr, path: &Path) -> Result<()> {
             return Err("Inventor assembly has ambiguous local kernel carriers".into());
         }
         let offset = carrier
-            .fields()
-            .get("payload_offset")
-            .and_then(serde_json::Value::as_u64)
+            .field("payload_offset")
+            .and_then(|value| value.as_u64())
             .ok_or("Inventor assembly kernel has no payload offset")?;
         let length = carrier
-            .fields()
-            .get("payload_len")
-            .and_then(serde_json::Value::as_u64)
+            .field("payload_len")
+            .and_then(|value| value.as_u64())
             .ok_or("Inventor assembly kernel has no payload length")?;
         let bulk = native
             .arenas()
@@ -399,24 +392,22 @@ fn validate_assembly_kernel(ir: &CadIr, path: &Path) -> Result<()> {
             .and_then(|records| {
                 records.iter().find(|record| {
                     record
-                        .fields()
-                        .get("token")
+                        .field("token")
+                        .as_ref()
                         .and_then(serde_json::Value::as_str)
                         == Some(token)
                 })
             })
             .ok_or("Inventor assembly has no matching bulk stream")?;
         let expanded_len = bulk
-            .fields()
-            .get("expanded_len")
-            .and_then(serde_json::Value::as_u64)
+            .field("expanded_len")
+            .and_then(|value| value.as_u64())
             .ok_or("Inventor assembly bulk stream has no expanded length")?;
         let expected_hash = bulk
-            .fields()
-            .get("expanded_sha256")
-            .and_then(serde_json::Value::as_str)
+            .field("expanded_sha256")
+            .and_then(|value| value.as_str().map(str::to_owned))
             .ok_or("Inventor assembly bulk stream has no source fingerprint")?;
-        let expanded = read_assembly_bulk(path, token, expanded_len, expected_hash)?;
+        let expanded = read_assembly_bulk(path, token, expanded_len, &expected_hash)?;
         let start = usize::try_from(
             offset
                 .checked_add(14)

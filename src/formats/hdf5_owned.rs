@@ -679,3 +679,8 @@ mod tests;
 #[path = "hdf5_index_tests.rs"]
 /// Independently authored HDF Group hierarchy and physical-page metadata regressions.
 mod index_tests;
+
+#[cfg(test)]
+#[path = "hdf5_legacy_data.rs"]
+/// Legacy index payloads retained as source so packaged library tests are self-contained.
+pub(super) mod legacy_data;

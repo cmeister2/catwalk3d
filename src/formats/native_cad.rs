@@ -1,8 +1,9 @@
 //! Neutral native CAD bodies tessellated by Catwalk's existing Rust STEP kernel.
 
+use super::native_budget::Context as DecodeContext;
 use crate::{Result, scene::Scene};
 use cadmpeg_codec_step::StepCodec;
-use cadmpeg_core::decode::{DecodeArena, DecodeContext, DecodePolicy};
+use cadmpeg_core::decode::{DecodeArena, DecodePolicy};
 use cadmpeg_ir::{
     CadIr, SourceGeometryRole,
     appearance::AppearanceTarget,
@@ -575,13 +576,14 @@ fn remap_pcurve(
             )?;
         }
         PcurveGeometry::Nurbs { nurbs } => {
-            nurbs.try_map_control_points_in_place(
-                |value| {
-                    FinitePoint2::new(point(value.get()))
-                        .ok_or("signed native pcurve produced a non-finite pole")
-                },
-                ctx,
-            )??;
+            nurbs.try_map_control_points_in_place(|value| {
+                ctx.charge_work(1, "native pcurve chart conversion")?;
+                FinitePoint2::new(point(value.get())).ok_or_else(|| {
+                    cadmpeg_core::CodecError::malformed(format_args!(
+                        "signed native pcurve produced a non-finite pole"
+                    ))
+                })
+            })?;
         }
         _ => return Err(
             "signed native analytic surface has an unsupported parameter-curve chart conversion"
