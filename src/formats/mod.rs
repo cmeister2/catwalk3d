@@ -53,6 +53,8 @@ mod lychee_scene;
 mod max;
 /// Polygon, triangle, point and wire interchange readers.
 mod mesh;
+/// Shared preview work, collection and retained-byte accounting for native CAD.
+mod native_budget;
 /// Placed native CAD geometry converted through the existing Rust tessellator.
 mod native_cad;
 /// Bounded native boundary meshing with verified product placement and import reports.

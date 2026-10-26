@@ -90,7 +90,6 @@ fn rational_pcurve_chart_changes_preserve_knots_weights_and_parameter_order() {
     let policy = DecodePolicy::service();
     let (ctx, _) = DecodeContext::from_root_bytes(&[], &arena, &policy).unwrap();
     let nurbs = PcurveNurbs::from_lanes(
-        &ctx,
         2,
         vec![0., 0., 0., 1., 1., 1.],
         vec![
@@ -101,7 +100,6 @@ fn rational_pcurve_chart_changes_preserve_knots_weights_and_parameter_order() {
         Some(vec![1., 0.5, 2.]),
         false,
     )
-    .unwrap()
     .unwrap();
     let knots = nurbs.knots().clone();
     let weights = nurbs.weights();
@@ -136,7 +134,7 @@ fn rational_pcurve_chart_changes_preserve_knots_weights_and_parameter_order() {
 }
 
 /// An analytic chart unit control, independent of any saved native thumbnail.
-fn pole_chart_ir(anchored: bool, ctx: &DecodeContext<'_>) -> CadIr {
+fn pole_chart_ir(anchored: bool) -> CadIr {
     let surface = SurfaceId::mint("test:chart:surface#sphere").unwrap();
     let face = FaceId::mint("test:chart:face#sphere").unwrap();
     let loop_id = LoopId::mint("test:chart:loop#pole").unwrap();
@@ -186,7 +184,6 @@ fn pole_chart_ir(anchored: bool, ctx: &DecodeContext<'_>) -> CadIr {
         });
         LoopBoundary::Ring(
             LoopRing::new(
-                ctx,
                 vec![coedge.clone()],
                 vec![AnchoredVertexUse {
                     vertex,
@@ -194,7 +191,6 @@ fn pole_chart_ir(anchored: bool, ctx: &DecodeContext<'_>) -> CadIr {
                     pcurves: vec![pcurve_use],
                 }],
             )
-            .unwrap()
             .unwrap(),
         )
     } else {
@@ -228,7 +224,7 @@ fn singular_and_anchored_pole_pcurves_follow_the_surface_chart() {
     let policy = DecodePolicy::service();
     let (ctx, _) = DecodeContext::from_root_bytes(&[], &arena, &policy).unwrap();
     for anchored in [false, true] {
-        let mut ir = pole_chart_ir(anchored, &ctx);
+        let mut ir = pole_chart_ir(anchored);
         let boundary = ir.model.loops[0].clone();
         let metadata = ir.model.pcurves[0].metadata.clone();
         canonicalize_signed_surfaces(&mut ir, &ctx).unwrap();
@@ -251,7 +247,7 @@ fn pole_pcurves_shared_by_changed_and_unchanged_charts_are_refused() {
     let arena = DecodeArena::new();
     let policy = DecodePolicy::service();
     let (ctx, _) = DecodeContext::from_root_bytes(&[], &arena, &policy).unwrap();
-    let mut ir = pole_chart_ir(false, &ctx);
+    let mut ir = pole_chart_ir(false);
     let mut surface = ir.model.surfaces[0].clone();
     surface.id = SurfaceId::mint("test:chart:surface#unchanged").unwrap();
     surface.geometry = SurfaceGeometry::Solved(SolvedSurfaceGeometry::Sphere(
@@ -289,7 +285,7 @@ fn native_signed_torus_normal_correction_is_separate_from_its_parameter_chart() 
     let arena = DecodeArena::new();
     let policy = DecodePolicy::service();
     let (ctx, _) = DecodeContext::from_root_bytes(&[], &arena, &policy).unwrap();
-    let mut source = pole_chart_ir(false, &ctx);
+    let mut source = pole_chart_ir(false);
     source.model.surfaces[0].geometry = SurfaceGeometry::Solved(SolvedSurfaceGeometry::Torus(
         TorusSurface::try_new(
             Point3::new(0., 0., 8.),

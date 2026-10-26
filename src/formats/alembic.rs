@@ -1926,13 +1926,37 @@ mod tests {
             .unwrap()
             .encode(WriteOptions::default())
             .unwrap();
+        let legacy = crate::formats::hdf5_owned::legacy_data::decode(
+            crate::formats::hdf5_owned::legacy_data::ALEMBIC,
+        );
+        for bytes in [bytes, legacy] {
+            assert_filtered_hdf_archive(bytes, &positions, &text);
+        }
+    }
+
+    /// Verify geometry, string decoding and pixels for a current or legacy archive.
+    fn assert_filtered_hdf_archive(bytes: Vec<u8>, positions: &[f32], text: &str) {
         let unmodified = hdf5_reader::Hdf5File::from_bytes(&bytes).unwrap();
-        for path in [
-            "ABC/.prop/.geom/P.smp0",
-            "ABC/.prop/fixed.smp0",
-            "ABC/.prop/variable.smp0",
-        ] {
-            assert!(unmodified.dataset(path).unwrap().read_raw_bytes().is_err());
+        assert_eq!(
+            unmodified
+                .dataset("ABC/.prop/.geom/P.smp0")
+                .unwrap()
+                .read_array::<f32>()
+                .unwrap()
+                .iter()
+                .copied()
+                .collect::<Vec<_>>(),
+            positions,
+        );
+        for name in ["fixed", "variable"] {
+            assert_eq!(
+                unmodified
+                    .dataset(&format!("ABC/.prop/{name}.smp0"))
+                    .unwrap()
+                    .read_string()
+                    .unwrap(),
+                text,
+            );
         }
         let archive = hdf_archive(bytes).unwrap();
         for name in ["fixed", "variable"] {

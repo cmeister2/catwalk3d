@@ -26,8 +26,8 @@ fn compressed(dataset: DatasetBuilder) -> DatasetBuilder {
         })
 }
 
-/// Produce a signed big-endian field with partially filled edge chunks in all three index families.
-fn edge_field(maximum: Vec<u64>) -> (Vec<u8>, Vec<i32>) {
+/// Produce current-writer v1 B-tree chunks with signed big-endian edge data.
+fn current_edge_field(maximum: Vec<u64>) -> (Vec<u8>, Vec<i32>) {
     let values: Vec<i32> = (0..297).map(|index| index * 17 - 2000).collect();
     let dataset = DatasetBuilder::typed_with_order::<i32>(
         "field",
@@ -53,22 +53,53 @@ fn edge_field(maximum: Vec<u64>) -> (Vec<u8>, Vec<i32>) {
     )
 }
 
+/// Retain real v4 index fixtures independently of the current writer's layout policy.
+fn edge_field(maximum: &[u64]) -> (Vec<u8>, Vec<i32>) {
+    let bytes = match maximum {
+        [3, 9, 11] => legacy_data::FIELD_FIXED,
+        [u64::MAX, 9, 11] => legacy_data::FIELD_EXTENSIBLE_SOURCE,
+        [u64::MAX, u64::MAX, 11] => legacy_data::FIELD_TREE,
+        _ => panic!("unsupported legacy fixture dimensions"),
+    };
+    (
+        legacy_data::decode(bytes),
+        (0..297).map(|index| index * 17 - 2000).collect(),
+    )
+}
+
 #[test]
 fn signed_endian_edge_chunks_and_strided_collapsed_slices_match_for_all_indexes() {
-    let (tree, expected) = edge_field(vec![u64::MAX, u64::MAX, 11]);
-    let (extensible, _) = edge_field(vec![u64::MAX, 9, 11]);
+    let (tree, expected) = edge_field(&[u64::MAX, u64::MAX, 11]);
+    let (extensible, _) = edge_field(&[u64::MAX, 9, 11]);
     let extensible = with_authored_extensible_index(extensible);
-    let (fixed, _) = edge_field(vec![3, 9, 11]);
-    for bytes in [fixed, extensible, tree] {
+    let (fixed, _) = edge_field(&[3, 9, 11]);
+    let (current, _) = current_edge_field(vec![3, 9, 11]);
+    for (bytes, fallback) in [
+        (fixed, true),
+        (extensible, true),
+        (tree, true),
+        (current, false),
+    ] {
         let file = Hdf5File::from_bytes(&bytes).unwrap();
-        assert!(
+        let dataset = file.dataset("field").unwrap();
+        assert_eq!(
+            dataset
+                .repair(&hdf5_reader::SliceInfo::all(dataset.ndim()))
+                .unwrap()
+                .is_some(),
+            fallback,
+        );
+        assert_eq!(
             file.inner
                 .dataset("field")
                 .unwrap()
                 .read_array::<i32>()
-                .is_err()
+                .unwrap()
+                .iter()
+                .copied()
+                .collect::<Vec<_>>(),
+            expected,
         );
-        let dataset = file.dataset("field").unwrap();
         let actual = dataset.read_array::<i32>().unwrap();
         assert_eq!(actual.shape(), &[3, 9, 11]);
         assert_eq!(actual.iter().copied().collect::<Vec<_>>(), expected);
@@ -198,15 +229,28 @@ fn fixed_and_variable_length_scalar_strings_reuse_upstream_decoding() {
             .chunked(vec![32]),
     );
     let bytes = encode(Hdf5Builder::new().dataset(fixed).dataset(variable));
-    let file = Hdf5File::from_bytes(&bytes).unwrap();
-    for name in ["fixed", "variable"] {
-        assert!(file.inner.dataset(name).unwrap().read_string().is_err());
-        let dataset = file.dataset(name).unwrap();
-        assert_eq!(dataset.read_string().unwrap(), text);
-        assert_eq!(
-            dataset.read_raw_bytes().unwrap().len(),
-            if name == "fixed" { 512 } else { 16 }
-        );
+    let legacy = legacy_data::decode(legacy_data::STRINGS);
+    for (bytes, fallback) in [(bytes, false), (legacy, true)] {
+        let file = Hdf5File::from_bytes(&bytes).unwrap();
+        for name in ["fixed", "variable"] {
+            assert_eq!(
+                file.inner.dataset(name).unwrap().read_string().unwrap(),
+                text
+            );
+            let dataset = file.dataset(name).unwrap();
+            assert_eq!(
+                dataset
+                    .repair(&hdf5_reader::SliceInfo::all(dataset.ndim()))
+                    .unwrap()
+                    .is_some(),
+                fallback,
+            );
+            assert_eq!(dataset.read_string().unwrap(), text);
+            assert_eq!(
+                dataset.read_raw_bytes().unwrap().len(),
+                if name == "fixed" { 512 } else { 16 }
+            );
+        }
     }
 }
 
@@ -259,7 +303,7 @@ fn refresh_eof(bytes: &mut [u8], offset_size: usize) {
 
 #[test]
 fn unallocated_chunks_preserve_fill_and_skipped_filters_preserve_raw_pixels() {
-    let (mut bytes, values) = edge_field(vec![3, 9, 11]);
+    let (mut bytes, values) = edge_field(&[3, 9, 11]);
     let (index, record, offset_size) = fixed_record(&bytes);
     bytes[record..record + offset_size].fill(0xff);
     refresh_fixed_checksum(&mut bytes, index, record, offset_size);
@@ -283,7 +327,7 @@ fn unallocated_chunks_preserve_fill_and_skipped_filters_preserve_raw_pixels() {
         }
     }
 
-    let (mut bytes, values) = edge_field(vec![3, 9, 11]);
+    let (mut bytes, values) = edge_field(&[3, 9, 11]);
     let (index, record, offset_size) = fixed_record(&bytes);
     let payload = u64::try_from(bytes.len()).unwrap();
     let mut raw = Vec::new();
@@ -313,7 +357,7 @@ fn unallocated_chunks_preserve_fill_and_skipped_filters_preserve_raw_pixels() {
 
 #[test]
 fn invalid_filtered_width_and_corrupt_chunk_payload_return_errors() {
-    let (mut bytes, _) = edge_field(vec![3, 9, 11]);
+    let (mut bytes, _) = edge_field(&[3, 9, 11]);
     let (index, record, offset_size) = fixed_record(&bytes);
     bytes[index + 6] = u8::try_from(offset_size + 4).unwrap();
     let checksum = index + 8 + 8 + offset_size;
@@ -330,7 +374,7 @@ fn invalid_filtered_width_and_corrupt_chunk_payload_return_errors() {
             .contains("width")
     );
 
-    let (mut bytes, _) = edge_field(vec![3, 9, 11]);
+    let (mut bytes, _) = edge_field(&[3, 9, 11]);
     let mut cursor = Cursor::new(&bytes[record..]);
     let payload = usize::try_from(cursor.read_uvar(offset_size).unwrap()).unwrap();
     bytes[payload] ^= 0x40;
@@ -522,51 +566,56 @@ fn affected_netcdf_slice_masks_stored_values_before_unpacking() {
             format: NcWriteFormat::Nc4,
         })
         .unwrap();
-    let file =
-        NcFile::from_bytes_with_options(&bytes, netcdf_reader::NcOpenOptions::default()).unwrap();
-    let selection = NcSliceInfo {
-        selections: vec![
-            NcSliceInfoElem::Index(0),
-            NcSliceInfoElem::Slice {
-                start: 1,
-                end: 4,
-                step: 2,
-            },
-            NcSliceInfoElem::Slice {
-                start: 2,
-                end: 8,
-                step: 3,
-            },
-            NcSliceInfoElem::Slice {
-                start: 1,
-                end: 8,
-                step: 2,
-            },
-        ],
-    };
-    assert!(
-        file.inner
+    let legacy = legacy_data::decode(legacy_data::DENSITY);
+    for bytes in [bytes, legacy] {
+        let file = NcFile::from_bytes_with_options(&bytes, netcdf_reader::NcOpenOptions::default())
+            .unwrap();
+        let selection = NcSliceInfo {
+            selections: vec![
+                NcSliceInfoElem::Index(0),
+                NcSliceInfoElem::Slice {
+                    start: 1,
+                    end: 4,
+                    step: 2,
+                },
+                NcSliceInfoElem::Slice {
+                    start: 2,
+                    end: 8,
+                    step: 3,
+                },
+                NcSliceInfoElem::Slice {
+                    start: 1,
+                    end: 8,
+                    step: 2,
+                },
+            ],
+        };
+        let upstream = file
+            .inner
             .read_variable_slice_unpacked_masked("density", &selection)
-            .is_err()
-    );
-    let actual = file
-        .read_variable_slice_unpacked_masked("density", &selection)
-        .unwrap();
-    assert_eq!(actual.shape(), &[2, 2, 4]);
-    let expected: Vec<_> = [1, 3]
-        .into_iter()
-        .flat_map(|z| {
-            [2, 5]
-                .into_iter()
-                .flat_map(move |y| [1, 3, 5, 7].map(move |x| z * 64 + y * 8 + x))
-        })
-        .map(|index| stored[index])
-        .collect();
-    for (&actual, &stored) in actual.iter().zip(&expected) {
-        if !(-60..=60).contains(&stored) || stored == -32767 {
-            assert!(actual.is_nan());
-        } else {
-            assert_eq!(actual, f64::from(stored) * 0.5 + 10.);
+            .unwrap();
+        let actual = file
+            .read_variable_slice_unpacked_masked("density", &selection)
+            .unwrap();
+        assert_eq!(actual.shape(), &[2, 2, 4]);
+        let expected: Vec<_> = [1, 3]
+            .into_iter()
+            .flat_map(|z| {
+                [2, 5]
+                    .into_iter()
+                    .flat_map(move |y| [1, 3, 5, 7].map(move |x| z * 64 + y * 8 + x))
+            })
+            .map(|index| stored[index])
+            .collect();
+        for actual in [&actual, &upstream] {
+            assert_eq!(actual.shape(), &[2, 2, 4]);
+            for (&actual, &stored) in actual.iter().zip(&expected) {
+                if !(-60..=60).contains(&stored) || stored == -32767 {
+                    assert!(actual.is_nan());
+                } else {
+                    assert_eq!(actual, f64::from(stored) * 0.5 + 10.);
+                }
+            }
         }
     }
 }

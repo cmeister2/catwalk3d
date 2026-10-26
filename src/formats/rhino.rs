@@ -5,12 +5,13 @@
 //! participate. Exact boundary faces use the shared Rust CAD tessellator;
 //! independent source meshes retain their original winding and shading normals.
 
+use super::native_budget::Context as DecodeContext;
 use crate::{
     Result,
     scene::{Line, Point, Scene, Triangle, TriangleAppearance, Vec3},
 };
 use cadmpeg_codec_rhino::RhinoCodec;
-use cadmpeg_core::decode::{DecodeArena, DecodeContext, DecodePolicy};
+use cadmpeg_core::decode::{DecodeArena, DecodePolicy};
 use cadmpeg_ir::{
     CadIr, Codec, DecodeOptions, SourceGeometryRole, SourceObjectAssociation,
     eval::{decode::curve_point_solved, finite_or_refusal},
@@ -629,7 +630,7 @@ fn append_curve_geometry(
     reserve(scene, parameters.len())?;
     let mut previous = None;
     for parameter in parameters {
-        let point = finite_or_refusal(curve_point_solved(ctx, geometry, parameter))
+        let point = finite_or_refusal(curve_point_solved(&**ctx, geometry, parameter))
             .map_err(cadmpeg_core::CodecError::ResourceLimit)?
             .ok_or("Rhino curve evaluation failed")?;
         let point = vector(
@@ -751,7 +752,7 @@ fn append_surface(
         for &v in &v {
             points.push(vector(
                 finite_or_refusal(cadmpeg_ir::eval::decode::surface_point(
-                    ctx,
+                    &**ctx,
                     &surface.geometry,
                     u,
                     v,

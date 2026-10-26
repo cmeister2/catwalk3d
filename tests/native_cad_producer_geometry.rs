@@ -6,6 +6,8 @@
 pub use catwalk3d::{Result, scene};
 #[path = "../src/formats/fusion.rs"]
 mod fusion;
+#[path = "../src/formats/native_budget.rs"]
+mod native_budget;
 #[path = "../src/formats/native_cad.rs"]
 mod native_cad;
 #[path = "../src/formats/native_step.rs"]

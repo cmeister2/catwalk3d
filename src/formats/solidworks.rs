@@ -310,13 +310,8 @@ impl Project {
 /// # Errors
 /// Geometry loss, unresolved/alternate configuration identity and stale caches fail.
 fn part(data: &[u8], requested: Option<&str>) -> Result<Scene> {
-    // Native display-to-B-rep validation compares many authored trim segments.
-    // Keep the service allocation/decompression ceilings while allowing one
-    // billion explicitly charged work units and eight million collection
-    // visits for these supported part graphs.
-    let mut policy = DecodePolicy::service();
-    policy.limits.max_work_units = 1_000_000_000;
-    policy.limits.max_collection_items = 8_000_000;
+    // Keep the service allocation, entity, recursion and decompression ceilings.
+    let policy = DecodePolicy::service();
     let decoded = SldprtCodec.decode(
         &mut Cursor::new(data),
         &DecodeOptions {

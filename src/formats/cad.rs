@@ -12,7 +12,7 @@ use std::{
     path::Path,
 };
 
-/// Restore native BREP geometry carrier placements.
+/// Validate native BREP carriers and exact planar boundaries.
 #[path = "cad_carriers.rs"]
 mod carriers;
 
@@ -83,6 +83,27 @@ pub(super) fn read_brep_model(text: &str) -> Result<(Model, Shape)> {
     carriers.restore(&mut model, &root, TOLERANCES)?;
     restore_brep_wire_order(&mut model)?;
     Ok((model, root))
+}
+
+/// Validate source carriers and complete exact planar charts after upstream import.
+///
+/// # Errors
+/// Native placement admission, imported topology or exact planar geometry is invalid.
+pub(super) fn restore_brep_carriers(
+    text: &str,
+    model: &mut Model,
+    root: &Shape,
+    tolerances: Tolerances,
+) -> Result<()> {
+    carriers::Metadata::parse(text)?.restore(model, root, tolerances)
+}
+
+/// Bound source placements and occurrences before the kernel's import-time expansion.
+///
+/// # Errors
+/// Native references are malformed or expanded storage, occurrence/depth or work limits are exceeded.
+pub(super) fn preflight_brep_import(tokens: &[&str]) -> Result<()> {
+    carriers::preflight_expansion(tokens)
 }
 
 /// Restore native endpoint and complete wire occurrence order after geometry-carrier restoration.
@@ -1901,40 +1922,9 @@ mod tests {
             }
             *model.node_mut(&shape).unwrap() = ogeom_topo::TShape::new(kind, data, children);
         }
-        let mut source = ogeom_io::brep::write(&model, &root, TOLERANCES).unwrap();
-        let start = source.find("Locations").unwrap();
-        let end = source.find("Curve2ds").unwrap();
-        // Native order is established by the first edge's inward carrier;
-        // the independently stored child edge occurrence is outward.
-        source.replace_range(
-            start..end,
-            "Locations 2\n1\n1 0 0 -10\n0 1 0 -3\n0 0 1 1\n1\n1 0 0 10\n0 1 0 3\n0 0 1 -1\n",
-        );
-        let mut words: Vec<String> = source.split_whitespace().map(str::to_owned).collect();
-        for at in 0..words.len() {
-            if words[at] != "Ed" {
-                continue;
-            }
-            let mut cursor = at + 5;
-            loop {
-                let kind = words[cursor].parse::<u32>().unwrap();
-                cursor += 1;
-                match kind {
-                    0 => break,
-                    1 => {
-                        words[cursor + 1] = "1".into();
-                        cursor += 4;
-                    }
-                    2 | 4 => cursor += 5,
-                    3 => cursor += 7,
-                    5 => cursor += 2,
-                    6 => cursor += 3,
-                    7 => cursor += 4,
-                    _ => panic!("bad repr"),
-                }
-            }
-        }
-        source = format!("DBRep_DrawableShape\n\n{}", words[1..].join(" "));
+        // Current upstream writers retain both geometry carrier indices and
+        // composite occurrence placements. Keep their complete location table.
+        let source = ogeom_io::brep::write(&model, &root, TOLERANCES).unwrap();
         let scene = load_brep_text(&source).unwrap();
         assert_eq!(scene.triangles.len(), 12);
         assert!((area(&scene) - 52.).abs() < 1e-8);

@@ -1,8 +1,8 @@
 //! Restore authored BREP analytic coordinate frames through upstream geometry builders.
 //!
-//! The upstream reader supplies topology, spline data and geometry parameters. Native
-//! BREP also stores an independent Y axis, which its reader reconstructs from X and Z.
-//! Rebuild only framed analytic leaves, preserving nested trims, offsets and sweeps.
+//! The upstream reader preserves authored axes and may append placed/canonical
+//! carriers while binding topology. Verify/restore only original table leaves,
+//! preserving those derived carriers and nested trims, offsets and sweeps.
 
 use crate::Result;
 use ogeom_core::Tolerances;
@@ -26,6 +26,9 @@ use std::collections::HashMap;
 /// the imported geometry store, or a reconstructed analytic primitive is invalid.
 pub(super) fn read(text: &str, tolerances: Tolerances) -> Result<(Model, Shape)> {
     let tokens: Vec<_> = text.split_whitespace().collect();
+    // Ogeom expands placement chains and walks native occurrences during read,
+    // before callers can enforce their limits on the imported model.
+    super::preflight_brep_import(&tokens)?;
     let section = |name: &str| -> Result<usize> {
         tokens
             .iter()
@@ -43,14 +46,16 @@ pub(super) fn read(text: &str, tolerances: Tolerances) -> Result<(Model, Shape)>
     let surface_frames = super::validate_geometry_table(&tokens[surfaces + 1..triangulations], 0)?;
     let (mut model, root) = ogeom_io::brep::read(text, tolerances)?;
     let (curve_count, _, surface_count) = model.geometry().counts();
-    if curve_count != curve_frames.len() || surface_count != surface_frames.len() {
+    if curve_count < curve_frames.len() || surface_count < surface_frames.len() {
         return Err("BREP analytic geometry table does not match imported ordinals".into());
     }
-    // The public reader inserts each top-level table record in file order.
-    // Keep surface handles stable for face and parameter-curve associations.
+    // Top-level tables are inserted first, in file order. Newer readers may
+    // append placed/right-handed carriers while binding topology. Preserve
+    // those derived handles and restore only the original table records.
     let replacements = model
         .geometry()
         .surfaces()
+        .take(surface_frames.len())
         .zip(surface_frames)
         .filter_map(|((id, geometry), frame)| frame.map(|frame| (id, geometry, frame)))
         .map(|(id, geometry, frame)| Ok((id, restore_surface(geometry, frame, tolerances)?)))
@@ -66,6 +71,7 @@ pub(super) fn read(text: &str, tolerances: Tolerances) -> Result<(Model, Shape)>
     let replacements = model
         .geometry()
         .curves()
+        .take(curve_frames.len())
         .zip(curve_frames)
         .filter_map(|((id, geometry), frame)| frame.map(|frame| (id, geometry, frame)))
         .map(|(id, geometry, frame)| Ok((id, restore_curve(geometry, frame, tolerances)?)))
@@ -470,7 +476,7 @@ mod tests {
         assert_eq!(revolution.axis().location, Point::new(7., -2., 5.));
         assert_eq!(revolution.axis().direction, Direction::Y);
         assert_eq!(surfaces[2].domain(), ((0., TAU), (0., 2.)));
-        assert_eq!(surfaces[3].domain(), ((-1e6, 1e6), (0., 1e9)));
+        assert_eq!(surfaces[3].domain(), ((-1e6, 1e6), (-1e9, 1e9)));
     }
 
     #[test]
