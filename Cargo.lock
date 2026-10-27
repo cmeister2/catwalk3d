@@ -282,7 +282,7 @@ dependencies = [
  "serde_json",
  "sha2",
  "tempfile",
- "zip 9.1.0",
+ "zip 9.1.2",
 ]
 
 [[package]]
@@ -353,7 +353,7 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.21",
- "zip 9.1.0",
+ "zip 9.1.2",
 ]
 
 [[package]]
@@ -365,7 +365,7 @@ dependencies = [
  "cadmpeg-core",
  "crc32fast",
  "flate2",
- "zip 9.1.0",
+ "zip 9.1.2",
  "zstd",
 ]
 
@@ -420,7 +420,7 @@ dependencies = [
  "flate2",
  "roxmltree",
  "serde",
- "zip 9.1.0",
+ "zip 9.1.2",
 ]
 
 [[package]]
@@ -477,7 +477,7 @@ dependencies = [
  "truck-meshalgo",
  "truck-modeling",
  "truck-stepio",
- "zip 9.1.0",
+ "zip 9.1.2",
 ]
 
 [[package]]
@@ -3225,9 +3225,9 @@ dependencies = [
 
 [[package]]
 name = "zip"
-version = "9.1.0"
+version = "9.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2886b00003a72c4ccee3f42cfc34908d33b2508a74d827dc2a4244706475c704"
+checksum = "ec2e3161de27091f18a831d9494e9c53378a34833af5c1dda35ad85849da18d6"
 dependencies = [
  "crc32fast",
  "flate2",
