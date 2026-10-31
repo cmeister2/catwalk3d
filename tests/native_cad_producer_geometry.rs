@@ -216,6 +216,7 @@ fn product_definition(
         part_number: None,
         bom_properties: BTreeMap::new(),
         bodies,
+        sketches: Vec::new(),
         native_ref: None,
     }
 }
