@@ -9,6 +9,11 @@ on:
 permissions:
   contents: read
 
+env:
+  # Large integration-test binaries must fit on hosted runners.
+  CARGO_PROFILE_DEV_DEBUG: "0"
+  CARGO_PROFILE_TEST_DEBUG: "0"
+
 concurrency:
   group: ci-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}

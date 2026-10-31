@@ -3,15 +3,21 @@
   "extends": ["github>cmeister2/renovate:yayornay"],
   "packageRules": [
     {
+      "description": "ogeom 0.12 changes to LGPL-2.1-only, outside the existing release license policy; retain the accepted 0.11 series",
+      "matchManagers": ["cargo"],
+      "matchPackageNames": ["/^ogeom-/"],
+      "allowedVersions": "<0.12"
+    },
+    {
       "description": "Work around npm/cli#9800 when regenerating lockfiles with bundled dependencies",
       "matchManagers": ["npm"],
       "skipInstalls": false
     },
     {
-      "description": "cadmpeg 0.6.3-0.6.6 reject supported Inventor schema-15 assembly records; retain 0.6.2 until a fixed release",
+      "description": "cadmpeg 0.6.3-0.6.7 regress qualified Fusion or Inventor geometry; retain 0.6.2 until a fixed release",
       "matchManagers": ["cargo"],
       "matchPackageNames": ["/^cadmpeg-/"],
-      "allowedVersions": "!/^0\\.6\\.[3-6]$/"
+      "allowedVersions": "!/^0\\.6\\.[3-7]$/"
     },
     {
       "matchManagers": ["cargo"],

@@ -25,7 +25,7 @@ name = "catwalk"
 path = "src/main.rs"
 
 [dependencies]
-acadrust = { version = "=0.6.7", default-features = false }
+acadrust = { version = "=0.6.8", default-features = false }
 base64 = "0.23.0"
 cadmpeg-codec-f3d = "=0.6.2"
 cadmpeg-codec-inventor = "=0.6.2"
@@ -34,22 +34,22 @@ cadmpeg-codec-sldprt = "=0.6.2"
 cadmpeg-codec-step = "=0.6.2"
 cadmpeg-core = "=0.6.2"
 cadmpeg-ir = "=0.6.2"
-cfb = { version = "=0.15.0", default-features = false }
+cfb = { version = "=0.16.0", default-features = false }
 clap = { version = "4.6.1", features = ["derive"] }
-dicom-object = { version = "=0.10.0", default-features = false, features = ["deflate"] }
-dicom-core = "=0.10.0"
-dicom-pixeldata = { version = "=0.10.0", default-features = false, features = ["native", "image"] }
+dicom-object = { version = "=0.10.1", default-features = false, features = ["deflate"] }
+dicom-core = "=0.10.1"
+dicom-pixeldata = { version = "=0.10.1", default-features = false, features = ["native", "image"] }
 draco-core = { version = "=2.3.2", default-features = false, features = ["decoder", "point_cloud_decode", "edgebreaker_valence_decode", "legacy_bitstream_decode"] }
 earcutr = "0.5.0"
 fbxcel = { version = "=0.9.0", default-features = false, features = ["tree"] }
 flate2 = { version = "1.1.9", default-features = false, features = ["zlib-rs"] }
 gltf = { version = "1.4.1", default-features = false, features = ["utils", "names", "extensions", "KHR_materials_unlit"] }
-hdf5-reader = { version = "=0.9.3", default-features = false, features = ["lz4"] }
+hdf5-reader = { version = "=0.11.0", default-features = false, features = ["lz4"] }
 las = { version = "0.11.1", default-features = false, features = ["laz"] }
 lz4_flex = { version = "0.14.0", default-features = false, features = ["std"] }
 openusd = { version = "=0.8.0", default-features = false }
 openusd-schemas = { version = "=0.8.0", default-features = false, features = ["geom", "shade"] }
-netcdf-reader = { version = "=0.9.3", default-features = false, features = ["netcdf4"] }
+netcdf-reader = { version = "=0.11.0", default-features = false, features = ["netcdf4"] }
 ndarray = "=0.17.2"
 num-rational = "=0.4.2"
 num-traits = "=0.2.19"
@@ -75,8 +75,8 @@ truck-meshalgo = { version = "0.4.0", default-features = false, features = ["tes
 zip = { version = "9.0.0", default-features = false, features = ["deflate"] }
 
 [dev-dependencies]
-hdf5-writer = { version = "=0.9.3", default-features = false }
-netcdf-writer = { version = "=0.9.3", default-features = false, features = ["netcdf4"] }
+hdf5-writer = { version = "=0.11.0", default-features = false }
+netcdf-writer = { version = "=0.11.0", default-features = false, features = ["netcdf4"] }
 truck-modeling = "=0.6.0"
 
 [profile.release]
