@@ -25,20 +25,20 @@ name = "catwalk"
 path = "src/main.rs"
 
 [dependencies]
-acadrust = { version = "=0.6.7", default-features = false }
+acadrust = { version = "=0.6.8", default-features = false }
 base64 = "0.23.0"
-cadmpeg-codec-f3d = "=0.6.2"
-cadmpeg-codec-inventor = "=0.6.2"
-cadmpeg-codec-rhino = "=0.6.2"
-cadmpeg-codec-sldprt = "=0.6.2"
-cadmpeg-codec-step = "=0.6.2"
-cadmpeg-core = "=0.6.2"
-cadmpeg-ir = "=0.6.2"
+cadmpeg-codec-f3d = "=0.6.7"
+cadmpeg-codec-inventor = "=0.6.7"
+cadmpeg-codec-rhino = "=0.6.7"
+cadmpeg-codec-sldprt = "=0.6.7"
+cadmpeg-codec-step = "=0.6.7"
+cadmpeg-core = "=0.6.7"
+cadmpeg-ir = "=0.6.7"
 cfb = { version = "=0.15.0", default-features = false }
 clap = { version = "4.6.1", features = ["derive"] }
-dicom-object = { version = "=0.10.0", default-features = false, features = ["deflate"] }
-dicom-core = "=0.10.0"
-dicom-pixeldata = { version = "=0.10.0", default-features = false, features = ["native", "image"] }
+dicom-object = { version = "=0.10.1", default-features = false, features = ["deflate"] }
+dicom-core = "=0.10.1"
+dicom-pixeldata = { version = "=0.10.1", default-features = false, features = ["native", "image"] }
 draco-core = { version = "=2.3.2", default-features = false, features = ["decoder", "point_cloud_decode", "edgebreaker_valence_decode", "legacy_bitstream_decode"] }
 earcutr = "0.5.0"
 fbxcel = { version = "=0.9.0", default-features = false, features = ["tree"] }
