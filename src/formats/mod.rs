@@ -112,7 +112,7 @@ mod xbf;
 /// Physical ZIP directory counts and duplicates checked before library indexing.
 pub(crate) mod zip_directory;
 
-use crate::{Result, scene::Scene};
+use crate::{Result, instanced::InstancedScene, scene::Scene};
 use std::path::Path;
 
 /// Advertised extension aliases with a Rust geometry reader.
@@ -198,6 +198,24 @@ pub fn load(path: &Path) -> Result<Scene> {
             )
             .into());
         }
+    };
+    scene.validate()?;
+    Ok(scene)
+}
+
+/// Import model geometry with shared indexed meshes and retained instance placements.
+///
+/// STEP readers preserve source-item meshes during import. Other readers currently
+/// adapt their validated world-space scene into a single indexed identity instance.
+///
+/// # Errors
+///
+/// Returns the same resource, format and geometry errors as [`load`], or an error
+/// when the imported geometry cannot be represented by the indexed scene limits.
+pub fn load_instanced(path: &Path) -> Result<InstancedScene> {
+    let scene = match extension(path)?.as_str() {
+        "step" | "stp" | "stpnc" | "p21" | "210" => step::load_instanced(path)?,
+        _ => InstancedScene::from_scene(load(path)?)?,
     };
     scene.validate()?;
     Ok(scene)

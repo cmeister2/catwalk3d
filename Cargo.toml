@@ -14,6 +14,7 @@ include = [
     "/README.md",
     "/LICENSE",
     "/examples/demo.rs",
+    "/examples/profile_thumbnail.rs",
     "/examples/models/gear.obj",
     "/examples/gear.png",
     "/Cargo.toml",
