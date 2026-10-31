@@ -27,13 +27,13 @@ path = "src/main.rs"
 [dependencies]
 acadrust = { version = "=0.6.8", default-features = false }
 base64 = "0.23.0"
-cadmpeg-codec-f3d = "=0.6.7"
-cadmpeg-codec-inventor = "=0.6.7"
-cadmpeg-codec-rhino = "=0.6.7"
-cadmpeg-codec-sldprt = "=0.6.7"
-cadmpeg-codec-step = "=0.6.7"
-cadmpeg-core = "=0.6.7"
-cadmpeg-ir = "=0.6.7"
+cadmpeg-codec-f3d = "=0.6.2"
+cadmpeg-codec-inventor = "=0.6.2"
+cadmpeg-codec-rhino = "=0.6.2"
+cadmpeg-codec-sldprt = "=0.6.2"
+cadmpeg-codec-step = "=0.6.2"
+cadmpeg-core = "=0.6.2"
+cadmpeg-ir = "=0.6.2"
 cfb = { version = "=0.15.0", default-features = false }
 clap = { version = "4.6.1", features = ["derive"] }
 dicom-object = { version = "=0.10.1", default-features = false, features = ["deflate"] }

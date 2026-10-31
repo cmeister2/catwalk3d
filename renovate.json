@@ -8,10 +8,10 @@
       "skipInstalls": false
     },
     {
-      "description": "cadmpeg 0.6.3-0.6.6 reject supported Inventor schema-15 assembly records; retain 0.6.2 until a fixed release",
+      "description": "cadmpeg 0.6.3-0.6.7 regress qualified Fusion or Inventor geometry; retain 0.6.2 until a fixed release",
       "matchManagers": ["cargo"],
       "matchPackageNames": ["/^cadmpeg-/"],
-      "allowedVersions": "!/^0\\.6\\.[3-6]$/"
+      "allowedVersions": "!/^0\\.6\\.[3-7]$/"
     },
     {
       "matchManagers": ["cargo"],

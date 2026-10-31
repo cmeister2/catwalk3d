@@ -253,9 +253,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-asm"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb75046036b8d47063eff15d319422e7ba23b7c49d6aec017bd917e468e14eef"
+checksum = "f1e30b83e8cc4e3864f2483435e6a5791c48e70a4b6deea0fa15a663f5f8e2ab"
 dependencies = [
  "cadmpeg-core",
  "cadmpeg-ir",
@@ -265,9 +265,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-f3d"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c207c0ec3b149e969448cc180044ff29fa766968f710c1714dde7ebc161adaee"
+checksum = "54505b952b9cda11a1a8bd98fc4acf54a92e5b7efc83f549877b6632d9296cbd"
 dependencies = [
  "cadmpeg-asm",
  "cadmpeg-container",
@@ -287,9 +287,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-inventor"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f9786e550022084a70a35de58ed40c133232bb4fe304c7cd5fc0fffc179e0b53"
+checksum = "95cc163d0779e6dc6a156c8580b06581799c2525d846bb461a7944a8e8efee15"
 dependencies = [
  "cadmpeg-asm",
  "cadmpeg-container",
@@ -303,9 +303,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-rhino"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7dd2b76bd1d9301c949fbd731fd22cff9d37d10d1f481c754b557c2187bd0171"
+checksum = "701ee0f79fdf1b09c08ee169ce00ddb00c1d66d697badfaf2af79728c7b7d52c"
 dependencies = [
  "cadmpeg-container",
  "cadmpeg-core",
@@ -322,9 +322,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-sldprt"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1affa26f53fd17c21a470831fac4e8c03ea7822ed6dd1d838649175901e35417"
+checksum = "af3bf53c3878a2218f077cd89cd32a9ce591a0a09cc8ed8957b9296ddf19129b"
 dependencies = [
  "cadmpeg-container",
  "cadmpeg-core",
@@ -341,9 +341,9 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-codec-step"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f3cbce33ed681a28b62d8b01ae64cca2b01f11f31b9a3e5e2455b9ffde915712"
+checksum = "08a9fe6b93af35c22b56cceccca9a8668dd1564e6544b8184c94d8b0d24a5ab5"
 dependencies = [
  "base64",
  "cadmpeg-container",
@@ -358,36 +358,37 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-container"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03f0d1c22b875294c5fbf4a4738aec8f8c0a4ad035eb28ece404f1dec21f371a"
+checksum = "57950ab1450471cd674c635b00b18686e7f55366a6cf9961dabfc33fc6e420fb"
 dependencies = [
  "cadmpeg-core",
  "crc32fast",
  "flate2",
  "zip 9.2.0",
+ "zstd",
 ]
 
 [[package]]
 name = "cadmpeg-core"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "795bdc6e2a10ecc0627138874c17e2948a3925cd22c6c6b0c2e4f6621d92f89c"
+checksum = "45eac6de0b68d8ae9baf43e5f04780cc153100597ce73bd636c85b2059fee1bd"
 dependencies = [
  "flate2",
  "memchr",
  "roxmltree",
- "ruzstd",
  "serde",
  "serde_json",
  "thiserror 2.0.21",
+ "zstd",
 ]
 
 [[package]]
 name = "cadmpeg-ir"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5592036516aaf2574b159a86a3d1ae872dc245261de86e4c0ce6773fed00a249"
+checksum = "2cc818eeac208c9d09dc3a4f5ce4c431fe26acfab79ceb4a0a1570e03ff8bd55"
 dependencies = [
  "base64",
  "cadmpeg-core",
@@ -400,18 +401,18 @@ dependencies = [
 
 [[package]]
 name = "cadmpeg-parasolid"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e0fd2e8f3683a14802e69e9dfc1e361096aaa7ef37c611c4bbfbed8300938977"
+checksum = "4b7ca78dea14a05d84afd881d801189030b404f0f46c18d9370e5948ce945154"
 dependencies = [
  "cadmpeg-core",
 ]
 
 [[package]]
 name = "cadmpeg-protein"
-version = "0.6.7"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d8ec824e025726c01c1e77d3c0e649d5d5c2cf6a9ee7309f67aa879ec0a564d"
+checksum = "a12ffec0cd60836f7d6dd7662f4d1f21ac3f88fa03bdc29a0659fe5bdc6226e8"
 dependencies = [
  "cadmpeg-container",
  "cadmpeg-core",
@@ -486,6 +487,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "86e055fa6e3e40ad6187ba25b6855eeb635d5271f8e0f0e1e9a5826b8d75bea0"
 dependencies = [
  "find-msvc-tools",
+ "jobserver",
+ "libc",
  "shlex",
 ]
 
@@ -1377,6 +1380,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
 
 [[package]]
+name = "jobserver"
+version = "0.1.35"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1c00acbd29eabad4a2392fa0e921c874934dbbf4194312ad20f04a0ed67a3cb3"
+dependencies = [
+ "getrandom 0.4.3",
+ "libc",
+]
+
+[[package]]
 name = "jpeg-decoder"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2066,6 +2079,12 @@ name = "pin-project-lite"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a89322df9ebe1c1578d689c92318e070967d1042b512afbe49518723f4e6d5cd"
+
+[[package]]
+name = "pkg-config"
+version = "0.3.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f6b464fbc74e149a392436b17d523f769e057cb6877f6a5c4618bc6f11800548"
 
 [[package]]
 name = "png"
@@ -3228,6 +3247,7 @@ dependencies = [
  "typed-path 0.13.0",
  "windows-sys",
  "zopfli",
+ "zstd",
 ]
 
 [[package]]
@@ -3252,6 +3272,34 @@ dependencies = [
  "crc32fast",
  "log",
  "simd-adler32",
+]
+
+[[package]]
+name = "zstd"
+version = "0.14.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "db3ae9bf90af6e40197bef767eeefc46ad6397420fe873830bd85e5fbbfb3c70"
+dependencies = [
+ "zstd-safe",
+]
+
+[[package]]
+name = "zstd-safe"
+version = "8.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ded520f16b29e1a9b771c722221b2b0a0398c2316d9bb3c42b458a5414d7434b"
+dependencies = [
+ "zstd-sys",
+]
+
+[[package]]
+name = "zstd-sys"
+version = "2.1.2+zstd.1.5.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "481ada9c543b2323cbb7bbdbb5249177fbf0188ed959ed2c15e4b22421c84ed3"
+dependencies = [
+ "cc",
+ "pkg-config",
 ]
 
 [[package]]
