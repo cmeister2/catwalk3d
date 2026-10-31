@@ -3,6 +3,12 @@
   "extends": ["github>cmeister2/renovate"],
   "packageRules": [
     {
+      "description": "ogeom 0.12 changes to LGPL-2.1-only, outside the existing release license policy; retain the accepted 0.11 series",
+      "matchManagers": ["cargo"],
+      "matchPackageNames": ["/^ogeom-/"],
+      "allowedVersions": "<0.12"
+    },
+    {
       "description": "Work around npm/cli#9800 when regenerating lockfiles with bundled dependencies",
       "matchManagers": ["npm"],
       "skipInstalls": false
