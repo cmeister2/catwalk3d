@@ -844,9 +844,9 @@ dependencies = [
 
 [[package]]
 name = "draco-core"
-version = "2.3.2"
+version = "2.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17957b93c10365b1392c98c86a091ea342741ea27d75e0a5b30102fa7e6841e9"
+checksum = "2d384c03a3090e54e7840f9f08d0bfb0860d58a527bfb78bd96cc5b921d4ba2e"
 dependencies = [
  "bytemuck",
 ]
