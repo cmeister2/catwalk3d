@@ -1190,18 +1190,18 @@ checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
 
 [[package]]
 name = "hdf5-core"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a99d8268adc8ac44bc0939deed382cb2ef65a34c37b4e565d5cd22a9f17d1195"
+checksum = "2c3d4ad873a5db535c052705e1b34070391157f4acc0ca50fcdc9c5923780112"
 dependencies = [
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "hdf5-reader"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eb073d61938f895013f22ea894d587f3ee3e8c4a9f380aec578d0b4a5a6d0261"
+checksum = "d1ac773e9e47f3765399b71525783c203c53844c83d52a73f3f313d0a040e413"
 dependencies = [
  "flate2",
  "hdf5-core",
@@ -1218,9 +1218,9 @@ dependencies = [
 
 [[package]]
 name = "hdf5-writer"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a70131ddae36797ef88789f9d00f39e4151dd96589833bc92aba1e959452a84e"
+checksum = "4a30694330c92d37b3d8183037d699012011976f14f45784b829e8be61d58bc3"
 dependencies = [
  "flate2",
  "hdf5-core",
@@ -1708,18 +1708,18 @@ dependencies = [
 
 [[package]]
 name = "netcdf-core"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18749409f5da6afc9d28fe431eb64da5f9c14f0214414c2898be1dfafc2cffa0"
+checksum = "9cad5b445e41178e133347ba40e701848971da4fada54d15bd5005c8f58a9558"
 dependencies = [
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "netcdf-reader"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "540272f41a24b666ce38852eebf8a6ad62a59c2e797f7e13e04dbbdaae604141"
+checksum = "a9f1a196246124ca06303e9d11ed268f499852277899e52fb47cc74e08fdd11b"
 dependencies = [
  "hdf5-reader",
  "memmap2",
@@ -1730,9 +1730,9 @@ dependencies = [
 
 [[package]]
 name = "netcdf-writer"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b21aca4dc3983172803164e38d7717997f467cb1d20fff7b1542cd9e8d71719e"
+checksum = "d5917acdf004e1bf7c90b90ac0a20d965ead91b1fec111221ae1ac0db7806e20"
 dependencies = [
  "hdf5-writer",
  "netcdf-core",
