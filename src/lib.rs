@@ -2,6 +2,8 @@
 #![forbid(unsafe_code)]
 /// Model-format discovery and bounded Rust geometry importers.
 pub mod formats;
+/// Indexed reusable meshes and checked affine instances with CPU scene expansion.
+pub mod instanced;
 /// Fixed-view CPU rendering and PNG encoding.
 pub mod render;
 /// Extraction of saved document images without loading model geometry.
