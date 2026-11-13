@@ -72,7 +72,7 @@ if (notices) {
   const thirdParty = await readFile(thirdPartyPath, 'utf8');
   const section = `<section id="wasi-runtime"><h2>WASI C runtime</h2>\n` +
     `<p><a href="./${runtime.filename}">Original runtime notices</a> and ` +
-    '<a href="./MUSL-COPYRIGHT">musl copyright</a></p>\n' +
+    '<a href="./MUSL-COPYRIGHT">Native musl copyright</a></p>\n' +
     `<pre>${escape(runtimeText)}</pre>\n<pre>${escape(muslText)}</pre>\n</section>\n`;
   await writeFile(thirdPartyPath, thirdParty.replace(/<\/html>\s*$/, section + '</html>\n'));
 }

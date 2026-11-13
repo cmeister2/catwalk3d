@@ -27,8 +27,9 @@ async function directory(t, rustVersion = '1.99.0') {
 
 test('WASI libc notices follow the pinned Rust SDK download and reject new or ambiguous SDKs', () => {
   assert.equal(bundledWasiSdk(docker()), '33.0');
+  assert.equal(bundledWasiSdk(docker('34.0')), '34.0');
   assert.equal(bundledWasiSdk(docker() + docker()), '33.0');
-  assert.throws(() => bundledWasiSdk(docker('34.0')), /requires qualified/);
+  assert.throws(() => bundledWasiSdk(docker('35.0')), /requires qualified/);
   assert.throws(() => bundledWasiSdk(docker('33.0', '32')), /disagree/);
   assert.throws(() => bundledWasiSdk(docker() + docker('34.0')), /unambiguous/);
   assert.throws(() => bundledWasiSdk('ENV TARGETS=wasm32-wasip1\n'), /unambiguous/);
@@ -47,7 +48,21 @@ test('qualified runtime sources use immutable libc paths with verified checksums
   }
   assert.equal(sources[2].sha256, 'c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0');
   assert.equal(sources[4].noticeBytes, 269);
-  assert.throws(() => wasiLibcSources('34.0'), /requires qualified/);
+  assert.throws(() => wasiLibcSources('35.0'), /requires qualified/);
+});
+
+test('SDK 34 requires its updated musl original independently of native musl', () => {
+  const sources = wasiLibcSources('34.0');
+  assert.equal(sources.length, 6);
+  for (const source of sources) {
+    assert.equal(source.url, 'https://raw.githubusercontent.com/WebAssembly/wasi-libc/' +
+      '2e6fb9d8ee0cdf9e431fbcabe8af3115de000a13/' + source.path);
+  }
+  assert.equal(sources.at(-1).path, 'libc-top-half/musl/COPYRIGHT');
+  assert.equal(sources.at(-1).sha256, 'b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b');
+  const contents = sources.map(() => Buffer.alloc(0));
+  assert.throws(() => renderWasiLibcNotices('34.0', contents, Buffer.from('native musl')),
+    /WASI musl COPYRIGHT differs/);
 });
 
 test('original notice rendering preserves UTF-8 and line endings and refuses substitutions', () => {
@@ -92,7 +107,7 @@ test('generator retrieves compiler-commit configuration and fails closed on unqu
   const prepared = await directory(t);
   const calls = [];
   await assert.rejects(generateWasiLibcNotices(prepared, prepared, {
-    verboseVersion, load: async url => { calls.push(url); return Buffer.from(docker('34.0')); },
+    verboseVersion, load: async url => { calls.push(url); return Buffer.from(docker('35.0')); },
   }), /requires qualified/);
   assert.deepEqual(calls, [dockerUrl]);
   await assert.rejects(readFile(join(prepared, 'WASI-LIBC-LICENSES.txt')), /ENOENT/);
