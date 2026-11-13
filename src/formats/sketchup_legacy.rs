@@ -641,10 +641,11 @@ impl<'a> Archive<'a> {
                 let drawing = self.drawing(depth)?;
                 let definition = self.required(depth + 1)?;
                 let mut transform = Transform::IDENTITY;
-                for row in 0..3 {
-                    for column in 0..3 {
-                        transform.0[column][row] = self.float()?;
-                    }
+                let [x_axis, y_axis, z_axis, _] = &mut transform.0;
+                for ((x, y), z) in x_axis.iter_mut().zip(y_axis).zip(z_axis).take(3) {
+                    *x = self.float()?;
+                    *y = self.float()?;
+                    *z = self.float()?;
                 }
                 let p = self.point()?;
                 transform.0[3] = [p.x, p.y, p.z, 1.];

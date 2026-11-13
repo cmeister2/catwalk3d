@@ -620,12 +620,10 @@ mod tests {
         assert_eq!(scene.triangles.len(), 3);
         for (index, triangle) in scene.triangles.iter().enumerate() {
             let appearance = &scene.appearances[&index];
-            for corner in 0..3 {
+            for (corner, vertex) in triangle.vertices.iter().enumerate() {
                 let authored = positions
                     .iter()
-                    .position(|[x, y]| {
-                        triangle.vertices[corner] == Vec3::new(f64::from(*x), f64::from(*y), 0.0)
-                    })
+                    .position(|[x, y]| *vertex == Vec3::new(f64::from(*x), f64::from(*y), 0.0))
                     .unwrap();
                 let uv = [4, 3, 2, 1, 0][authored];
                 let normal = [3, 2, 1, 0, 4][authored];

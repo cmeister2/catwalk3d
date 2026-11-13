@@ -390,8 +390,7 @@ pub(super) fn load(path: &Path) -> Result<Scene> {
         let kind = prim
             .type_name()
             .map_err(|e| e.to_string())?
-            .map(|t| t.to_string())
-            .unwrap_or_default();
+            .map_or_else(String::new, |t| t.to_string());
         let world = basis.then(world);
         if kind == "PointInstancer" {
             instancer(
@@ -1150,8 +1149,7 @@ fn prototype_scene(
         let kind = prim
             .type_name()
             .map_err(|e| e.to_string())?
-            .map(|t| t.to_string())
-            .unwrap_or_default();
+            .map_or_else(String::new, |t| t.to_string());
         append_geometry(
             &prim,
             &kind,

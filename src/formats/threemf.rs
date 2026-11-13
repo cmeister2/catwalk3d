@@ -1198,9 +1198,7 @@ mod tests {
     }
 
     fn production_model(unit: &str, resources: &str, build: Option<&str>) -> String {
-        let build = build
-            .map(|items| format!("<build>{items}</build>"))
-            .unwrap_or_default();
+        let build = build.map_or_else(String::new, |items| format!("<build>{items}</build>"));
         format!(
             "<model xmlns=\"{CORE}\" xmlns:p=\"{PRODUCTION}\" requiredextensions=\"p\" unit=\"{unit}\"><resources>{resources}</resources>{build}</model>"
         )
