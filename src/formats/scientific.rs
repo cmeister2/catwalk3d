@@ -1689,9 +1689,7 @@ mod tests {
             };
             tags.push(format!("<DataArray Name=\"{name}\" type=\"{ty}\" NumberOfComponents=\"{components}\" {placement}</DataArray>"));
         }
-        let compression = compressor
-            .map(|c| format!(" compressor=\"{c}\""))
-            .unwrap_or_default();
+        let compression = compressor.map_or_else(String::new, |c| format!(" compressor=\"{c}\""));
         let mut document = format!(
             "<VTKFile type=\"UnstructuredGrid\" byte_order=\"{}\" header_type=\"UInt{}\"{compression}><UnstructuredGrid><Piece NumberOfPoints=\"4\" NumberOfCells=\"1\"><Points>{}</Points><Cells>{}{}{}</Cells></Piece></UnstructuredGrid>",
             if big { "BigEndian" } else { "LittleEndian" }, header*8, tags[0], tags[1], tags[2], tags[3]

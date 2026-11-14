@@ -1117,8 +1117,9 @@ impl<'a> Assembly<'a> {
                     assembly
                         .children
                         .get(&id)
-                        .map(|children| children.iter().map(|p| p.child).collect())
-                        .unwrap_or_default(),
+                        .map_or_else(Vec::new, |children| {
+                            children.iter().map(|p| p.child).collect()
+                        }),
                 )
             })
             .collect();
@@ -1369,8 +1370,8 @@ impl<'a> Assembly<'a> {
         {
             let representation = self.representation(member)?;
             let mut scale = Transform::IDENTITY;
-            for i in 0..3 {
-                scale.0[i][i] = representation.scale;
+            for (i, column) in scale.0.iter_mut().enumerate().take(3) {
+                column[i] = representation.scale;
             }
             let geometry_transform = transform.then(scale);
             if geometry_transform

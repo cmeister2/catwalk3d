@@ -1076,8 +1076,7 @@ impl<'a> Deformation<'a> {
     fn children_of(&self, key: &Id) -> &[Id] {
         self.children
             .get(key)
-            .map(Vec::as_slice)
-            .unwrap_or_default()
+            .map_or_else(Default::default, Vec::as_slice)
     }
     #[allow(clippy::too_many_arguments)]
     /// Decode mesh positions, apply blend shapes, then evaluate the connected skin.

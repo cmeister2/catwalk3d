@@ -8,25 +8,39 @@ import { compilerIdentity, fetchVerifiedNotice, sourceBytes } from '../release/n
 const maximumBytes = 1024 * 1024;
 const filename = 'WASI-LIBC-LICENSES.txt';
 
-// Rust b940084d's dist-various-2 builder downloads SDK 33.0. SDK tag
-// wasi-sdk-33 pins this libc submodule; its musl COPYRIGHT exactly matches
-// the existing native 1.2.5 notice. Keep these original bytes qualified.
+// SDKs 33 and 34 retain these original notice bytes without changes.
+const commonNotices = [
+  { path: 'LICENSE', sha256: '2711a8b5a5cdfef0e639f96c1aca12ae23d7d64a02d0507f1bdf14d2b27bbc3a' },
+  { path: 'LICENSE-MIT', sha256: '23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3' },
+  { path: 'libc-bottom-half/cloudlibc/LICENSE', sha256: 'c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0' },
+  { path: 'fts/musl-fts/COPYING', sha256: '55af87e4017668f54467a3380e7ebbac5e672d8c763bfe95e6fc882a6fdc4046' },
+  {
+    path: 'dlmalloc/src/malloc.c',
+    sha256: '9e7ce51d813331ae87ef235f6ca2d5ce2167692e30bb51a173513e3754a67f8f',
+    // The complete verified source supplies only its original CC0 notice;
+    // no allocator implementation is copied into the distributed site.
+    noticeBytes: 269,
+    noticeSha256: '80cd40e7a6955355308ece79af9e8dcb3646af20e79c75ac6f3f9bf02536e929',
+  },
+];
+
+// Each SDK tag pins the exact libc submodule that supplies these originals.
 const knownSdks = new Map([
   ['33.0', {
     commit: '161b3195fc2558d2b1ba3eb9ffae3b2b47407623',
+    // This SDK's original is byte-identical to the prepared native notice.
     muslSha256: 'f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af',
+    files: commonNotices,
+  }],
+  ['34.0', {
+    commit: '2e6fb9d8ee0cdf9e431fbcabe8af3115de000a13',
+    // SDK 34 updates musl's original; distribute it independently of native musl.
+    muslSha256: 'b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b',
     files: [
-      { path: 'LICENSE', sha256: '2711a8b5a5cdfef0e639f96c1aca12ae23d7d64a02d0507f1bdf14d2b27bbc3a' },
-      { path: 'LICENSE-MIT', sha256: '23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3' },
-      { path: 'libc-bottom-half/cloudlibc/LICENSE', sha256: 'c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0' },
-      { path: 'fts/musl-fts/COPYING', sha256: '55af87e4017668f54467a3380e7ebbac5e672d8c763bfe95e6fc882a6fdc4046' },
+      ...commonNotices,
       {
-        path: 'dlmalloc/src/malloc.c',
-        sha256: '9e7ce51d813331ae87ef235f6ca2d5ce2167692e30bb51a173513e3754a67f8f',
-        // The complete verified source supplies only its original CC0 notice;
-        // no allocator implementation is copied into the distributed site.
-        noticeBytes: 269,
-        noticeSha256: '80cd40e7a6955355308ece79af9e8dcb3646af20e79c75ac6f3f9bf02536e929',
+        path: 'libc-top-half/musl/COPYRIGHT',
+        sha256: 'b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b',
       },
     ],
   }],
@@ -96,14 +110,20 @@ export function renderWasiLibcNotices(version, contents, musl) {
   if (!Array.isArray(contents) || contents.length !== sources.length) {
     throw new Error('WASI libc notices require every qualified original file');
   }
-  text(musl);
-  if (createHash('sha256').update(musl).digest('hex') !== sdk.muslSha256) {
-    throw new Error('Prepared MUSL-COPYRIGHT differs from the WASI libc original');
+  const muslIndex = sources.findIndex(source => source.path === 'libc-top-half/musl/COPYRIGHT');
+  const runtimeMusl = muslIndex < 0 ? musl : contents[muslIndex];
+  text(runtimeMusl);
+  if (createHash('sha256').update(runtimeMusl).digest('hex') !== sdk.muslSha256) {
+    throw new Error(muslIndex < 0
+      ? 'Prepared MUSL-COPYRIGHT differs from the WASI libc original'
+      : 'WASI musl COPYRIGHT differs from its qualified original');
   }
   const output = [Buffer.from(
     `Rust self-contained WASI C runtime\nWASI SDK ${version}; wasi-libc ${sdk.commit}\n` +
     'The MIT option is used for wasi-libc; third-party portions retain their original terms.\n' +
-    'The musl portion is covered by the accompanying byte-identical MUSL-COPYRIGHT.\n\n',
+    (muslIndex < 0
+      ? 'The musl portion is covered by the accompanying byte-identical MUSL-COPYRIGHT.\n\n'
+      : 'The musl portion is covered by its original COPYRIGHT reproduced below.\n\n'),
   )];
   for (const [index, source] of sources.entries()) {
     output.push(renderOriginalWasiNotice(source, contents[index]));

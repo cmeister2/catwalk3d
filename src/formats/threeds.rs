@@ -374,9 +374,9 @@ fn mesh_data(data: &[u8], name: String) -> Result<Mesh> {
                     return Err("duplicate 3DS mesh transform".into());
                 }
                 has_matrix = true;
-                for column in 0..4 {
-                    for row in 0..3 {
-                        mesh.matrix.0[column][row] = values.float()?;
+                for column in &mut mesh.matrix.0 {
+                    for value in column.iter_mut().take(3) {
+                        *value = values.float()?;
                     }
                 }
                 values.finish()?;

@@ -215,8 +215,8 @@ fn singular_normals_fall_back_and_large_finite_transforms_remain_bounded() {
         surface().triangles[0].vertices
     );
     shared.instances[0] = MeshInstance::default();
-    for axis in 0..3 {
-        shared.instances[0].transform[axis][axis] = 1e200;
+    for (axis, column) in shared.instances[0].transform.iter_mut().enumerate().take(3) {
+        column[axis] = 1e200;
     }
     let expanded = shared.to_scene().unwrap();
     assert!(expanded.positions().all(Vec3::is_finite));
