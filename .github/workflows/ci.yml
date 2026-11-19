@@ -118,14 +118,14 @@ jobs:
           name: format-snapshots-${{ runner.os }}
           path: target/format-snapshots
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 7
       - name: Retain gallery preview
         if: runner.os == 'Linux' && success()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: thumbnail-gallery
           path: target/gallery
-          retention-days: 14
+          retention-days: 7
 
   success:
     name: Success
@@ -183,6 +183,7 @@ jobs:
           name: release-plan
           path: release-prepared
           if-no-files-found: error
+          retention-days: 7
 
   prepare-binaries:
     needs: release-plan
@@ -233,6 +234,7 @@ jobs:
           name: binary-prepared
           path: release-prepared
           if-no-files-found: error
+          retention-days: 7
 
   binaries:
     needs: prepare-binaries
@@ -296,6 +298,7 @@ jobs:
           name: release-binary-${{ matrix.target }}
           path: release-assets
           if-no-files-found: error
+          retention-days: 7
       - name: Retain release snapshot comparisons
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
@@ -303,6 +306,7 @@ jobs:
           name: release-snapshots-${{ matrix.target }}
           path: target/release-snapshots
           if-no-files-found: warn
+          retention-days: 7
 
   web:
     needs: prepare-binaries
@@ -357,14 +361,14 @@ jobs:
             test-results
             playwright-report
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 7
       - name: Retain the verified thumbnail uploader
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: thumbnail-uploader
           path: target/web
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 7
 
   gallery:
     needs: [checks, tests, web]
@@ -390,7 +394,7 @@ jobs:
           name: thumbnail-site
           path: target/gallery
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 7
       - name: Configure GitHub Pages
         if: github.event.repository.private == false && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
