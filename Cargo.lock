@@ -282,7 +282,7 @@ dependencies = [
  "serde_json",
  "sha2",
  "tempfile",
- "zip 9.5.1",
+ "zip",
 ]
 
 [[package]]
@@ -353,7 +353,7 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 2.0.21",
- "zip 9.5.1",
+ "zip",
 ]
 
 [[package]]
@@ -365,7 +365,7 @@ dependencies = [
  "cadmpeg-core",
  "crc32fast",
  "flate2",
- "zip 9.5.1",
+ "zip",
  "zstd",
 ]
 
@@ -420,7 +420,7 @@ dependencies = [
  "flate2",
  "roxmltree",
  "serde",
- "zip 9.5.1",
+ "zip",
 ]
 
 [[package]]
@@ -450,7 +450,7 @@ dependencies = [
  "hdf5-writer",
  "image",
  "las",
- "lz4_flex 0.14.0",
+ "lz4_flex",
  "ndarray",
  "netcdf-reader",
  "netcdf-writer",
@@ -477,7 +477,7 @@ dependencies = [
  "truck-meshalgo",
  "truck-modeling",
  "truck-stepio",
- "zip 9.5.1",
+ "zip",
 ]
 
 [[package]]
@@ -1195,27 +1195,30 @@ name = "hashbrown"
 version = "0.17.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
+dependencies = [
+ "foldhash",
+]
 
 [[package]]
 name = "hdf5-core"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c3d4ad873a5db535c052705e1b34070391157f4acc0ca50fcdc9c5923780112"
+checksum = "8677f7e6cdd34853d824de6d4394395aff5f4d00e388e75b7366e08fefe91236"
 dependencies = [
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "hdf5-reader"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1ac773e9e47f3765399b71525783c203c53844c83d52a73f3f313d0a040e413"
+checksum = "a34ef20fa8f104da38fbc79438b31d18c790e5f65d7200021987f974d69e7462"
 dependencies = [
  "flate2",
  "hdf5-core",
  "libc",
  "lru",
- "lz4_flex 0.11.6",
+ "lz4_flex",
  "memmap2",
  "ndarray",
  "parking_lot",
@@ -1226,9 +1229,9 @@ dependencies = [
 
 [[package]]
 name = "hdf5-writer"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a30694330c92d37b3d8183037d699012011976f14f45784b829e8be61d58bc3"
+checksum = "7545adf9836e914f56a9f619e6ac32eeaf145811a9dbcd5a4b47c4448852721c"
 dependencies = [
  "flate2",
  "hdf5-core",
@@ -1555,20 +1558,11 @@ dependencies = [
 
 [[package]]
 name = "lru"
-version = "0.16.4"
+version = "0.19.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f66e8d5d03f609abc3a39e6f08e4164ebf1447a732906d39eb9b99b7919ef39"
+checksum = "d4e2a1b977b42ee8b53a2a4adbd1183431c493f1d1960b7ccd893e2f0b9407ba"
 dependencies = [
- "hashbrown 0.16.1",
-]
-
-[[package]]
-name = "lz4_flex"
-version = "0.11.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "373f5eceeeab7925e0c1098212f2fbc4d416adec9d35051a6ab251e824c1854a"
-dependencies = [
- "twox-hash",
+ "hashbrown 0.17.1",
 ]
 
 [[package]]
@@ -1738,18 +1732,18 @@ dependencies = [
 
 [[package]]
 name = "netcdf-core"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9cad5b445e41178e133347ba40e701848971da4fada54d15bd5005c8f58a9558"
+checksum = "e0c8352e5715be57c27c37152188eed61fd9402c869b71a23d981e8e19685638"
 dependencies = [
  "thiserror 2.0.21",
 ]
 
 [[package]]
 name = "netcdf-reader"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a9f1a196246124ca06303e9d11ed268f499852277899e52fb47cc74e08fdd11b"
+checksum = "511aa141b4ac02fc0c40ffe3282f296eaba60a73696f9b66abbe1f26bddc8e0d"
 dependencies = [
  "hdf5-reader",
  "memmap2",
@@ -1760,9 +1754,9 @@ dependencies = [
 
 [[package]]
 name = "netcdf-writer"
-version = "0.12.1"
+version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5917acdf004e1bf7c90b90ac0a20d965ead91b1fec111221ae1ac0db7806e20"
+checksum = "5c31a66fc5423c82a6469752a14b3292ecac26362a31751d27557346b5785b62"
 dependencies = [
  "hdf5-writer",
  "netcdf-core",
@@ -2001,29 +1995,31 @@ checksum = "384b8ab6d37215f3c5301a95a4accb5d64aa607f1fcb26a11b5303878451b4fe"
 
 [[package]]
 name = "openusd"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54f38d869c64c96492e1a482fb621eda620d120d91dbe93072112ee315a8923c"
+checksum = "caf1d3030ab9442f205c20a6c551754f4bc4b8e6727e49f915c4f482345c7dc5"
 dependencies = [
  "bitflags",
  "bytemuck",
  "derive_more 2.1.1",
  "half",
  "logos",
- "lz4_flex 0.14.0",
+ "lz4_flex",
  "num-traits",
  "regex-lite",
+ "rustc-hash",
  "strum",
  "thiserror 2.0.21",
  "windows-sys",
- "zip 8.6.0",
+ "zip",
+ "zmij",
 ]
 
 [[package]]
 name = "openusd-build"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ffbbcc78f97548fe2e4c6eaa164f6ec25414c6f685c73ee547504a7bc2361c6"
+checksum = "6d659e0709efed1fbd1716ef3177d5ebe75974e269c55eb79d75d361805f15d8"
 dependencies = [
  "openusd",
  "prettyplease",
@@ -2037,9 +2033,9 @@ dependencies = [
 
 [[package]]
 name = "openusd-schemas"
-version = "0.8.0"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "841935b1f1445c20c139f42478566459fac7b8830da0358d735526a7415057f4"
+checksum = "bb4814d6ad33935128eb8e28027ccbdcabd5343768d0a80b712988cf7f56e9af"
 dependencies = [
  "derive_more 2.1.1",
  "openusd",
@@ -2985,12 +2981,6 @@ checksum = "86a801b3cea342a06d468c8710662aa29e5e05e4f5c0d62f00bbb7f2ad7941c2"
 
 [[package]]
 name = "typed-path"
-version = "0.12.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54ec2755506471f54baf5e4bb5499d8e510cc1caf271270e778a736bd2d7336c"
-
-[[package]]
-name = "typed-path"
 version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ce898823d8cd0f028662d2f349694b1af0a5cc9be83f1d213a00d3147445e1e"
@@ -3230,20 +3220,6 @@ dependencies = [
 
 [[package]]
 name = "zip"
-version = "8.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2d04a6b5381502aa6087c94c669499eb1602eb9c5e8198e534de571f7154809b"
-dependencies = [
- "crc32fast",
- "flate2",
- "indexmap",
- "memchr",
- "typed-path 0.12.4",
- "zopfli",
-]
-
-[[package]]
-name = "zip"
 version = "9.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e3476fd497ac8af5b1ec7b51acab7bef380f7e8dd8e0487595bafd839417a302"
@@ -3256,7 +3232,7 @@ dependencies = [
  "libc",
  "memchr",
  "nix",
- "typed-path 0.13.0",
+ "typed-path",
  "windows-sys",
  "zeroize",
  "zopfli",
